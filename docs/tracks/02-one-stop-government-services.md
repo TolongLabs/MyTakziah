@@ -21,7 +21,7 @@ The problem statement above is reproduced verbatim from the supplied ground trut
 - Which end-to-end transaction journey is specific enough to explain clearly?
 - Where does the target user currently repeat information or lose progress?
 - What would the conversational assistant do before, during, and after the transaction?
-- What consent, privacy, agency, and handoff assumptions must be stated?
+- What consent, privacy, agency, and service-transfer assumptions must be stated?
 - What evidence supports the selected journey and user pain point?
 
 ## Concept Prompts

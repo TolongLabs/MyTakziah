@@ -1,6 +1,6 @@
-# PROGRESS
+# Team Progress
 
-> Dated execution log. Record verified work only. Do not infer completion from a draft existing.
+> Owned by the team. Add a named human owner for active work and record verified outcomes only. Do not infer completion from a draft existing.
 
 ## Current Status
 
@@ -18,12 +18,12 @@
 | Solution Concept   | TODO   | TODO  | one-sentence concept and journey drafted |
 | Idea Submission    | TODO   | TODO  | all eight template sections complete     |
 | Innovation Canvas  | TODO   | TODO  | A3 portrait JPG or PNG export ready      |
-| Weighted QA        | TODO   | TODO  | verdict recorded in `docs/test.md`       |
+| Weighted Review    | TODO   | TODO  | outcome recorded in final preflight      |
 | Kolaxus Submission | TODO   | TODO  | human confirmation before deadline       |
 
 ## Deadline Risk
 
-The critical path is track choice to evidence to complete draft to canvas to QA to export. Optional apps or videos are out of scope until both required artifacts pass preflight.
+The critical path is track choice to evidence to complete draft to canvas to weighted review to export. Optional apps or videos are out of scope until both required artifacts pass preflight.
 
 ## Log
 

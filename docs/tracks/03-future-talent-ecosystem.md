@@ -19,7 +19,7 @@ The problem statement above is reproduced verbatim from the supplied ground trut
 ## Questions to Answer
 
 - Which part of the education-to-employment journey has the clearest unmet need?
-- Is the primary user a learner, educator, employer, workforce planner, or another specific group?
+- Is the primary user a learner, educator, employer, workforce coordinator, or another specific group?
 - What information would AI use, and what decision would it improve?
 - How does the concept support career readiness, skills matching, workforce planning, or lifelong learning?
 - What evidence supports the selected gap and user need?

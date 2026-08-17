@@ -18,7 +18,7 @@ This is **not a software product repo**. The required work is an innovation idea
 
 **The Single Hardest Constraint:** the submission deadline is **21 August 2026 at 11:59 PM**. Today is 18 August 2026, so the team has three days. No extension will be given.
 
-Read `docs/competition/brief.md` before doing substantive work. Then read the tail of `docs/decisions.md`, `docs/progress.md`, and the selected file in `docs/tracks/`. `docs/README.md` carries the full working order.
+Read `docs/competition/brief.md` before doing substantive work. Then read the tail of `docs/decisions.md`, `docs/progress.md`, `docs/plan.md`, and the selected file in `docs/tracks/`. `docs/README.md` carries the full working order.
 
 ---
 
@@ -31,11 +31,31 @@ uriis-challenge/
 ├── AGENTS.md
 ├── CLAUDE.md
 ├── README.md
-├── .claude/agents/       # Claude role adapters
-├── .codex/agents/        # Codex role adapters
+├── package.json
+├── bun.lock
+├── commitlint.config.js
+├── .prettierrc
+├── .prettierignore
+├── .gitignore
+├── .gitattributes
+├── skills-lock.json
+├── .husky/
+│   └── commit-msg        # commit message check
+├── .agents/
+│   └── skills/           # installed skills and their guide, the canonical copy
+├── .claude/
+│   ├── skills -> ../.agents/skills   # symlink, do not replace with a real directory
+│   ├── settings.json     # shared hooks: punctuation guard and Impeccable detector
+│   └── hooks/
+│       └── no-emdash-emoji.mjs
+├── scripts/
+│   └── link-skills.mjs   # repairs the skills symlink after a Windows clone
+├── frontend/             # optional prototype, React and Vite, not graded
 └── docs/
     ├── README.md         # working manual
     ├── decisions.md      # one-line ledger of lasting choices
+    ├── plan.md           # urgent team task list
+    ├── progress.md       # dated status and blocker log
     ├── competition/      # brief, rubric, timeline, and submission rules
     ├── tracks/           # the four official problem statements
     ├── research/         # cited evidence and fill-in templates
@@ -49,14 +69,25 @@ uriis-challenge/
 
 ## Commands
 
-At the repo root, run `bun install` once, then:
+At the repo root, run `bun run setup` once. That installs dependencies, activates the commit message hook, and repairs the skills symlink if a clone broke it.
 
 ```bash
-bun run format
-bun run format:check
+bun run setup          # once per machine
+bun run format         # apply formatting
+bun run format:check   # verify formatting
+bun run skills:link    # repair .claude/skills if skills go missing
 ```
 
-Prettier owns whitespace, tables, list markers, and line endings for authored Markdown and configuration files. There is no build, application, or prototype command.
+Prettier owns whitespace, tables, list markers, and line endings for authored Markdown and configuration files.
+
+The optional prototype in `frontend/` has its own toolchain and is driven from the root:
+
+```bash
+bun run frontend:dev     # run the prototype locally
+bun run frontend:build   # produce the shareable build
+```
+
+There is no build step for the submission itself. The documents are the product.
 
 ---
 
@@ -106,18 +137,19 @@ Do not reformat received sources, transcripts, or installed skills. `.prettierig
 - Submit before 21 August 2026 at 11:59 PM. No extension will be given.
 - Check the exported files, not only the editable originals.
 
-The judging weights are Innovation 30%, Feasibility 25%, Social/Economic Impact 25%, and Submission Quality 20%. Drafting effort and QA should follow those weights.
+The judging weights are Innovation 30%, Feasibility 25%, Social/Economic Impact 25%, and Submission Quality 20%. Drafting and review effort should follow those weights.
 
 ---
 
 ## Critical Do-Nots
 
 - **Do not** create, modify, delete, move, rename, reformat, or otherwise touch anything under `docs/source/`. The official PDFs and briefing transcripts live there and are the record we cite.
-- **Do not** run `git init`, `git add`, `git commit`, or another git write command without explicit human direction.
-- **Do not** hand-create files under `.agents/skills/`. Skills are installed and pinned with skills.sh, see `.agents/skills/README.md`.
+- **Do not** use a commit message that breaks the enforced convention, force-push, or rewrite shared history. See "Git Commit Convention" below.
+- **Do not** manually create or edit files under `.agents/skills/`. Skills are installed and pinned with skills.sh. Read `.agents/skills/README.md` for the supported management commands.
 - **Do not fabricate facts.** Use TODOs and source markers instead.
 - **Do not assume a track has been selected** until it is recorded in `docs/decisions.md`.
-- **Do not build a prototype by default.** The competition does not require one, and the deadline makes unscored work especially costly.
+- **Do not build a prototype by default.** The competition does not require one, and the deadline makes unscored work especially costly. `frontend/` holds a ready React and Vite setup if the team decides one is worth it, but only start it after the PDF and the canvas have passed preflight. Read `frontend/README.md` first.
+- **Do not replace `.claude/skills` with a real directory.** It is a symlink to `.agents/skills`, which is the canonical copy. Installers sometimes overwrite it. Repair it with `bun run skills:link`.
 - **Do not miss a format gate** for the PDF or canvas.
 - **No Secrets in Repo.** Keep credentials, private contact details, and Kolaxus login data out of tracked files.
 
@@ -129,18 +161,27 @@ The judging weights are Innovation 30%, Feasibility 25%, Social/Economic Impact 
 
 ---
 
-## Agent Workflow
+## Using AI Assistants
 
-This workspace can use a PM-orchestrated Planner to Producer to QA workflow. The roles are tool-agnostic and defined in `docs/roles.md`; execution details are in `docs/agent-workflow.md`.
+Any AI assistant may be used to read, research, draft, or review work in this workspace. The human team owns every lasting decision, all claims based on lived experience, the final wording and exported files, and the submission through Kolaxus.
 
-- **Planner:** turns the next submission objective into a sourced, checkboxed plan in `docs/plan.md`.
-- **Producer:** performs research, writes submission content, and prepares canvas-ready copy. The legacy adapter filename is `programmer`, but this role does not default to coding.
-- **QA:** reviews the work against official rules, judging weights, source quality, internal consistency, and export readiness.
-
-Human teammates own track selection, claims based on lived experience, final wording, and submission through Kolaxus. Agents may assist, but they do not invent or submit on the team's behalf.
+AI assistants must not invent team facts, user research, validation results, metrics, partnerships, costs, or feasibility claims. They must leave unknown team content as `TODO:`, mark missing evidence as `[NEEDS SOURCE]`, label assumptions as `[ASSUMPTION]`, and never submit on the team's behalf.
 
 ---
 
 ## Git Commit Convention
 
-When a human later authorizes commits, use Conventional Commits: `<type>[scope]: <description>`. Prefer `docs:` and `chore:` for this workspace. Use a single imperative sentence with no trailing period. Never commit or push without team approval.
+Conventional Commits are enforced by the `.husky/commit-msg` hook. Every commit message must follow `<type>[optional-scope]: <description>`.
+
+Allowed types are `feat`, `fix`, `refactor`, `docs`, `test`, `chore`, `style`, and `perf`. Use `docs:` for most writing changes. Write a short imperative description, start it with a lowercase word, and do not add a trailing period.
+
+Examples:
+
+```text
+docs: add rural track research notes
+docs(canvas): revise impact copy
+fix: correct the submission deadline
+chore: update document formatting
+```
+
+If the hook rejects a message, its friendly error explains the rule and gives copy-paste examples. The change is not lost; correct the message and try again. Never force-push or rewrite shared history.

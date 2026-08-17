@@ -1,12 +1,16 @@
 # Agent Skills
 
-62 skills installed for the URIIS Student Biz Innov Challenge 2026, curated
+63 skills installed for the URIIS Student Biz Innov Challenge 2026, curated
 against the eight submission sections, the four judging criteria, and the four
 problem statements.
 
 These are plain `SKILL.md` instruction files. Any agent that reads `.agents/`
-picks them up. They were installed with `--copy` rather than symlinks, so they
-survive a `git clone` and work for every teammate without setup.
+picks them up.
+
+This directory is the single source of truth. `.claude/skills` is a symlink
+pointing here, so Claude sees exactly the same set. If skills ever go missing
+after a clone, which happens on Windows when the symlink does not survive, run
+`bun run skills:link` from the project root to repair it.
 
 ## Managing skills
 
@@ -36,7 +40,7 @@ The template has eight sections. Reach for these:
 | 4. Innovation Element | `competitor-analysis`, `competitive-battlecard`, `positioning-ideas`, `swot-analysis`, `porters-five-forces` |
 | 5. Impact | `toc-builder`, `market-sizing`, `north-star-metric`, `data-visualization` |
 | 6. Feasibility | `business-model`, `monetization-strategy`, `gtm-strategy`, `startup-validator`, `pre-mortem`, `strategy-red-team` |
-| 7. Visual Concept | `wireframe-spec`, `storyboard-manager`, `visual-hierarchy`, `layout-grid`, `color-system`, `typography-scale`, `information-architecture` |
+| 7. Visual Concept | `impeccable`, `wireframe-spec`, `storyboard-manager`, `visual-hierarchy`, `layout-grid`, `color-system`, `typography-scale`, `information-architecture` |
 | 8. Why Your Team Should Win | `product-vision`, `value-prop-statements`, `grammar-check`, `ux-writing` |
 
 ## Map to the judging criteria
@@ -48,7 +52,36 @@ Weightings are fixed by the organisers. Spend effort proportionally.
 | Innovation | 30% | `competitor-analysis`, `positioning-ideas`, `brainstorm-ideas-new`, `opportunity-solution-tree` |
 | Feasibility | 25% | `business-model`, `startup-validator`, `identify-assumptions-new`, `pre-mortem`, `strategy-red-team` |
 | Social / Economic Impact | 25% | `toc-builder`, `market-sizing`, `north-star-metric`, `pestle-analysis` |
-| Submission Quality | 20% | `grammar-check`, `ux-writing`, `visual-hierarchy`, `layout-grid`, `business-document-generator`, `docx`, `pptx` |
+| Submission Quality | 20% | `impeccable`, `grammar-check`, `ux-writing`, `visual-hierarchy`, `layout-grid`, `business-document-generator`, `docx`, `pptx` |
+
+## Building the A3 Innovation Canvas
+
+The canvas is a graded deliverable: one page, A3 portrait, JPG or PNG only. It
+carries a real share of the 20% Submission Quality score, and it is the first
+thing a judge looks at.
+
+`impeccable` is installed for this. It is a design skill aimed at HTML and CSS,
+which suits the canvas well: build the page in HTML, then export it at A3 300
+DPI (3508 by 4961 pixels, portrait) to PNG. Working in HTML rather than a
+drawing tool means the layout, type scale, and colour stay editable to the last
+minute, and every change is reviewable in git.
+
+Useful entry points, all invoked as `/impeccable <command>`:
+
+| Command | Use it for |
+| --- | --- |
+| `init` | Set up design context for the repo first, once. |
+| `craft` | Build the canvas from a description. |
+| `layout` | Fix the five-pillar arrangement and visual balance. |
+| `typeset` | Type scale and readability, which matters at A3 print size. |
+| `colorize` | Build a coherent palette. |
+| `visualize` | Present impact numbers as charts rather than raw text. |
+| `critique` | Get a design review before you export. |
+| `polish`, `bolder`, `quieter` | Adjust the finished piece. |
+
+Keep the five pillars intact: The Concept, Problem, Target User, Innovation,
+and Impact. Confirm the exported file is A3 portrait and JPG or PNG in
+`docs/submission/preflight.md` before uploading.
 
 ## Map to the four problem statements
 

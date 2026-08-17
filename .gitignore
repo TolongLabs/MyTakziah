@@ -2,14 +2,14 @@
 .env
 .env.local
 
-# Local-Only Workflow State
+# Local Settings
 .claude/settings.local.json
-docs/.codex/
-docs/.pm-handoff.md
-docs/.pm-lock
 
 # Dependencies
 node_modules/
+
+# Prototype Build Output
+frontend/dist/
 
 # Tool Artifacts
 .playwright-mcp/

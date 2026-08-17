@@ -19,7 +19,7 @@
 
 **Time Remaining:** Three days
 
-The competition is now in submission mode. Track choice, evidence, idea writing, canvas design, weighted QA, export verification, and Kolaxus upload must all fit inside the remaining window.
+The competition is now in submission mode. Track choice, evidence, idea writing, canvas design, weighted review, export verification, and Kolaxus upload must all fit inside the remaining window.
 
 ## Recommended Internal Cutoffs
 
@@ -29,7 +29,7 @@ These are team targets, not official organizer dates.
 | ------------- | --------------------------------------------------------------------------- |
 | 18 August     | team information, track, target user, concept direction, owners             |
 | 19 August     | evidence notes and full idea-submission draft                               |
-| 20 August     | canvas export, rubric QA, and revision                                      |
+| 20 August     | canvas export, weighted review, and revision                                |
 | 21 August     | final exports, preflight, and Kolaxus submission before the official cutoff |
 
 ## Deadline Rules

@@ -11,7 +11,7 @@ Everything needed to turn the selected concept into the two required artifacts a
 | Idea Submission   | PDF only, under 25 MB      | Team Information and Sections 1 through 8 from the official template |
 | Innovation Canvas | one A3 portrait JPG or PNG | The Concept, Problem, Target User, Innovation, and Impact            |
 
-Optional apps or videos come only after both required artifacts pass QA. They must strengthen the idea without delaying submission.
+Optional apps or videos come only after both required artifacts pass the weighted review and preflight. They must strengthen the idea without delaying submission.
 
 ## Suggested Working Files
 
@@ -23,7 +23,7 @@ Create these only when the team is ready to fill them with real content:
 | `canvas-copy.md`           | concise five-pillar copy before visual layout             |
 | `visual-concept.md`        | notes for Section 7 and the canvas reading order          |
 | `references.md`            | source list for factual claims and numbers                |
-| `review-notes.md`          | consolidated human and QA changes                         |
+| `review-notes.md`          | consolidated team comments and requested changes          |
 
 Do not create a polished-looking claim where the evidence is missing. Use `[NEEDS SOURCE]`, `[ASSUMPTION]`, or `TODO:`.
 
@@ -59,7 +59,7 @@ Use short copy, a clear reading order, and only visuals that help judges underst
 
 1. Complete the idea-submission draft.
 2. Distill the same story into canvas copy.
-3. Run weighted QA against `../competition/rubrics.md`.
+3. Run the weighted review against `../competition/rubrics.md` and record its outcome in `preflight.md`.
 4. Revise both artifacts together.
 5. Export the PDF and canvas image.
 6. Complete `preflight.md` using the actual exports.

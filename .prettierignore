@@ -3,25 +3,20 @@
 .claude/skills/
 skills-lock.json
 
+# Managed Commit Configuration
+commitlint.config.js
+
 # Received Primary Sources
 docs/source/
 
-# Private Workflow and Ledger Files
-docs/roles.md
+# Private Team Files
 docs/plan.md
 docs/progress.md
-docs/test.md
-docs/agent-workflow.md
 docs/decisions.md
-.claude/agents/
-.codex/agents/
-
-# Local Workflow State
-docs/.codex/
-docs/.pm-handoff.md
 
 # Dependencies and Tool Output
 node_modules/
+frontend/dist/
 .playwright-mcp/
 
 # Binary and Media Files

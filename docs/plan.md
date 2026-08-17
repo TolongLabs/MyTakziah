@@ -1,6 +1,6 @@
-# PLAN
+# Team Plan
 
-> Owned by **PL**. The team approves priorities before execution. With three days remaining, approval must happen immediately and tasks should run in parallel where file scopes do not overlap.
+> Owned by the team. Add a named human owner to each task before work begins. With three days remaining, the team must settle priorities immediately and may work on non-overlapping files at the same time.
 
 **Planning Date:** 18 August 2026
 **Official Deadline:** 21 August 2026 at 11:59 PM
@@ -77,19 +77,20 @@
 
 **Verify:** the export is one A3 portrait image in JPG or PNG and all five pillars are present.
 
-### Task 6: Run Weighted QA and Revision
+### Task 6: Run Weighted Review and Revision
 
 **Owner:** TODO
-**Files:** submission draft, canvas copy, `docs/test.md`
+**Files:** submission draft, canvas copy, `docs/submission/preflight.md`
 **Depends On:** Tasks 4 and 5
 
 - [ ] Review Innovation at 30%.
 - [ ] Review Feasibility at 25%.
 - [ ] Review Social/Economic Impact at 25%.
 - [ ] Review Submission Quality at 20%.
+- [ ] Record the strongest evidence and remaining risk for each criterion in `docs/submission/preflight.md`.
 - [ ] Resolve every blocking finding or narrow the claim.
 
-**Verify:** `docs/test.md` records an Approve or Approve with Comments verdict with no unresolved format blocker.
+**Verify:** `docs/submission/preflight.md` records the weighted review outcome with no unresolved format blocker.
 
 ### Task 7: Export and Submit
 
@@ -113,7 +114,7 @@ These are team working targets, not official competition dates.
 | --------- | ----------------------------------------------------- |
 | 18 August | Track, target user, and core concept locked           |
 | 19 August | Evidence and complete first draft ready               |
-| 20 August | Canvas export and weighted QA complete                |
+| 20 August | Canvas export and weighted review complete            |
 | 21 August | Final export, preflight, and early Kolaxus submission |
 
 ## Open TODOs

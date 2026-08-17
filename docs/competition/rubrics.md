@@ -42,7 +42,7 @@ The descriptions in the third column are internal review prompts, not additional
 - Do the PDF, canvas, and visual concept tell the same story?
 - Are the exports legible and compliant with every format rule?
 
-## Rubric QA Table
+## Weighted Review Table
 
 | Criterion              | Weight | Strongest Evidence | Weakest Claim | Revision Owner |
 | ---------------------- | -----: | ------------------ | ------------- | -------------- |

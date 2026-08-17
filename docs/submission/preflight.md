@@ -58,6 +58,14 @@ A bare tick is not enough for a file property. Record the observed format, size,
 | [ ]  | Social/Economic Impact |    25% | TODO               | TODO           |
 | [ ]  | Submission Quality     |    20% | TODO               | TODO           |
 
+## Weighted Review Outcome
+
+Complete this record after reviewing both required artifacts against the four judging criteria. Use "Ready with Comments" only when every remaining comment is non-blocking.
+
+| Outcome                                           | Recorded By | Date | Unresolved Blockers |
+| ------------------------------------------------- | ----------- | ---- | ------------------- |
+| TODO: Ready / Ready with Comments / Not Yet Ready | TODO        | TODO | TODO                |
+
 ## Evidence and Integrity
 
 | Done | Check                                                                                                      | Owner | Evidence |
@@ -117,7 +125,7 @@ Email is not accepted. Do not treat an email draft or sent message as a submissi
 
 ## Sign-Off
 
-| Role                        | Name | Date | Signed |
+| Responsibility              | Name | Date | Signed |
 | --------------------------- | ---- | ---- | ------ |
 | Team Lead                   | TODO | TODO | TODO   |
 | Independent Format Verifier | TODO | TODO | TODO   |

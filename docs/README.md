@@ -1,78 +1,50 @@
-# docs/
+# Documentation Guide
 
-The working manual for this workspace. For first-contact orientation, read the root [`README.md`](../README.md). For the official challenge summary, read [`competition/brief.md`](competition/brief.md).
+This folder holds the competition facts, team decisions, research, drafts, and final checks for URIIS - Student Biz Innov Challenge 2026.
 
-## What This Repo Is
+**Deadline:** 21 August 2026 at 11:59 PM. No extension will be given.
 
-This is a document-first team workspace for **URIIS - Student Biz Innov Challenge 2026**. The required outputs are an idea submission in PDF and a one-page Innovation Canvas image. No coding or prototype is required.
+## What Lives Where
 
-## Deadline State
+| Path           | Purpose                                                                                  |
+| -------------- | ---------------------------------------------------------------------------------------- |
+| `competition/` | Official brief, judging weights, timeline, and submission rules.                         |
+| `tracks/`      | The four official problem statements and fill-in space for the team's angle.             |
+| `research/`    | Evidence notes, source records, and reusable research templates.                         |
+| `submission/`  | Guidance for the written entry, Innovation Canvas, weighted review, and final preflight. |
+| `source/`      | Original official PDFs and transcripts. This folder is an immutable record.              |
 
-**D-3 as of 18 August 2026. Submission closes 21 August 2026 at 11:59 PM, with no extension.**
+The files beside this guide have simple team purposes:
 
-The team should optimize for a complete, evidenced, compliant submission. Optional supporting material comes only after both required artifacts pass preflight.
+| File           | Purpose                                                       |
+| -------------- | ------------------------------------------------------------- |
+| `decisions.md` | Record lasting choices, including the one selected track.     |
+| `plan.md`      | Track urgent tasks, owners, dependencies, and checks.         |
+| `progress.md`  | Record dated status, verified outcomes, blockers, and owners. |
 
-## What We Are Producing
+## Work in This Order
 
-| Deliverable         | Required Format       | Hard Gate                                      | Deadline                 |
-| ------------------- | --------------------- | ---------------------------------------------- | ------------------------ |
-| Idea Submission     | PDF only              | Under 25 MB and follows the provided template  | 21 August 2026, 11:59 PM |
-| Innovation Canvas   | JPG or PNG only       | One page, A3 portrait                          | 21 August 2026, 11:59 PM |
-| Supporting Material | Optional app or video | Only if it strengthens the required submission | Same submission window   |
+1. Read `competition/brief.md` and `competition/rubrics.md`.
+2. Read all four files in `tracks/` and choose exactly one track as a human team.
+3. Record the choice and rationale in `decisions.md`.
+4. Add named owners and work through `plan.md`.
+5. Gather cited evidence under `research/` for one target user and problem.
+6. Draft Team Information and Sections 1 through 8 using `submission/README.md`.
+7. Prepare the one-page A3 portrait Innovation Canvas as JPG or PNG.
+8. Use `submission/preflight.md` to review the judging coverage and inspect the actual exported files.
+9. Have the human team submit through Kolaxus before the deadline. Email is not accepted.
 
-Submission is through Kolaxus. Email submissions are not accepted.
+## Required Outputs
 
-## Directory Map
-
-| Path                | Purpose                                                             |
-| ------------------- | ------------------------------------------------------------------- |
-| `docs/competition/` | Ground-truth brief, judging weights, timeline, and submission rules |
-| `docs/tracks/`      | The four official problem statements plus team fill-in prompts      |
-| `docs/research/`    | Evidence notes, source records, and reusable templates              |
-| `docs/submission/`  | Required section map, canvas guidance, and export preflight         |
-| `docs/source/`      | Primary sources, immutable record; never edit or reformat           |
-| `docs/decisions.md` | Lasting team choices, newest at the bottom                          |
-| `docs/plan.md`      | Current checkboxed work plan                                        |
-| `docs/progress.md`  | Dated status and blocker log                                        |
-| `docs/test.md`      | QA verdicts and preflight observations                              |
-
-## Submission Pipeline
-
-`rules -> track choice -> target-user evidence -> concept -> submission draft -> canvas -> rubric QA -> export preflight -> Kolaxus`
-
-Each stage must feed the next. Research that does not improve a template section, canvas pillar, or judging criterion is out of scope on a three-day clock.
-
-## Reading Order for a New Session
-
-1. `docs/competition/brief.md`
-2. `docs/competition/rubrics.md`
-3. Tail of `docs/decisions.md`
-4. `docs/progress.md`
-5. `docs/plan.md`
-6. The selected file under `docs/tracks/`, once chosen
-7. The research or submission file matching the assigned task
+- Idea submission: PDF only, under 25 MB.
+- Innovation Canvas: one page, A3 portrait, JPG or PNG only.
+- Section 8, "Why Your Team Should Win": 100 words or less.
 
 ## Writing Rules
 
+- Keep team facts as `TODO:` until a human teammate supplies them.
+- Mark missing evidence as `[NEEDS SOURCE]` and assumptions as `[ASSUMPTION]`.
+- Cite factual claims and numbers in the research notes.
+- Never edit, move, rename, reformat, or delete anything in `source/`.
 - Use Title Case for headings, table headers, and bold opening labels.
-- Use kebab-case for paths.
-- Cite factual claims and numbers.
-- Mark missing evidence as `[NEEDS SOURCE]`.
-- Mark team-specific unknowns as `TODO:`.
-- Label assumptions as `[ASSUMPTION]`.
 - Use no em dashes and no emoji.
-- Never alter `docs/source/` or protected root media.
-
-## Commands
-
-```bash
-bun install
-bun run format
-bun run format:check
-```
-
-There is no build step. Export checks are performed on the final PDF and canvas image using the checklist in `docs/submission/preflight.md`.
-
-## Agent Workflow
-
-The optional workflow is PM to Planner to Producer to QA. `docs/roles.md` defines boundaries, and `docs/agent-workflow.md` defines the handoffs. The workflow does not replace human decisions or the final Kolaxus submission.

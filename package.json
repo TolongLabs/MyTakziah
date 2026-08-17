@@ -2,12 +2,21 @@
   "name": "uriis-challenge",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "description": "Team workspace for URIIS Student Biz Innov Challenge 2026",
   "scripts": {
+    "setup": "bun install && bun run skills:link",
+    "skills:link": "node scripts/link-skills.mjs",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "frontend:dev": "cd frontend && bun install && bun run dev",
+    "frontend:build": "cd frontend && bun install && bun run build",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "husky": "^9.1.7",
     "prettier": "^3.9.6"
   }
 }
