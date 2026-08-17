@@ -23,6 +23,12 @@ The challenge aims to inspire students to create impactful, scalable innovations
 
 ## The Four Tracks
 
+**Pick exactly one.** The presenter states this twice in the participant briefing: "you can choose one of the problem statement" and "Just choose one of the problem statement" (`../source/2026-08-03-participant-briefing-transcript.md`, `[00:15:39]` and `[00:15:47]`).
+
+This rule is not written in either PDF. The briefing deck labels the four as "Idea Sample 1" through "Idea Sample 4", which reads as optional inspiration, so confirm on the Kolaxus forum before betting the submission on a fifth idea of our own.
+
+The four statements below are locked inside an image in the briefing PDF and cannot be extracted as text from it. They are transcribed here and in `../source/README.md`.
+
 ### 1. Fostering Trustworthy and Ethical AI in the Public Sphere
 
 How might we develop a transparent, user-centric tool that enables Malaysian citizens to understand, monitor, and provide feedback on AI systems used in public service delivery, thereby building public trust and ensuring accountability?
