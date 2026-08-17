@@ -1,0 +1,13 @@
+# Line Endings
+* text=auto eol=lf
+
+# Binary Assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.mp4 binary
+*.xlsx binary

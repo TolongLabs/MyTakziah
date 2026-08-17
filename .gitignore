@@ -1,0 +1,27 @@
+# Secrets
+.env
+.env.local
+
+# Local-Only Workflow State
+.claude/settings.local.json
+docs/.codex/
+docs/.pm-handoff.md
+docs/.pm-lock
+
+# Dependencies
+node_modules/
+
+# Tool Artifacts
+.playwright-mcp/
+
+# OS and Editors
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+
+# Office Lock Files
+~$*
+
+# Root Supporting Videos Are Kept Locally Unless the Team Chooses Otherwise
+*.mp4

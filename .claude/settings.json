@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [".claude/hooks/no-emdash-emoji.mjs"],
+            "timeout": 10,
+            "statusMessage": "Checking punctuation"
+          }
+        ]
+      }
+    ]
+  }
+}

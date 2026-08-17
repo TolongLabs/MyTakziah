@@ -1,0 +1,36 @@
+# Installed Skills
+.agents/skills/
+.claude/skills/
+skills-lock.json
+
+# Received Primary Sources
+docs/source/
+
+# Private Workflow and Ledger Files
+docs/roles.md
+docs/plan.md
+docs/progress.md
+docs/test.md
+docs/agent-workflow.md
+docs/decisions.md
+.claude/agents/
+.codex/agents/
+
+# Local Workflow State
+docs/.codex/
+docs/.pm-handoff.md
+
+# Dependencies and Tool Output
+node_modules/
+.playwright-mcp/
+
+# Binary and Media Files
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.ico
+*.mp4
+*.xlsx
