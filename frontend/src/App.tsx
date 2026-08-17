@@ -1,6 +1,8 @@
 import { ArrowRight, Lightbulb, Target, TrendingUp } from "lucide-react";
 
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const PILLARS = [
   {
@@ -24,9 +26,7 @@ export default function App() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <div className="mx-auto max-w-5xl px-6 py-20">
-        <p className="text-sm font-medium tracking-wide text-muted-foreground uppercase">
-          URIIS Student Biz Innov Challenge 2026
-        </p>
+        <Badge variant="secondary">URIIS Student Biz Innov Challenge 2026</Badge>
 
         <h1 className="mt-4 text-5xl font-semibold tracking-tight text-balance sm:text-6xl">
           TODO: Name The Idea
@@ -46,11 +46,15 @@ export default function App() {
 
         <section id="pillars" className="mt-20 grid gap-5 sm:grid-cols-3">
           {PILLARS.map(({ icon: Icon, title, body }) => (
-            <article key={title} className="rounded-xl border bg-card p-6 text-card-foreground">
-              <Icon className="size-5 text-primary" />
-              <h2 className="mt-4 font-semibold">{title}</h2>
-              <p className="mt-2 text-sm text-muted-foreground">{body}</p>
-            </article>
+            <Card key={title}>
+              <CardHeader>
+                <Icon className="size-5 text-primary" />
+                <CardTitle className="mt-2">{title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">{body}</p>
+              </CardContent>
+            </Card>
           ))}
         </section>
 

@@ -10,8 +10,6 @@ commitlint.config.js
 docs/source/
 
 # Private Team Files
-docs/plan.md
-docs/progress.md
 docs/decisions.md
 
 # Dependencies and Tool Output

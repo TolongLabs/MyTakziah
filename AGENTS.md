@@ -18,7 +18,7 @@ This is **not a software product repo**. The required work is an innovation idea
 
 **The Single Hardest Constraint:** the submission deadline is **21 August 2026 at 11:59 PM**. Today is 18 August 2026, so the team has three days. No extension will be given.
 
-Read `docs/competition/brief.md` before doing substantive work. Then read the tail of `docs/decisions.md`, `docs/progress.md`, `docs/plan.md`, and the selected file in `docs/tracks/`. `docs/README.md` carries the full working order.
+Read `docs/competition/brief.md` before doing substantive work. Then read the tail of `docs/decisions.md` and the selected file in `docs/tracks/`. `docs/README.md` carries the full working order.
 
 ---
 
@@ -54,8 +54,6 @@ uriis-challenge/
 └── docs/
     ├── README.md         # working manual
     ├── decisions.md      # one-line ledger of lasting choices
-    ├── plan.md           # urgent team task list
-    ├── progress.md       # dated status and blocker log
     ├── competition/      # brief, rubric, timeline, and submission rules
     ├── tracks/           # the four official problem statements
     ├── research/         # cited evidence and fill-in templates

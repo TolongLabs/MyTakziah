@@ -14,25 +14,22 @@ This folder holds the competition facts, team decisions, research, drafts, and f
 | `submission/`  | Guidance for the written entry, Innovation Canvas, weighted review, and final preflight. |
 | `source/`      | Original official PDFs and transcripts. This folder is an immutable record.              |
 
-The files beside this guide have simple team purposes:
+One file sits beside this guide:
 
-| File           | Purpose                                                       |
-| -------------- | ------------------------------------------------------------- |
-| `decisions.md` | Record lasting choices, including the one selected track.     |
-| `plan.md`      | Track urgent tasks, owners, dependencies, and checks.         |
-| `progress.md`  | Record dated status, verified outcomes, blockers, and owners. |
+| File           | Purpose                                                   |
+| -------------- | --------------------------------------------------------- |
+| `decisions.md` | Record lasting choices, including the one selected track. |
 
 ## Work in This Order
 
 1. Read `competition/brief.md` and `competition/rubrics.md`.
 2. Read all four files in `tracks/` and choose exactly one track as a human team.
 3. Record the choice and rationale in `decisions.md`.
-4. Add named owners and work through `plan.md`.
-5. Gather cited evidence under `research/` for one target user and problem.
-6. Draft Team Information and Sections 1 through 8 using `submission/README.md`.
-7. Prepare the one-page A3 portrait Innovation Canvas as JPG or PNG.
-8. Use `submission/preflight.md` to review the judging coverage and inspect the actual exported files.
-9. Have the human team submit through Kolaxus before the deadline. Email is not accepted.
+4. Gather cited evidence under `research/` for one target user and problem.
+5. Draft Team Information and Sections 1 through 8 using `submission/README.md`.
+6. Prepare the one-page A3 portrait Innovation Canvas as JPG or PNG.
+7. Use `submission/preflight.md` to review the judging coverage and inspect the actual exported files.
+8. Have the human team submit through Kolaxus before the deadline. Email is not accepted.
 
 ## Required Outputs
 

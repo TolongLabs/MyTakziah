@@ -24,13 +24,28 @@ bun run frontend:build
 
 ## What Is Already Set Up
 
-| Tool                  | What it does for you                                                            |
-| --------------------- | ------------------------------------------------------------------------------- |
-| React with TypeScript | The page structure. TypeScript catches mistakes as you type.                    |
-| Vite                  | Runs the dev server and builds the final files. Very fast.                      |
-| Tailwind CSS v4       | Styling written directly on the elements, so an assistant can restyle safely.   |
-| shadcn/ui             | Ready-made accessible components. Add one with `bunx shadcn@latest add <name>`. |
-| lucide-react          | Icon set, already installed.                                                    |
+| Tool                  | What it does for you                                                                             |
+| --------------------- | ------------------------------------------------------------------------------------------------ |
+| React with TypeScript | The page structure. TypeScript catches mistakes as you type.                                     |
+| Vite                  | Runs the dev server and builds the final files. Very fast.                                       |
+| Tailwind CSS v4       | Styling written directly on the elements, so an assistant can restyle safely.                    |
+| Radix UI              | The accessible behaviour under the components: focus handling, keyboard support, screen readers. |
+| shadcn/ui             | Styled components built on Radix. Add one with `bunx shadcn@latest add <name>`.                  |
+| lucide-react          | Icon set, already installed.                                                                     |
+
+### Components Already Installed
+
+`button`, `card`, `badge`, `tabs`, `dialog`, `accordion`, `separator`, `input`, `label`.
+
+They live in `src/components/ui/` and are yours to edit. Radix handles the behaviour, so a dialog traps focus and closes on Escape without you writing that.
+
+Add more from the [shadcn/ui catalogue](https://ui.shadcn.com/docs/components) as needed:
+
+```bash
+bunx shadcn@latest add chart table sheet tooltip
+```
+
+`chart` is worth knowing about: it wraps Recharts and is the quickest way to turn an impact number into something a judge can read at a glance.
 
 The `@/` prefix in imports means `src/`, so `@/components/ui/button` is `src/components/ui/button.tsx`.
 

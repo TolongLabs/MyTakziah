@@ -25,7 +25,7 @@ You do not need to install anything or use a text command window to begin writin
 ### Find the Next Task
 
 ```text
-Read AGENTS.md, docs/competition/brief.md, docs/decisions.md, docs/progress.md, and docs/plan.md. Tell me the deadline, the decisions still needed from the team, and the three most useful actions I can take now. Do not invent team facts, and do not edit anything under docs/source/.
+Read AGENTS.md, docs/competition/brief.md, docs/decisions.md, and docs/README.md. Tell me the deadline, the decisions still needed from the team, and the three most useful actions I can take now. Do not invent team facts, and do not edit anything under docs/source/.
 ```
 
 ### Compare the Four Tracks
@@ -85,8 +85,6 @@ Use [`docs/competition/rubrics.md`](docs/competition/rubrics.md) for the review 
 | `docs/submission/`  | Guidance for the written entry, canvas copy, final review, and exported-file checks.       |
 | `docs/source/`      | The original PDFs and briefing transcripts. Read them when needed, but never edit them.    |
 | `docs/decisions.md` | The lasting choices made by the human team.                                                |
-| `docs/plan.md`      | The urgent task list, with TODO spaces for named owners.                                   |
-| `docs/progress.md`  | The dated record of completed work, current status, and blockers.                          |
 | `.agents/skills/`   | Extra instructions that AI assistants can use for research, writing, strategy, and design. |
 | `frontend/`         | An optional clickable demo. Not required and not graded. Ignore it unless asked.           |
 | `AGENTS.md`         | The rules every AI assistant must follow in this folder.                                   |
