@@ -65,20 +65,13 @@ asking "which company offered this?" exposes the submission in front of the pane
 
 ### Scored on the New Criterion
 
-| Dimension                        |                                            Bereavement |                                       DataKampung |
-| -------------------------------- | -----------------------------------------------------: | ------------------------------------------------: |
-| Prototype conveyance             |                                              **4.5/5** |                                             2.5/5 |
-| Mock-honesty risk                | Medium, manageable with a persistent simulation banner |                       **Critical and structural** |
-| Layak visual and component reuse |    **50 to 60% of screens, 70 to 80% of demo grammar** |                          Under 20% of the journey |
-| Video narrative                  |                  **Strong**, one family, one clear arc | Weak, must define five concepts before the payoff |
-| A3 canvas compression            |     **Strong**, one horizontal flow plus three numbers |       Poor, needs six concepts in a circular flow |
-| Prior overall score              |                                                 89/100 |                                      54 to 66/100 |
-
-`[VERIFY]` Reuse percentages are estimates from a machine pass that could not inspect the
-repository. Inspection of the local Layak frontend supports the direction: `manual-entry-form`,
-`pipeline-narrative`, `evaluation-results-client`, `strategy-section`, `landing-packets-preview`,
-`section-badge`, `status-pill-status` and `confidence-meter` all map onto a bereavement flow
-with content changes rather than structural ones.
+| Dimension             |                                            Bereavement |                                       DataKampung |
+| --------------------- | -----------------------------------------------------: | ------------------------------------------------: |
+| Prototype conveyance  |                                              **4.5/5** |                                             2.5/5 |
+| Mock-honesty risk     | Medium, manageable with a persistent simulation banner |                       **Critical and structural** |
+| Video narrative       |                  **Strong**, one family, one clear arc | Weak, must define five concepts before the payoff |
+| A3 canvas compression |     **Strong**, one horizontal flow plus three numbers |       Poor, needs six concepts in a circular flow |
+| Prior overall score   |                                                 89/100 |                                      54 to 66/100 |
 
 ### The Five Screens Worth Building
 
@@ -112,6 +105,79 @@ widens the gap rather than narrowing it.
 out of 5. The mitigation is to never pitch it as an AI government chatbot. Pitch it as a
 narrowly defined once-only bereavement service built on deterministic published rules, deadline
 protection, per-agency consent and source provenance.
+
+---
+
+## 2b. Is a Death Topic Appropriate for This Competition
+
+A fair question, raised by the team. The short answer from the evidence is **the topic is not
+taboo in Malaysia and has mainstream precedent, but the treatment carries all the risk**.
+The team are Malaysian and are better placed to judge the cultural read than any research pass;
+what follows is evidence rather than a cultural verdict.
+
+### Evidence That Death Administration Is Openly Handled in Malaysia
+
+| Evidence                                                                                                                                                                                                                                  | What It Shows                                                                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Khairat kematian** is described in academic work as an organic institution existing in Malay Muslim communities across Malaysia, operated through mosque kariah, with roots traced to a body founded at Masjid Jelutong, Penang in 1926 | Death administration is not merely discussed, it is community-organised and has been for a century                                              |
+| **MyGovernment publishes an official "Funeral Management Assistance (Khairat Kematian)" page**, filed under a "caretakers to older parents" persona                                                                                       | The government itself treats this as an ordinary citizen service with a named life stage                                                        |
+| **Bereev**, a Malaysian legacy-planning startup founded 2018, received Khazanah funding, partnered with **Zurich Malaysia** in 2019 covering life insurance and **family takaful** customers, and later partnered with Nirvana            | A Malaysian company operates commercially in death planning with a major insurer and a sovereign fund involved, including in the takaful market |
+| **PERKESO funeral benefit and EPF death withdrawal** are standard, publicly documented government products                                                                                                                                | The state already runs bereavement transactions at scale                                                                                        |
+| Two team members study **actuarial science**                                                                                                                                                                                              | Mortality is their academic discipline, which makes the team's interest in this domain natural rather than incongruous                          |
+
+`[VERIFY]` All of the above came from a machine research pass and should be opened at source
+before any of it is quoted.
+
+### A Signal Worth Reading, Though Not Citable
+
+A Malaysian social media post found during this research describes the problem almost exactly:
+the mosque khairat fund pays fastest because there is no form to fill, while EPF, Tabung Haji,
+SOCSO and ASB claims wait for business days, so a death on a Friday night means waiting until
+Monday.
+
+**Do not cite social media in the submission.** But it is a useful signal that the premise is
+felt, and it names two agencies not yet in scope, **Tabung Haji and ASB**, worth considering.
+
+### Where the Real Risk Sits
+
+Not in the topic. In the treatment.
+
+- **Stay on the administrative layer.** Funeral rites differ across Islam, Buddhism,
+  Christianity and Hinduism. Paperwork does not. Keeping the concept faith-neutral avoids the
+  only genuinely sensitive ground.
+- **The subject is the burden, not the grief.** The pitch is about a family being made to act
+  as systems integrator for government while grieving. It is not about death itself.
+- **Urgency is real and can be stated respectfully.** Islamic burial customarily happens within
+  about a day, so administrative pressure arrives immediately rather than after a decent
+  interval. `[VERIFY]` Confirm before asserting this in the submission.
+- **Visual discipline.** No bodies, no funeral scenes, no hospital death, no crying actors, no
+  religious iconography. Show documents, deadlines, repeated forms and status uncertainty. A
+  fictional composite family, calm narration, muted palette.
+- **Never imply profit from grief.** The concept reduces burden and protects deadlines. It
+  does not sell anything to the bereaved.
+
+### The Honest Counterweight
+
+A death-related idea is **less shareable than a cheerful one**, and 30% of the score is a
+student popular vote. The concept was rated 4 out of 5 on vote appeal rather than 5, precisely
+for this reason. That is a modest drag, not a disqualifier, and it is outweighed by the
+concept's advantages elsewhere.
+
+There is also an asymmetry worth naming: a mawkish or exploitative treatment of this subject
+fails harder than a poor treatment of a neutral subject would. The upside is real and so is the
+downside, and both depend on execution rather than topic choice.
+
+### Suggested Framing
+
+Lead with dignity and administration, never with death:
+
+> **A family should not have to become a systems integrator for the government while grieving.**
+
+That sits directly on the competition theme, "Empowering Citizens. Transforming Government."
+
+**If the team wants organizer comfort before committing**, ask on the Kolaxus forum. The
+organizer repeatedly directed questions there and said the forum was quiet (`[00:39:37]`), so
+a question would likely be answered quickly.
 
 ---
 
