@@ -1,9 +1,10 @@
 # DataKampung
+
 ## A Community-Owned AI Cooperative for Rural Malaysia
 
 **Competition:** URIIS Student Biz Innov Challenge 2026  
 **Challenge Area:** Empowering Rural Communities Through Innovation  
-**Core Idea:** Rural communities should not only *use* AI. They should be able to **own, govern, and benefit economically from the local data and knowledge that make AI useful.**
+**Core Idea:** Rural communities should not only _use_ AI. They should be able to **own, govern, and benefit economically from the local data and knowledge that make AI useful.**
 
 ---
 
@@ -395,13 +396,13 @@ Example:
 
 ## RM30,000 licensing income
 
-| Recipient | Share | Amount |
-|---|---:|---:|
-| Data contributors | 40% | RM12,000 |
-| Community development fund | 30% | RM9,000 |
-| Data maintenance | 10% | RM3,000 |
-| Digital/AI education | 10% | RM3,000 |
-| Platform operations | 10% | RM3,000 |
+| Recipient                  | Share |   Amount |
+| -------------------------- | ----: | -------: |
+| Data contributors          |   40% | RM12,000 |
+| Community development fund |   30% |  RM9,000 |
+| Data maintenance           |   10% |  RM3,000 |
+| Digital/AI education       |   10% |  RM3,000 |
+| Platform operations        |   10% |  RM3,000 |
 
 This is only an example.
 
