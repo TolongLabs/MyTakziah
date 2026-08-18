@@ -96,8 +96,6 @@ before any of it enters a submission.
 - **Vote appeal is weak, and the vote is 30%.** A data cooperative with consent, licensing
   and royalty mechanics is abstract in a five-second glance, and the word "data marketplace"
   can trigger privacy suspicion. Independent assessment put it at **2 out of 5**.
-- **No Layak reuse.** Different domain, different architecture. The team's largest execution
-  advantage does not transfer.
 - **Same domain-access gap as the rest of Track 04, but worse.** This concept needs a real
   rural community more than any other, because it is fundamentally about community governance.
   The team has not stated any such relationship, and the rules forbid inventing one.
