@@ -128,14 +128,14 @@ export function FrameProvideOnce({
           {FIELD_GROUPS.map((group, i) => {
             const complete = groupComplete(group, values);
             return (
-              <Card key={group.id} className={complete ? "border-primary/60" : undefined}>
+              <Card key={group.id} className={complete ? "border-support" : undefined}>
                 <CardHeader>
                   <div className="flex items-center justify-between gap-3">
                     <CardTitle className="text-base">
                       {i + 1}. {group.label}
                     </CardTitle>
                     {complete && (
-                      <span className="flex items-center gap-1 text-sm font-medium text-primary">
+                      <span className="flex items-center gap-1 text-sm font-medium text-support">
                         <Check className="size-4" /> Provided
                       </span>
                     )}
@@ -165,12 +165,12 @@ export function FrameProvideOnce({
               family hands over; they are the conditions that select which
               documents each agency will ask them to bring. Mixing them into the
               five would blunt the claim the matrix is making. */}
-          <Card className={conditionsDone === QUESTIONS.length ? "border-primary/60" : undefined}>
+          <Card className={conditionsDone === QUESTIONS.length ? "border-support" : undefined}>
             <CardHeader>
               <div className="flex items-center justify-between gap-3">
                 <CardTitle className="text-base">A Few More Things</CardTitle>
                 {conditionsDone === QUESTIONS.length && (
-                  <span className="flex items-center gap-1 text-sm font-medium text-primary">
+                  <span className="flex items-center gap-1 text-sm font-medium text-support">
                     <Check className="size-4" /> Answered
                   </span>
                 )}
@@ -250,7 +250,7 @@ export function FrameProvideOnce({
                                 <span
                                   aria-label={complete ? "provided" : "demanded"}
                                   className={`inline-block size-2.5 rounded-full transition-colors ${
-                                    complete ? "bg-primary" : "bg-border"
+                                    complete ? "bg-support" : "bg-border"
                                   }`}
                                 />
                               ) : (
@@ -565,7 +565,7 @@ export function FrameTimeline({
                     )}
                     <span
                       className={`relative mt-4 size-2.5 rounded-full ${
-                        e.done ? "bg-primary" : "bg-border"
+                        e.done ? "bg-support" : "bg-border"
                       }`}
                     />
                   </span>
@@ -646,7 +646,7 @@ export function FrameTimeline({
             cost rather than stacking a second line under all fourteen rows. */}
         <CardContent className="text-sm">
           {sharedDocs.length > 0 && (
-            <section>
+            <section className="rounded-[var(--radius-control)] border bg-muted p-4">
               <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
                 Every Counter
               </p>

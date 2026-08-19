@@ -120,7 +120,7 @@ export function Pipeline({ stages, onDone }: { stages: string[]; onDone: () => v
               >
                 <span
                   className={`grid size-5 shrink-0 place-items-center rounded-full ${
-                    complete ? "bg-primary text-primary-foreground" : "bg-muted"
+                    complete ? "bg-support text-background" : "bg-muted"
                   }`}
                 >
                   {complete && <Check aria-hidden className="size-3" />}
