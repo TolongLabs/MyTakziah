@@ -19,6 +19,7 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { DraftDialog } from "@/draft";
+import { QUESTIONS, TRIPS, answered, docsFor, shared, type Answers } from "@/plan";
 import {
   AGENCIES,
   AGENCY_PAYLOADS,
@@ -81,10 +82,14 @@ export function FrameVerified({ onNext }: { onNext: () => void }) {
 export function FrameProvideOnce({
   values,
   setValues,
+  answers,
+  setAnswers,
   onNext,
 }: {
   values: Values;
   setValues: (v: Values) => void;
+  answers: Answers;
+  setAnswers: (a: Answers) => void;
   onNext: () => void;
 }) {
   const done = FIELD_GROUPS.filter((g) => groupComplete(g, values)).length;
@@ -101,7 +106,10 @@ export function FrameProvideOnce({
       <Button
         className="mt-5"
         disabled={allDone}
-        onClick={() => setValues({ ...values, ...SAMPLE_VALUES })}
+        onClick={() => {
+          setValues({ ...values, ...SAMPLE_VALUES });
+          setAnswers({ marital: "married", religion: "muslim", nomination: "yes" });
+        }}
         variant="outline"
       >
         <Wand2 className="size-4" /> Fill This In for Me
@@ -147,6 +155,48 @@ export function FrameProvideOnce({
               </Card>
             );
           })}
+
+          {/* Separate from the five on purpose. These are not evidence the
+              family hands over; they are the conditions that select which
+              documents each agency will ask them to bring. Mixing them into the
+              five would blunt the claim the matrix is making. */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base">A Few More Things</CardTitle>
+              <p className="mt-1 text-sm text-muted-foreground">
+                These do not change what you provide. They change which documents each agency asks
+                you to bring, so answering them once means we can tell you exactly what to take.
+              </p>
+            </CardHeader>
+            <CardContent className="space-y-5">
+              {QUESTIONS.map((q) => (
+                <div key={q.key}>
+                  <p className="text-sm font-medium">{q.label}</p>
+                  <p className="text-xs text-muted-foreground">{q.why}</p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {q.options.map((o) => {
+                      const active = answers[q.key] === o.value;
+                      return (
+                        <button
+                          key={o.value}
+                          aria-pressed={active}
+                          className={`rounded-[var(--radius-control)] border px-3 py-1.5 text-sm font-medium transition-colors duration-150 ${
+                            active
+                              ? "border-primary bg-selected text-selected-foreground"
+                              : "bg-card text-muted-foreground hover:bg-muted hover:text-foreground"
+                          }`}
+                          onClick={() => setAnswers({ ...answers, [q.key]: o.value })}
+                          type="button"
+                        >
+                          {o.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
         </div>
 
         <div className="lg:sticky lg:top-6 lg:self-start">
@@ -391,11 +441,13 @@ export function FrameConsent({
 export function FrameTimeline({
   consents,
   values,
+  answers,
   onRestart,
   onAbout,
 }: {
   consents: Record<Agency, boolean>;
   values: Record<string, string>;
+  answers: Answers;
   onRestart: () => void;
   onAbout: () => void;
 }) {
@@ -403,6 +455,7 @@ export function FrameTimeline({
   const sent = AGENCIES.filter((a) => consents[a]);
   const waiting = AGENCIES.filter((a) => !consents[a]);
   const waitingList = new Intl.ListFormat("en-GB", { type: "conjunction" }).format(waiting);
+  const sharedDocs = shared(answers);
 
   /* One merged stream, not three. The whole claim of this frame is that a
      family currently has to chase three agencies separately with no single
@@ -558,8 +611,62 @@ export function FrameTimeline({
         </Card>
       </div>
 
+      <Card className="mt-5">
+        <CardHeader>
+          <CardTitle className="text-base">What to Bring, and In What Order</CardTitle>
+          <p className="mt-1 text-sm text-muted-foreground">
+            {answered(answers)
+              ? "Narrowed to your situation from the conditions you gave on step 2."
+              : "Answer the three conditions on step 2 and this narrows to your situation."}
+          </p>
+        </CardHeader>
+        <CardContent>
+          {sharedDocs.length > 0 && (
+            <div className="rounded-[var(--radius-control)] bg-muted p-4">
+              <p className="text-sm font-medium">Bring copies, not one of each</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                These are demanded by more than one agency. Today a family finds that out one
+                counter at a time.
+              </p>
+              <ul className="mt-3 space-y-1.5">
+                {sharedDocs.map(({ doc, count }) => (
+                  <li className="flex items-baseline gap-2 text-sm" key={doc.id}>
+                    <span className="font-medium">{count} x</span>
+                    <span>{doc.label}</span>
+                    <span className="text-xs text-muted-foreground">{doc.agencies.join(", ")}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <ol className="mt-5 grid gap-5 sm:grid-cols-3">
+            {TRIPS.map(({ agency, heading, why }) => (
+              <li key={agency}>
+                <p className="text-sm font-medium">{heading}</p>
+                <p className="text-xs text-muted-foreground">{why}</p>
+                <ul className="mt-2 space-y-2">
+                  {docsFor(agency, answers).map((d) => (
+                    <li className="text-sm" key={d.id}>
+                      <span className="block">{d.label}</span>
+                      <span className="block text-xs text-muted-foreground">{d.note}</span>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ol>
+
+          <p className="mt-5 border-t pt-4 text-sm text-muted-foreground">
+            JPN is first because it issues the death certificate the other two then demand. Any
+            other order sends a family home to come back.
+          </p>
+        </CardContent>
+      </Card>
+
       <DraftDialog
         agency={open}
+        answers={answers}
         onClose={() => setOpen(null)}
         submitted={open ? consents[open] : false}
         values={values}

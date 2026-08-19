@@ -4,6 +4,7 @@ import { useCallback, useState } from "react";
 import { About } from "@/About";
 import { Pipeline } from "@/pipeline";
 import { PIPELINE_STAGES, type Agency } from "@/data";
+import { type Answers } from "@/plan";
 import {
   FrameConsent,
   FrameEntitlements,
@@ -43,6 +44,7 @@ export default function App() {
   const [dimmed, setDimmed] = useState(false);
   const [pending, setPending] = useState<{ target: number; stages: string[] } | null>(null);
   const [values, setValues] = useState<Record<string, string>>({});
+  const [answers, setAnswers] = useState<Answers>({});
   const [consents, setConsents] = useState<Record<Agency, boolean>>({
     JPN: false,
     KWSP: false,
@@ -110,7 +112,13 @@ export default function App() {
             <>
               {step === 0 && <FrameVerified onNext={advance} />}
               {step === 1 && (
-                <FrameProvideOnce onNext={advance} setValues={setValues} values={values} />
+                <FrameProvideOnce
+                  answers={answers}
+                  onNext={advance}
+                  setAnswers={setAnswers}
+                  setValues={setValues}
+                  values={values}
+                />
               )}
               {step === 2 && <FrameEntitlements onNext={advance} />}
               {step === 3 && (
@@ -118,6 +126,7 @@ export default function App() {
               )}
               {step === 4 && (
                 <FrameTimeline
+                  answers={answers}
                   consents={consents}
                   onAbout={() => setAbout(true)}
                   onRestart={() => setStep(0)}

@@ -7,7 +7,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { AGENCY_PAYLOADS, FIELD_GROUPS, STILL_NEEDED, type Agency } from "@/data";
+import { AGENCY_PAYLOADS, FIELD_GROUPS, type Agency } from "@/data";
+import { docsFor, type Answers } from "@/plan";
 
 /**
  * What would actually go on one agency's form, opened from a draft card.
@@ -26,11 +27,13 @@ import { AGENCY_PAYLOADS, FIELD_GROUPS, STILL_NEEDED, type Agency } from "@/data
 export function DraftDialog({
   agency,
   values,
+  answers,
   submitted,
   onClose,
 }: {
   agency: Agency | null;
   values: Record<string, string>;
+  answers: Answers;
   submitted: boolean;
   onClose: () => void;
 }) {
@@ -96,10 +99,10 @@ export function DraftDialog({
               : "MyTakziah cannot produce these. It removes the repetition, not the paperwork."}
           </p>
           <ul className="mt-3 space-y-2.5">
-            {STILL_NEEDED[agency].map(({ item, when }) => (
-              <li className="flex flex-col gap-0.5" key={item}>
-                <span className="text-sm font-medium">{item}</span>
-                <span className="text-xs text-muted-foreground">{when}</span>
+            {docsFor(agency, answers).map((d) => (
+              <li className="flex flex-col gap-0.5" key={d.id}>
+                <span className="text-sm font-medium">{d.label}</span>
+                <span className="text-xs text-muted-foreground">{d.note}</span>
               </li>
             ))}
           </ul>
