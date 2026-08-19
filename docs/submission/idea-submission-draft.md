@@ -426,20 +426,22 @@ seen small, which matters because 30 per cent of the score is a student vote.
 
 ## 8. Why Your Team Should Win
 
-> **Draft, 98 words.** Recount before export and record the count in `preflight.md`.
+> **Draft, 96 words.** Recount before export and record the count in `preflight.md`.
+>
+> **Honesty constraint from issue #9, do not break it.** Layak was built by two of the four
+> members. The wording below says "two of our members" for exactly that reason. **Do not change it
+> to anything that implies all four built it.**
 
 Survive is four students: two in Computer Science, two in Actuarial Science, whose discipline is
-mortality itself. Two of us built Layak, grand champion of the Project 2030 MyAI Future Hackathon,
-so we have shipped a citizen-facing service before.
+mortality itself. Two of our members built Layak, grand champion of the Project 2030 MyAI Future
+Hackathon, and that experience shaped this one.
 
 We did not invent a single number. Every figure carries a source, every limit is stated, and where
 we could not verify something we narrowed the claim instead of softening it. MyTakziah is
 deliberately small: one life event, three agencies, published rules, and a family that tells
 government once.
 
-That discipline is the reason this can actually be built.
-
----
+That discipline is why this can actually be built.
 
 ## Sources Used In Sections 5 And 6
 
