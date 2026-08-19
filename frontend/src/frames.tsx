@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Clock, ExternalLink, FileText, Lock } from "lucide-react";
+import { ArrowRight, Check, Clock, ExternalLink, FileText, Lock, Wand2 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,7 @@ import {
   AGENCY_PAYLOADS,
   ENTITLEMENTS,
   FIELD_GROUPS,
+  SAMPLE_VALUES,
   TIMELINE_STATES,
   type Agency,
 } from "@/data";
@@ -76,6 +77,7 @@ export function FrameProvideOnce({
   onNext: () => void;
 }) {
   const done = FIELD_GROUPS.filter((g) => groupComplete(g, values)).length;
+  const allDone = done === FIELD_GROUPS.length;
 
   return (
     <div className="mx-auto max-w-6xl">
@@ -83,6 +85,18 @@ export function FrameProvideOnce({
       <h2 className="mt-3 text-3xl font-semibold tracking-tight">Provide Your Evidence Once</h2>
       <p className="mt-3 max-w-2xl text-muted-foreground">
         Five things. Today each of them is demanded again at each agency, on a different form.
+      </p>
+
+      <Button
+        className="mt-5"
+        disabled={allDone}
+        onClick={() => setValues({ ...values, ...SAMPLE_VALUES })}
+        variant="outline"
+      >
+        <Wand2 className="size-4" /> Fill This In for Me
+      </Button>
+      <p className="mt-2 text-xs text-muted-foreground">
+        Fills every field with an illustrative composite family. Nothing here is a real person.
       </p>
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
@@ -188,9 +202,17 @@ export function FrameProvideOnce({
         </div>
       </div>
 
-      <Button className="mt-8" size="lg" onClick={onNext} disabled={done === 0}>
-        Continue <ArrowRight className="size-4" />
-      </Button>
+      <div className="mt-8 flex flex-wrap items-center gap-3">
+        <Button disabled={!allDone} onClick={onNext} size="lg">
+          Continue <ArrowRight className="size-4" />
+        </Button>
+        {!allDone && (
+          <p className="text-sm text-muted-foreground">
+            {FIELD_GROUPS.length - done} of {FIELD_GROUPS.length} still to provide. The point of the
+            service is that you do this once, so the demo asks you to do it once.
+          </p>
+        )}
+      </div>
     </div>
   );
 }
@@ -339,9 +361,16 @@ export function FrameConsent({
         withdrawing it stops that agency receiving anything.
       </p>
 
-      <Button className="mt-6" size="lg" onClick={onNext}>
-        Continue <ArrowRight className="size-4" />
-      </Button>
+      <div className="mt-6 flex flex-wrap items-center gap-3">
+        <Button disabled={granted === 0} onClick={onNext} size="lg">
+          Continue <ArrowRight className="size-4" />
+        </Button>
+        {granted === 0 && (
+          <p className="text-sm text-muted-foreground">
+            Nothing is prepared until you agree to at least one agency.
+          </p>
+        )}
+      </div>
     </div>
   );
 }

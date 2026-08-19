@@ -1,4 +1,4 @@
-import { Bell, Moon, PanelLeft, RotateCcw, Sun, UserRound } from "lucide-react";
+import { ArrowLeft, Bell, Moon, PanelLeft, RotateCcw, Sun, UserRound } from "lucide-react";
 import { useEffect, useRef, useState, type ComponentType } from "react";
 
 import { cn } from "@/lib/utils";
@@ -106,7 +106,7 @@ export function SidebarIsland({
                   expanded ? "opacity-100" : "pointer-events-none opacity-0"
                 )}
               >
-                {i + 1}. {label}
+                {label}
               </span>
             </button>
           </li>
@@ -210,22 +210,31 @@ export function AccountIsland() {
 }
 
 /**
- * Position and restart, parked at the bottom centre.
+ * Position, back and restart, parked at the bottom centre.
  *
  * It sits where a media player's transport sits, because that is what it is:
  * you are being walked through five frames and this says where you are. Bottom
  * centre also keeps it clear of the account island and out of the reading
  * column entirely.
+ *
+ * Both controls are icon-only. The label carries the meaning, and two worded
+ * buttons under a five-word status line was more chrome than a walkthrough of
+ * five screens can justify.
  */
 export function StepIsland({
   step,
   total,
+  onBack,
   onRestart,
 }: {
   step: number;
   total: number;
+  onBack: () => void;
   onRestart: () => void;
 }) {
+  const control =
+    "grid size-9 place-items-center rounded-[var(--radius-control)] text-muted-foreground transition-colors duration-150 hover:bg-muted hover:text-foreground disabled:pointer-events-none disabled:text-border";
+
   return (
     <div
       className="glass fixed bottom-4 left-1/2 hidden -translate-x-1/2 items-center gap-1 rounded-[var(--radius-float)] p-1.5 md:flex"
@@ -234,15 +243,28 @@ export function StepIsland({
       <p aria-live="polite" className="px-3 text-sm font-medium whitespace-nowrap">
         Step {step + 1} of {total}
       </p>
-      {step > 0 && (
-        <button
-          className="flex h-10 items-center gap-2 rounded-[var(--radius-control)] bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors duration-150 hover:bg-primary-hover"
-          onClick={onRestart}
-          type="button"
-        >
-          <RotateCcw aria-hidden className="size-4" /> Restart
-        </button>
-      )}
+
+      <button
+        aria-label="Back one step"
+        className={control}
+        disabled={step === 0}
+        onClick={onBack}
+        title="Back"
+        type="button"
+      >
+        <ArrowLeft aria-hidden className="size-4" />
+      </button>
+
+      <button
+        aria-label="Restart the walkthrough"
+        className={control}
+        disabled={step === 0}
+        onClick={onRestart}
+        title="Restart"
+        type="button"
+      >
+        <RotateCcw aria-hidden className="size-4" />
+      </button>
     </div>
   );
 }

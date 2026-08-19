@@ -2,7 +2,8 @@ import { ClipboardList, FileCheck, ListChecks, ShieldCheck, Timer } from "lucide
 import { useCallback, useState } from "react";
 
 import { About } from "@/About";
-import { type Agency } from "@/data";
+import { Pipeline } from "@/pipeline";
+import { PIPELINE_STAGES, type Agency } from "@/data";
 import {
   FrameConsent,
   FrameEntitlements,
@@ -40,6 +41,7 @@ function fromHash() {
 export default function App() {
   const [view, setView] = useState(fromHash);
   const [dimmed, setDimmed] = useState(false);
+  const [pending, setPending] = useState<{ target: number; stages: string[] } | null>(null);
   const [values, setValues] = useState<Record<string, string>>({});
   const [consents, setConsents] = useState<Record<Agency, boolean>>({
     JPN: false,
@@ -61,7 +63,15 @@ export default function App() {
     globalThis.scrollTo({ top: 0 });
   }, []);
 
-  const next = () => setStep(Math.min(step + 1, STEPS.length - 1));
+  /* Advance through the pipeline overlay where there is something to narrate,
+     and cut straight there where there is not. Frame 1 to 2 has nothing to
+     compute: the user has supplied no evidence yet. */
+  const advance = () => {
+    const target = Math.min(step + 1, STEPS.length - 1);
+    const stages = PIPELINE_STAGES[`${step}-${target}`];
+    if (stages) setPending({ target, stages });
+    else setStep(target);
+  };
   const onExpandedChange = useCallback((expanded: boolean) => setDimmed(expanded), []);
 
   return (
@@ -79,25 +89,32 @@ export default function App() {
         <div aria-hidden className="scrim" data-visible={dimmed} />
 
         <AccountIsland />
-        {!about && <StepIsland onRestart={() => setStep(0)} step={step} total={STEPS.length} />}
+        {!about && (
+          <StepIsland
+            onBack={() => setStep(Math.max(step - 1, 0))}
+            onRestart={() => setStep(0)}
+            step={step}
+            total={STEPS.length}
+          />
+        )}
         <MobileDock onSelect={setStep} step={about ? -1 : step} steps={STEPS} />
 
         {/* On md+ the left offset clears the collapsed island and never reflows
             when it expands: content shifting under a hover would be worse than
             the dimming it replaces. Below md the dock is at the bottom, so the
             padding moves there to clear it instead. */}
-        <main className="px-4 pt-10 pb-32 md:py-24 md:pr-6 md:pl-24">
+        <main className="px-4 pt-10 pb-40 md:py-24 md:pr-6 md:pl-24">
           {about ? (
             <About onBack={() => setAbout(false)} />
           ) : (
             <>
-              {step === 0 && <FrameVerified onNext={next} />}
+              {step === 0 && <FrameVerified onNext={advance} />}
               {step === 1 && (
-                <FrameProvideOnce onNext={next} setValues={setValues} values={values} />
+                <FrameProvideOnce onNext={advance} setValues={setValues} values={values} />
               )}
-              {step === 2 && <FrameEntitlements onNext={next} />}
+              {step === 2 && <FrameEntitlements onNext={advance} />}
               {step === 3 && (
-                <FrameConsent consents={consents} onNext={next} setConsents={setConsents} />
+                <FrameConsent consents={consents} onNext={advance} setConsents={setConsents} />
               )}
               {step === 4 && <FrameTimeline consents={consents} />}
             </>
@@ -106,6 +123,16 @@ export default function App() {
       </div>
 
       <SiteFooter onAbout={() => setAbout(true)} />
+
+      {pending && (
+        <Pipeline
+          onDone={() => {
+            setStep(pending.target);
+            setPending(null);
+          }}
+          stages={pending.stages}
+        />
+      )}
     </div>
   );
 }

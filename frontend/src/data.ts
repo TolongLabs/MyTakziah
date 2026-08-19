@@ -157,3 +157,35 @@ export const TIMELINE_STATES = [
   "Receipted",
   "In Review by Agency",
 ] as const;
+
+/* Illustrative values for the "Fill This In for Me" shortcut. A fictional
+   composite family, matching the verification record on frame 1. Nobody should
+   have to type a MyKad number to see the point of the demo. */
+export const SAMPLE_VALUES: Record<string, string> = {
+  "deceased.Full Name": "Fatimah binti Abdullah",
+  "deceased.Identity Number": "540312-10-5432",
+  "claimant.Your Full Name": "Ismail bin Yusof",
+  "claimant.Your Identity Number": "500118-10-5011",
+  "death.Death Register Reference": "LM02-2026-0814-KL",
+  "relationship.Relationship": "Spouse",
+  "payment.Bank Account": "Maybank 5141 2233 4455",
+};
+
+/* Stage labels for the transition between frames.
+   Deliberately worded as rule matching rather than as a model deciding
+   anything: the concept's whole defence is that eligibility is never
+   determined by a model. See the wording table in agency-rule-map.md. */
+export const PIPELINE_STAGES: Record<string, string[]> = {
+  "1-2": [
+    "Reading the Published Agency Rules",
+    "Mapping Your Evidence to Each Agency Form",
+    "Checking Every Deadline Against Today",
+    "Ranking by Deadline, Not by Value",
+  ],
+  "3-4": ["Assembling One Payload per Agency", "Removing Anything an Agency Does Not Require"],
+  "4-5": [
+    "Filling Each Agency Form From Your Evidence",
+    "Marking Every Form as a Draft",
+    "Opening One Consolidated Timeline",
+  ],
+};
