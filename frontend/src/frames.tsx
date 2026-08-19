@@ -621,43 +621,71 @@ export function FrameTimeline({
           </p>
         </CardHeader>
         <CardContent>
+          {/* Split by role rather than by agency. Listing the shared documents
+              inside every trip made the reader work through the same four items
+              three times, which is what made this card unreadable. */}
           {sharedDocs.length > 0 && (
             <div className="rounded-[var(--radius-control)] bg-muted p-4">
-              <p className="text-sm font-medium">Bring copies, not one of each</p>
-              <p className="mt-1 text-sm text-muted-foreground">
-                These are demanded by more than one agency. Today a family finds that out one
-                counter at a time.
+              <p className="text-sm font-medium">Carry These to Every Counter</p>
+              <p className="mt-0.5 text-xs text-muted-foreground">
+                Demanded by more than one agency. Today a family finds that out one counter at a
+                time.
               </p>
-              <ul className="mt-3 space-y-1.5">
+              <ul className="mt-3 space-y-2">
                 {sharedDocs.map(({ doc, count }) => (
-                  <li className="flex items-baseline gap-2 text-sm" key={doc.id}>
-                    <span className="font-medium">{count} x</span>
-                    <span>{doc.label}</span>
-                    <span className="text-xs text-muted-foreground">{doc.agencies.join(", ")}</span>
+                  <li className="flex items-baseline gap-3 text-sm" key={doc.id}>
+                    <span className="w-7 shrink-0 font-medium text-primary">{count}x</span>
+                    <span className="flex-1">{doc.label}</span>
+                    <span className="shrink-0 text-xs text-muted-foreground">
+                      {doc.agencies.join(", ")}
+                    </span>
                   </li>
                 ))}
               </ul>
             </div>
           )}
 
-          <ol className="mt-5 grid gap-5 sm:grid-cols-3">
-            {TRIPS.map(({ agency, heading, why }) => (
-              <li key={agency}>
-                <p className="text-sm font-medium">{heading}</p>
-                <p className="text-xs text-muted-foreground">{why}</p>
-                <ul className="mt-2 space-y-2">
-                  {docsFor(agency, answers).map((d) => (
-                    <li className="text-sm" key={d.id}>
-                      <span className="block">{d.label}</span>
-                      <span className="block text-xs text-muted-foreground">{d.note}</span>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
+          {/* Numbered and vertical, because the order is the point. Three
+              columns read as three choices rather than as three steps. */}
+          <ol className="mt-6 space-y-5">
+            {TRIPS.map(({ agency, why }, i) => {
+              const only = docsFor(agency, answers).filter((d) => d.agencies.length === 1);
+              return (
+                <li className="flex gap-4" key={agency}>
+                  <span className="grid size-7 shrink-0 place-items-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
+                    {i + 1}
+                  </span>
+                  <div className="flex-1">
+                    <p className="text-sm font-medium">{agency}</p>
+                    <p className="text-xs text-muted-foreground">{why}</p>
+                    {only.length > 0 && (
+                      <ul className="mt-2 space-y-1.5">
+                        {only.map((d) => (
+                          <li className="text-sm" key={d.id}>
+                            <span>{d.label}</span>
+                            <span className="block text-xs text-muted-foreground">{d.note}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {/* With the conditions unanswered, an empty list means we do
+                        not know yet, not that nothing is required. Saying
+                        "nothing else" there would be wrong rather than merely
+                        incomplete. */}
+                    {only.length === 0 && (
+                      <p className="mt-2 text-sm text-muted-foreground">
+                        {answered(answers)
+                          ? "Nothing beyond what you are already carrying."
+                          : `Answer the conditions on step 2 to see what else ${agency} asks for.`}
+                      </p>
+                    )}
+                  </div>
+                </li>
+              );
+            })}
           </ol>
 
-          <p className="mt-5 border-t pt-4 text-sm text-muted-foreground">
+          <p className="mt-6 border-t pt-4 text-sm text-muted-foreground">
             JPN is first because it issues the death certificate the other two then demand. Any
             other order sends a family home to come back.
           </p>
