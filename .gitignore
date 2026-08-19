@@ -25,3 +25,6 @@ Thumbs.db
 
 # Root Supporting Videos Are Kept Locally Unless the Team Chooses Otherwise
 *.mp4
+
+# Private contact details, per AGENTS.md "No Secrets in Repo"
+docs/submission/team-contact.local.md

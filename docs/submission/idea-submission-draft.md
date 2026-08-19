@@ -19,7 +19,11 @@
 
 **Team Name:** Survive
 
-TODO: four member names, universities, contact
+TODO: four member names and universities, from the team
+
+**Contact details are deliberately not stored in this repo**, per the "No Secrets in Repo" rule in
+`AGENTS.md`. They live in `team-contact.local.md`, which is gitignored, and are typed into the
+export at the end.
 
 ---
 
@@ -368,11 +372,53 @@ out of scope.
 
 ## 7. Visual Concept
 
-TODO: #9.
+### What Judges Should See First
+
+**One continuous line, carrying one death through three agencies.**
+
+The canvas centre is a single thread drawn like a transit line. It begins at one filled point,
+a verified death, and passes through three stations: JPN, KWSP, PERKESO. **The family appears once,
+at the start, and the line never returns to them.**
+
+Directly beside it, the Problem pillar shows the same three stations as they work today: three
+separate lines, each looping back to the family. **Three round trips against one pass.** The
+argument is made by the shape before a word is read.
+
+### The Detail That Carries The Urgency
+
+A single marker sits above the KWSP station reading **six months**. It is the one family deadline
+we verified, and it is why the service ranks entitlements by deadline rather than by value.
+
+### Treatment, And Why
+
+Warm neutral ground, deep ink, one accent colour used only for the thread and the deadline marker.
+**No people, no funeral imagery, no religious iconography, and no government crests or logos**,
+because MyTakziah is a proposed addition to the MyGOV family and must not imply endorsement.
+
+The subject is bereavement. **The treatment is deliberately not somber**, because the product is
+about competence and relief, not grief. The visual language is a journey that moves forward and
+does not double back.
+
+### The Five-Second Test
+
+At a glance a viewer sees the name, one line, three stations, and one sentence:
+**One death. Tell government once.** That is the whole idea, and it is designed to survive being
+seen small, which matters because 30 per cent of the score is a student vote.
 
 ## 8. Why Your Team Should Win
 
-TODO: #9. **100 words or less.** Count it and record the count in `preflight.md`.
+> **Draft, 98 words.** Recount before export and record the count in `preflight.md`.
+
+Survive is four students: two in Computer Science, two in Actuarial Science, whose discipline is
+mortality itself. Two of us built Layak, grand champion of the Project 2030 MyAI Future Hackathon,
+so we have shipped a citizen-facing service before.
+
+We did not invent a single number. Every figure carries a source, every limit is stated, and where
+we could not verify something we narrowed the claim instead of softening it. MyTakziah is
+deliberately small: one life event, three agencies, published rules, and a family that tells
+government once.
+
+That discipline is the reason this can actually be built.
 
 ---
 

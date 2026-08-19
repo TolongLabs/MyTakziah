@@ -87,13 +87,10 @@ vote.** Every word below is load-bearing; cut rather than add.
 > **They are connected. They are still the least likely to transact. The barrier is the process,
 > not the device.**
 
-**Add this line, from `../research/documented-accounts-bereavement.md`:**
-
-> **One widow collected her PERKESO survivor benefits 23 years late. She was never refused. She
-> was never told.**
-
-That single line does more for the Target User pillar than a statistic, and it is sourced. Do not
-widen it into a claim about how many families this happens to.
+> `[NEEDS SOURCE]` **The 23-year widow case is deliberately NOT on the canvas.** Its source is
+> paywalled and nobody has opened it. The statistics above are fully verified, so the canvas stays
+> 100 per cent sourced. If someone opens the Borneo Post article before export, one line may be
+> added; until then, do not design around it.
 
 ### 3. Innovation
 
@@ -123,18 +120,65 @@ widen it into a claim about how many families this happens to.
 
 ---
 
-## Design Notes For #13
+## Visual Direction: One Thread
 
-- **Reading order is Concept first, then left column top to bottom, then right column.** The
-  centre must be visually dominant.
-- **The Problem table is the centrepiece.** It is the one thing a judge can verify at a glance.
-  Give it room. Do not shrink it to fit more words elsewhere.
-- **Tone: dignity and administration, never death itself.** No bodies, no funeral imagery, no
-  religious iconography, no crying. Show documents, forms, deadlines and repeated fields.
-- **No government logos or crests.** Nothing implying MyTakziah is an existing or sanctioned
-  MyGOV service. Recorded decision, 2026-08-18.
-- **Muted palette.** Text must stay legible at A3 and in a thumbnail, because the popular vote
-  is decided on a scrolled feed.
+**Chosen 2026-08-19. This is the design, not a suggestion.**
+
+### The Metaphor
+
+**A single continuous line carrying one death through three agencies, drawn like a transit map.**
+The thread is the family's evidence, given once, travelling. It begins at one filled point, the
+verified death, and passes through three stations: JPN, KWSP, PERKESO.
+
+**The family appears once, at the start. The line never returns to them.** That is the entire
+argument, made by shape before a word is read.
+
+### Where The Contrast Lives
+
+**In pillar 1, not in the centre.** The Problem pillar shows the same three stations as they work
+today: three separate lines, each looping back to the family. Three round trips against one pass.
+
+Keeping the contrast in pillar 1 lets the centre stay clean and forward-moving, **which is what
+stops a bereavement canvas reading as somber.** Do not put the tangle in the middle.
+
+### The One Marker
+
+A small tick above the **KWSP** station reading **6 months**. It is the only verified family
+deadline and it supplies urgency without grimness. It also visually justifies why the Innovation
+pillar says "ranked by deadline, not value".
+
+### Palette
+
+| Role   | Direction                                                                         |
+| ------ | --------------------------------------------------------------------------------- |
+| Ground | Warm neutral, sand or bone. **Not white, not grey**                               |
+| Text   | Deep ink. **Not pure black**                                                      |
+| Accent | **One colour only**, used for the thread and the deadline marker and nothing else |
+
+**Avoid MyGOV blue.** We must not imply government endorsement, and a familiar institutional blue
+does exactly that. A warm ochre or terracotta reads Malaysian, reads warm, and reads clearly as
+not-official.
+
+### Typography
+
+One dominant headline, **One death. Tell government once.** Everything else drops well back.
+Nothing competes with it. The canvas must survive being seen at thumbnail size.
+
+### Forbidden
+
+- No people, no figures, no portraits
+- No funeral, hospital or cemetery imagery
+- No religious iconography of any faith
+- No government logos, crests or wordmarks
+- No stock photography of any kind
+
+The thread and the stations carry everything.
+
+### The Five-Second Test
+
+At feed size a viewer must see: **Survive**, one line, three stations, one headline. If any of
+those four is not legible in a thumbnail, the design is not finished. **30 per cent of the final
+score is a student popular vote decided on a scrolled feed.**
 
 ## Before Export
 
