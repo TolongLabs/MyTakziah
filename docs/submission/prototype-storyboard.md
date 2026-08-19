@@ -155,6 +155,27 @@ State these in the demo notes, because a judge will look for them:
 
 ---
 
+## What Was Actually Built, 2026-08-20
+
+The five frames below are all present and in order. The build also added four
+things this storyboard did not anticipate, recorded here so the claim audit in
+#15 reviews what exists rather than what was planned:
+
+| Addition                                                   | Why                                                                                                                                    |
+| ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **An About page**, linked from the footer on every screen  | Carries the full disclosure after the persistent banner was removed                                                                    |
+| **A draft view per agency**, opened from the frame 5 cards | States what each agency receives, field by field, with the source group named. **Deliberately not a facsimile of the government form** |
+| **What to Bring, and In What Order**, on frame 5           | The plan that follows from MyTakziah submitting the claim but not the documents. Deduplicated by copies and sequenced JPN first        |
+| **Three conditions on frame 2**                            | Marital status, religion and nomination, which select the conditional documents. Separate from the five, and they gate Continue        |
+
+Two rules the build enforces that this storyboard only implied:
+
+- **Terracotta means act or attend. Slate means settled.** No third meaning.
+- **No transparent or half-transparent surfaces.** Every card, control and CTA is
+  solid or glass. The only exceptions are the scrim and the scrollbar track.
+
+---
+
 ## Build Gate
 
 Do not open `frontend/` until every box is ticked:

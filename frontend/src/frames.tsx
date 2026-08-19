@@ -366,7 +366,7 @@ export function FrameConsent({
   setConsents: (c: Record<Agency, boolean>) => void;
   onNext: () => void;
 }) {
-  const granted = AGENCIES.filter((a) => consents[a]).length;
+  const consented = AGENCIES.filter((a) => consents[a]).length;
 
   return (
     <div className="mx-auto max-w-3xl">
@@ -401,7 +401,7 @@ export function FrameConsent({
                   <ul className="space-y-2 text-sm">
                     {payload.receives.map((r) => (
                       <li key={r} className="flex items-center gap-2">
-                        <Check className="size-4 text-primary" /> {r}
+                        <Check className="size-4 text-muted-foreground" /> {r}
                       </li>
                     ))}
                   </ul>
@@ -437,15 +437,15 @@ export function FrameConsent({
       </Tabs>
 
       <p className="mt-6 text-sm text-muted-foreground">
-        {granted} of {AGENCIES.length} agencies consented. Consent is not all or nothing, and
+        {consented} of {AGENCIES.length} agencies consented. Consent is not all or nothing, and
         withdrawing it stops that agency receiving anything.
       </p>
 
       <div className="mt-6 flex flex-wrap items-center gap-3">
-        <Button disabled={granted === 0} onClick={onNext} size="lg">
+        <Button disabled={consented === 0} onClick={onNext} size="lg">
           Continue <ArrowRight className="size-4" />
         </Button>
-        {granted === 0 && (
+        {consented === 0 && (
           <p className="text-sm text-muted-foreground">
             Nothing is prepared until you agree to at least one agency.
           </p>
