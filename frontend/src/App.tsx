@@ -1,6 +1,7 @@
 import { ClipboardList, FileCheck, ListChecks, ShieldCheck, Timer } from "lucide-react";
 import { useCallback, useState } from "react";
 
+import { About } from "@/About";
 import { type Agency } from "@/data";
 import {
   FrameConsent,
@@ -10,44 +11,56 @@ import {
   FrameVerified,
 } from "@/frames";
 import {
-  ActionIsland,
+  AccountIsland,
   DemoBanner,
   MobileDock,
   SidebarIsland,
   SiteFooter,
+  StepIsland,
   type Step,
 } from "@/shell";
 
 const STEPS: Step[] = [
   { label: "Verified", icon: FileCheck },
-  { label: "Provide once", icon: ClipboardList },
+  { label: "Provide Once", icon: ClipboardList },
   { label: "Entitlements", icon: ListChecks },
   { label: "Consent", icon: ShieldCheck },
   { label: "Timeline", icon: Timer },
 ];
 
-/* The step lives in the hash so a single frame can be linked directly.
-   Frame 2 is the one worth sending anyone, and "open the demo then click twice"
-   is a worse instruction than a URL. */
-function stepFromHash() {
-  const n = Number.parseInt(globalThis.location?.hash.replace("#step", "") ?? "", 10);
-  return Number.isNaN(n) ? 0 : Math.min(Math.max(n - 1, 0), 4);
+/* The view lives in the hash so a single frame can be linked directly. Frame 2
+   is the one worth sending anyone, and "open the demo then click twice" is a
+   worse instruction than a URL. */
+function fromHash() {
+  const hash = globalThis.location?.hash ?? "";
+  if (hash === "#about") return { about: true, step: 0 };
+  const n = Number.parseInt(hash.replace("#step", ""), 10);
+  return { about: false, step: Number.isNaN(n) ? 0 : Math.min(Math.max(n - 1, 0), 4) };
 }
 
 export default function App() {
-  const [step, setStepState] = useState(stepFromHash);
+  const [view, setView] = useState(fromHash);
   const [dimmed, setDimmed] = useState(false);
-
-  const setStep = useCallback((i: number) => {
-    setStepState(i);
-    globalThis.history.replaceState(null, "", `#step${i + 1}`);
-  }, []);
   const [values, setValues] = useState<Record<string, string>>({});
   const [consents, setConsents] = useState<Record<Agency, boolean>>({
     JPN: false,
     KWSP: false,
     PERKESO: false,
   });
+
+  const { about, step } = view;
+
+  const setStep = useCallback((i: number) => {
+    setView({ about: false, step: i });
+    globalThis.history.replaceState(null, "", `#step${i + 1}`);
+    globalThis.scrollTo({ top: 0 });
+  }, []);
+
+  const setAbout = useCallback((next: boolean) => {
+    setView((v) => ({ about: next, step: v.step }));
+    globalThis.history.replaceState(null, "", next ? "#about" : "#step1");
+    globalThis.scrollTo({ top: 0 });
+  }, []);
 
   const next = () => setStep(Math.min(step + 1, STEPS.length - 1));
   const onExpandedChange = useCallback((expanded: boolean) => setDimmed(expanded), []);
@@ -60,7 +73,7 @@ export default function App() {
         <SidebarIsland
           onExpandedChange={onExpandedChange}
           onSelect={setStep}
-          step={step}
+          step={about ? -1 : step}
           steps={STEPS}
         />
 
@@ -68,25 +81,34 @@ export default function App() {
             as the page, so it cannot be a child of the thing it is dimming. */}
         <div aria-hidden className="scrim" data-visible={dimmed} />
 
-        <ActionIsland onRestart={() => setStep(0)} step={step} total={STEPS.length} />
-        <MobileDock onSelect={setStep} step={step} steps={STEPS} />
+        <AccountIsland />
+        {!about && <StepIsland onRestart={() => setStep(0)} step={step} total={STEPS.length} />}
+        <MobileDock onSelect={setStep} step={about ? -1 : step} steps={STEPS} />
 
         {/* On md+ the left offset clears the collapsed island and never reflows
             when it expands: content shifting under a hover would be worse than
             the dimming it replaces. Below md the dock is at the bottom, so the
             padding moves there to clear it instead. */}
         <main className="px-4 pt-16 pb-32 md:py-24 md:pr-6 md:pl-24">
-          {step === 0 && <FrameVerified onNext={next} />}
-          {step === 1 && <FrameProvideOnce onNext={next} setValues={setValues} values={values} />}
-          {step === 2 && <FrameEntitlements onNext={next} />}
-          {step === 3 && (
-            <FrameConsent consents={consents} onNext={next} setConsents={setConsents} />
+          {about ? (
+            <About onBack={() => setAbout(false)} />
+          ) : (
+            <>
+              {step === 0 && <FrameVerified onNext={next} />}
+              {step === 1 && (
+                <FrameProvideOnce onNext={next} setValues={setValues} values={values} />
+              )}
+              {step === 2 && <FrameEntitlements onNext={next} />}
+              {step === 3 && (
+                <FrameConsent consents={consents} onNext={next} setConsents={setConsents} />
+              )}
+              {step === 4 && <FrameTimeline consents={consents} />}
+            </>
           )}
-          {step === 4 && <FrameTimeline consents={consents} />}
         </main>
       </div>
 
-      <SiteFooter />
+      <SiteFooter onAbout={() => setAbout(true)} />
     </div>
   );
 }

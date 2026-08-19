@@ -28,20 +28,20 @@ export function FrameVerified({ onNext }: { onNext: () => void }) {
   return (
     <div className="mx-auto max-w-2xl">
       <Badge variant="secondary">Step 1</Badge>
-      <h2 className="mt-3 text-3xl font-semibold tracking-tight">A death has been verified</h2>
+      <h2 className="mt-3 text-3xl font-semibold tracking-tight">A Death Has Been Verified</h2>
       <p className="mt-3 text-muted-foreground">
         A verification record exists from a hospital, PDRM or DBKL. MyTakziah begins here.
       </p>
 
       <Card className="mt-8">
         <CardHeader>
-          <CardTitle className="text-base">Verification record</CardTitle>
+          <CardTitle className="text-base">Verification Record</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3 text-sm">
           {[
             ["Deceased", "Fatimah binti Abdullah (illustrative)"],
-            ["Date of verification", "14 August 2026"],
-            ["Issuing body", "Hospital Kuala Lumpur"],
+            ["Date of Verification", "14 August 2026"],
+            ["Issuing Body", "Hospital Kuala Lumpur"],
             ["Reference", "NRD.LM02 (Pin.1/11)"],
           ].map(([k, v]) => (
             <div key={k} className="flex justify-between gap-6">
@@ -80,7 +80,7 @@ export function FrameProvideOnce({
   return (
     <div className="mx-auto max-w-6xl">
       <Badge variant="secondary">Step 2</Badge>
-      <h2 className="mt-3 text-3xl font-semibold tracking-tight">Provide your evidence once</h2>
+      <h2 className="mt-3 text-3xl font-semibold tracking-tight">Provide Your Evidence Once</h2>
       <p className="mt-3 max-w-2xl text-muted-foreground">
         Five things. Today each of them is demanded again at each agency, on a different form.
       </p>
@@ -127,7 +127,7 @@ export function FrameProvideOnce({
         <div className="lg:sticky lg:top-6 lg:self-start">
           <Card>
             <CardHeader>
-              <CardTitle className="text-base">Who demands the same information</CardTitle>
+              <CardTitle className="text-base">Who Demands the Same Information</CardTitle>
               <p className="mt-1 text-sm text-muted-foreground">
                 {done} of {FIELD_GROUPS.length} provided. Each row lights across every agency that
                 asks for it today.
@@ -202,7 +202,7 @@ export function FrameEntitlements({ onNext }: { onNext: () => void }) {
     <div className="mx-auto max-w-3xl">
       <Badge variant="secondary">Step 3</Badge>
       <h2 className="mt-3 text-3xl font-semibold tracking-tight">
-        What you may be entitled to, ranked by deadline
+        What You May Be Entitled To, Ranked by Deadline
       </h2>
       <p className="mt-3 text-muted-foreground">
         Ordered by which runs out first, not by which is largest.
@@ -219,18 +219,18 @@ export function FrameEntitlements({ onNext }: { onNext: () => void }) {
                     <Clock className="size-3.5" /> {e.deadline}
                   </span>
                 ) : (
-                  <span className="text-sm text-muted-foreground">No published deadline</span>
+                  <span className="text-sm text-muted-foreground">No Published Deadline</span>
                 )}
               </div>
               <CardTitle className="mt-2 text-lg">{e.title}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 text-sm">
-              <p className="font-medium">Potentially eligible, confirmation required</p>
+              <p className="font-medium">Potentially Eligible, Confirmation Required</p>
               <p className="text-muted-foreground">{e.amount}</p>
               <Separator />
               <p className="text-muted-foreground">{e.condition}</p>
               <p className="text-muted-foreground">
-                <span className="font-medium text-foreground">What we cannot know. </span>
+                <span className="font-medium text-foreground">What We Cannot Know. </span>
                 {e.limitation}
               </p>
               <a
@@ -247,7 +247,7 @@ export function FrameEntitlements({ onNext }: { onNext: () => void }) {
       </div>
 
       <Button className="mt-8" size="lg" onClick={onNext}>
-        Review what each agency receives <ArrowRight className="size-4" />
+        Review What Each Agency Receives <ArrowRight className="size-4" />
       </Button>
     </div>
   );
@@ -269,7 +269,7 @@ export function FrameConsent({
   return (
     <div className="mx-auto max-w-3xl">
       <Badge variant="secondary">Step 4</Badge>
-      <h2 className="mt-3 text-3xl font-semibold tracking-tight">Review and consent, per agency</h2>
+      <h2 className="mt-3 text-3xl font-semibold tracking-tight">Review and Consent, per Agency</h2>
       <p className="mt-3 text-muted-foreground">
         Each agency receives only what it requires. You agree to each one separately.
       </p>
@@ -308,7 +308,7 @@ export function FrameConsent({
 
                   {consents[a] ? (
                     <div className="flex items-center justify-between gap-4">
-                      <p className="text-sm font-medium text-primary">Consent given for {a}</p>
+                      <p className="text-sm font-medium text-primary">Consent Given for {a}</p>
                       <Button
                         size="sm"
                         variant="outline"
@@ -323,7 +323,7 @@ export function FrameConsent({
                         No consent given yet. Nothing is sent to {a}.
                       </p>
                       <Button onClick={() => setConsents({ ...consents, [a]: true })}>
-                        <Lock className="size-4" /> I agree to send this to {a}
+                        <Lock className="size-4" /> I Agree to Send This to {a}
                       </Button>
                     </div>
                   )}
@@ -352,7 +352,7 @@ export function FrameTimeline({ consents }: { consents: Record<Agency, boolean> 
   return (
     <div className="mx-auto max-w-3xl">
       <Badge variant="secondary">Step 5</Badge>
-      <h2 className="mt-3 text-3xl font-semibold tracking-tight">Drafts, and one timeline</h2>
+      <h2 className="mt-3 text-3xl font-semibold tracking-tight">Drafts, and One Timeline</h2>
       <p className="mt-3 text-muted-foreground">
         Three forms prepared from one set of evidence, and a single place to watch them.
       </p>
@@ -375,7 +375,7 @@ export function FrameTimeline({ consents }: { consents: Record<Agency, boolean> 
 
       <Card className="mt-8">
         <CardHeader>
-          <CardTitle className="text-base">One status, across all three</CardTitle>
+          <CardTitle className="text-base">One Status, Across All Three</CardTitle>
         </CardHeader>
         <CardContent>
           <ol className="space-y-4">

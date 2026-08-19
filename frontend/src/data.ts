@@ -19,43 +19,43 @@ export type FieldGroup = {
 export const FIELD_GROUPS: FieldGroup[] = [
   {
     id: "deceased",
-    label: "Who died",
-    hint: "Identity of the deceased",
+    label: "Who Died",
+    hint: "Identity of the Deceased",
     fields: [
-      { name: "Full name", placeholder: "Name as printed on MyKad" },
-      { name: "Identity number", placeholder: "MyKad number" },
+      { name: "Full Name", placeholder: "Name as printed on MyKad" },
+      { name: "Identity Number", placeholder: "MyKad number" },
     ],
     demandedBy: ["JPN", "KWSP", "PERKESO"],
   },
   {
     id: "claimant",
-    label: "Who you are",
-    hint: "Identity of the claimant",
+    label: "Who You Are",
+    hint: "Identity of the Claimant",
     fields: [
-      { name: "Your full name", placeholder: "Name as printed on MyKad" },
-      { name: "Your identity number", placeholder: "MyKad number" },
+      { name: "Your Full Name", placeholder: "Name as printed on MyKad" },
+      { name: "Your Identity Number", placeholder: "MyKad number" },
     ],
     demandedBy: ["JPN", "KWSP", "PERKESO"],
   },
   {
     id: "death",
-    label: "Proof of the death",
-    hint: "The fact of the death",
-    fields: [{ name: "Death register reference", placeholder: "NRD.LM02 reference" }],
+    label: "Proof of the Death",
+    hint: "The Fact of the Death",
+    fields: [{ name: "Death Register Reference", placeholder: "NRD.LM02 reference" }],
     demandedBy: ["JPN", "KWSP", "PERKESO"],
   },
   {
     id: "relationship",
-    label: "How you are related",
-    hint: "Relationship to the deceased",
+    label: "How You Are Related",
+    hint: "Relationship to the Deceased",
     fields: [{ name: "Relationship", placeholder: "Spouse, child, parent" }],
     demandedBy: ["KWSP", "PERKESO"],
   },
   {
     id: "payment",
-    label: "Where money should go",
-    hint: "Payment destination",
-    fields: [{ name: "Bank account", placeholder: "Account in your own name" }],
+    label: "Where Money Should Go",
+    hint: "Payment Destination",
+    fields: [{ name: "Bank Account", placeholder: "Account in your own name" }],
     demandedBy: ["KWSP", "PERKESO"],
   },
 ];
@@ -78,7 +78,7 @@ export const ENTITLEMENTS: Entitlement[] = [
   {
     id: "epf",
     agency: "KWSP",
-    title: "Death Withdrawal, including Death Assistance",
+    title: "Death Withdrawal, Including Death Assistance",
     amount: "RM2,500 Death Assistance, at EPF's discretion",
     deadline: "6 months from the date of death",
     condition:
@@ -126,26 +126,26 @@ export const ENTITLEMENTS: Entitlement[] = [
 export const AGENCY_PAYLOADS: Record<Agency, { form: string; receives: string[] }> = {
   JPN: {
     form: "NRD.LM02, at the registration counter",
-    receives: ["Who died", "Who you are", "Proof of the death"],
+    receives: ["Who Died", "Who You Are", "Proof of the Death"],
   },
   KWSP: {
     form: "KWSP 9KM (AHL)",
     receives: [
-      "Who died",
-      "Who you are",
-      "Proof of the death",
-      "How you are related",
-      "Where money should go",
+      "Who Died",
+      "Who You Are",
+      "Proof of the Death",
+      "How You Are Related",
+      "Where Money Should Go",
     ],
   },
   PERKESO: {
     form: "Borang 24 and Borang 26",
     receives: [
-      "Who died",
-      "Who you are",
-      "Proof of the death",
-      "How you are related",
-      "Where money should go",
+      "Who Died",
+      "Who You Are",
+      "Proof of the Death",
+      "How You Are Related",
+      "Where Money Should Go",
     ],
   },
 };
@@ -155,7 +155,7 @@ export const TIMELINE_STATES = [
   "Prepared",
   "Submitted",
   "Receipted",
-  "In review by agency",
+  "In Review by Agency",
 ] as const;
 
 export const DEMO_BANNER =

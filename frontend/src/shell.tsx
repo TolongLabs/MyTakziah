@@ -1,8 +1,9 @@
-import { AlertTriangle, PanelLeft, RotateCcw } from "lucide-react";
+import { AlertTriangle, Bell, Moon, PanelLeft, RotateCcw, Sun, UserRound } from "lucide-react";
 import { useEffect, useRef, useState, type ComponentType } from "react";
 
 import { cn } from "@/lib/utils";
 import { DEMO_BANNER } from "@/data";
+import { useTheme } from "@/lib/theme";
 
 const OPEN_DELAY_MS = 120;
 const CLOSE_DELAY_MS = 200;
@@ -73,9 +74,7 @@ export function SidebarIsland({
       style={{ zIndex: "var(--z-island)" }}
     >
       <div className="flex items-center gap-2 rounded-[var(--radius-control)] px-2 py-3">
-        <span className="grid size-6 shrink-0 place-items-center rounded-full bg-primary text-[0.7rem] font-bold text-primary-foreground">
-          M
-        </span>
+        <img alt="" className="size-9 shrink-0" src="/logo-mark.png" />
         <span
           className={cn(
             "text-lg font-semibold tracking-tight whitespace-nowrap transition-opacity duration-150",
@@ -95,7 +94,7 @@ export function SidebarIsland({
                 "flex h-11 w-full items-center gap-3 rounded-[var(--radius-control)] px-3",
                 "text-sm font-medium transition-colors duration-150",
                 i === step
-                  ? "bg-primary/16 text-primary"
+                  ? "bg-selected text-selected-foreground"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground"
               )}
               onClick={() => onSelect(i)}
@@ -141,14 +140,85 @@ export function SidebarIsland({
 }
 
 /**
- * The top-right island, detached the way the sidebar is so the two read as one
- * system.
+ * The top-right island: theme, notifications, account.
  *
- * It carries position first and the action second. An island holding only a
- * restart control is dead on the screen a judge lands on, and a control that is
- * present but disabled reads worse than one that is absent.
+ * **The bell and the account control are stubs and are labelled as such.** This
+ * is a concept demo with no accounts and no notifications, and a control that
+ * looks functional but silently does nothing is exactly the kind of thing that
+ * gets caught in a live pitch. Each announces itself on activation instead.
  */
-export function ActionIsland({
+export function AccountIsland() {
+  const { theme, toggle } = useTheme();
+  const [note, setNote] = useState<string | null>(null);
+
+  const stub = (message: string) => {
+    setNote(message);
+    globalThis.setTimeout(() => setNote(null), 2400);
+  };
+
+  const item =
+    "inline-flex size-10 items-center justify-center rounded-[var(--radius-control)] text-muted-foreground transition-colors duration-150 hover:bg-muted hover:text-foreground";
+
+  return (
+    <div
+      className="glass fixed top-16 right-4 hidden items-center gap-1 rounded-[var(--radius-float)] p-1.5 md:flex md:right-6"
+      style={{ zIndex: "var(--z-island)" }}
+    >
+      {note && (
+        <p
+          className="absolute top-full right-0 mt-2 rounded-[var(--radius-control)] bg-foreground px-3 py-2 text-xs font-medium text-background"
+          role="status"
+        >
+          {note}
+        </p>
+      )}
+
+      <button
+        aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+        className={item}
+        onClick={toggle}
+        title={theme === "dark" ? "Light Theme" : "Dark Theme"}
+        type="button"
+      >
+        {theme === "dark" ? (
+          <Sun aria-hidden className="size-[18px]" />
+        ) : (
+          <Moon aria-hidden className="size-[18px]" />
+        )}
+      </button>
+
+      <button
+        aria-label="Notifications, not implemented in this demo"
+        className={item}
+        onClick={() => stub("Notifications are not part of this concept demo.")}
+        title="Notifications"
+        type="button"
+      >
+        <Bell aria-hidden className="size-[18px]" />
+      </button>
+
+      <button
+        aria-label="Account, not implemented in this demo"
+        className={item}
+        onClick={() => stub("There are no accounts in this concept demo.")}
+        title="Account"
+        type="button"
+      >
+        <UserRound aria-hidden className="size-[18px]" />
+      </button>
+    </div>
+  );
+}
+
+/**
+ * Position and restart, parked at the bottom centre.
+ *
+ * It sits where a media player's transport sits, because that is what it is:
+ * you are being walked through five frames and this says where you are. Bottom
+ * centre also keeps it clear of the account island and out of the reading
+ * column entirely.
+ */
+export function StepIsland({
   step,
   total,
   onRestart,
@@ -159,15 +229,15 @@ export function ActionIsland({
 }) {
   return (
     <div
-      className="glass fixed top-16 right-4 hidden items-center gap-1 rounded-[var(--radius-float)] p-1.5 md:flex"
+      className="glass fixed bottom-4 left-1/2 hidden -translate-x-1/2 items-center gap-1 rounded-[var(--radius-float)] p-1.5 md:flex"
       style={{ zIndex: "var(--z-island)" }}
     >
-      <p aria-live="polite" className="px-3 text-sm font-medium text-muted-foreground">
+      <p aria-live="polite" className="px-3 text-sm font-medium whitespace-nowrap">
         Step {step + 1} of {total}
       </p>
       {step > 0 && (
         <button
-          className="flex h-11 items-center gap-2 rounded-[var(--radius-control)] bg-primary px-4 text-sm font-medium text-primary-foreground transition-opacity duration-150 hover:opacity-90"
+          className="flex h-10 items-center gap-2 rounded-[var(--radius-control)] bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors duration-150 hover:bg-primary-hover"
           onClick={onRestart}
           type="button"
         >
@@ -203,7 +273,7 @@ export function MobileDock({
           className={cn(
             "flex min-h-12 flex-1 flex-col items-center justify-center gap-0.5 rounded-[var(--radius-control)] px-1 py-1.5",
             "text-[0.65rem] font-medium transition-colors duration-150",
-            i === step ? "bg-primary/12 text-primary" : "text-muted-foreground"
+            i === step ? "bg-selected text-selected-foreground" : "text-muted-foreground"
           )}
           onClick={() => onSelect(i)}
           type="button"
@@ -241,7 +311,7 @@ export function DemoBanner() {
  * it is opaque, so reaching the end uncovers something that was always there
  * rather than scrolling a panel into view. Nothing animates; the occluder moves.
  */
-export function SiteFooter() {
+export function SiteFooter({ onAbout }: { onAbout: () => void }) {
   const footer = useRef<HTMLElement>(null);
 
   /* A fixed element's rect is always inside the viewport, so the browser sees no
@@ -261,15 +331,21 @@ export function SiteFooter() {
 
   return (
     <footer className="site-footer" ref={footer}>
-      <div className="mx-auto flex h-full max-w-6xl flex-col items-end justify-center gap-3 px-6 py-10 text-right">
-        <span className="text-xl font-semibold tracking-tight">MyTakziah</span>
-        <p className="text-sm font-medium opacity-90">One death. Tell government once.</p>
-        <p className="max-w-md text-xs opacity-80">
-          Concept demo for the URIIS Student Biz Innov Challenge 2026 by team Survive. Agency
-          responses are simulated and no submission is made to any government system. Every rule
-          shown is drawn from a published agency page and cited on screen. MyTakziah is a proposed
-          service and is not endorsed by any government agency.
-        </p>
+      <div className="mx-auto flex h-full max-w-6xl flex-col items-end justify-center gap-2 px-6 py-10 text-right">
+        <span className="flex items-center gap-3">
+          <img alt="" className="size-10" src="/logo-mark.png" />
+          <span className="font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight">
+            MyTakziah
+          </span>
+        </span>
+        <p className="text-base font-medium">One death. Tell government once.</p>
+        <button
+          className="text-sm underline underline-offset-4 transition-opacity hover:no-underline"
+          onClick={onAbout}
+          type="button"
+        >
+          About
+        </button>
       </div>
     </footer>
   );

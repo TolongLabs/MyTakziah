@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "@fontsource-variable/work-sans";
+@import "@fontsource-variable/outfit";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -24,6 +26,20 @@
   --accent-foreground: oklch(0.4 0.11 62);
 
   /* Chrome material and the layers it sits on. */
+  /* Solid hover and selected states. Never an alpha tint: a translucent
+     background's contrast depends on whatever is behind it. */
+  --secondary: oklch(0.915 0.022 80);
+  --secondary-foreground: oklch(0.32 0.02 60);
+  --destructive: oklch(0.52 0.16 27);
+  --destructive-foreground: oklch(0.99 0.005 85);
+  --input: oklch(0.89 0.016 80);
+  --ring: oklch(0.55 0.13 62);
+
+  --primary-hover: oklch(0.48 0.13 62);
+  --selected: oklch(0.93 0.035 70);
+  --selected-foreground: oklch(0.36 0.11 62);
+  --field: oklch(0.995 0.006 85);
+
   --glass: oklch(0.995 0.006 85 / 0.72);
   --glass-line: oklch(0.89 0.016 80 / 0.85);
   --scrim-fill: oklch(0.24 0.018 60 / 0.26);
@@ -55,6 +71,18 @@
   --accent: oklch(0.32 0.05 62);
   --accent-foreground: oklch(0.9 0.04 70);
 
+  --secondary: oklch(0.3 0.016 62);
+  --secondary-foreground: oklch(0.93 0.01 85);
+  --destructive: oklch(0.62 0.17 27);
+  --destructive-foreground: oklch(0.15 0.01 60);
+  --input: oklch(0.34 0.016 65);
+  --ring: oklch(0.72 0.13 68);
+
+  --primary-hover: oklch(0.79 0.13 68);
+  --selected: oklch(0.32 0.05 62);
+  --selected-foreground: oklch(0.92 0.04 70);
+  --field: oklch(0.28 0.014 60);
+
   --glass: oklch(0.24 0.014 60 / 0.7);
   --glass-line: oklch(0.34 0.016 65 / 0.85);
   --scrim-fill: oklch(0.12 0.01 60 / 0.45);
@@ -78,6 +106,19 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-selected: var(--selected);
+  --color-selected-foreground: var(--selected-foreground);
+  --color-field: var(--field);
+
+  --font-sans: "Work Sans Variable", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Outfit Variable", "Work Sans Variable", system-ui, sans-serif;
 }
 
 @layer base {
@@ -86,10 +127,17 @@
   }
 
   body {
+    font-family: var(--font-sans);
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
   }
 }
 
