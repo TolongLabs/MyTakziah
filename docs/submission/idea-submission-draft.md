@@ -32,17 +32,10 @@ TODO: courses, to be filled by each member.
 `AGENTS.md`. They live in `team-contact.local.md`, which is gitignored, and are typed into the
 export at the end.
 
-> `[NEEDS SOURCE]` **Eligibility, checked 2026-08-19.** All four members are Malaysian. One is
-> enrolled at the University of Sheffield rather than a Malaysian institution.
->
-> The official briefing PDF describes URIIS as "a national innovation competition that empowers
-> university students **across Malaysia**". That phrasing is geographic, and the supplied record
-> states no explicit rule on whether eligibility follows **nationality** or **institution**. Neither
-> transcript addresses it.
->
-> **Low concern, cheap to close.** Malaysian nationality plus successful registration both point
-> the right way. Ask once on the Kolaxus forum to be certain, since the organizer directed questions
-> there and said it was quiet. Do not let it hold up any drafting.
+> **Eligibility, resolved by the team 2026-08-19.** All four members are Malaysian. One is enrolled
+> at the University of Sheffield rather than a Malaysian institution. The briefing describes URIIS
+> as for "university students across Malaysia" and states no explicit institution rule. **The team
+> reviewed this and judged it fine. Closed, not carried into preflight.**
 
 ---
 

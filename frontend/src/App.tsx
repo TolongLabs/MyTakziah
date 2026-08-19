@@ -1,68 +1,80 @@
-import { ArrowRight, Lightbulb, Target, TrendingUp } from "lucide-react";
+import { useState } from "react";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { DEMO_BANNER, type Agency } from "@/data";
+import {
+  FrameConsent,
+  FrameEntitlements,
+  FrameProvideOnce,
+  FrameTimeline,
+  FrameVerified,
+} from "@/frames";
 
-const PILLARS = [
-  {
-    icon: Target,
-    title: "Problem",
-    body: "TODO: state the exact problem the chosen track asks us to solve.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Solution",
-    body: "TODO: describe what this prototype demonstrates in one sentence.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Impact",
-    body: "TODO: the measurable change, with a source recorded in docs/research/.",
-  },
-];
+const STEPS = ["Verified", "Provide once", "Entitlements", "Consent", "Timeline"];
 
 export default function App() {
+  const [step, setStep] = useState(0);
+  const [values, setValues] = useState<Record<string, string>>({});
+  const [consents, setConsents] = useState<Record<Agency, boolean>>({
+    JPN: false,
+    KWSP: false,
+    PERKESO: false,
+  });
+
+  const next = () => setStep((s) => Math.min(s + 1, STEPS.length - 1));
+
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto max-w-5xl px-6 py-20">
-        <Badge variant="secondary">URIIS Student Biz Innov Challenge 2026</Badge>
-
-        <h1 className="mt-4 text-5xl font-semibold tracking-tight text-balance sm:text-6xl">
-          TODO: Name The Idea
-        </h1>
-
-        <p className="mt-6 max-w-2xl text-lg text-pretty text-muted-foreground">
-          TODO: one plain sentence a judge can repeat back after reading it once. Replace everything
-          on this page. Nothing here is meant to survive.
-        </p>
-
-        <Button asChild size="lg" className="mt-8">
-          <a href="#pillars">
-            See the concept
-            <ArrowRight className="size-4" />
-          </a>
-        </Button>
-
-        <section id="pillars" className="mt-20 grid gap-5 sm:grid-cols-3">
-          {PILLARS.map(({ icon: Icon, title, body }) => (
-            <Card key={title}>
-              <CardHeader>
-                <Icon className="size-5 text-primary" />
-                <CardTitle className="mt-2">{title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">{body}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </section>
-
-        <p className="mt-16 rounded-lg border border-dashed p-4 text-sm text-muted-foreground">
-          This prototype is optional supporting material. The graded deliverables are the PDF
-          submission and the A3 canvas. Do not start here until both are safe.
-        </p>
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Never dismissible. Every screen, every time. */}
+      <div className="sticky top-0 z-50 bg-foreground px-4 py-2 text-center text-xs font-medium tracking-wide text-background">
+        {DEMO_BANNER}
       </div>
-    </main>
+
+      <header className="border-b">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
+          <div>
+            <p className="text-lg font-semibold tracking-tight">MyTakziah</p>
+            <p className="text-sm text-muted-foreground">One death. Tell government once.</p>
+          </div>
+          <nav className="flex flex-wrap gap-1">
+            {STEPS.map((label, i) => (
+              <button
+                key={label}
+                className={`rounded-md px-2.5 py-1 text-sm transition-colors ${
+                  i === step
+                    ? "bg-accent font-medium text-accent-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+                onClick={() => setStep(i)}
+                type="button"
+              >
+                {i + 1}. {label}
+              </button>
+            ))}
+          </nav>
+        </div>
+      </header>
+
+      <main className="px-6 py-12">
+        {step === 0 && <FrameVerified onNext={next} />}
+        {step === 1 && <FrameProvideOnce onNext={next} setValues={setValues} values={values} />}
+        {step === 2 && <FrameEntitlements onNext={next} />}
+        {step === 3 && <FrameConsent consents={consents} onNext={next} setConsents={setConsents} />}
+        {step === 4 && <FrameTimeline consents={consents} />}
+      </main>
+
+      <footer className="mx-auto max-w-6xl px-6 pb-12">
+        <p className="border-t pt-6 text-sm text-muted-foreground">
+          Concept demo for the URIIS Student Biz Innov Challenge 2026. Agency responses are
+          simulated. No submission is made to any government system. Rules shown are drawn from
+          published agency pages and cited on screen.
+        </p>
+        {step > 0 && (
+          <Button className="mt-6" onClick={() => setStep(0)} variant="outline">
+            Restart the walkthrough
+          </Button>
+        )}
+      </footer>
+    </div>
   );
 }
