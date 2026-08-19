@@ -19,11 +19,28 @@
 
 **Team Name:** Survive
 
-TODO: four member names and universities, from the team
+| Member                    | University              | Course |
+| ------------------------- | ----------------------- | ------ |
+| Ling Jing Jie (team lead) | Universiti Malaya       | TODO   |
+| Hee Zi Jie                | Asia Pacific University | TODO   |
+| Yow Li Hao                | University of Sheffield | TODO   |
+| Wong Xuan Rui             | Universiti Malaya       | TODO   |
+
+TODO: courses, to be filled by each member.
 
 **Contact details are deliberately not stored in this repo**, per the "No Secrets in Repo" rule in
 `AGENTS.md`. They live in `team-contact.local.md`, which is gitignored, and are typed into the
 export at the end.
+
+> `[NEEDS SOURCE]` **Eligibility question, raised 2026-08-19.** The official briefing PDF describes
+> this as "a national innovation competition that empowers university students **across Malaysia**".
+> It does not state an explicit institution rule anywhere in the supplied record, and neither
+> transcript addresses it. One member is enrolled at the University of Sheffield.
+>
+> **This is an open question, not a known problem.** Ask on the Kolaxus forum tonight. The organizer
+> repeatedly directed questions there and said the forum was quiet, so an answer should be quick.
+> Successful registration is weak evidence that it is fine, but registration may not validate
+> institution.
 
 ---
 
