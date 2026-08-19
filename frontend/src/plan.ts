@@ -49,6 +49,9 @@ export type Doc = {
   id: string;
   label: string;
   note: string;
+  /** Four words at most, and only where it changes whether you need the item.
+      The plan card is a checklist; the fuller `note` belongs in the dialog. */
+  hint?: string;
   agencies: Agency[];
   /** Undefined means always required. */
   applies?: (a: Answers) => boolean;
@@ -66,6 +69,7 @@ export const DOCUMENTS: Doc[] = [
   {
     id: "cause",
     label: "Medical certification of the cause of death",
+    hint: "hospital deaths only",
     note: "Form NRD.LM09, or NRD.LM10 after a post-mortem. Only if the death was in hospital",
     agencies: ["JPN"],
   },
@@ -90,6 +94,7 @@ export const DOCUMENTS: Doc[] = [
   {
     id: "bank",
     label: "Bank account evidence, in your own name",
+    hint: "not a joint account",
     note: "Statement, account book or a bank confirmation letter. Joint accounts are not accepted",
     agencies: ["KWSP", "PERKESO"],
   },
@@ -138,6 +143,7 @@ export const DOCUMENTS: Doc[] = [
   {
     id: "court",
     label: "Court, legal institution or Amanah Raya letter",
+    hint: "if there was no nomination",
     note: "May be required where there is no nomination, above the payment thresholds",
     agencies: ["KWSP"],
     applies: (a) => a.nomination === "no" || a.nomination === "unknown",
@@ -145,6 +151,7 @@ export const DOCUMENTS: Doc[] = [
   {
     id: "tier",
     label: "Relationship evidence for surviving family",
+    hint: "spouse and children first",
     note: "PERKESO works in tiers: spouse and children, else parents and siblings, else grandparents",
     agencies: ["PERKESO"],
   },
@@ -165,17 +172,17 @@ export const TRIPS: { agency: Agency; heading: string; why: string }[] = [
   {
     agency: "JPN",
     heading: "First, JPN",
-    why: "Registers the death and issues the certificate the other two require",
+    why: "Issues the certificate the other two need",
   },
   {
     agency: "KWSP",
     heading: "Then KWSP",
-    why: "Death Withdrawal, and the six month Death Assistance window",
+    why: "Death Withdrawal, six month window",
   },
   {
     agency: "PERKESO",
     heading: "Then PERKESO",
-    why: "Funeral benefit, and survivors' pension if the contribution record allows",
+    why: "Funeral benefit and survivors' pension",
   },
 ];
 
