@@ -17,7 +17,8 @@
 
 ## Team Information
 
-TODO: team name (#7, still open)
+**Team Name:** Survive
+
 TODO: four member names, universities, contact
 
 ---
