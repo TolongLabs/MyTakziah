@@ -93,7 +93,12 @@ export function FrameProvideOnce({
   onNext: () => void;
 }) {
   const done = FIELD_GROUPS.filter((g) => groupComplete(g, values)).length;
-  const allDone = done === FIELD_GROUPS.length;
+  const conditionsDone = QUESTIONS.filter((q) => answers[q.key]).length;
+  /* Continue requires the conditions too. They are a separate section because
+     they are conditions rather than evidence, but leaving them optional meant a
+     user could legitimately finish this page, move on, and then be told on step
+     5 that this page was unfinished. */
+  const allDone = done === FIELD_GROUPS.length && conditionsDone === QUESTIONS.length;
 
   return (
     <div className="mx-auto max-w-6xl">
@@ -160,9 +165,16 @@ export function FrameProvideOnce({
               family hands over; they are the conditions that select which
               documents each agency will ask them to bring. Mixing them into the
               five would blunt the claim the matrix is making. */}
-          <Card>
+          <Card className={conditionsDone === QUESTIONS.length ? "border-primary/60" : undefined}>
             <CardHeader>
-              <CardTitle className="text-base">A Few More Things</CardTitle>
+              <div className="flex items-center justify-between gap-3">
+                <CardTitle className="text-base">A Few More Things</CardTitle>
+                {conditionsDone === QUESTIONS.length && (
+                  <span className="flex items-center gap-1 text-sm font-medium text-primary">
+                    <Check className="size-4" /> Answered
+                  </span>
+                )}
+              </div>
               <p className="mt-1 text-sm text-muted-foreground">
                 These do not change what you provide. They change which documents each agency asks
                 you to bring, so answering them once means we can tell you exactly what to take.
@@ -269,8 +281,15 @@ export function FrameProvideOnce({
         </Button>
         {!allDone && (
           <p className="text-sm text-muted-foreground">
-            {FIELD_GROUPS.length - done} of {FIELD_GROUPS.length} still to provide. The point of the
-            service is that you do this once, so the demo asks you to do it once.
+            {[
+              done < FIELD_GROUPS.length &&
+                `${FIELD_GROUPS.length - done} of the five still to provide`,
+              conditionsDone < QUESTIONS.length &&
+                `${QUESTIONS.length - conditionsDone} of the three conditions still to answer`,
+            ]
+              .filter(Boolean)
+              .join(", ")}
+            . The point of the service is that you do this once, so the demo asks you to do it once.
           </p>
         )}
       </div>
@@ -617,7 +636,7 @@ export function FrameTimeline({
           <p className="mt-1 text-sm text-muted-foreground">
             {answered(answers)
               ? "Narrowed to your situation from the conditions you gave on step 2."
-              : "Answer the three conditions on step 2 and this narrows to your situation."}
+              : "Shown in full. Complete step 2 and this narrows to your situation."}
           </p>
         </CardHeader>
         <CardContent>
@@ -676,7 +695,7 @@ export function FrameTimeline({
                       <p className="mt-2 text-sm text-muted-foreground">
                         {answered(answers)
                           ? "Nothing beyond what you are already carrying."
-                          : `Answer the conditions on step 2 to see what else ${agency} asks for.`}
+                          : `Complete step 2 to see what else ${agency} asks for.`}
                       </p>
                     )}
                   </div>
