@@ -177,6 +177,7 @@ It is a genuinely tempting number. That is exactly why it is written down here a
 - "Documented accounts show survivors collecting death benefits two decades after the death."
 - "In one reported case, a widow collected her SOCSO survivor benefits almost 23 years later,
   having never been denied them; she simply did not know she was eligible until a relative told her."
+  **Conditional on a human opening the Borneo Post source. If nobody does, cut this sentence.**
 - "The Malaysian government's own portal names at least seven bodies a family may deal with after a
   death, and sets separate deadlines of six and twelve months."
 - "We did not conduct primary user research within the competition window."
@@ -196,6 +197,25 @@ It is a genuinely tempting number. That is exactly why it is written down here a
   remarkable, so 23-year delays are reported precisely because they are unusual. **This evidence
   cannot establish how common the problem is, and we do not claim it does.**
 - **Two of the three accounts are from 2017 and 2020.** They are dated.
+- **The 23-year case has not been opened at source by anyone.** PressReader is paywalled and
+  the Borneo Post original blocks automated retrieval. **Until someone opens it in a browser,
+  Section 2 must not quote it.** The safe fallback is below.
 - **Account 2 has a different root cause** to Account 1 and must not be blended with it.
 - **No Malaysian measurement exists** of how long bereavement administration takes or how many
   claims are missed. That gap remains open and is stated in Section 5.
+
+---
+
+## Safe Fallback If Nothing Further Can Be Opened
+
+If the Borneo Post sources cannot be opened before export, **cut the 23-year case entirely** and
+rest Section 2 on the two items already verified and accessible:
+
+1. **The Bernama quote.** A PERKESO deputy director hoping beneficiaries "are aware of their rights
+   and would contact us immediately in the event of death". Verified, accessible, and it makes the
+   awareness point in an official's own words.
+2. **The MyGovernment portal.** Names at least seven bodies and carries separate six-month and
+   twelve-month deadlines. Primary, official, current.
+
+**That is enough.** It is narrower than the 23-year case supports, and narrowing is the correct
+response to an unopenable source. Do not soften the wording and keep the citation.
