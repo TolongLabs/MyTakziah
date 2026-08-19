@@ -1,8 +1,7 @@
-import { AlertTriangle, Bell, Moon, PanelLeft, RotateCcw, Sun, UserRound } from "lucide-react";
+import { Bell, Moon, PanelLeft, RotateCcw, Sun, UserRound } from "lucide-react";
 import { useEffect, useRef, useState, type ComponentType } from "react";
 
 import { cn } from "@/lib/utils";
-import { DEMO_BANNER } from "@/data";
 import { useTheme } from "@/lib/theme";
 
 const OPEN_DELAY_MS = 120;
@@ -56,7 +55,7 @@ export function SidebarIsland({
         // Below md the island is the wrong shape for a thumb and hover does not
         // exist, so it is replaced by a bottom dock rather than shrunk.
         "hidden md:flex",
-        "glass fixed top-16 bottom-4 left-4 flex-col rounded-[var(--radius-float)] p-2",
+        "glass fixed top-4 bottom-4 left-4 flex-col rounded-[var(--radius-float)] p-2",
         "transition-[width] duration-[220ms] ease-out",
         expanded ? "w-60" : "w-16"
       )}
@@ -161,7 +160,7 @@ export function AccountIsland() {
 
   return (
     <div
-      className="glass fixed top-16 right-4 hidden items-center gap-1 rounded-[var(--radius-float)] p-1.5 md:flex md:right-6"
+      className="glass fixed top-4 right-4 hidden items-center gap-1 rounded-[var(--radius-float)] p-1.5 md:flex md:right-6"
       style={{ zIndex: "var(--z-island)" }}
     >
       {note && (
@@ -283,24 +282,6 @@ export function MobileDock({
         </button>
       ))}
     </nav>
-  );
-}
-
-/**
- * The banner is not chrome and is deliberately not glass. A judge must never
- * mistake this for a live government service, so it is opaque, loud, fixed above
- * every other layer, and has no dismiss control anywhere.
- */
-export function DemoBanner() {
-  return (
-    <div
-      className="fixed inset-x-0 top-0 flex items-center justify-center gap-2 bg-foreground px-4 py-2 text-center text-xs font-medium tracking-wide text-background"
-      role="status"
-      style={{ zIndex: "var(--z-banner)" }}
-    >
-      <AlertTriangle aria-hidden className="size-3.5 shrink-0" />
-      <span>{DEMO_BANNER}</span>
-    </div>
   );
 }
 

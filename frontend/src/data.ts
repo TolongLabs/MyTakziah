@@ -157,6 +157,3 @@ export const TIMELINE_STATES = [
   "Receipted",
   "In Review by Agency",
 ] as const;
-
-export const DEMO_BANNER =
-  "CONCEPT DEMO. Simulated agency responses. No live government submission.";

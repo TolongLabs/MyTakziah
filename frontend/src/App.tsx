@@ -12,7 +12,6 @@ import {
 } from "@/frames";
 import {
   AccountIsland,
-  DemoBanner,
   MobileDock,
   SidebarIsland,
   SiteFooter,
@@ -68,8 +67,6 @@ export default function App() {
   return (
     <div>
       <div className="reveal-page dot-grid">
-        <DemoBanner />
-
         <SidebarIsland
           onExpandedChange={onExpandedChange}
           onSelect={setStep}
@@ -89,7 +86,7 @@ export default function App() {
             when it expands: content shifting under a hover would be worse than
             the dimming it replaces. Below md the dock is at the bottom, so the
             padding moves there to clear it instead. */}
-        <main className="px-4 pt-16 pb-32 md:py-24 md:pr-6 md:pl-24">
+        <main className="px-4 pt-10 pb-32 md:py-24 md:pr-6 md:pl-24">
           {about ? (
             <About onBack={() => setAbout(false)} />
           ) : (

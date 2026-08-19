@@ -17,11 +17,19 @@
 
 ## Global Rules, Every Frame
 
-**Persistent banner, top of every screen, never dismissible:**
+**Disclosure, revised 2026-08-20.** The original storyboard mandated a persistent
+`CONCEPT DEMO` bar across the top of every screen. **That bar has been removed** by team decision:
+it is self-evident that a five-screen walkthrough with no login and no data is a demo, and the bar
+cost a full strip of vertical space on every frame.
 
-```text
-CONCEPT DEMO. Simulated agency responses. No live government submission.
-```
+**Disclosure now lives in two places instead, and both are load-bearing:**
+
+- **The About page**, reachable from the footer on every screen, which states plainly what is real,
+  what is simulated, and what is unproven.
+- **The interface wording itself**, which never says approved and never says a claim was granted.
+
+**If the demo is ever screen-recorded or shown without the footer in frame, say out loud that
+agency responses are simulated.** The removed bar was doing that job passively.
 
 **Banned words anywhere in the interface.** From the wording table in
 `../research/agency-rule-map.md`:

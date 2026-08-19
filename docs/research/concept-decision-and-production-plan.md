@@ -90,6 +90,9 @@ If bereavement is chosen, the prototype is these screens and nothing else:
 5. **Drafts and one timeline.** Pre-filled forms marked `DRAFT, NOT SUBMITTED`, then a single
    consolidated status timeline.
 
+`[SUPERSEDED 2026-08-20]` The banner recommendation below was reversed. See `docs/decisions.md`
+and `../submission/prototype-storyboard.md`. Disclosure now lives on a dedicated About page.
+
 **Put a persistent banner on every screen:** `CONCEPT DEMO. Simulated agency responses. No live
 government submission.` In Q&A, the honest line is that the demo proves the user journey and
 rule transparency, not completed government integration.
