@@ -87,12 +87,13 @@ vote.** Every word below is load-bearing; cut rather than add.
 > **They are connected. They are still the least likely to transact. The barrier is the process,
 > not the device.**
 
-**If #5 happens, add one line only**, using a permitted sentence shape from
-`../research/user-insight-bereavement.md`:
+**Add this line, from `../research/documented-accounts-bereavement.md`:**
 
-> "In one recorded conversation, a Malaysian who handled a death described TODO."
+> **One widow collected her PERKESO survivor benefits 23 years late. She was never refused. She
+> was never told.**
 
-Do not widen it. Do not add a second quotation.
+That single line does more for the Target User pillar than a statistic, and it is sourced. Do not
+widen it into a claim about how many families this happens to.
 
 ### 3. Innovation
 

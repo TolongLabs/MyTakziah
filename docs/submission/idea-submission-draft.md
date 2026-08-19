@@ -97,14 +97,38 @@ else.
 **The barrier is the process, not the device.** A simpler digital front door does not fix a
 journey that requires three separate in-person submissions of the same evidence.
 
-### What We Know, And How We Know It
+### What Happens When Nobody Tells You
 
 **We did not conduct primary user research within the competition window.** This section is built
-from the published requirements of the three agencies, recorded in our shared-fields matrix, and
-from national statistics. We state this rather than present desk research as user validation.
+from the published requirements of the three agencies, from national statistics, and from
+documented accounts in Malaysian news reporting. We state this rather than present desk research
+as user validation.
 
-TODO: if the team completes one recorded conversation (#5), add **one** sentence here using a
-permitted shape from `../research/user-insight-bereavement.md`, and nothing wider.
+**Documented accounts show survivors collecting death benefits two decades after the death.** In
+one reported case, a widow in Kuching collected her PERKESO survivor benefits almost 23 years
+after her husband died, and began receiving a lifetime monthly pension. She had never been
+denied them. She did not know she was eligible until her sister heard about it at a community
+seminar.
+
+A PERKESO deputy director, quoted by Bernama, put the gap plainly: _"We only hope that Socso
+contributors and the beneficiaries are aware of their rights and would contact us immediately in
+the event of death."_
+
+**The failure mode is not rejection. It is that nobody tells the family, and the family has no way
+to check.**
+
+`[ASSUMPTION]` These are individual reported cases. Journalism selects for the remarkable, so a
+23-year delay is reported precisely because it is unusual. **We do not claim to know how common
+this is**, and no Malaysian measurement of it exists.
+
+### How Fragmented The Journey Officially Is
+
+This is not our characterisation. The Malaysian government's own MyGovernment portal, in its
+guidance on dealing with a death, names **JPN, the Ministry of Health, PDRM, DBKL, Malaysian
+embassies, the High Court and State Zakat Boards**, and sets separate deadlines including **six
+months** for the EPF death benefit and **twelve months** for funeral assistance.
+
+**A grieving family is expected to hold all of that in their head, in the first weeks.**
 
 ### What The User Needs
 
