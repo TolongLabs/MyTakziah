@@ -150,14 +150,6 @@ export const AGENCY_PAYLOADS: Record<Agency, { form: string; receives: string[] 
   },
 };
 
-/* Status vocabulary. "Approved" is deliberately absent and must stay absent. */
-export const TIMELINE_STATES = [
-  "Prepared",
-  "Submitted",
-  "Receipted",
-  "In Review by Agency",
-] as const;
-
 /* Illustrative values for the "Fill This In for Me" shortcut. A fictional
    composite family, matching the verification record on frame 1. Nobody should
    have to type a MyKad number to see the point of the demo. */

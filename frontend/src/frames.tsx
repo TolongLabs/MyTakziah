@@ -1,4 +1,13 @@
-import { ArrowRight, Check, Clock, ExternalLink, FileText, Lock, Wand2 } from "lucide-react";
+import {
+  ArrowRight,
+  Check,
+  Clock,
+  ExternalLink,
+  FileText,
+  Lock,
+  RotateCcw,
+  Wand2,
+} from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -13,7 +22,6 @@ import {
   ENTITLEMENTS,
   FIELD_GROUPS,
   SAMPLE_VALUES,
-  TIMELINE_STATES,
   type Agency,
 } from "@/data";
 
@@ -377,7 +385,45 @@ export function FrameConsent({
 
 /* Frame 5. Drafts stay drafts. The status vocabulary has no "approved" in it,
    because the agency has not decided anything yet. */
-export function FrameTimeline({ consents }: { consents: Record<Agency, boolean> }) {
+export function FrameTimeline({
+  consents,
+  onRestart,
+  onAbout,
+}: {
+  consents: Record<Agency, boolean>;
+  onRestart: () => void;
+  onAbout: () => void;
+}) {
+  const sent = AGENCIES.filter((a) => consents[a]);
+  const waiting = AGENCIES.filter((a) => !consents[a]);
+  const waitingList = new Intl.ListFormat("en-GB", { type: "conjunction" }).format(waiting);
+
+  /* One merged stream, not three. The whole claim of this frame is that a
+     family currently has to chase three agencies separately with no single
+     view, so rendering three parallel progress bars would say the opposite of
+     the card's own title. */
+  const events: { date: string; label: string; actor: string; done: boolean }[] = [
+    { date: "14 Aug", label: "Death verified", actor: "Hospital Kuala Lumpur", done: true },
+    { date: "15 Aug", label: "Evidence provided once", actor: "You", done: true },
+    ...sent.flatMap((a) => [
+      { date: "15 Aug", label: `Consent given to ${a}`, actor: "You", done: true },
+      { date: "15 Aug", label: `Submitted to ${a}`, actor: "MyTakziah", done: true },
+      { date: "15 Aug", label: `Receipted by ${a}`, actor: a as string, done: true },
+    ]),
+    ...sent.map((a) => ({
+      date: "Now",
+      label: `In review by ${a}`,
+      actor: `${a} decides`,
+      done: false,
+    })),
+    ...waiting.map((a) => ({
+      date: "Waiting",
+      label: `${a} has not been sent anything`,
+      actor: "Awaiting your consent",
+      done: false,
+    })),
+  ];
+
   return (
     <div className="mx-auto max-w-3xl">
       <Badge variant="secondary">Step 5</Badge>
@@ -388,14 +434,16 @@ export function FrameTimeline({ consents }: { consents: Record<Agency, boolean> 
 
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
         {AGENCIES.map((a) => (
-          <Card key={a}>
+          <Card className="flex flex-col" key={a}>
             <CardHeader>
               <FileText className="size-5 text-muted-foreground" />
               <CardTitle className="mt-2 text-base">{AGENCY_PAYLOADS[a].form}</CardTitle>
             </CardHeader>
-            <CardContent>
-              <span className="inline-block rounded border border-dashed px-2 py-1 text-xs font-medium tracking-wide text-muted-foreground">
-                DRAFT, NOT SUBMITTED
+            {/* Pushed to the bottom left of the card, so the three badges line
+                up across the row whatever the form name wraps to. */}
+            <CardContent className="mt-auto flex">
+              <span className="rounded border border-dashed px-2 py-1 text-xs font-medium tracking-wide text-muted-foreground">
+                {consents[a] ? "DRAFT, SUBMITTED" : "DRAFT, NOT SUBMITTED"}
               </span>
             </CardContent>
           </Card>
@@ -405,41 +453,93 @@ export function FrameTimeline({ consents }: { consents: Record<Agency, boolean> 
       <Card className="mt-8">
         <CardHeader>
           <CardTitle className="text-base">One Status, Across All Three</CardTitle>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Today this lives in three places and none of them talk to each other. Here it is as one
+            list, in the order it happened.
+          </p>
         </CardHeader>
         <CardContent>
-          <ol className="space-y-4">
-            {AGENCIES.map((a) => {
-              const reached = consents[a] ? 2 : 0;
-              return (
-                <li key={a}>
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="font-medium">{a}</span>
-                    <span className="text-sm text-muted-foreground">
-                      {consents[a] ? TIMELINE_STATES[2] : TIMELINE_STATES[0]}
-                    </span>
-                  </div>
-                  <div className="mt-2 flex gap-1.5">
-                    {TIMELINE_STATES.map((s, i) => (
-                      <span
-                        key={s}
-                        className={`h-1.5 flex-1 rounded-full ${
-                          i <= reached ? "bg-primary" : "bg-border"
-                        }`}
-                        title={s}
-                      />
-                    ))}
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
+          <ol className="space-y-0">
+            {events.map((e, i) => (
+              <li className="flex gap-4" key={`${e.label}-${i}`}>
+                <span className="w-16 shrink-0 pt-3 text-xs text-muted-foreground">{e.date}</span>
 
-          <p className="mt-6 border-t pt-4 text-sm text-muted-foreground">
-            The agency decides. MyTakziah prepares the claim, submits it with your consent, and
-            tracks it. No status here means a claim has been granted.
+                {/* The rail: a dot per event, joined by a line, so the whole
+                    thing reads as one thread rather than as separate rows. */}
+                <span className="relative flex w-4 shrink-0 justify-center">
+                  {i !== events.length - 1 && (
+                    <span className="absolute top-5 bottom-0 w-px bg-border" />
+                  )}
+                  <span
+                    className={`relative mt-4 size-2.5 rounded-full ${
+                      e.done ? "bg-primary" : "bg-border"
+                    }`}
+                  />
+                </span>
+
+                <span className="flex-1 py-3">
+                  <span
+                    className={`block text-sm ${e.done ? "font-medium" : "text-muted-foreground"}`}
+                  >
+                    {e.label}
+                  </span>
+                  <span className="block text-xs text-muted-foreground">{e.actor}</span>
+                </span>
+              </li>
+            ))}
+          </ol>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-5">
+        <CardHeader>
+          <CardTitle className="text-base">What Happens Next</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4 text-sm">
+          <p>
+            <span className="font-medium">Nothing, from you.</span>{" "}
+            <span className="text-muted-foreground">
+              Each agency decides in its own time. MyTakziah watches the deadlines and tells you
+              when a decision arrives, so nobody has to remember which office to ring.
+            </span>
+          </p>
+
+          <div className="flex items-start gap-3 rounded-[var(--radius-control)] bg-muted p-3">
+            <Clock aria-hidden className="mt-0.5 size-4 shrink-0 text-primary" />
+            <p>
+              <span className="font-medium">The One Date That Matters. </span>
+              <span className="text-muted-foreground">
+                The EPF Death Assistance window closes six months after the death, on 14 February
+                2027. It is the only family deadline we could verify, which is why it leads.
+              </span>
+            </p>
+          </div>
+
+          {waiting.length > 0 && (
+            <p className="text-muted-foreground">
+              <span className="font-medium text-foreground">
+                {waitingList} {waiting.length === 1 ? "has" : "have"} not been sent anything.{" "}
+              </span>
+              Consent was never all or nothing. You can go back and give it, or leave it, and the
+              rest still proceeds.
+            </p>
+          )}
+
+          <p className="border-t pt-4 text-muted-foreground">
+            No status in this demo means a claim has been granted. The agency decides. MyTakziah
+            prepares, submits with your consent, and tracks.
           </p>
         </CardContent>
       </Card>
+
+      <div className="mt-8 flex flex-wrap gap-3">
+        <Button onClick={onRestart} size="lg">
+          <RotateCcw className="size-4" /> Walk Through It Again
+        </Button>
+        <Button onClick={onAbout} size="lg" variant="outline">
+          What This Demo Is, and Is Not <ArrowRight className="size-4" />
+        </Button>
+      </div>
     </div>
   );
 }

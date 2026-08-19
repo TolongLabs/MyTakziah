@@ -336,7 +336,13 @@ export function SiteFooter({ onAbout }: { onAbout: () => void }) {
     <footer className="site-footer" ref={footer}>
       <div className="mx-auto flex h-full max-w-6xl flex-col items-end justify-center gap-2 px-6 py-10 text-right">
         <span className="flex items-center gap-3">
-          <img alt="" className="size-10" src="/logo-mark.png" />
+          <img
+            alt=""
+            /* The mark is ochre and so is the footer. Painted to match the
+               footer's own foreground: white on light, ink on dark. */
+            className="size-10 brightness-0 invert dark:invert-0"
+            src="/logo-mark.png"
+          />
           <span className="font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight">
             MyTakziah
           </span>

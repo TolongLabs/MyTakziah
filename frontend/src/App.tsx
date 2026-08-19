@@ -116,7 +116,13 @@ export default function App() {
               {step === 3 && (
                 <FrameConsent consents={consents} onNext={advance} setConsents={setConsents} />
               )}
-              {step === 4 && <FrameTimeline consents={consents} />}
+              {step === 4 && (
+                <FrameTimeline
+                  consents={consents}
+                  onAbout={() => setAbout(true)}
+                  onRestart={() => setStep(0)}
+                />
+              )}
             </>
           )}
         </main>
