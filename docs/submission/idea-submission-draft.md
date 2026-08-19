@@ -24,23 +24,186 @@ TODO: four member names, universities, contact
 
 ## 1. The Problem
 
-TODO: #7. Lead with the shared-fields matrix. Frame as administrative burden on a grieving
-family, never as death itself.
+### One Death Starts Three Separate Paper Trails
+
+When someone dies in Malaysia, the surviving family does not deal with "the government". It
+deals with **Jabatan Pendaftaran Negara, KWSP and PERKESO, separately**, each with its own form,
+its own counter and its own document list.
+
+| Demanded of the family       | JPN | KWSP | PERKESO |
+| ---------------------------- | :-: | :--: | :-----: |
+| Identity of the deceased     | Yes | Yes  |   Yes   |
+| Identity of the claimant     | Yes | Yes  |   Yes   |
+| Proof of the death           | Yes | Yes  |   Yes   |
+| Relationship to the deceased |  -  | Yes  |   Yes   |
+| Where to pay the money       |  -  | Yes  |   Yes   |
+
+Three agencies. Three different forms: NRD.LM02, KWSP 9KM (AHL), and Borang 34 or Borang 24 and 26. **The same core information, demanded again each time.**
+
+### It Is Not Only Repetition. It Is Repetition In Person.
+
+JPN requires attendance at a registration office with original documents. PERKESO's claim
+checklist states the requirement in capitals: the applicant must attend, bringing the original
+documents, when submitting the claim.
+
+**A survivor makes at least two mandatory in-person trips, carrying original documents, to two
+different agencies, to prove the same death.**
+
+### The Burden Grows As The Family Shape Departs From The Standard
+
+PERKESO's relationship evidence is tiered. A family that does not fit the spouse-and-children
+shape must produce documents about other people: parents' identity documents and siblings' birth
+certificates, or at the furthest tier, the parents' death certificates and birth certificates
+plus the grandparents' identity documents.
+
+**The further a survivor sits from the standard family shape, the more documents about more
+people they must assemble, at exactly the moment they are least able to.**
+
+### Scale And Urgency
+
+**198,992 deaths were registered in Malaysia in 2024.** Each one begins this sequence.
+
+One deadline sits on the family and is verified: **an application for EPF Death Withdrawal must
+be received within six months of the death**, or the RM2,500 Death Assistance is lost.
+
+`[NEEDS SOURCE]` No Malaysian measurement exists of how long this administration takes, or how
+many claims are missed. We do not claim a figure for either. The repetition above is documented
+from the agencies' own published requirements, and it is enough.
+
+### The Problem In One Sentence
+
+**A family should not have to act as systems integrator for the government while grieving.**
+
+---
 
 ## 2. Target User
 
-TODO: #7. If #5 does not happen, use the fallback disclosure in
-`../research/interview-guide-bereavement.md`, which is pre-written and safe to use as-is.
+### Who
+
+**The surviving family member who administers the death**, most often an older spouse. The median
+age at death in Malaysia was **69.0 years** in 2024, and the largest single age band was 70 to 74.
+
+### They Are Not Offline. That Is The Point.
+
+| Measure                                       | Aged 60 and Over |              All Individuals |
+| --------------------------------------------- | ---------------: | ---------------------------: |
+| Use the internet                              |            91.6% | Above 90% in every age group |
+| Interact with government organisations online |            33.6% |                        38.9% |
+
+Among Malaysians who use the internet, those aged 60 and over are **the least likely age group to
+deal with government online**, despite being connected at essentially the same rate as everyone
+else.
+
+**The barrier is the process, not the device.** A simpler digital front door does not fix a
+journey that requires three separate in-person submissions of the same evidence.
+
+### What We Know, And How We Know It
+
+**We did not conduct primary user research within the competition window.** This section is built
+from the published requirements of the three agencies, recorded in our shared-fields matrix, and
+from national statistics. We state this rather than present desk research as user validation.
+
+TODO: if the team completes one recorded conversation (#5), add **one** sentence here using a
+permitted shape from `../research/user-insight-bereavement.md`, and nothing wider.
+
+### What The User Needs
+
+1. To give each piece of evidence **once**.
+2. To be told **which deadline comes first**, not which benefit is largest.
+3. To know **what each agency will receive** before it is sent, and to agree to each separately.
+4. To see **one status**, not three.
+
+---
 
 ## 3. Your Solution
 
-TODO: #7.
+### MyTakziah, In One Line
+
+**One verified death, told to government once.** The family provides its evidence a single time.
+MyTakziah prepares the claims at JPN, KWSP and PERKESO, submits them with the family's consent,
+and tracks them in one timeline.
+
+### What "End To End" Means Here
+
+**Submitted, receipted and tracked. Never automatically approved.**
+
+The agency keeps every eligibility and approval decision. MyTakziah pre-fills forms and cites
+published rules. It does not decide, and it never tells a family it has been approved.
+
+### The Journey
+
+| Step | What Happens                                                                                                                                                        |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | **Start from a verified death.** After a hospital, PDRM or DBKL verification record exists. MyTakziah does not verify a death or trigger a registration itself      |
+| 2    | **Provide once.** Who died, who you are, proof of the death, how you are related, where money should go. Five things, entered a single time                         |
+| 3    | **See what you may be entitled to, ranked by deadline.** Every card reads "potentially eligible, confirmation required" and carries a link to the rule it came from |
+| 4    | **Review and consent, per agency.** Separate tabs, each showing exactly what that agency would receive, each with its own explicit consent action                   |
+| 5    | **Drafts and one timeline.** Pre-filled forms, then a single consolidated status view across all three agencies                                                     |
+
+### The Honest Limit, Stated In The Product
+
+**PERKESO eligibility depends on a contribution history that neither the family nor MyTakziah can
+see.** Survivors' Pension requires at least 24 monthly contributions within the 40 months before
+death, or a fractional equivalent. A widow cannot compute that. Neither can we.
+
+So PERKESO can only ever be shown as **potentially eligible, confirmation required**. The same
+discipline applies to the RM2,500 EPF Death Assistance, which KWSP describes as a gesture made at
+its own discretion.
+
+### Deliberately Out Of Scope
+
+Estate distribution, faraid and probate, banks, zakat, and local burial management. These add
+religious, judicial, state and local-authority complexity that the concept does not need in order
+to be useful. **v1 covers Peninsular Malaysia**, with Sabah and Sarawak, whose registration
+procedures differ, named as phase 2.
+
+---
 
 ## 4. Innovation Element
 
-TODO: #7. Must contain the agreed sentence: "A chatbot tells you what to do. MyTakziah does it:
-one death, one set of evidence, three agencies' claims prepared, submitted and tracked under
-published rules the family can check."
+### The Central Innovation
+
+**The once-only principle, applied to a single life event, across agency boundaries.**
+
+Malaysia already has the rails. MyDigital ID provides identity. MyGDX moves data between
+agencies. The Data Sharing Act 2025 gives a legal basis. **What does not exist is a journey.** The
+plumbing is shared; the citizen's experience is not.
+
+### Why This Is Not The MyGOV Chatbot
+
+> **A chatbot tells you what to do. MyTakziah does it: one death, one set of evidence, three
+> agencies' claims prepared, submitted and tracked under published rules the family can check.**
+
+The difference is architectural, not cosmetic:
+
+| A General Government Assistant    | MyTakziah                                   |
+| --------------------------------- | ------------------------------------------- |
+| Generates an answer               | Cites a published rule and pre-fills a form |
+| Covers every service shallowly    | Covers one life event completely            |
+| The model's output is the product | The model never decides eligibility         |
+| You still fill the forms          | The forms arrive filled, for your consent   |
+
+### Why This Is Not The UK's Tell Us Once
+
+Tell Us Once is the closest international analogue, and the distinction is the whole idea.
+**Tell Us Once notifies agencies that a death has occurred. MyTakziah claims.** Notification stops
+a family being asked again. It does not put money in their hands, and it does not protect a
+deadline.
+
+### The Four Design Choices That Carry It
+
+1. **Deterministic, published, cited rules.** Roughly a dozen conditions across three agencies,
+   every one traceable to a government page or form. Provenance is visible to the user.
+2. **Ranked by deadline, not by value.** The six-month EPF window outranks a larger benefit with
+   no deadline. No existing service does this.
+3. **Consent per agency, granted separately.** The family sees exactly what each agency receives.
+4. **Drafts, never auto-approval.** If the system is wrong, the cost is a correction, not a
+   family's money.
+
+### Why It Matters
+
+The innovation is not a new technology. It is **refusing to make a grieving family the integration
+layer** between three institutions that already share infrastructure with each other.
 
 ---
 
