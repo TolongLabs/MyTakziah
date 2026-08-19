@@ -121,6 +121,7 @@ export default function App() {
                   consents={consents}
                   onAbout={() => setAbout(true)}
                   onRestart={() => setStep(0)}
+                  values={values}
                 />
               )}
             </>

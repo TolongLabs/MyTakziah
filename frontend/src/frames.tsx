@@ -9,6 +9,8 @@ import {
   Wand2,
 } from "lucide-react";
 
+import { useState } from "react";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -16,6 +18,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { DraftDialog } from "@/draft";
 import {
   AGENCIES,
   AGENCY_PAYLOADS,
@@ -387,13 +390,16 @@ export function FrameConsent({
    because the agency has not decided anything yet. */
 export function FrameTimeline({
   consents,
+  values,
   onRestart,
   onAbout,
 }: {
   consents: Record<Agency, boolean>;
+  values: Record<string, string>;
   onRestart: () => void;
   onAbout: () => void;
 }) {
+  const [open, setOpen] = useState<Agency | null>(null);
   const sent = AGENCIES.filter((a) => consents[a]);
   const waiting = AGENCIES.filter((a) => !consents[a]);
   const waitingList = new Intl.ListFormat("en-GB", { type: "conjunction" }).format(waiting);
@@ -411,9 +417,9 @@ export function FrameTimeline({
       { date: "15 Aug", label: `Receipted by ${a}`, actor: a as string, done: true },
     ]),
     ...sent.map((a) => ({
-      date: "Now",
-      label: `In review by ${a}`,
-      actor: `${a} decides`,
+      date: "Next",
+      label: `${a} is waiting for your supporting documents`,
+      actor: "Only then does it decide",
       done: false,
     })),
     ...waiting.map((a) => ({
@@ -434,17 +440,31 @@ export function FrameTimeline({
 
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
         {AGENCIES.map((a) => (
-          <Card className="flex flex-col" key={a}>
+          <Card
+            aria-label={`View the draft for ${a}`}
+            className="flex cursor-pointer flex-col text-left transition-colors duration-150 hover:border-primary"
+            key={a}
+            onClick={() => setOpen(a)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setOpen(a);
+              }
+            }}
+          >
             <CardHeader>
               <FileText className="size-5 text-muted-foreground" />
               <CardTitle className="mt-2 text-base">{AGENCY_PAYLOADS[a].form}</CardTitle>
             </CardHeader>
             {/* Pushed to the bottom left of the card, so the three badges line
                 up across the row whatever the form name wraps to. */}
-            <CardContent className="mt-auto flex">
+            <CardContent className="mt-auto flex items-center justify-between gap-3">
               <span className="rounded border border-dashed px-2 py-1 text-xs font-medium tracking-wide text-muted-foreground">
                 {consents[a] ? "DRAFT, SUBMITTED" : "DRAFT, NOT SUBMITTED"}
               </span>
+              <span className="text-xs font-medium text-primary">View draft</span>
             </CardContent>
           </Card>
         ))}
@@ -498,9 +518,16 @@ export function FrameTimeline({
           </CardHeader>
           <CardContent className="space-y-4 text-sm">
             <p>
-              <span className="font-medium">Nothing, from you. </span>
+              <span className="font-medium">Bring what each agency still asks for. </span>
               <span className="text-muted-foreground">
-                MyTakziah watches the deadlines and tells you when an agency decides.
+                Open any draft above to see the list. MyTakziah sent the claim, not the documents.
+              </span>
+            </p>
+
+            <p>
+              <span className="font-medium">Then nothing, from you. </span>
+              <span className="text-muted-foreground">
+                It watches the deadlines and tells you when an agency decides.
               </span>
             </p>
 
@@ -530,6 +557,13 @@ export function FrameTimeline({
           </CardContent>
         </Card>
       </div>
+
+      <DraftDialog
+        agency={open}
+        onClose={() => setOpen(null)}
+        submitted={open ? consents[open] : false}
+        values={values}
+      />
 
       <div className="mt-8 flex flex-wrap gap-3">
         <Button onClick={onRestart} size="lg">
