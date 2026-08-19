@@ -425,7 +425,7 @@ export function FrameTimeline({
   ];
 
   return (
-    <div className="mx-auto max-w-3xl">
+    <div className="mx-auto max-w-6xl">
       <Badge variant="secondary">Step 5</Badge>
       <h2 className="mt-3 text-3xl font-semibold tracking-tight">Drafts, and One Timeline</h2>
       <p className="mt-3 text-muted-foreground">
@@ -450,87 +450,86 @@ export function FrameTimeline({
         ))}
       </div>
 
-      <Card className="mt-8">
-        <CardHeader>
-          <CardTitle className="text-base">One Status, Across All Three</CardTitle>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Today this lives in three places and none of them talk to each other. Here it is as one
-            list, in the order it happened.
-          </p>
-        </CardHeader>
-        <CardContent>
-          <ol className="space-y-0">
-            {events.map((e, i) => (
-              <li className="flex gap-4" key={`${e.label}-${i}`}>
-                <span className="w-16 shrink-0 pt-3 text-xs text-muted-foreground">{e.date}</span>
+      <div className="mt-8 grid items-start gap-5 lg:grid-cols-[1.5fr_1fr]">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">One Status, Across All Three</CardTitle>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Today this lives in three places and none of them talk to each other. Here it is as
+              one list, in the order it happened.
+            </p>
+          </CardHeader>
+          <CardContent>
+            <ol className="space-y-0">
+              {events.map((e, i) => (
+                <li className="flex gap-4" key={`${e.label}-${i}`}>
+                  <span className="w-16 shrink-0 pt-3 text-xs text-muted-foreground">{e.date}</span>
 
-                {/* The rail: a dot per event, joined by a line, so the whole
+                  {/* The rail: a dot per event, joined by a line, so the whole
                     thing reads as one thread rather than as separate rows. */}
-                <span className="relative flex w-4 shrink-0 justify-center">
-                  {i !== events.length - 1 && (
-                    <span className="absolute top-5 bottom-0 w-px bg-border" />
-                  )}
-                  <span
-                    className={`relative mt-4 size-2.5 rounded-full ${
-                      e.done ? "bg-primary" : "bg-border"
-                    }`}
-                  />
-                </span>
-
-                <span className="flex-1 py-3">
-                  <span
-                    className={`block text-sm ${e.done ? "font-medium" : "text-muted-foreground"}`}
-                  >
-                    {e.label}
+                  <span className="relative flex w-4 shrink-0 justify-center">
+                    {i !== events.length - 1 && (
+                      <span className="absolute top-5 bottom-0 w-px bg-border" />
+                    )}
+                    <span
+                      className={`relative mt-4 size-2.5 rounded-full ${
+                        e.done ? "bg-primary" : "bg-border"
+                      }`}
+                    />
                   </span>
-                  <span className="block text-xs text-muted-foreground">{e.actor}</span>
-                </span>
-              </li>
-            ))}
-          </ol>
-        </CardContent>
-      </Card>
 
-      <Card className="mt-5">
-        <CardHeader>
-          <CardTitle className="text-base">What Happens Next</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 text-sm">
-          <p>
-            <span className="font-medium">Nothing, from you.</span>{" "}
-            <span className="text-muted-foreground">
-              Each agency decides in its own time. MyTakziah watches the deadlines and tells you
-              when a decision arrives, so nobody has to remember which office to ring.
-            </span>
-          </p>
+                  <span className="flex-1 py-3">
+                    <span
+                      className={`block text-sm ${e.done ? "font-medium" : "text-muted-foreground"}`}
+                    >
+                      {e.label}
+                    </span>
+                    <span className="block text-xs text-muted-foreground">{e.actor}</span>
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </CardContent>
+        </Card>
 
-          <div className="flex items-start gap-3 rounded-[var(--radius-control)] bg-muted p-3">
-            <Clock aria-hidden className="mt-0.5 size-4 shrink-0 text-primary" />
+        <Card className="lg:sticky lg:top-6">
+          <CardHeader>
+            <CardTitle className="text-base">What Happens Next</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4 text-sm">
             <p>
-              <span className="font-medium">The One Date That Matters. </span>
+              <span className="font-medium">Nothing, from you. </span>
               <span className="text-muted-foreground">
-                The EPF Death Assistance window closes six months after the death, on 14 February
-                2027. It is the only family deadline we could verify, which is why it leads.
+                MyTakziah watches the deadlines and tells you when an agency decides.
               </span>
             </p>
-          </div>
 
-          {waiting.length > 0 && (
-            <p className="text-muted-foreground">
-              <span className="font-medium text-foreground">
-                {waitingList} {waiting.length === 1 ? "has" : "have"} not been sent anything.{" "}
-              </span>
-              Consent was never all or nothing. You can go back and give it, or leave it, and the
-              rest still proceeds.
+            <div className="flex items-start gap-3 rounded-[var(--radius-control)] bg-muted p-3">
+              <Clock aria-hidden className="mt-0.5 size-4 shrink-0 text-primary" />
+              <p>
+                <span className="font-medium">14 February 2027. </span>
+                <span className="text-muted-foreground">
+                  The EPF window closes six months after the death. The only family deadline we
+                  could verify.
+                </span>
+              </p>
+            </div>
+
+            {waiting.length > 0 && (
+              <p>
+                <span className="font-medium">{waitingList} not sent. </span>
+                <span className="text-muted-foreground">
+                  Consent is per agency. Give it later, or leave it.
+                </span>
+              </p>
+            )}
+
+            <p className="border-t pt-4 text-muted-foreground">
+              Nothing here is a granted claim. The agency decides.
             </p>
-          )}
-
-          <p className="border-t pt-4 text-muted-foreground">
-            No status in this demo means a claim has been granted. The agency decides. MyTakziah
-            prepares, submits with your consent, and tracks.
-          </p>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </div>
 
       <div className="mt-8 flex flex-wrap gap-3">
         <Button onClick={onRestart} size="lg">
