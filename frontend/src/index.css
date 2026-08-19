@@ -22,6 +22,23 @@
   --primary-foreground: oklch(0.99 0.005 85);
   --accent: oklch(0.93 0.035 70);
   --accent-foreground: oklch(0.4 0.11 62);
+
+  /* Chrome material and the layers it sits on. */
+  --glass: oklch(0.995 0.006 85 / 0.72);
+  --glass-line: oklch(0.89 0.016 80 / 0.85);
+  --scrim-fill: oklch(0.24 0.018 60 / 0.26);
+  --grid-dot: oklch(0.24 0.018 60 / 0.07);
+
+  --radius-float: 1.25rem;
+  --radius-control: 0.55rem;
+
+  --footer-h: 13rem;
+
+  --z-base: 0;
+  --z-page: 10;
+  --z-scrim: 20;
+  --z-island: 30;
+  --z-banner: 40;
 }
 
 .dark {
@@ -37,6 +54,11 @@
   --primary-foreground: oklch(0.19 0.012 60);
   --accent: oklch(0.32 0.05 62);
   --accent-foreground: oklch(0.9 0.04 70);
+
+  --glass: oklch(0.24 0.014 60 / 0.7);
+  --glass-line: oklch(0.34 0.016 65 / 0.85);
+  --scrim-fill: oklch(0.12 0.01 60 / 0.45);
+  --grid-dot: oklch(0.96 0.008 85 / 0.06);
 }
 
 @theme inline {
@@ -68,5 +90,106 @@
     color: var(--color-foreground);
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
+  }
+}
+
+@layer components {
+  /*
+   * Chrome material, for the islands and nothing else. A translucent surface's
+   * contrast depends on whatever scrolls behind it, so it is never used for
+   * content the reader has to trust: not a rule card, not a source link.
+   *
+   * The -webkit- prefix comes FIRST and the standard property LAST. Written the
+   * other way round a minifier treats the pair as one property declared twice,
+   * keeps the last, and ships the prefixed one alone. Dev looks perfect and the
+   * production build silently degrades to flat translucency. Do not reorder.
+   */
+  .glass {
+    background-color: var(--glass);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    backdrop-filter: blur(20px) saturate(150%);
+    border: 1px solid var(--glass-line);
+    box-shadow:
+      0 1px 2px oklch(0 0 0 / 0.04),
+      0 8px 24px -8px oklch(0 0 0 / 0.12);
+  }
+
+  /*
+   * The paper the demo is printed on, and load-bearing for the glass.
+   * backdrop-filter blurs what is behind it, so over a flat fill it has nothing
+   * to work on and the islands read as merely translucent however large the
+   * radius. The grid gives the blur something to smear.
+   */
+  .dot-grid {
+    background-color: var(--background);
+    background-image: radial-gradient(circle at 1px 1px, var(--grid-dot) 1px, transparent 0);
+    background-size: 18px 18px;
+  }
+
+  /* One fixed scrim carries the dim for the whole app. Filtering the content
+     subtree instead janks on every hover. */
+  .scrim {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-scrim);
+    background-color: var(--scrim-fill);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .scrim[data-visible="true"] {
+    opacity: 1;
+  }
+
+  /*
+   * Two layers, not one column. The footer is fixed at the bottom of the
+   * viewport for the whole session and the page is an opaque sheet lying on top
+   * of it. Reaching the end uncovers something that was always there rather
+   * than scrolling a panel into view.
+   */
+  .reveal-page {
+    position: relative;
+    z-index: var(--z-page);
+    min-height: 100vh;
+    margin-bottom: var(--footer-h);
+    /* Opaque, and that is the whole mechanism. A translucent page would show
+       the footer through itself from the first paint. */
+  }
+
+  .site-footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: var(--z-base);
+    height: var(--footer-h);
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  /*
+   * Below md the reveal is switched off rather than resized. Stacking the
+   * columns roughly doubles the footer, so holding the effect on a phone
+   * reserves most of a viewport as dead scroll to uncover what a normal footer
+   * shows for free.
+   */
+  @media (width < 48rem) {
+    .reveal-page {
+      margin-bottom: 0;
+    }
+
+    .site-footer {
+      position: static;
+      height: auto;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scrim {
+      transition: none;
+    }
   }
 }

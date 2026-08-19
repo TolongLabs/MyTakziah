@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { ClipboardList, FileCheck, ListChecks, ShieldCheck, Timer } from "lucide-react";
+import { useCallback, useState } from "react";
 
-import { Button } from "@/components/ui/button";
-import { DEMO_BANNER, type Agency } from "@/data";
+import { type Agency } from "@/data";
 import {
   FrameConsent,
   FrameEntitlements,
@@ -9,11 +9,39 @@ import {
   FrameTimeline,
   FrameVerified,
 } from "@/frames";
+import {
+  ActionIsland,
+  DemoBanner,
+  MobileDock,
+  SidebarIsland,
+  SiteFooter,
+  type Step,
+} from "@/shell";
 
-const STEPS = ["Verified", "Provide once", "Entitlements", "Consent", "Timeline"];
+const STEPS: Step[] = [
+  { label: "Verified", icon: FileCheck },
+  { label: "Provide once", icon: ClipboardList },
+  { label: "Entitlements", icon: ListChecks },
+  { label: "Consent", icon: ShieldCheck },
+  { label: "Timeline", icon: Timer },
+];
+
+/* The step lives in the hash so a single frame can be linked directly.
+   Frame 2 is the one worth sending anyone, and "open the demo then click twice"
+   is a worse instruction than a URL. */
+function stepFromHash() {
+  const n = Number.parseInt(globalThis.location?.hash.replace("#step", "") ?? "", 10);
+  return Number.isNaN(n) ? 0 : Math.min(Math.max(n - 1, 0), 4);
+}
 
 export default function App() {
-  const [step, setStep] = useState(0);
+  const [step, setStepState] = useState(stepFromHash);
+  const [dimmed, setDimmed] = useState(false);
+
+  const setStep = useCallback((i: number) => {
+    setStepState(i);
+    globalThis.history.replaceState(null, "", `#step${i + 1}`);
+  }, []);
   const [values, setValues] = useState<Record<string, string>>({});
   const [consents, setConsents] = useState<Record<Agency, boolean>>({
     JPN: false,
@@ -21,60 +49,44 @@ export default function App() {
     PERKESO: false,
   });
 
-  const next = () => setStep((s) => Math.min(s + 1, STEPS.length - 1));
+  const next = () => setStep(Math.min(step + 1, STEPS.length - 1));
+  const onExpandedChange = useCallback((expanded: boolean) => setDimmed(expanded), []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Never dismissible. Every screen, every time. */}
-      <div className="sticky top-0 z-50 bg-foreground px-4 py-2 text-center text-xs font-medium tracking-wide text-background">
-        {DEMO_BANNER}
+    <div>
+      <div className="reveal-page dot-grid">
+        <DemoBanner />
+
+        <SidebarIsland
+          onExpandedChange={onExpandedChange}
+          onSelect={setStep}
+          step={step}
+          steps={STEPS}
+        />
+
+        {/* Outside the content tree: the scrim has to cover the islands as well
+            as the page, so it cannot be a child of the thing it is dimming. */}
+        <div aria-hidden className="scrim" data-visible={dimmed} />
+
+        <ActionIsland onRestart={() => setStep(0)} step={step} total={STEPS.length} />
+        <MobileDock onSelect={setStep} step={step} steps={STEPS} />
+
+        {/* On md+ the left offset clears the collapsed island and never reflows
+            when it expands: content shifting under a hover would be worse than
+            the dimming it replaces. Below md the dock is at the bottom, so the
+            padding moves there to clear it instead. */}
+        <main className="px-4 pt-16 pb-32 md:py-24 md:pr-6 md:pl-24">
+          {step === 0 && <FrameVerified onNext={next} />}
+          {step === 1 && <FrameProvideOnce onNext={next} setValues={setValues} values={values} />}
+          {step === 2 && <FrameEntitlements onNext={next} />}
+          {step === 3 && (
+            <FrameConsent consents={consents} onNext={next} setConsents={setConsents} />
+          )}
+          {step === 4 && <FrameTimeline consents={consents} />}
+        </main>
       </div>
 
-      <header className="border-b">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
-          <div>
-            <p className="text-lg font-semibold tracking-tight">MyTakziah</p>
-            <p className="text-sm text-muted-foreground">One death. Tell government once.</p>
-          </div>
-          <nav className="flex flex-wrap gap-1">
-            {STEPS.map((label, i) => (
-              <button
-                key={label}
-                className={`rounded-md px-2.5 py-1 text-sm transition-colors ${
-                  i === step
-                    ? "bg-accent font-medium text-accent-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-                onClick={() => setStep(i)}
-                type="button"
-              >
-                {i + 1}. {label}
-              </button>
-            ))}
-          </nav>
-        </div>
-      </header>
-
-      <main className="px-6 py-12">
-        {step === 0 && <FrameVerified onNext={next} />}
-        {step === 1 && <FrameProvideOnce onNext={next} setValues={setValues} values={values} />}
-        {step === 2 && <FrameEntitlements onNext={next} />}
-        {step === 3 && <FrameConsent consents={consents} onNext={next} setConsents={setConsents} />}
-        {step === 4 && <FrameTimeline consents={consents} />}
-      </main>
-
-      <footer className="mx-auto max-w-6xl px-6 pb-12">
-        <p className="border-t pt-6 text-sm text-muted-foreground">
-          Concept demo for the URIIS Student Biz Innov Challenge 2026. Agency responses are
-          simulated. No submission is made to any government system. Rules shown are drawn from
-          published agency pages and cited on screen.
-        </p>
-        {step > 0 && (
-          <Button className="mt-6" onClick={() => setStep(0)} variant="outline">
-            Restart the walkthrough
-          </Button>
-        )}
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
