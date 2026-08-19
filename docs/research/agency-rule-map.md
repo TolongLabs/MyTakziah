@@ -142,6 +142,20 @@ It is payable to the eligible person, or where there is none, to whoever bore th
 
 Whether the qualifying contribution period is met; which scheme applies; the benefit rate; and whether the funeral expenditure evidence is accepted.
 
+### One Channel Already Exists Online
+
+PERKESO's benefit application page directs claimants to Portal LINDUNG FAEDAH,
+https://lindungfaedah.perkeso.gov.my/, to "create an application for the categories below:
+Accident Notice, Occupational Disease Notice, Death Notice".
+
+**A death notice can already be lodged online at one of the three agencies.** This is worth a
+line in Feasibility: the concept is not proposing something no Malaysian agency has attempted,
+it is proposing that the channel one agency already built should be reachable once, alongside
+the other two, from a single journey.
+
+Treat it as precedent and as an integration candidate. It is **not** evidence that a public
+submission or status API exists, and the submission must not imply that it is.
+
 ### The Honest Limit, And Why It Strengthens Us
 
 **Survivors' Pension eligibility depends on a contribution history that neither the family nor MyTakziah can see.** A widow cannot tell you whether her husband had 24 contributions inside the last 40 months. Neither can we.
@@ -196,5 +210,6 @@ Apply these in the PDF, the canvas, the prototype and the video script. One pers
 4. PERKESO, "Employment Injury Scheme (LINDUNG PEKERJA)", https://www.perkeso.gov.my/en/our-services/protection/employment-injury-scheme.html, accessed 2026-08-19. Supports Dependants' Benefit rates, distribution shares, and the Funeral Benefit amount and effective date.
 5. PERKESO, "Invalidity Scheme (LINDUNG PEKERJA)", https://www.perkeso.gov.my/en/our-services/protection/invalidity-scheme.html, accessed 2026-08-19. Supports Survivors' Pension conditions and the full and reduced qualifying periods.
 6. PERKESO, "Senarai Semak Dokumen Permohonan Borang 34, Butiran Notis Dan Tuntutan Faedah", dated 9 December 2024, https://www.perkeso.gov.my/images/borang/2024/091224-SS-DokumenBorang34.pdf, accessed 2026-08-19. Supports the death notice evidence tiers, the funeral receipt condition, submission channels, and PERKESO's stated right to reject late or incomplete applications.
-7. PERKESO, "Senarai Semak Dokumen Tuntutan Faedah Orang Tanggungan dan Pengurusan Mayat", https://www.perkeso.gov.my/images/borang/FOT%20DAN%20FPM/SenaraiSemak_fpm.pdf, accessed 2026-08-19. Supports Borang 24, Borang 26, Borang BKA-1, the sole widow declaration for Muslims, and the in-person original-documents requirement.
-8. MyGovernment, "Funeral Management Assistance (Khairat Kematian) in Malaysia", updated 30 July 2026, https://www.malaysia.gov.my/en/personas/caretakers-to-older-parents/mengurus-kematian-ibu-bapa/funeral-management-assistance-khairat-kematian-in-malaysia, accessed 2026-08-19. Independently corroborates the EPF and PERKESO conditions and amounts.
+7. PERKESO, "Benefit Application", https://www.perkeso.gov.my/en/uncategorised/936-benefit-application.html, accessed 2026-08-19. Supports the counter submission instruction and the Portal LINDUNG FAEDAH online Death Notice channel.
+8. PERKESO, "Senarai Semak Dokumen Tuntutan Faedah Orang Tanggungan dan Pengurusan Mayat", https://www.perkeso.gov.my/images/borang/FOT%20DAN%20FPM/SenaraiSemak_fpm.pdf, accessed 2026-08-19. Supports Borang 24, Borang 26, Borang BKA-1, the sole widow declaration for Muslims, and the in-person original-documents requirement.
+9. MyGovernment, "Funeral Management Assistance (Khairat Kematian) in Malaysia", updated 30 July 2026, https://www.malaysia.gov.my/en/personas/caretakers-to-older-parents/mengurus-kematian-ibu-bapa/funeral-management-assistance-khairat-kematian-in-malaysia, accessed 2026-08-19. Independently corroborates the EPF and PERKESO conditions and amounts.
