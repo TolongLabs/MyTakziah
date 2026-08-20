@@ -56,7 +56,7 @@ no grief photography. Muted palette. A fictional composite family only.
 | ------------- | ------------------------------------------------------------------------------------------ |
 | Heading       | A death has been verified                                                                  |
 | Body          | A verification record exists from a hospital, PDRM or DBKL. MyTakziah begins here          |
-| Record card   | Deceased, fictional composite name. Date of verification. Issuing body. Reference NRD.LM02 |
+| Record card   | Deceased, fictional composite name. Date of verification. Issuing body. Reference JPN.LM02 |
 | Explicit note | MyTakziah does not verify a death and does not register it. JPN registers the death        |
 | Action        | Continue                                                                                   |
 

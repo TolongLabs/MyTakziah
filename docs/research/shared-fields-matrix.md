@@ -31,15 +31,15 @@ Rows are data items. Columns are agencies. **Req** means required, **Cond** mean
 | ---------------------------------------------- | :-----------------------------------------: | :---------------------------------------------: | :----------------------------------------------------------------------------------------------: | :---------------------------------: |
 | Deceased's Identity Document                   |                Req, original                |    Req, copy plus original for verification     |                                     Req, copy front and back                                     |               Yes, 3x               |
 | Claimant Or Informant Identity Document        |           Req, original and copy            |                       Req                       |                                               Req                                                |               Yes, 3x               |
-| Death Register Or Burial Permit NRD.LM02       |               Req, blue copy                |          Consumed as death certificate          |                            Req, copy of certificate or burial permit                             |               Yes, 3x               |
-| Medical Certification Of Cause Of Death        | Cond, hospital deaths, NRD.LM09 or NRD.LM10 |                       No                        |                                     Cond, other claim routes                                     |               Partly                |
+| Death Register Or Burial Permit JPN.LM02       |               Req, blue copy                |          Consumed as death certificate          |                            Req, copy of certificate or burial permit                             |               Yes, 3x               |
+| Medical Certification Of Cause Of Death        | Cond, hospital deaths, JPN.LM09 or JPN.LM10 |                       No                        |                                     Cond, other claim routes                                     |               Partly                |
 | Marriage Certificate                           |                     No                      |             Cond, if member married             |                               Cond, if a widow or widower survives                               |               Yes, 2x               |
 | Claimant's Or Children's Birth Certificate     |                     No                      |                Cond, if required                |                                 Cond, children, siblings by tier                                 |               Yes, 2x               |
 | Deceased's Own Birth Certificate               |                     No                      |            Cond, if member unmarried            |                                       Cond, tiers b and c                                        |               Yes, 2x               |
 | Divorce Certificate Or Proof Of Relation       |                     No                      |            Cond, if member divorced             |                                                No                                                |                 No                  |
 | Parents' Death And Birth Certificates          |                     No                      |                       No                        |                                      Cond, grandparent tier                                      |                 No                  |
 | Recipient's Bank Account Evidence              |                     No                      |                       Req                       |                                               Req                                                |               Yes, 2x               |
-| Agency's Own Claim Form                        |          NRD.LM02, at the counter           |          KWSP 9KM (AHL) plus checklist          |                    Borang 34, or Borang 24 and Borang 26, plus Senarai Semak                     | Three agencies, at least four forms |
+| Agency's Own Claim Form                        |          JPN.LM02, at the counter           |          KWSP 9KM (AHL) plus checklist          |                    Borang 34, or Borang 24 and Borang 26, plus Senarai Semak                     | Three agencies, at least four forms |
 | Declaration Of Responsibility                  |                     No                      | Req, Appendix A Muslims, Appendix B non-Muslims |          Req on the Borang 24 route, Borang Akuan Balu Tunggal for Muslims, Lampiran A           |   Yes, 2x, both religion-specific   |
 | Court, Legal Institution Or Amanah Raya Letter |                     No                      |      Cond, no nomination above thresholds       |                                                No                                                |                 No                  |
 | Receipts For Funeral Expenditure               |                     No                      |                       No                        | Cond, original receipts where there is no next of kin, or claimant outside the close-family list |                 No                  |
@@ -55,12 +55,12 @@ Reproduced from the official pages and forms. Wording is the agency's own.
 
 Documents to be submitted by the informant or next of kin at the NRD office:
 
-1. Copy of Death Register or Burial Permit NRD.LM02 (Pin.1/11), the blue copy.
+1. Copy of Death Register or Burial Permit JPN.LM02 (Pin.1/11), the blue copy.
 2. Identity card or identification document of the deceased, original.
 3. Identity card or identification document of the informant, original and copy.
-4. Medical practitioner's certification of the causes of death, original, Form NRD.LM09 or NRD.LM10 for post-mortem, if the death occurred in hospital.
+4. Medical practitioner's certification of the causes of death, original, Form JPN.LM09 or JPN.LM10 for post-mortem, if the death occurred in hospital.
 
-Form NRD.LM02 is obtained at the NRD counter. There is no fee. Those eligible to collect the death certificate are the deceased's mother or father, husband or wife, children, biological siblings, or the informant recorded in NRD.LM02.
+Form JPN.LM02 is obtained at the JPN counter. There is no fee. Those eligible to collect the death certificate are the deceased's mother or father, husband or wife, children, biological siblings ("adik-beradik kandung"), or the informant recorded in JPN.LM02. (Form codes verified against the Bahasa Malaysia service page on 2026-08-20; the English page renders them as "NRD.LM02" etc., a machine-translation of the department code, not the form's identifier.)
 
 ### KWSP, Death Withdrawal
 
@@ -126,7 +126,7 @@ So the further a survivor sits from the standard spouse-and-children shape, the 
 
 Issue #3 and issue #4 both warn against this, and the matrix confirms the warning was right.
 
-- **Do not claim the three agencies demand an identical document set.** They do not. The forms are entirely different: NRD.LM02, KWSP 9KM (AHL), and Borang 34. The document lists differ in length, in conditionality and in format.
+- **Do not claim the three agencies demand an identical document set.** They do not. The forms are entirely different: JPN.LM02, KWSP 9KM (AHL), and Borang 34. The document lists differ in length, in conditionality and in format.
 - **The defensible claim is repetition of core information.** The deceased's identity, the claimant's identity and the fact of the death are demanded at all three. Relationship and payment destination are demanded at both benefit agencies.
 - **Do not describe this as an integration failure by any named agency.** Each agency's list is reasonable on its own terms. The gap is between them, and that is the point.
 
@@ -143,19 +143,19 @@ This matrix covers **Peninsular Malaysia only**. JPN's death registration proced
 
 ## Open Gaps
 
-- `[NEEDS SOURCE]` The KWSP 9KM (AHL) form itself was not opened, only KWSP's published list of required documents. `kwsp.gov.my` blocks automated retrieval, so the KWSP page was read through the Internet Archive. A team member should open both in a browser and confirm the list is unchanged.
+- `[NEEDS SOURCE]` The KWSP 9KM (AHL) form itself was not opened, only KWSP's published list of required documents. `kwsp.gov.my` blocks automated retrieval, so the KWSP page was read through the Internet Archive. A team member should open both in a browser and confirm the list is unchanged. Re-checked 2026-08-20 (issue #20): `kwsp.gov.my` still returned HTTP 403 and web.archive.org was unreachable by the tools used, so the form fields remain unconfirmed against prototype screen 2.
 - `[NEEDS SOURCE]` Sabah and Sarawak death registration requirements, deliberately out of scope for v1.
 - `[ASSUMPTION]` The Borang 34 checklist dated 9 December 2024 is the current version. It is the version linked from PERKESO's live benefit application page as of the access date.
 
 ## Observation, Team's Call Whether To Use It
 
-JPN's English-language service page is only partly translated. Published instructions to a bereaved informant read, in the original, "Copy Death Register/Burial Permit NRD.LM02 (Pin.1/11) that colour biru" and "Sends copy Death Register / Burial Permit NRD.LM02 (Pin.1/11) colour kelabu to NRD that nearby in masa 7 working days".
+JPN's English-language service page is only partly translated. Published instructions to a bereaved informant read, on the English page, "Copy Death Register/Burial Permit NRD.LM02 (Pin.1/11) that colour biru" and "Sends copy Death Register / Burial Permit NRD.LM02 (Pin.1/11) colour kelabu to NRD that nearby in masa 7 working days". The Bahasa Malaysia original, checked on 2026-08-20, reads cleanly and gives the form code as "JPN.LM02"; the English page has both mistranslated the code to "NRD.LM02" and left phrases such as "colour biru" untranslated.
 
 This is a factual, checkable accessibility observation, and it supports the argument that the burden is in the interface rather than in the policy. It could also read as mocking a government agency, which would cost more than it gains. **Recommendation: do not put it in the PDF or the canvas.** Keep it in reserve as an answer if a judge asks whether the problem is really that bad.
 
 ## Sources
 
-1. Jabatan Pendaftaran Negara, "Ordinary Registration of Death (Peninsular)", page last updated 19 August 2026, https://www.jpn.gov.my/en/services/death/ordinary-registration-of-death-peninsular/, accessed 2026-08-19. Supports the JPN column, both registration methods, eligible collectors and the no-fee statement.
+1. Jabatan Pendaftaran Negara, "Ordinary Registration of Death (Peninsular)", page last updated 19 August 2026, https://www.jpn.gov.my/en/services/death/ordinary-registration-of-death-peninsular/, accessed 2026-08-19. Supports the JPN column, both registration methods, eligible collectors and the no-fee statement. Bahasa Malaysia original, https://www.jpn.gov.my/ms/perkhidmatan/kematian/pendaftaran-biasa-kematian-semenanjung/, accessed 2026-08-20, confirms the document list verbatim and the correct form codes JPN.LM02, JPN.LM09 and JPN.LM10.
 2. Employees Provident Fund, "Death Withdrawal", https://www.kwsp.gov.my/en/member/account-centre/death, accessed 2026-08-19 via the Internet Archive because kwsp.gov.my blocks automated retrieval. Supports the KWSP column and the ten required documents.
 3. PERKESO, "Senarai Semak Dokumen Permohonan Borang 34, Butiran Notis Dan Tuntutan Faedah", dated 9 December 2024, https://www.perkeso.gov.my/images/borang/2024/091224-SS-DokumenBorang34.pdf, accessed 2026-08-19. Supports the PERKESO column, Section D Notis Kematian, the relationship tiers and the submission channels.
 4. PERKESO, "Permohonan Faedah", https://www.perkeso.gov.my/en/uncategorised/932-permohonan-faedah.html, accessed 2026-08-19. Supports the identification of Borang 34 as the form covering Pencen Penakat, and the location of the official checklists.

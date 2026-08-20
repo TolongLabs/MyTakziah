@@ -54,6 +54,8 @@ That is corroborated but not directly verified. The corroboration is strong for 
 
 **Action for a team member, five minutes.** Open `https://www.kwsp.gov.my/documents/d/guest/6-kwsp24_e-performance` in a normal browser, find "Withdrawal By Schemes", read the Death row for 2024, and record it here. Until that is done, treat the 2024 figure as `[NEEDS SOURCE]`.
 
+**Re-checked 2026-08-20 (issue #20).** An automated re-attempt to open that performance document returned HTTP 403, and web.archive.org was not reachable by the tools used. The block persists, so this still needs a human with a normal browser. The verified 2023 fallback stands until then.
+
 **Safe fallback if nobody opens it.** Print the 2023 figures, which are fully verified from a primary source: **85,731 death withdrawals worth RM3.05 billion in 2023**. A verified 2023 number is worth more than an unverified 2024 number.
 
 ## The Base Error On The DOSM Digital Divide Figure

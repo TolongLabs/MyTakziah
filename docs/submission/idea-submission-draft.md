@@ -55,7 +55,7 @@ its own counter and its own document list.
 | Relationship to the deceased |  -  | Yes  |   Yes   |
 | Where to pay the money       |  -  | Yes  |   Yes   |
 
-Three agencies. Three different forms: NRD.LM02, KWSP 9KM (AHL), and Borang 34 or Borang 24 and 26. **The same core information, demanded again each time.**
+Three agencies. Three different forms: JPN.LM02, KWSP 9KM (AHL), and Borang 34 or Borang 24 and 26. **The same core information, demanded again each time.**
 
 ### It Is Not Only Repetition. It Is Repetition In Person.
 

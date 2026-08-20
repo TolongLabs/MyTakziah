@@ -33,7 +33,7 @@ Two further time limits exist but are not the family's to meet, and must not be 
 
 ### Precondition
 
-Registration begins only after a death verification agency, meaning a hospital, PDRM or DBKL, has verified the death and issued the Death Register or Burial Permit NRD.LM02 (Pin.1/11). There are two routes: the verification agency notifies JPN directly, or the next of kin reports the death and carries the permit themselves.
+Registration begins only after a death verification agency, meaning a hospital, PDRM or DBKL, has verified the death and issued the Death Register or Burial Permit JPN.LM02 (Pin.1/11). There are two routes: the verification agency notifies JPN directly, or the next of kin reports the death and carries the permit themselves.
 
 This is why prototype screen 1 starts after verification. **Do not depict MyTakziah verifying a death or triggering a JPN registration automatically.**
 
@@ -41,15 +41,15 @@ This is why prototype screen 1 starts after verification. **Do not depict MyTakz
 
 | Role                                | Basis                                                                                       |
 | ----------------------------------- | ------------------------------------------------------------------------------------------- |
-| Informant                           | The person recorded in the Death Register NRD.LM02 (Pin.1/11)                               |
+| Informant                           | The person recorded in the Death Register JPN.LM02 (Pin.1/11)                               |
 | Next Of Kin                         | May report the death and present at the NRD office                                          |
 | Eligible To Collect The Certificate | Mother or father, husband or wife, children, biological siblings, or the recorded informant |
 
 ### Evidence
 
-**Mandatory:** the blue copy of NRD.LM02 (Pin.1/11); the deceased's identity card or identification document, original; the informant's identity card or identification document, original and copy.
+**Mandatory:** the blue copy of JPN.LM02 (Pin.1/11); the deceased's identity card or identification document, original; the informant's identity card or identification document, original and copy.
 
-**Conditional:** the medical practitioner's certification of the causes of death, original, Form NRD.LM09, or NRD.LM10 where there was a post-mortem, if the death occurred in hospital.
+**Conditional:** the medical practitioner's certification of the causes of death, original, Form JPN.LM09, or JPN.LM10 where there was a post-mortem, if the death occurred in hospital.
 
 ### What JPN Decides
 
@@ -170,7 +170,7 @@ The single table that defines the product boundary.
 
 | Agency  | MyTakziah Can Pre-Fill                                                   | Only The Agency Decides                                                           |
 | ------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------- |
-| JPN     | Particulars already held on NRD.LM02 by the verification agency          | Whether the death is registered, and issuance of the certificate                  |
+| JPN     | Particulars already held on JPN.LM02 by the verification agency          | Whether the death is registered, and issuance of the certificate                  |
 | KWSP    | Form KWSP 9KM (AHL) identity, relationship and bank fields               | Sufficiency of documents, award of the discretionary RM2,500, and payment staging |
 | PERKESO | Borang 24, Borang 26 or Borang 34 identity, relationship and bank fields | Whether the qualifying period is met, which scheme applies, and the benefit rate  |
 
@@ -197,14 +197,28 @@ Apply these in the PDF, the canvas, the prototype and the video script. One pers
 
 ## Open Gaps
 
-- `[NEEDS SOURCE]` The statutory window for ordinary death registration under the Births and Deaths Registration Act 1957. JPN's service page does not state it, and the official Act text could not be retrieved. Search results indicate a three-day ordinary window with a further short delayed-registration period, but that reading came from third-party hosts of the Act and **must not be printed until confirmed** against the official text.
-- `[NEEDS SOURCE]` The PERKESO claim submission deadline. The official checklist states only that PERKESO may reject applications later than "tempoh masa yang ditetapkan", the stipulated period, without quantifying it. A 12-month figure circulates on social media and is not a source.
-- `[NEEDS SOURCE]` The KWSP page lists the without-nomination claimants twice and the two lists differ: one includes siblings, the other does not. Confirm which applies before any screen or table repeats it.
+- `[NEEDS SOURCE]` The statutory window for ordinary death registration under the Births and Deaths Registration Act 1957. JPN's service page does not state it, and the official Act text could not be retrieved. Search results indicate a three-day ordinary window with a further short delayed-registration period, but that reading came from third-party hosts of the Act and **must not be printed until confirmed** against the official text. See the browser-verification log below for the 2026-08-20 re-check.
+- `[NEEDS SOURCE]` The PERKESO claim submission deadline. The official checklist states only that PERKESO may reject applications later than "tempoh masa yang ditetapkan", the stipulated period, without quantifying it. A 12-month figure circulates on social media and is not a source. Re-checked 2026-08-20: still no official quantification, see log below.
+- `[NEEDS SOURCE]` The KWSP page lists the without-nomination claimants twice and the two lists differ: one includes siblings, the other does not. Confirm which applies before any screen or table repeats it. Re-checked 2026-08-20: could not reopen the official page, see log below.
 - `[ASSUMPTION]` Both PERKESO checklists located are current. Borang 34's checklist is dated 9 December 2024; the Borang 24 and 26 checklist is undated.
+
+## Browser-Verification Log, 2026-08-20 (Issue #20)
+
+Issue #20 flagged that several official pages block automated retrieval and asked a human with a normal browser to confirm six items. What follows is an honest record of a re-check run by an AI assistant, not a human browser session. Three items were resolved or advanced; three still need a human.
+
+| Item                                       | Outcome On 2026-08-20                                                                                                                                                                                                                                                                                                                                        | Still Needs A Human |
+| ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-----------------: |
+| JPN Bahasa Malaysia document list          | **Confirmed.** The BM service page was retrieved in full. The document list matches this note. **Correction:** the form codes are `JPN.LM02`, `JPN.LM09` and `JPN.LM10`, not `NRD.LM02` etc. The English page machine-translated the department code `JPN` to its English acronym `NRD`, garbling the form identifiers. All references in this note are corrected accordingly. Certificate collectors, including "adik-beradik kandung" (biological siblings), are confirmed. No informant registration deadline appears on the page. |         No          |
+| JPN statutory registration window          | **Not resolved.** The official Laws of Malaysia page for Act 299 (`lom.agc.gov.my/act-detail.php?lang=BM&act=299`) timed out and CommonLII returned HTTP 403. Consolidated third-party hosts consistently attribute a three-day ordinary window to Section 21, but per the issue this may not be printed until confirmed against the official Act text. Remains `[NEEDS SOURCE]`. |         Yes         |
+| PERKESO claim deadline                     | **Confirmed as unquantifiable from a source.** The 12-month figure appears only on third-party blogs, job sites and a Meta AI social post, never on an official PERKESO page. Leave unquantified.                                                                                                                                                             |    No (settled)     |
+| KWSP without-nomination claimant list      | **Not resolved at source.** `kwsp.gov.my` still returned HTTP 403 and web.archive.org is not reachable by the tools used. Corroborating Malaysian news and blogs describe a spouse then children then parents hierarchy with **no siblings**, which matches the version already used in this note, but the official page's internal contradiction could not be reopened to settle it. |         Yes         |
+| KWSP 9KM (AHL) form fields                 | **Not resolved.** The form itself could not be opened (`kwsp.gov.my` HTTP 403, archive unreachable). Field match against prototype screen 2 still unconfirmed.                                                                                                                                                                                                |         Yes         |
+| EPF 2024 death withdrawals                 | **Not resolved.** Recorded in `verified-figures.md`. `kwsp.gov.my` performance document returned HTTP 403; 2024 figure stays `[NEEDS SOURCE]` and the verified 2023 fallback stands.                                                                                                                                                                          |         Yes         |
 
 ## Sources
 
 1. Jabatan Pendaftaran Negara, "Ordinary Registration of Death (Peninsular)", page last updated 19 August 2026, https://www.jpn.gov.my/en/services/death/ordinary-registration-of-death-peninsular/, accessed 2026-08-19. Supports the JPN precondition, both routes, the informant and collector lists, mandatory and conditional evidence, and the no-fee statement.
+   - Bahasa Malaysia original, "Pendaftaran Biasa Kematian (Semenanjung)", https://www.jpn.gov.my/ms/perkhidmatan/kematian/pendaftaran-biasa-kematian-semenanjung/, accessed 2026-08-20. Confirms the document list verbatim and the correct form codes JPN.LM02 (Pin.1/11), JPN.LM09 and JPN.LM10. The English page's "NRD.LM02" is a machine-translation of the department code and is not the form's identifier.
 2. Jabatan Pendaftaran Negara, "Death" services index, https://www.jpn.gov.my/en/services/death/, accessed 2026-08-19. Supports the existence of Ordinary, Late and Delayed Registration procedures and separate Peninsular, Sabah and Sarawak tracks.
 3. Employees Provident Fund, "Death Withdrawal", https://www.kwsp.gov.my/en/member/account-centre/death, accessed 2026-08-19 via the Internet Archive because kwsp.gov.my blocks automated retrieval. Supports nomination and non-nomination claimant rules, the Muslim and non-Muslim nominee succession rules, the payment staging table, and all six Death Assistance conditions.
 4. PERKESO, "Employment Injury Scheme (LINDUNG PEKERJA)", https://www.perkeso.gov.my/en/our-services/protection/employment-injury-scheme.html, accessed 2026-08-19. Supports Dependants' Benefit rates, distribution shares, and the Funeral Benefit amount and effective date.
