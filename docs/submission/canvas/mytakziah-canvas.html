@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MyTakziah Innovation Canvas</title>
+    <style>
+      /* MyTakziah A3 Innovation Canvas, issue #13.
+         Copy from docs/submission/canvas-copy.md, numbers from
+         docs/research/verified-figures.md. Designed at 877x1240 CSS px so a
+         device-scale-factor of 4.0 exports A3 portrait at ~300 DPI (3508x4960).
+         One Thread palette from frontend/src/index.css.
+         The accent appears on the thread and the six-month marker only. */
+      :root {
+        /* sRGB hex equivalents of the One Thread oklch palette in
+           frontend/src/index.css. Hex is used because this renderer does not
+           paint oklch(). Ground bone, deep warm ink, one terracotta accent. */
+        --ground: #f3e9dc;
+        --ink: #281913;
+        --muted: #736056;
+        --hair: #cabbab;
+        --accent: #bc4d1a;
+        --card: #fffefb;
+        --wash: #fbe7d8;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 877px;
+        height: 1240px;
+      }
+      body {
+        background: var(--ground);
+        color: var(--ink);
+        font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: geometricPrecision;
+        overflow: hidden;
+      }
+      .frame {
+        width: 877px;
+        height: 1240px;
+        padding: 26px 30px 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+      }
+      .serif {
+        font-family: Georgia, "Times New Roman", serif;
+      }
+
+      /* Header */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        border-bottom: 1px solid var(--hair);
+        padding-bottom: 11px;
+      }
+      .brand {
+        font-family: Georgia, serif;
+        font-size: 21px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
+      .brand small {
+        display: block;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: 8.5px;
+        font-weight: 400;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 3px;
+      }
+      .kicker {
+        text-align: right;
+        font-size: 8.5px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      /* Body grid, matching the prescribed template:
+         Problem TL, Target User BL, Concept centre spanning, Innovation TR, Impact BR. */
+      .grid {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 0.92fr 1.3fr 0.92fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 12px;
+        min-height: 0;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--hair);
+        border-radius: 13px;
+        padding: 15px 16px;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        overflow: hidden;
+        box-shadow: 0 1.5px 5px rgba(40, 25, 19, 0.08);
+      }
+      .tag {
+        font-size: 8.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 8px;
+      }
+      .tag b {
+        color: var(--accent-off, var(--ink));
+        font-weight: 700;
+      }
+      .num {
+        display: inline-flex;
+        width: 15px;
+        height: 15px;
+        border: 1px solid var(--hair);
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        font-size: 8.5px;
+        color: var(--ink);
+        font-weight: 700;
+      }
+      .card h2 {
+        font-family: Georgia, serif;
+        font-size: 15px;
+        line-height: 1.18;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .card p {
+        font-size: 10.3px;
+        line-height: 1.46;
+        color: var(--ink);
+      }
+      .card p + p {
+        margin-top: 7px;
+      }
+      .lead {
+        color: var(--muted) !important;
+      }
+
+      /* Problem matrix */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 4px 0 8px;
+        font-size: 9.6px;
+      }
+      th,
+      td {
+        padding: 4.5px 4px;
+        text-align: center;
+        border-bottom: 1px solid var(--hair);
+      }
+      th:first-child,
+      td:first-child {
+        text-align: left;
+        color: var(--ink);
+      }
+      thead th {
+        font-size: 8.4px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 700;
+        border-bottom: 1.5px solid var(--ink);
+      }
+      tbody tr.all td {
+        background: var(--wash);
+      }
+      td.y {
+        font-weight: 700;
+      }
+      td.n {
+        color: var(--muted);
+      }
+      .mini-cap {
+        font-size: 8.6px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 2px 0 4px;
+      }
+      .foot-note {
+        font-size: 9.7px;
+        line-height: 1.4;
+        margin-top: auto;
+        padding-top: 8px;
+      }
+
+      /* Numbers */
+      .stat {
+        font-family: Georgia, serif;
+        font-weight: 700;
+        line-height: 1;
+      }
+      .impact-hero {
+        font-size: 30px;
+        font-family: Georgia, serif;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.01em;
+      }
+      ul.facts {
+        list-style: none;
+        margin: 9px 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+      ul.facts li {
+        font-size: 10px;
+        line-height: 1.35;
+        padding-left: 12px;
+        position: relative;
+      }
+      ul.facts li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: 4px;
+        height: 4px;
+        background: var(--ink);
+        border-radius: 50%;
+      }
+      ul.facts li b {
+        font-weight: 700;
+      }
+      .measure {
+        font-size: 9.2px;
+        line-height: 1.4;
+        color: var(--muted);
+        margin-top: auto;
+        padding-top: 8px;
+        border-top: 1px dashed var(--hair);
+      }
+
+      /* Target user stats */
+      .tstat {
+        display: flex;
+        gap: 14px;
+        margin: 6px 0 2px;
+      }
+      .tstat .big {
+        font-family: Georgia, serif;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 1;
+      }
+      .tstat .cap {
+        font-size: 8.7px;
+        line-height: 1.3;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+
+      /* Innovation list */
+      ul.inv {
+        list-style: none;
+        margin: 4px 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+      ul.inv li {
+        font-size: 9.9px;
+        line-height: 1.34;
+        padding-left: 14px;
+        position: relative;
+      }
+      ul.inv li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 3px;
+        width: 6px;
+        height: 6px;
+        border: 1.4px solid var(--ink);
+        border-radius: 2px;
+      }
+      ul.inv li b {
+        font-weight: 700;
+      }
+      .vs {
+        font-size: 9.7px;
+        line-height: 1.4;
+        margin-top: auto;
+        padding-top: 8px;
+      }
+
+      /* Concept centre */
+      .concept {
+        background: var(--card);
+        border: 1px solid var(--hair);
+        border-radius: 13px;
+        padding: 22px 20px 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: 0;
+        overflow: hidden;
+        box-shadow: 0 2px 7px rgba(40, 25, 19, 0.09);
+      }
+      .concept .eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .concept .name {
+        font-family: Georgia, serif;
+        font-size: 25px;
+        font-weight: 700;
+        letter-spacing: 0.005em;
+        margin: 3px 0 10px;
+      }
+      .headline {
+        font-family: Georgia, serif;
+        font-weight: 700;
+        font-size: 39px;
+        line-height: 1.04;
+        letter-spacing: -0.015em;
+        max-width: 300px;
+      }
+      .concept .sub {
+        font-size: 10.6px;
+        line-height: 1.5;
+        max-width: 285px;
+        margin-top: 12px;
+        color: var(--ink);
+      }
+      .concept .fineprint {
+        font-size: 9.4px;
+        line-height: 1.45;
+        color: var(--muted);
+        max-width: 275px;
+        margin-top: 8px;
+      }
+      .thread-wrap {
+        flex: 1 1 auto;
+        display: block;
+        width: 100%;
+        min-height: 430px;
+        margin-top: 6px;
+      }
+      .thread-wrap svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 430px;
+      }
+      /* The accent (terracotta) appears on the thread and the six-month marker
+         only; all SVG colours are set as hex attributes on the elements. */
+
+      /* Footer */
+      footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid var(--hair);
+        padding-top: 9px;
+        font-size: 8.7px;
+        color: var(--muted);
+        letter-spacing: 0.02em;
+      }
+      footer .r {
+        text-align: right;
+      }
+      footer b {
+        color: var(--ink);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <header>
+        <div class="brand">
+          Survive
+          <small>URIIS Student Biz Innov Challenge 2026 &middot; Track 02, One-Stop Government Services</small>
+        </div>
+        <div class="kicker">
+          Innovation Canvas &middot; A3<br />Empowering citizens. Transforming government.
+        </div>
+      </header>
+
+      <div class="grid">
+        <!-- 1. PROBLEM (top-left) -->
+        <section class="card">
+          <div class="tag"><span class="num">1</span> Problem</div>
+          <h2>Three agencies. Three forms. The same information, demanded again each time.</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Demanded of the family</th>
+                <th>JPN</th>
+                <th>KWSP</th>
+                <th>PERKESO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="all">
+                <td>Who died</td>
+                <td class="y">Yes</td>
+                <td class="y">Yes</td>
+                <td class="y">Yes</td>
+              </tr>
+              <tr class="all">
+                <td>Who you are</td>
+                <td class="y">Yes</td>
+                <td class="y">Yes</td>
+                <td class="y">Yes</td>
+              </tr>
+              <tr class="all">
+                <td>Proof of the death</td>
+                <td class="y">Yes</td>
+                <td class="y">Yes</td>
+                <td class="y">Yes</td>
+              </tr>
+              <tr>
+                <td>How you are related</td>
+                <td class="n">&ndash;</td>
+                <td class="y">Yes</td>
+                <td class="y">Yes</td>
+              </tr>
+              <tr>
+                <td>Where to pay</td>
+                <td class="n">&ndash;</td>
+                <td class="y">Yes</td>
+                <td class="y">Yes</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="foot-note">
+            A survivor makes at least <b>two mandatory in-person trips</b>, carrying original documents, to two
+            different agencies, to prove the same death.
+          </p>
+        </section>
+
+        <!-- THE CONCEPT (centre, spans) -->
+        <section class="concept" style="grid-column: 2; grid-row: 1 / span 2">
+          <div class="eyebrow">The Concept</div>
+          <div class="name">MyTakziah</div>
+          <div class="headline serif">One death.<br />Tell government once.</div>
+          <div class="sub">
+            A family gives its evidence a single time. MyTakziah prepares the claims at JPN, KWSP and PERKESO,
+            submits them with consent, and tracks them in one timeline.
+          </div>
+          <div class="fineprint">
+            A proposed addition to the MyGOV family. Rules are published and cited. The agency still decides.
+          </div>
+          <div class="thread-wrap">
+            <svg width="300" height="500" viewBox="0 0 300 500" fill="none" preserveAspectRatio="xMidYMin meet" xmlns="http://www.w3.org/2000/svg" role="img"
+              aria-label="One continuous thread: the family's evidence given once, carried through JPN, KWSP and PERKESO into one status timeline.">
+              <!-- the continuous thread. Hex attributes: CSS classes and custom
+                   properties do not apply to inline SVG in this renderer. The
+                   diagram is inset from the left so the 6-month marker clears
+                   the viewBox edge. -->
+              <path d="M98 34 L98 470" stroke="#bc4d1a" stroke-width="3.6" stroke-linecap="round" />
+
+              <!-- start: the family, once -->
+              <circle cx="98" cy="34" r="8.5" fill="#bc4d1a" />
+              <text x="122" y="31" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#281913">Evidence given once</text>
+              <text x="122" y="46" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#736056">The family appears here, once.</text>
+
+              <!-- JPN -->
+              <circle cx="98" cy="150" r="9" fill="#fffefb" stroke="#bc4d1a" stroke-width="3.4" />
+              <text x="122" y="147" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#281913">JPN</text>
+              <text x="122" y="162" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#736056">Register the death</text>
+
+              <!-- KWSP with the one deadline marker -->
+              <circle cx="98" cy="266" r="9" fill="#fffefb" stroke="#bc4d1a" stroke-width="3.4" />
+              <text x="122" y="263" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#281913">KWSP</text>
+              <text x="122" y="278" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#736056">Savings and RM2,500 assistance</text>
+              <!-- deadline tick, the only other accent element -->
+              <line x1="74" y1="266" x2="56" y2="266" stroke="#bc4d1a" stroke-width="2.6" stroke-linecap="round" />
+              <text x="52" y="262" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#bc4d1a">6</text>
+              <text x="52" y="275" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="700" fill="#bc4d1a">months</text>
+
+              <!-- PERKESO -->
+              <circle cx="98" cy="382" r="9" fill="#fffefb" stroke="#bc4d1a" stroke-width="3.4" />
+              <text x="122" y="379" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#281913">PERKESO</text>
+              <text x="122" y="394" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#736056">Survivor and funeral benefits</text>
+
+              <!-- end: one status timeline -->
+              <rect x="88.5" y="460.5" width="19" height="19" rx="4.5" fill="#bc4d1a" />
+              <text x="122" y="468" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#281913">One status timeline</text>
+              <text x="122" y="483" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#736056">Submitted, receipted, tracked</text>
+            </svg>
+          </div>
+        </section>
+
+        <!-- 3. INNOVATION (top-right) -->
+        <section class="card">
+          <div class="tag"><span class="num">3</span> Innovation</div>
+          <h2>A chatbot tells you what to do. MyTakziah does it.</h2>
+          <p class="lead">The once-only principle, applied to one life event.</p>
+          <ul class="inv">
+            <li><b>Published rules, not a model deciding.</b> Every condition carries its source link.</li>
+            <li><b>Ranked by deadline, not by value.</b> The EPF window is six months.</li>
+            <li><b>Consent per agency,</b> shown separately, granted separately.</li>
+            <li><b>Drafts, never auto-approval.</b> The agency keeps every decision.</li>
+          </ul>
+          <p class="vs">
+            The UK's Tell Us Once <b>notifies</b> agencies of a death. MyTakziah <b>claims</b>.
+          </p>
+        </section>
+
+        <!-- 2. TARGET USER (bottom-left) -->
+        <section class="card">
+          <div class="tag"><span class="num">2</span> Target User</div>
+          <h2>The surviving spouse, usually older, usually alone with the paperwork.</h2>
+          <div class="tstat">
+            <div>
+              <div class="big">69.0</div>
+              <div class="cap">years, median<br />age at death</div>
+            </div>
+            <div>
+              <div class="big">91.6%</div>
+              <div class="cap">of Malaysians aged<br />60+ use the internet</div>
+            </div>
+          </div>
+          <p style="margin-top: 9px">
+            Among internet users, only <b>33.6%</b> of those 60 and over interact with government online, against
+            <b>38.9%</b> overall.
+          </p>
+          <p class="foot-note">
+            They are connected. They are still the least likely to transact. <b>The barrier is the process, not the
+            device.</b>
+          </p>
+        </section>
+
+        <!-- 4. IMPACT (bottom-right) -->
+        <section class="card">
+          <div class="tag"><span class="num">4</span> Impact</div>
+          <div class="impact-hero">198,992</div>
+          <p style="margin-top: 5px">
+            deaths in Malaysia in 2024. <b>Every one starts the same paperwork.</b>
+          </p>
+          <ul class="facts">
+            <li><b>RM3.05 billion</b> in EPF death withdrawals across <b>85,731</b> claims, 2023</li>
+            <li><b>RM2,500</b> EPF Death Assistance, lost if not claimed within <b>six months</b></li>
+            <li><b>Up to RM3,000</b> PERKESO funeral benefit</li>
+          </ul>
+          <p class="measure">
+            What we would measure, and have not yet: information items re-entered per death, mandatory in-person
+            trips, and claims completed inside the six-month window.
+          </p>
+        </section>
+      </div>
+
+      <footer>
+        <div>
+          <b>MyTakziah</b>, a proposed addition to the MyGOV family &middot; rules published and cited, the agency
+          decides &middot; not an official government service
+        </div>
+        <div class="r">Team <b>Survive</b> &middot; "Small Ideas. Big Impact."</div>
+      </footer>
+    </div>
+  </body>
+</html>
