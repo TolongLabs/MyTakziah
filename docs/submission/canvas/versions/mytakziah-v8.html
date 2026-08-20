@@ -71,7 +71,7 @@
   .hero { text-align: center; margin-top: 16px; }
   .hero h1 {
     font-family: "Outfit", sans-serif; font-weight: 700;
-    font-size: 78px; line-height: 1.04; letter-spacing: -0.035em;
+    font-size: 74px; line-height: 1.04; letter-spacing: -0.035em;
   }
   .hero h1 .b { display: block; color: var(--accent); }
   .hero .lede {
@@ -80,7 +80,7 @@
   }
 
   /* the thread */
-  .thread { position: relative; margin-top: 22px; }
+  .thread { position: relative; margin-top: 18px; }
   .chain { display: block; }
   .stations { display: flex; justify-content: space-between; margin-top: 8px; }
   .station { width: 260px; text-align: center; }
@@ -98,21 +98,21 @@
   }
 
   /* proof from the running prototype */
-  .proofs { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 10px; align-items: start; }
+  .proofs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 8px; align-items: start; }
   .proofs figure { margin: 0; }
   .proofs img {
     width: 100%; height: auto; display: block; border: 1px solid var(--border);
     border-radius: 8px; background: var(--card);
   }
   .proofs figcaption {
-    font-size: 20px; font-weight: 700; line-height: 1.22;
-    color: var(--ink); margin-top: 8px;
+    font-size: 20px; font-weight: 700; line-height: 1.2;
+    color: var(--ink); margin-top: 7px;
   }
   .proofs figcaption span { font-weight: 500; color: var(--muted); }
 
   /* pillars */
   .pillars {
-    flex: 1; min-height: 0; margin-top: 12px;
+    flex: 1; min-height: 0; margin-top: 10px;
     display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto;
     gap: 26px;
   }
@@ -122,7 +122,7 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: 0 4px 18px rgba(40, 25, 19, 0.07);
-    padding: 16px 26px 14px;
+    padding: 14px 24px 12px;
     display: flex; flex-direction: column;
   }
   .card-art {
@@ -164,7 +164,7 @@
     background: #f6efe5; border-radius: 8px; padding: 7px 20px;
   }
   .stat .v { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 50px; letter-spacing: -0.02em; color: var(--slate); min-width: 158px; font-variant-numeric: tabular-nums; }
-  .stat .l { font-size: 24px; font-weight: 500; line-height: 1.18; color: var(--muted); }
+  .stat .l { font-size: 23px; font-weight: 500; line-height: 1.16; color: var(--muted); }
 
   /* pillar 3 points */
   .points { margin-top: 14px; display: flex; flex-direction: column; gap: 14px; }
@@ -187,7 +187,7 @@
   .money-row { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; background: #f6efe5; border-radius: 8px; padding: 11px 16px; margin-top: 0; }
   .money-row .v { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 30px; color: var(--accent); white-space: nowrap; font-variant-numeric: tabular-nums; }
   .money-row .l { font-size: 21px; font-weight: 500; line-height: 1.24; color: var(--muted); }
-  .measure { font-size: 20px; font-weight: 500; line-height: 1.26; color: var(--muted); margin-top: auto; padding-top: 10px; }
+  .measure { font-size: 19px; font-weight: 500; line-height: 1.24; color: var(--muted); margin-top: auto; padding-top: 10px; }
 
   /* footer */
   .footer {
@@ -286,11 +286,11 @@
     <div class="proofs">
       <figure>
         <img src="./assets/proto-entitlements.png" alt="Entitlement card from the prototype" onerror="this.parentElement.remove()" />
-        <figcaption>Ranked by deadline, never promised. <span>Every entitlement reads potentially eligible, shows what we cannot know, and links the published rule.</span></figcaption>
+        <figcaption>Ranked by deadline, never promised. <span>Every entitlement links the published rule it came from.</span></figcaption>
       </figure>
       <figure>
         <img src="./assets/proto-consent.png" alt="Per agency consent from the prototype" onerror="this.parentElement.remove()" />
-        <figcaption>Nothing is sent until you agree. <span>Each agency sees exactly what it needs and nothing else. You consent to each one separately.</span></figcaption>
+        <figcaption>Nothing is sent until you agree. <span>Each agency sees only what it needs, consented separately.</span></figcaption>
       </figure>
     </div>
 

@@ -122,8 +122,13 @@ the order explicit:
   never-auto-approved were assertions; they are now visible in the product, so the pillar shows
   rather than tells and the space pays for the screens.
 
-Screens live in `assets/proto-entitlements.png` and `assets/proto-consent.png`. To refresh them, run
-the prototype and re-capture; the crop regions are recorded in the commit that added them.
+**The screens are captured from a 430 pixel mobile frame, not the desktop layout.** That matters: on
+the desktop layout the interface text lands at roughly 7 pt once placed on A3, which is half the
+poster's own body size and unreadable at poster distance. Captured on mobile and shown at 1.9x, the
+same text lands at **12.9 pt for body and 16.5 pt for titles**, at or above the poster's 12.5 pt body.
+Capture at deviceScaleFactor 4 with viewport 430 by 940, isMobile true; crops are
+`{x:14, y:252, w:402, h:193}` for Entitlements and `{x:14, y:405, w:402, h:207}` for Consent.
+Screens live in `assets/proto-entitlements.png` and `assets/proto-consent.png`.
 
 **Note on the removed disclaimer.** `docs/decisions.md` records a standing caution against implying
 official endorsement. In v8 the masthead's "A proposed addition to the MyGOV family" is the only
