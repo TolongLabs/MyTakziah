@@ -4,6 +4,11 @@ Everything needed to turn the selected concept into the two required artifacts a
 
 **Read `../competition/submission-rules.md` first.** The deadline is 21 August 2026 at 11:59 PM, and no extension will be given.
 
+> **Building the deck, the canvas or the pitch video? Read `narrative-brief.md` before anything else.**
+> It is the shared story all three draw from, written to be understood cold, and it carries the
+> say-this-never-that table that keeps every public artifact defensible. The research notes prove the
+> facts; the narrative brief tells them.
+
 ## Required Artifacts
 
 | Artifact          | Format                     | Required Content                                                     |
