@@ -159,6 +159,32 @@ pillar says "ranked by deadline, not value".
 does exactly that. A warm ochre or terracotta reads Malaysian, reads warm, and reads clearly as
 not-official.
 
+**Two things on this canvas are outside the accent rule, and both are deliberate.** The one colour
+rule governs the thread and the deadline marker. It does not govern the mark, which is three
+colours by design, and it does not govern the official SDG icons, which carry the United Nations'
+own colours, `#00689D` for SDG 16 and `#E5243B` for SDG 1. **The SDG icons must not be recoloured,
+cropped or rounded**, so do not try to bring them into the warm palette. Keep them small and let
+them sit as a credential rather than as decoration, and the accent rule still does the work it was
+written to do. The rules for those files are in `../../../frontend/public/sdg/README.md`.
+
+### The Mark
+
+Use the supplied file. Do not redraw it, do not recolour it, and do not regenerate it.
+
+| File                           | Use It For                                            |
+| ------------------------------ | ----------------------------------------------------- |
+| `mytakziah-mark-2400.png`      | The canvas. Three colours, transparent, 2400 by 2400. |
+| `mytakziah-mark-mono-2400.png` | Any place the mark must sit in one colour.            |
+
+The mark is three hexagonal strands woven together, one per agency: terracotta `#BC4D1A` is JPN,
+ochre `#E08A4C` is KWSP, slate `#376D7C` is PERKESO. **That is the whole point of it, so do not
+flatten it to one colour on the canvas.** The vector masters live in `../brand/` if a larger or
+differently cropped export is needed.
+
+Note that slate is the one cool colour permitted anywhere in this project. It belongs to the mark
+and to settled states. **It is not available for the thread or the deadline marker**, which stay on
+the single accent described above.
+
 ### Typography
 
 One dominant headline, **One death. Tell government once.** Everything else drops well back.
