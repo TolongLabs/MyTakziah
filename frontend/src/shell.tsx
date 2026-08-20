@@ -339,9 +339,11 @@ export function SiteFooter({ onAbout }: { onAbout: () => void }) {
           <img
             alt=""
             /* The mark is ochre and so is the footer. Painted to match the
-               footer's own foreground: white on light, ink on dark. */
+               footer's own foreground: white on light, ink on dark. The filter
+               flattens every pixel, so this uses the one-colour lockup, whose
+               knockout gaps keep the weave readable once colour is gone. */
             className="size-10 brightness-0 invert dark:invert-0"
-            src="/logo-mark.png"
+            src="/logo-mark-mono.png"
           />
           <span className="font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight">
             MyTakziah
