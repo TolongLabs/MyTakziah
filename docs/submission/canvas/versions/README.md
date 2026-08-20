@@ -86,8 +86,8 @@ comfortable. v7 clears the first bar; v1, v2 and v3 sit well below it.
 - **The Kolaxus mark is keyed to transparency.** Its white box is removed by unpremultiplying
   against the white matte, so the mark sits on the warm ground rather than in a white rectangle.
 - **The URIIS 2026 organiser mark is added** to the footer, keyed the same way from
-  `uriis-logo.jpeg`. Transparent copies are `kolaxus-logo-transparent.png` and
-  `uriis-logo-transparent.png` in `../`.
+  `assets/uriis-logo.jpeg`. Transparent copies are `kolaxus-logo-transparent.png` and
+  `uriis-logo-transparent.png` in `assets/`.
 
 **Copy, corrected against the research**
 

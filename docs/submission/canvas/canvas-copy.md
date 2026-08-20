@@ -171,10 +171,10 @@ written to do. The rules for those files are in `../../../frontend/public/sdg/RE
 
 Use the supplied file. Do not redraw it, do not recolour it, and do not regenerate it.
 
-| File                           | Use It For                                            |
-| ------------------------------ | ----------------------------------------------------- |
-| `mytakziah-mark-2400.png`      | The canvas. Three colours, transparent, 2400 by 2400. |
-| `mytakziah-mark-mono-2400.png` | Any place the mark must sit in one colour.            |
+| File                                           | Use It For                                            |
+| ---------------------------------------------- | ----------------------------------------------------- |
+| `versions/assets/mytakziah-mark-2400.png`      | The canvas. Three colours, transparent, 2400 by 2400. |
+| `versions/assets/mytakziah-mark-mono-2400.png` | Any place the mark must sit in one colour.            |
 
 The mark is three hexagonal strands woven together, one per agency: terracotta `#BC4D1A` is JPN,
 ochre `#E08A4C` is KWSP, slate `#376D7C` is PERKESO. **That is the whole point of it, so do not
