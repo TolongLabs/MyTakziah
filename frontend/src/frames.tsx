@@ -226,7 +226,7 @@ export function FrameProvideOnce({
                   <tr className="border-b">
                     <th className="pb-2 text-left font-medium">Information</th>
                     {AGENCIES.map((a) => (
-                      <th key={a} className="pb-2 text-center font-medium">
+                      <th key={a} className="px-2 pb-2 text-center font-medium">
                         {a}
                       </th>
                     ))}
@@ -245,7 +245,7 @@ export function FrameProvideOnce({
                         {AGENCIES.map((a) => {
                           const demanded = g.demandedBy.includes(a);
                           return (
-                            <td key={a} className="py-2.5 text-center">
+                            <td key={a} className="px-2 py-2.5 text-center">
                               {demanded ? (
                                 <span
                                   aria-label={complete ? "provided" : "demanded"}
