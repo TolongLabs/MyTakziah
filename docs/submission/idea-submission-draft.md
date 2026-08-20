@@ -66,6 +66,15 @@ documents, when submitting the claim.
 **A survivor makes at least two mandatory in-person trips, carrying original documents, to two
 different agencies, to prove the same death.**
 
+KWSP completes the pattern, and the contrast inside one agency is the clearest evidence we have.
+**A member can create or update an EPF nomination from the i-Akaun app, identity verified by e-KYC,
+without visiting an office. The beneficiary is offered no equivalent.** The only action on KWSP's
+Death Withdrawal page is a link labelled "Apply For Manual Withdrawal", pointing at a form to print
+and carry.
+
+**The barrier is not that these agencies lack digital capability. It is that the bereavement path
+was never built.**
+
 ### The Burden Grows As The Family Shape Departs From The Standard
 
 PERKESO's relationship evidence is tiered. A family that does not fit the spouse-and-children
@@ -80,12 +89,48 @@ people they must assemble, at exactly the moment they are least able to.**
 
 **198,992 deaths were registered in Malaysia in 2024.** Each one begins this sequence.
 
-One deadline sits on the family and is verified: **an application for EPF Death Withdrawal must
-be received within six months of the death**, or the RM2,500 Death Assistance is lost.
+Three clocks start at the death. They run at very different speeds, nobody tells the family that any
+of them has started, and **only one of the three is fully published.**
 
-`[NEEDS SOURCE]` No Malaysian measurement exists of how long this administration takes, or how
-many claims are missed. We do not claim a figure for either. The repetition above is documented
-from the agencies' own published requirements, and it is enough.
+| Clock                        | Agency  | Is The Deadline Published?                 | Is The Consequence Published?                 |
+| ---------------------------- | ------- | ------------------------------------------ | --------------------------------------------- |
+| Registration of the death    | JPN     | **Yes.** The seventh day after the death   | **No.** See below                             |
+| Benefit claim submission     | PERKESO | **No.** Only "the stipulated period"       | **No**                                        |
+| Death Withdrawal application | KWSP    | **Yes.** Six months from the date of death | **Yes.** The RM2,500 Death Assistance is lost |
+
+**Two of the three agencies enforce timing they do not fully publish.**
+
+**A family cannot meet a deadline it cannot find.** That is the sentence this section exists to
+earn. It moves the problem from inconvenience to process: the survivor is being timed by rules that
+are not written down where the survivor can read them.
+
+JPN's own pages put the boundary at the seventh day: ordinary registration requires the grey copy
+of JPN.LM02 (Pin.1/11) to reach the NRD office within seven working days, and registration after
+the seventh day falls outside the ordinary procedure. **But JPN's Late Registration procedure for
+Peninsular Malaysia, the one carrying form JPN.LM28, two sponsors and an RM50 application fee,
+applies by its own wording only to deaths occurring before 1 December 2011.** For Peninsular
+Malaysia, JPN publishes an Ordinary procedure and that legacy Late procedure, and no Delayed
+procedure at all. Delayed Registration is published only for Sabah and Sarawak.
+
+`[NEEDS SOURCE]` **So a family in Peninsular Malaysia that passes the seventh day today cannot find
+out from JPN's published pages what happens next.** We state the boundary, which is published, and
+we do not invent the consequence, which is not.
+
+**Parliament has measured part of this, and named the cause.** The explanatory statement to the
+Births and Deaths Registration (Amendment) Bill 2016 records that **72,929 cases of late
+registration of death were recorded between 2003 and 2014**, roughly 6,000 a year, and gives the
+reason for extending the reporting window:
+
+> "Due to the needs, circumstances, rituals, religious obligations and customs with regard to the
+> management of a death that may prevent a qualified person from informing the death to the
+> Registrar..."
+
+**That is the state's own account of why families miss government deadlines after a death.**
+
+`[NEEDS SOURCE]` That figure counts late registration at JPN. **No Malaysian measurement exists of
+how long the wider administration takes, or how many KWSP or PERKESO claims are never made.** We do
+not claim a figure for either. The repetition above is documented from the agencies' own published
+requirements, and it is enough.
 
 ### The Problem In One Sentence
 
@@ -231,6 +276,41 @@ Tell Us Once is the closest international analogue, and the distinction is the w
 a family being asked again. It does not put money in their hands, and it does not protect a
 deadline.
 
+### Why MyDigital ID Does Not Already Do This
+
+MyDigital ID is the identity anchor this concept assumes, and it is about to become mandatory for
+death certificate services. **It is not a competitor. It is the layer beneath us.** The Digital
+Minister has described its scope precisely:
+
+> "It is purely a verification and authentication platform. It only verifies your identity by
+> cryptographically linking your digital ID to existing records in a secure one-time process."
+>
+> Gobind Singh Deo, Minister of Digital, reported by The Star, 13 December 2025
+
+**MyDigital ID proves who you are, once, to each agency in turn. It does not carry your evidence
+between them, rank your deadlines, or prepare a claim.** The same announcement confirms the
+direction of travel: wedding registrations, death certificates and passport renewals will require a
+MyDigital ID. Every future user of MyTakziah will already hold one, which removes an onboarding
+problem rather than creating a competitor.
+
+### Why Putting The Agencies In One Building Does Not Solve It
+
+Malaysia already tried co-location. Twelve Urban Transformation Centres place agency counters under
+one roof, and it is the fairest challenge to this concept.
+
+It does not close the gap, for two reasons.
+
+**Coverage is partial and inconsistent.** At UTC Perak, JPN and PERKESO sit on Level 3 and KWSP is
+a self-service kiosk on the Ground Floor. UTC's own agency listing names neither KWSP nor PERKESO.
+No source lists all three as standard. Twelve cities do not cover a country recording close to
+199,000 deaths a year.
+
+**And co-location is not integration.** In the same building you still queue three times, hand over
+the same originals three times, and leave with three reference numbers and no single view of any of
+them. Nobody at the JPN counter tells you the KWSP six-month clock has started.
+
+**A shared roof is not a shared record.**
+
 ### The Four Design Choices That Carry It
 
 1. **Deterministic, published, cited rules.** Roughly a dozen conditions across three agencies,
@@ -275,17 +355,33 @@ Every one of those deaths generates the same administrative sequence.
 
 ### Money Already Moving Through This Journey
 
-| Benefit                    | Scale                                                              |
-| -------------------------- | ------------------------------------------------------------------ |
-| EPF Death Withdrawal, 2023 | 85,731 transactions worth RM3.05 billion                           |
-| EPF Death Assistance       | RM2,500 one-off, at EPF's discretion, six-month application window |
-| PERKESO Funeral Benefit    | Up to RM3,000, actual expenditure or RM3,000, whichever is lower   |
+| Benefit                     | Scale                                                              |
+| --------------------------- | ------------------------------------------------------------------ |
+| EPF Death Withdrawal, 2024  | **85,532 transactions worth RM3,243,030,617**                      |
+| EPF Death Assistance, 2024  | **27,006 payments worth RM67,515,000**                             |
+| EPF Death Assistance, terms | RM2,500 one-off, at EPF's discretion, six-month application window |
+| PERKESO Funeral Benefit     | Up to RM3,000, actual expenditure or RM3,000, whichever is lower   |
 
-`[NEEDS SOURCE]` 2024 EPF figures pending the browser check in #20. Reported as 85,532 worth
-RM3.24 billion. **If unconfirmed, print the 2023 figures above, which are fully verified.**
+Both EPF figures are verified from the same primary document, the EPF five-year financial
+highlights, archived at `../research/kwsp-five-year-financial-highlights.pdf`.
+
+### The Gap Inside Those Two Rows
+
+**In 2024 the EPF processed 85,532 death withdrawals and made 27,006 Death Assistance payments.**
+Most death withdrawals are not accompanied by a Death Assistance payment.
+
+`[ASSUMPTION]` **We do not attribute that gap to missed deadlines, and neither should anyone
+presenting this.** Death Assistance also requires the member to have died before age 60, and the
+median age at death is 69.0, so the age condition must account for a large share of it on its own.
+EPF also states the payment is discretionary. **No published breakdown separates the age condition,
+the discretion and the six-month window.**
+
+**What we claim is the gap and the silence, not a cause: most EPF death withdrawals carry no Death
+Assistance payment, and EPF does not publish why.** A family cannot audit a decision whose reasons
+are not published, which is the same pattern the deadlines show in Section 1.
 
 **Note for the drafter:** the death withdrawal series does not rise monotonically. 2022 recorded
-91,414 transactions, more than 2023. Do not describe it as a growing trend.
+91,414 transactions, more than either 2023 or 2024. Do not describe it as a growing trend.
 
 ### How Impact Could Be Observed
 
@@ -319,8 +415,12 @@ Source: United Nations, "The 17 Goals", <https://sdgs.un.org/goals>, accessed 20
 
 ### The Limit We State Rather Than Hide
 
-`[NEEDS SOURCE]` **No Malaysian measurement exists of how long bereavement administration takes,
-or how many claims are missed.** We do not claim a figure for either.
+**One part of this has been measured, and we use only that part.** Parliament recorded 72,929 late
+death registrations between 2003 and 2014. That counts registration at JPN.
+
+`[NEEDS SOURCE]` **Beyond it, no Malaysian measurement exists of how long bereavement
+administration takes, or how many KWSP or PERKESO claims are never made.** We do not claim a figure
+for either, and we do not stretch the JPN figure to cover them.
 
 **We also do not compute a take-up rate.** Dividing death withdrawals by national deaths is
 indefensible: not every deceased person was an EPF member, a claim can be paid in a later year,
@@ -365,6 +465,12 @@ system never decides, being wrong costs a correction, not a family's money.
   Survivors' Pension requires at least 24 monthly contributions within the 40 months before
   death, or a fractional equivalent. A widow cannot compute this. Neither can we. PERKESO is
   therefore only ever shown as **"potentially eligible, confirmation required"**.
+- **PERKESO enforces a claim deadline it does not publish.** Its checklist reserves the right to
+  reject applications later than "tempoh masa yang ditetapkan", the stipulated period, without
+  quantifying it anywhere we could find. The quantified PERKESO windows that do exist, 60 days for
+  EIS job loss and 12 months for a SIP accident, belong to other schemes and do not apply here.
+  **We print no number.** A deadline that is enforceable but unpublished is not a gap in our
+  research. It is part of the problem the concept exists to address.
 
 ### Dependencies
 
