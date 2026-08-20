@@ -1,6 +1,6 @@
 # Canvas Versions
 
-Six A3 candidates for the Innovation Canvas. **The team picks one; the rest are kept for the
+Seven A3 candidates for the Innovation Canvas. **The team picks one; the rest are kept for the
 record.** Decision owner is @AlaskanTuna, per issue #13.
 
 Every file here is A3 portrait, **3508 by 4961 pixels at 300 DPI**, PNG, one page, and under the
@@ -8,37 +8,64 @@ Every file here is A3 portrait, **3508 by 4961 pixels at 300 DPI**, PNG, one pag
 
 ## The Candidates
 
-| Version | File                  | Source      | Look                                                                                | Hero Line                                         |
-| ------- | --------------------- | ----------- | ----------------------------------------------------------------------------------- | ------------------------------------------------- |
-| v1      | `mytakziah-v1-a3.png` | Code + art  | Serif hero, gold corner ornament, horizontal thread, illustrated scene at the base. | One death. Tell government once.                  |
-| v2      | `mytakziah-v2-a3.png` | Image model | The illustrated "full-v2". Songket border, medallion chain, watercolour base.       | Grief is hard enough. The paperwork shouldn't be. |
-| v3      | `mytakziah-v3-a3.png` | Code        | Editorial and austere. Three columns, one vertical thread, no illustration.         | One death. Tell government once.                  |
-| v4      | `mytakziah-v4-a3.png` | Code + art  | Illustrated rebuild. Watercolour backdrop, connected chain, four cards.             | Grief is hard enough. The paperwork shouldn't be. |
-| v5      | `mytakziah-v5-a3.png` | Code + art  | As v4, plus a watercolour scene behind each pillar card.                            | Grief is hard enough. The paperwork shouldn't be. |
-| v6      | `mytakziah-v6-a3.png` | Code + art  | As v4, in a layered paper-cut style, with each card led by an illustrated banner.   | Grief is hard enough. The paperwork shouldn't be. |
+| Version        | File                  | Source      | Look                                                                                 | Hero Line                                         |
+| -------------- | --------------------- | ----------- | ------------------------------------------------------------------------------------ | ------------------------------------------------- |
+| v1             | `mytakziah-v1-a3.png` | Code + art  | Serif hero, gold corner ornament, horizontal thread, illustrated scene at the base.  | One death. Tell government once.                  |
+| v2             | `mytakziah-v2-a3.png` | Image model | The illustrated "full-v2". Songket border, medallion chain, watercolour base.        | Grief is hard enough. The paperwork shouldn't be. |
+| v3             | `mytakziah-v3-a3.png` | Code        | Editorial and austere. Three columns, one vertical thread, no illustration.          | One death. Tell government once.                  |
+| v4             | `mytakziah-v4-a3.png` | Code + art  | Illustrated rebuild. Watercolour backdrop, connected chain, four cards.              | Grief is hard enough. The paperwork shouldn't be. |
+| v5             | `mytakziah-v5-a3.png` | Code + art  | As v4, plus a watercolour scene behind each pillar card.                             | Grief is hard enough. The paperwork shouldn't be. |
+| v6             | `mytakziah-v6-a3.png` | Code + art  | As v4, in a layered paper-cut style, with each card led by an illustrated banner.    | Grief is hard enough. The paperwork shouldn't be. |
+| **v7, latest** | `mytakziah-v7-a3.png` | Code + art  | v5 rebuilt for legibility: bigger and heavier type, darker text, two-column pillars. | Grief is hard enough. The paperwork shouldn't be. |
 
-**v2 has no editable source in this repo**, because it came out of an image model. v1 and v3 to v6
-each have a matching `.html` that re-exports the PNG exactly, so their copy and figures can still be
+**v2 has no editable source in this repo**, because it came out of an image model. Every other
+version has a matching `.html` that re-exports the PNG exactly, so its copy and figures can still be
 corrected before submission.
 
 ## How They Check Out
 
-| Check                                          | v1  | v2  | v3  | v4  | v5  | v6  |
-| ---------------------------------------------- | --- | --- | --- | --- | --- | --- |
-| A3 portrait, 3508 by 4961, 300 DPI             | Yes | Yes | Yes | Yes | Yes | Yes |
-| Under 25 MB                                    | Yes | Yes | Yes | Yes | Yes | Yes |
-| Vector-crisp text at print size                | Yes | No  | Yes | Yes | Yes | Yes |
-| Body text at or above 5 mm on A3               | No  | No  | No  | Yes | Yes | Yes |
-| Prototype QR present and decodes               | No  | No  | Yes | Yes | Yes | Yes |
-| Editable source in repo                        | Yes | No  | Yes | Yes | Yes | Yes |
-| No em dash, no emoji, no banned agency wording | Yes | Yes | Yes | Yes | Yes | Yes |
+| Check                                          | v1  | v2  | v3  | v4  | v5  | v6  | v7  |
+| ---------------------------------------------- | --- | --- | --- | --- | --- | --- | --- |
+| A3 portrait, 3508 by 4961, 300 DPI             | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| Under 25 MB                                    | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| Vector-crisp text at print size                | Yes | No  | Yes | Yes | Yes | Yes | Yes |
+| Prototype QR present and decodes               | No  | No  | Yes | Yes | Yes | Yes | Yes |
+| Editable source in repo                        | Yes | No  | Yes | Yes | Yes | Yes | Yes |
+| No em dash, no emoji, no banned agency wording | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 
-**On text size.** v1, v2 and v3 set body copy at roughly 3 mm on A3, which is a caption size and
-too small to read at poster distance. v4, v5 and v6 set it at 5 mm or more.
+## Body Text Size, Measured
 
-**On v2.** It is an image-model render, so its text is soft at A3 and cannot be corrected without
-regenerating the whole poster. v4, v5 and v6 reproduce its look in code, which keeps the warmth and
-makes the text sharp and editable.
+Measured from each version's own source, converted to the printed A3 sheet. This is the dominant
+body size, not the headline or the display numbers.
+
+| Version | Body text on A3                                               |
+| ------- | ------------------------------------------------------------- |
+| v1      | 8.6 pt, about 3.0 mm                                          |
+| v2      | Not measurable, image model output, visually comparable to v1 |
+| v3      | 8.5 pt, about 3.0 mm                                          |
+| v4      | 11.0 pt, about 3.9 mm                                         |
+| v5      | 11.0 pt, about 3.9 mm                                         |
+| v6      | 11.0 pt, about 3.9 mm                                         |
+| **v7**  | **13.4 pt, about 4.7 mm**                                     |
+
+**Correction.** An earlier note on issue #13 said v4 to v6 set body text "at 5 mm or more". That was
+wrong. They set it at 11 pt, roughly 3.9 mm. v7 is the first version at 13 pt and above.
+
+For reference, a poster read at arm's length wants 12 pt or more for body copy, and 14 pt is
+comfortable. v7 clears the first bar; v1, v2 and v3 sit well below it.
+
+## What v7 Changes Against v5
+
+- **Type is larger and heavier throughout.** Body copy moves from 11 pt to 13.4 pt, the base weight
+  moves from regular to medium, and bold lead-ins move from semibold to bold.
+- **Text is darker.** The muted neutral moves from `#736056` to `#5c4a40`, which lifts contrast on
+  every secondary line, and the lede under the headline is now full ink rather than muted.
+- **Pillar numbers are terracotta**, so "1. Problem" reads as a marker rather than grey furniture.
+- **Two pillars became two-column** to pay for the larger type: the four Innovation points sit in a
+  2 by 2 grid, and the two benefit figures in Impact sit side by side.
+- **The station chain is slightly smaller**, which released the vertical space the bigger type needed.
+- **The card artwork is more present**, raised from 50 to 62 per cent opacity and widened, because
+  the heavier darker text can carry it without losing contrast.
 
 ## Rebuilding An Export
 
@@ -46,14 +73,20 @@ Edit the version's `.html`, then screenshot the `#page` element at 1754 by 2480.
 `deviceScaleFactor: 2` in Playwright, and pad the result to 4961 with a 300 DPI tag. Fonts are
 embedded in `assets/fonts-embedded.css`, so an export cannot silently fall back to a system face.
 
-Generated artwork lives in `../../codex-generated/`. Prefixes: no prefix for v4, `b-` for v5,
+Note that **v1 is authored at half scale**, an 877 pixel page, so it does not follow this recipe.
+
+Generated artwork lives in `../../codex-generated/`. Prefixes: no prefix for v4, `b-` for v5 and v7,
 `c-` for v6.
 
 ## Open Points Before Submission
 
-- **The hero line changed.** v1 and v3 carry "One death. Tell government once." from `canvas-copy.md`.
-  The team removed it as insensitive, so v4 to v6 use v2's hero and sub instead. `canvas-copy.md`
-  and the deck on issue #9 still carry the old line and need updating to match whichever version wins.
-- **In v4 to v6 the KWSP station reads "savings and death benefit"**, not a figure. v1 and v2 print "RM2,500" there. EPF Death Assistance is
-  discretionary in KWSP's own words, so a bare amount on a station label would read as a promise.
+- **The hero line changed.** v1 and v3 carry "One death. Tell government once." from
+  `canvas-copy.md`. The team removed it as insensitive, so v4 onward use v2's hero and sub instead.
+  `canvas-copy.md` and the deck on issue #9 still carry the old line and need updating to match
+  whichever version wins.
+- **From v4 onward the KWSP station reads "savings and death benefit"**, not a figure. v1 and v2
+  print "RM2,500" there. EPF Death Assistance is discretionary in KWSP's own words, so a bare amount
+  on a station label would read as a promise.
+- **v7 shortens three Innovation lines and one Impact line** to pay for the larger type. The meaning
+  is unchanged, but the exact wording now differs from `canvas-copy.md`.
 - **Team member names are still `TODO`** and appear on none of these versions.
