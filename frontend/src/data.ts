@@ -61,8 +61,29 @@ export const FIELD_GROUPS: FieldGroup[] = [
 ];
 
 /* Entitlements, ranked by deadline first and value second.
-   Only the KWSP six-month window is a verified family deadline.
-   Source: docs/research/agency-rule-map.md */
+
+   Two family-facing boundaries are verified: JPN's seventh day, which is the
+   registration clock below, and the KWSP six-month window. PERKESO publishes
+   neither a deadline nor a consequence, which is not the same as having no
+   deadline: it reserves the right to reject a late application without saying
+   when late begins. The UI must never render that as "no deadline".
+   Source: docs/research/agency-rule-map.md, incumbent-and-deadline-verification.md */
+
+/* The clock that runs before any claim can start. JPN is not an entitlement,
+   so it is deliberately not in ENTITLEMENTS: it is the prerequisite that issues
+   the certificate the other two agencies then demand. */
+export const REGISTRATION_CLOCK = {
+  agency: "JPN" as Agency,
+  title: "Register the Death",
+  deadline: "7 days from the date of death",
+  why: "JPN issues the death certificate that KWSP and PERKESO both demand, so this clock runs out before any claim can even begin.",
+  limitation:
+    "Seven days is JPN's published boundary. What happens after it, for a death today, is not published: JPN's late registration procedure covers only deaths before 1 December 2011, and Peninsular Malaysia has no delayed procedure at all.",
+  source: {
+    label: "JPN, Ordinary Registration of Death (Peninsular)",
+    url: "https://www.jpn.gov.my/en/services/death/ordinary-registration-of-death-peninsular/",
+  },
+};
 export type Entitlement = {
   id: string;
   agency: Agency;
@@ -97,9 +118,9 @@ export const ENTITLEMENTS: Entitlement[] = [
     amount: "Up to RM3,000",
     deadline: null,
     condition:
-      "Payable on death from any cause. The amount is the actual funeral expenditure or RM3,000, whichever is lower.",
+      "Payable where the deceased was an insured person under either PERKESO scheme, whatever the cause of death. The amount is the actual funeral expenditure or RM3,000, whichever is lower.",
     limitation:
-      "Evidence of expenditure is required. PERKESO does not publish a quantified claim deadline.",
+      "Evidence of expenditure is required. PERKESO reserves the right to reject an application later than its stipulated period, and does not publish what that period is.",
     source: {
       label: "PERKESO, Invalidity Scheme",
       url: "https://www.perkeso.gov.my/en/our-services/protection/invalidity-scheme.html",
@@ -112,9 +133,9 @@ export const ENTITLEMENTS: Entitlement[] = [
     amount: "Monthly pension, rate set by PERKESO",
     deadline: null,
     condition:
-      "Requires at least 24 monthly contributions within the 40 months before death, or a fractional equivalent, and death before age 60.",
+      "Death before age 60 with at least 24 monthly contributions in the 40 months before death, or a fractional equivalent. It also applies at any age where the deceased was already receiving Invalidity Pension.",
     limitation:
-      "This turns entirely on a contribution history that neither the family nor MyTakziah can see. Only PERKESO can confirm it.",
+      "This turns entirely on a contribution history that neither the family nor MyTakziah can see. Only PERKESO can confirm it, and it does not publish its claim deadline either.",
     source: {
       label: "PERKESO, Invalidity Scheme",
       url: "https://www.perkeso.gov.my/en/our-services/protection/invalidity-scheme.html",
@@ -139,7 +160,7 @@ export const AGENCY_PAYLOADS: Record<Agency, { form: string; receives: string[] 
     ],
   },
   PERKESO: {
-    form: "Borang 24 and Borang 26",
+    form: "Borang 34, or Borang 24 and 26",
     receives: [
       "Who Died",
       "Who You Are",

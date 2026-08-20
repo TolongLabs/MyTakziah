@@ -25,6 +25,7 @@ import {
   AGENCY_PAYLOADS,
   ENTITLEMENTS,
   FIELD_GROUPS,
+  REGISTRATION_CLOCK,
   SAMPLE_VALUES,
   type Agency,
 } from "@/data";
@@ -310,7 +311,46 @@ export function FrameEntitlements({ onNext }: { onNext: () => void }) {
         Ordered by which runs out first, not by which is largest.
       </p>
 
-      <div className="mt-8 space-y-5">
+      {/* JPN sits above the entitlements and outside them. It pays nothing, so
+          it is not an entitlement, but it is the tightest clock in the journey
+          and it gates both of the others. Ranking by deadline is meaningless
+          without it on the page. */}
+      <Card className="mt-8 border-primary">
+        <CardHeader>
+          <div className="flex flex-wrap items-center gap-2">
+            <Badge variant="outline">{REGISTRATION_CLOCK.agency}</Badge>
+            <span className="flex items-center gap-1.5 rounded-full bg-accent px-2.5 py-0.5 text-sm font-medium text-accent-foreground">
+              <Clock className="size-3.5" /> {REGISTRATION_CLOCK.deadline}
+            </span>
+            <span className="text-xs font-medium tracking-wide text-primary uppercase">
+              Soonest
+            </span>
+          </div>
+          <CardTitle className="mt-2 text-lg">{REGISTRATION_CLOCK.title}</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-3 text-sm">
+          <p className="text-muted-foreground">{REGISTRATION_CLOCK.why}</p>
+          <Separator />
+          <p className="text-muted-foreground">
+            <span className="font-medium text-foreground">What We Cannot Know. </span>
+            {REGISTRATION_CLOCK.limitation}
+          </p>
+          <a
+            className="inline-flex items-center gap-1.5 text-primary underline underline-offset-4"
+            href={REGISTRATION_CLOCK.source.url}
+            rel="noreferrer"
+            target="_blank"
+          >
+            {REGISTRATION_CLOCK.source.label} <ExternalLink className="size-3.5" />
+          </a>
+        </CardContent>
+      </Card>
+
+      <p className="mt-5 text-sm text-muted-foreground">
+        Then the two that pay. Neither can start until JPN has issued the certificate.
+      </p>
+
+      <div className="mt-5 space-y-5">
         {ENTITLEMENTS.map((e) => (
           <Card key={e.id}>
             <CardHeader>
@@ -321,7 +361,12 @@ export function FrameEntitlements({ onNext }: { onNext: () => void }) {
                     <Clock className="size-3.5" /> {e.deadline}
                   </span>
                 ) : (
-                  <span className="text-sm text-muted-foreground">No Published Deadline</span>
+                  /* Never "no deadline". PERKESO enforces one and declines to
+                     say when it starts, which is a worse position for a family
+                     than a published date, not a better one. */
+                  <span className="flex items-center gap-1.5 text-sm font-medium text-primary">
+                    <Clock className="size-3.5" /> Enforced, Not Published
+                  </span>
                 )}
               </div>
               <CardTitle className="mt-2 text-lg">{e.title}</CardTitle>
@@ -608,8 +653,9 @@ export function FrameTimeline({
               <p>
                 <span className="font-medium">14 February 2027. </span>
                 <span className="text-muted-foreground">
-                  The EPF window closes six months after the death. The only family deadline we
-                  could verify.
+                  The EPF window closes six months after the death. It is the only one of the three
+                  clocks where the agency publishes both the deadline and what missing it costs. JPN
+                  publishes the seventh day but not the consequence, and PERKESO publishes neither.
                 </span>
               </p>
             </div>
