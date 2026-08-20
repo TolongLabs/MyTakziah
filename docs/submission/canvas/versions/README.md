@@ -8,15 +8,15 @@ Every file here is A3 portrait, **3508 by 4961 pixels at 300 DPI**, PNG, one pag
 
 ## The Candidates
 
-| Version        | File                  | Source      | Look                                                                                 | Hero Line                                         |
-| -------------- | --------------------- | ----------- | ------------------------------------------------------------------------------------ | ------------------------------------------------- |
-| v1             | `mytakziah-v1-a3.png` | Code + art  | Serif hero, gold corner ornament, horizontal thread, illustrated scene at the base.  | One death. Tell government once.                  |
-| v2             | `mytakziah-v2-a3.png` | Image model | The illustrated "full-v2". Songket border, medallion chain, watercolour base.        | Grief is hard enough. The paperwork shouldn't be. |
-| v3             | `mytakziah-v3-a3.png` | Code        | Editorial and austere. Three columns, one vertical thread, no illustration.          | One death. Tell government once.                  |
-| v4             | `mytakziah-v4-a3.png` | Code + art  | Illustrated rebuild. Watercolour backdrop, connected chain, four cards.              | Grief is hard enough. The paperwork shouldn't be. |
-| v5             | `mytakziah-v5-a3.png` | Code + art  | As v4, plus a watercolour scene behind each pillar card.                             | Grief is hard enough. The paperwork shouldn't be. |
-| v6             | `mytakziah-v6-a3.png` | Code + art  | As v4, in a layered paper-cut style, with each card led by an illustrated banner.    | Grief is hard enough. The paperwork shouldn't be. |
-| **v7, latest** | `mytakziah-v7-a3.png` | Code + art  | v5 rebuilt for legibility: bigger and heavier type, darker text, two-column pillars. | Grief is hard enough. The paperwork shouldn't be. |
+| Version        | File                  | Source      | Look                                                                                           | Hero Line                                         |
+| -------------- | --------------------- | ----------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| v1             | `mytakziah-v1-a3.png` | Code + art  | Serif hero, gold corner ornament, horizontal thread, illustrated scene at the base.            | One death. Tell government once.                  |
+| v2             | `mytakziah-v2-a3.png` | Image model | The illustrated "full-v2". Songket border, medallion chain, watercolour base.                  | Grief is hard enough. The paperwork shouldn't be. |
+| v3             | `mytakziah-v3-a3.png` | Code        | Editorial and austere. Three columns, one vertical thread, no illustration.                    | One death. Tell government once.                  |
+| v4             | `mytakziah-v4-a3.png` | Code + art  | Illustrated rebuild. Watercolour backdrop, connected chain, four cards.                        | Grief is hard enough. The paperwork shouldn't be. |
+| v5             | `mytakziah-v5-a3.png` | Code + art  | As v4, plus a watercolour scene behind each pillar card.                                       | Grief is hard enough. The paperwork shouldn't be. |
+| v6             | `mytakziah-v6-a3.png` | Code + art  | As v4, in a layered paper-cut style, with each card led by an illustrated banner.              | Grief is hard enough. The paperwork shouldn't be. |
+| **v7, latest** | `mytakziah-v7-a3.png` | Code + art  | v5 rebuilt for legibility: bigger, heavier, darker type, two-column pillars, money-led Impact. | Grief is hard enough. The paperwork shouldn't be. |
 
 **v2 has no editable source in this repo**, because it came out of an image model. Every other
 version has a matching `.html` that re-exports the PNG exactly, so its copy and figures can still be
@@ -46,26 +46,60 @@ body size, not the headline or the display numbers.
 | v4      | 11.0 pt, about 3.9 mm                                         |
 | v5      | 11.0 pt, about 3.9 mm                                         |
 | v6      | 11.0 pt, about 3.9 mm                                         |
-| **v7**  | **13.4 pt, about 4.7 mm**                                     |
+| **v7**  | **about 13 pt, 4.6 mm**                                       |
 
 **Correction.** An earlier note on issue #13 said v4 to v6 set body text "at 5 mm or more". That was
-wrong. They set it at 11 pt, roughly 3.9 mm. v7 is the first version at 13 pt and above.
+wrong. They set it at 11 pt, roughly 3.9 mm. v7 is the first version at about 13 pt.
 
 For reference, a poster read at arm's length wants 12 pt or more for body copy, and 14 pt is
 comfortable. v7 clears the first bar; v1, v2 and v3 sit well below it.
 
 ## What v7 Changes Against v5
 
-- **Type is larger and heavier throughout.** Body copy moves from 11 pt to 13.4 pt, the base weight
-  moves from regular to medium, and bold lead-ins move from semibold to bold.
-- **Text is darker.** The muted neutral moves from `#736056` to `#5c4a40`, which lifts contrast on
-  every secondary line, and the lede under the headline is now full ink rather than muted.
+**Legibility**
+
+- **Type is larger and heavier throughout.** Body copy moves from 11 pt to about 13 pt, the base
+  weight moves from regular to medium, and bold lead-ins move from semibold to bold.
+- **Text is darker.** The muted neutral moves from `#736056` to `#5c4a40`, and the lede under the
+  headline is now full ink rather than muted.
+- **Station subtexts are ink, not muted**, and set in semibold, because they were the faintest text
+  on the poster.
+- **The footer is bigger and darker.** Its labels are ink and semibold, the QR grows to 164 px, the
+  SDG icons to 120 px, and the Kolaxus mark to 76 px.
+
+**Composition**
+
 - **Pillar numbers are terracotta**, so "1. Problem" reads as a marker rather than grey furniture.
 - **Two pillars became two-column** to pay for the larger type: the four Innovation points sit in a
   2 by 2 grid, and the two benefit figures in Impact sit side by side.
-- **The station chain is slightly smaller**, which released the vertical space the bigger type needed.
-- **The card artwork is more present**, raised from 50 to 62 per cent opacity and widened, because
-  the heavier darker text can carry it without losing contrast.
+- **Money now leads the Impact pillar.** RM3.05b is set at 88 px against 198,992 at 66 px, and the
+  two sit on a shared baseline via a grid row rather than being flex-aligned by their bottoms.
+- **No footer panel.** An earlier pass put the footer on a white card, which read as clutter. The
+  footer now sits on the page under a hairline rule, and a soft wash of the page ground settles the
+  illustration behind it so the text still holds.
+- **The card artwork is more present**, raised from 50 to 62 per cent opacity and widened.
+
+**Marks**
+
+- **The Kolaxus mark is keyed to transparency.** Its white box is removed by unpremultiplying
+  against the white matte, so the mark sits on the warm ground rather than in a white rectangle.
+- **The URIIS 2026 organiser mark is added** to the footer, keyed the same way from
+  `uriis-logo.jpeg`. Transparent copies are `kolaxus-logo-transparent.png` and
+  `uriis-logo-transparent.png` in `../`.
+
+**Copy, corrected against the research**
+
+The old line "Drafts, never auto-approval" sat next to "MyTakziah claims" and read as a
+contradiction. The sourced position is in `docs/research/agency-rule-map.md`: the model never
+decides eligibility, MyTakziah pre-fills forms and submits them, and the agency decides. v7 makes
+the order explicit:
+
+- "**You approve each agency separately.** Nothing is sent until you do."
+- "**Never auto-approved.** The agency decides every claim."
+- The station now reads "One timeline: you approve, it submits, you track".
+- The closing line reads "MyTakziah prepares and files the claim".
+- The bottom disclaimer drops "Drafts only", which contradicted the above, in favour of
+  "Nothing is sent without your approval".
 
 ## Rebuilding An Export
 
@@ -89,4 +123,9 @@ Generated artwork lives in `../../codex-generated/`. Prefixes: no prefix for v4,
   on a station label would read as a promise.
 - **v7 shortens three Innovation lines and one Impact line** to pay for the larger type. The meaning
   is unchanged, but the exact wording now differs from `canvas-copy.md`.
+- **No public submission API is evidenced.** `docs/research/agency-rule-map.md` records that a death
+  notice can already be lodged online at one agency, but warns that this "is not evidence that a
+  public submission or status API exists, and the submission must not imply that it is". JPN death
+  registration is in person. So filing is the proposed service, not demonstrated integration, and
+  nobody should defend it in question and answer as something that already works end to end.
 - **Team member names are still `TODO`** and appear on none of these versions.
