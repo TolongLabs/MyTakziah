@@ -67,11 +67,11 @@ export function DraftDialog({
                 const value = values[`${group.id}.${f.name}`]?.trim();
                 return (
                   <div
-                    className="flex items-baseline gap-4 px-3 py-2.5"
+                    className="flex flex-col gap-0.5 px-3 py-2.5 sm:flex-row sm:items-baseline sm:gap-4"
                     key={`${group.id}.${f.name}`}
                   >
-                    <dt className="w-44 shrink-0 text-sm text-muted-foreground">{f.name}</dt>
-                    <dd className="flex-1 text-sm font-medium">
+                    <dt className="text-sm text-muted-foreground sm:w-44 sm:shrink-0">{f.name}</dt>
+                    <dd className="text-sm font-medium sm:flex-1">
                       {value || (
                         <span className="font-normal text-muted-foreground">Not given</span>
                       )}

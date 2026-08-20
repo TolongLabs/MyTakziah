@@ -284,7 +284,7 @@ export function MobileDock({
   return (
     <nav
       aria-label="Walkthrough"
-      className="glass fixed inset-x-3 bottom-3 flex items-center justify-around rounded-[var(--radius-float)] p-1.5 md:hidden"
+      className="glass fixed inset-x-3 bottom-3 flex items-stretch justify-around rounded-[var(--radius-float)] p-1.5 md:hidden"
       style={{ zIndex: "var(--z-island)" }}
     >
       {steps.map(({ label, icon: Icon }, i) => (
