@@ -19,6 +19,12 @@
       "skillPath": "pm-product-discovery/skills/brainstorm-ideas-new/SKILL.md",
       "computedHash": "d996451909bfe18cce853f1838d640505ee00d564fdf8818e3563b790ad8b492"
     },
+    "brandkit": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/brandkit/SKILL.md",
+      "computedHash": "b63012f3c3d21197e0185d3e9cc7ec40c589fb10e0b5a32a561739de31aa3f20"
+    },
     "business-document-generator": {
       "source": "ailabs-393/ai-labs-claude-skills",
       "sourceType": "github",
@@ -72,6 +78,12 @@
       "sourceType": "github",
       "skillPath": "ux-strategy/skills/design-brief/SKILL.md",
       "computedHash": "f0c2e590d8977ce4c584de62f9f30d61afe9543d5be3ba4921438453e40abec9"
+    },
+    "design-taste-frontend": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/taste-skill/SKILL.md",
+      "computedHash": "6d838b246d0e35d0b53f4f23f98ba7a1dd561937e64f7d0c7553b0928e376c3e"
     },
     "docx": {
       "source": "ailabs-393/ai-labs-claude-skills",

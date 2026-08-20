@@ -1,6 +1,6 @@
 # Agent Skills
 
-63 skills installed for the URIIS Student Biz Innov Challenge 2026, curated
+65 skills installed for the URIIS Student Biz Innov Challenge 2026, curated
 against the eight submission sections, the four judging criteria, and the four
 problem statements.
 
@@ -40,7 +40,7 @@ The template has eight sections. Reach for these:
 | 4. Innovation Element | `competitor-analysis`, `competitive-battlecard`, `positioning-ideas`, `swot-analysis`, `porters-five-forces` |
 | 5. Impact | `toc-builder`, `market-sizing`, `north-star-metric`, `data-visualization` |
 | 6. Feasibility | `business-model`, `monetization-strategy`, `gtm-strategy`, `startup-validator`, `pre-mortem`, `strategy-red-team` |
-| 7. Visual Concept | `impeccable`, `wireframe-spec`, `storyboard-manager`, `visual-hierarchy`, `layout-grid`, `color-system`, `typography-scale`, `information-architecture` |
+| 7. Visual Concept | `impeccable`, `brandkit`, `design-taste-frontend`, `wireframe-spec`, `storyboard-manager`, `visual-hierarchy`, `layout-grid`, `color-system`, `typography-scale`, `information-architecture` |
 | 8. Why Your Team Should Win | `product-vision`, `value-prop-statements`, `grammar-check`, `ux-writing` |
 
 ## Map to the judging criteria
@@ -52,7 +52,7 @@ Weightings are fixed by the organisers. Spend effort proportionally.
 | Innovation | 30% | `competitor-analysis`, `positioning-ideas`, `brainstorm-ideas-new`, `opportunity-solution-tree` |
 | Feasibility | 25% | `business-model`, `startup-validator`, `identify-assumptions-new`, `pre-mortem`, `strategy-red-team` |
 | Social / Economic Impact | 25% | `toc-builder`, `market-sizing`, `north-star-metric`, `pestle-analysis` |
-| Submission Quality | 20% | `impeccable`, `grammar-check`, `ux-writing`, `visual-hierarchy`, `layout-grid`, `business-document-generator`, `docx`, `pptx` |
+| Submission Quality | 20% | `impeccable`, `brandkit`, `grammar-check`, `ux-writing`, `visual-hierarchy`, `layout-grid`, `business-document-generator`, `docx`, `pptx` |
 
 ## Building the A3 Innovation Canvas
 
@@ -82,6 +82,40 @@ Useful entry points, all invoked as `/impeccable <command>`:
 Keep the five pillars intact: The Concept, Problem, Target User, Innovation,
 and Impact. Confirm the exported file is A3 portrait and JPG or PNG in
 `docs/submission/preflight.md` before uploading.
+
+## Designing The Brand Mark
+
+Two skills come from [taste-skill](https://github.com/Leonxlnx/taste-skill)
+rather than the sources above, and both are installed for identity work on
+MyTakziah.
+
+| Skill | Install name | Use it for |
+| --- | --- | --- |
+| `brandkit` | `brandkit` | Logo concepting and identity boards. It outputs images, not code, so pair it with an image model. |
+| `design-taste-frontend` | `design-taste-frontend` | The anti-slop frontend rules, if the optional prototype in `frontend/` gets more design attention. |
+
+`brandkit` is the one that matters for the submission. Its value is the logo
+concept methods, monogram plus meaning, product action, metaphor fusion,
+negative space, and construction geometry, which give you five distinct ways
+into a mark instead of one. Its default visual world is dark developer
+branding, so override it with the warm palette recorded in
+`../../docs/submission/canvas/canvas-copy.md`.
+
+Claude Code cannot generate images. Delegate that to the Codex CLI, which has
+image generation built in and needs no API key:
+
+```bash
+codex exec --skip-git-repo-check - < brief.md
+```
+
+Two constraints bind any mark for this project. It must be a single flat
+colour, because `frontend/src/shell.tsx` repaints the footer mark with a CSS
+filter that only works on a solid one-colour silhouette. And it must be legible
+at 32 pixels, because 30 per cent of the final score is a student vote decided
+on a scrolled feed.
+
+Generated marks are raster. Redraw the chosen one as SVG before it goes near
+the A3 canvas.
 
 ## Map to the four problem statements
 
