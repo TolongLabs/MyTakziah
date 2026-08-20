@@ -3,14 +3,13 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-/* Official goal colours and target wording, from sdgs.un.org. The UN permits
-   illustrative use of the goals without written permission; nothing here
-   reproduces UN artwork. */
+/* Target wording from sdgs.un.org; icons are the UN's own files, unmodified,
+   with provenance and the permission basis recorded in public/sdg/README.md. */
 const GOALS = [
   {
     number: 16,
     name: "Peace, Justice and Strong Institutions",
-    colour: "#00689D",
+    icon: "/sdg/E-Goal-16.png",
     target: "16.6",
     text: "Develop effective, accountable and transparent institutions at all levels",
     how: "MyTakziah publishes the rule behind every requirement, receipts every submission and shows all three agencies in one status list. It never marks a claim approved, because the agency decides. Transparency here means a family can check the rule, not that it is asked to trust the system.",
@@ -18,7 +17,7 @@ const GOALS = [
   {
     number: 1,
     name: "No Poverty",
-    colour: "#E5243B",
+    icon: "/sdg/E-Goal-01.png",
     target: "1.3",
     text: "Implement nationally appropriate social protection systems and measures for all, including floors, and by 2030 achieve substantial coverage of the poor and the vulnerable",
     how: "Malaysia's survivor benefits already exist and are already funded. The gap is coverage, and an entitlement that is never claimed pays nothing. Documented cases include a widow who reached her claim twenty-three years late.",
@@ -54,19 +53,17 @@ export function About({ onBack }: { onBack: () => void }) {
         <CardContent className="space-y-6">
           {GOALS.map((g) => (
             <div className="flex flex-col gap-4 sm:flex-row" key={g.number}>
-              {/* The two hex values are the UN's official goal colours and are
-                  deliberately outside our palette. They identify the goal, so a
-                  future palette pass must not harmonise them. Both clear 4.5:1
-                  against white. */}
-              <div
-                className="flex size-28 shrink-0 flex-col justify-between rounded-[var(--radius-control)] p-3 text-white"
-                style={{ backgroundColor: g.colour }}
-              >
-                <span className="font-[family-name:var(--font-display)] text-4xl leading-none font-bold">
-                  {g.number}
-                </span>
-                <span className="text-[0.65rem] leading-tight font-semibold">{g.name}</span>
-              </div>
+              {/* Official UN artwork, used unmodified. The guidelines forbid
+                  altering the icons, so there is no recolouring, no cropping
+                  and deliberately no corner rounding, however much the latter
+                  would match the rest of this page. */}
+              <img
+                alt={`Sustainable Development Goal ${g.number}: ${g.name}`}
+                className="size-28 shrink-0"
+                height={1500}
+                src={g.icon}
+                width={1500}
+              />
 
               <div className="min-w-0">
                 <p className="text-sm font-medium">
@@ -82,6 +79,11 @@ export function About({ onBack }: { onBack: () => void }) {
             Not SDG 10, because the first release covers Peninsular Malaysia and defers Sabah and
             Sarawak to a second phase. Not SDG 5, because we hold no gender-disaggregated evidence,
             only the fact that PERKESO publishes a sole widow declaration form.
+          </p>
+
+          <p className="text-xs text-muted-foreground">
+            Goal icons are the United Nations' own, used unmodified for illustrative purposes. Team
+            Survive is not affiliated with or endorsed by the United Nations.
           </p>
         </CardContent>
       </Card>
