@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>MyTakziah Innovation Canvas v8, A3 Portrait</title>
+<link rel="stylesheet" href="./assets/fonts-embedded.css" />
+<style>
+  :root {
+    --ground: #f9f3ea;
+    --ink: #281913;
+    --card: #fffdfa;
+    --muted: #5c4a40;
+    --border: #e1d7cd;
+    --accent: #bc4d1a;
+    --ochre: #e08a4c;
+    --slate: #376d7c;
+    --radius: 10px;
+    --gen: ../../codex-generated;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #d8d2c7; }
+  body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+  #page {
+    position: relative;
+    width: 1754px;
+    height: 2480.5px; /* doubles to 4961, exact A3 portrait at 300 DPI */
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    overflow: hidden;
+  }
+
+  /* ---------- layers ---------- */
+  .backdrop {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: 0;
+  }
+  .footer-veil {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 470px; z-index: 10;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(249,243,234,0) 0%, rgba(249,243,234,0.72) 34%, rgba(249,243,234,0.93) 68%, rgba(249,243,234,0.97) 100%);
+  }
+  .paper {
+    position: absolute; inset: 0; z-index: 60; pointer-events: none;
+    width: 100%; height: 100%; object-fit: cover;
+    mix-blend-mode: multiply; opacity: 0.3;
+  }
+
+  /* ---------- content ---------- */
+  .content {
+    position: relative; z-index: 20;
+    height: 100%;
+    padding: 56px 96px 44px 96px;
+    display: flex; flex-direction: column;
+  }
+
+  /* masthead */
+  .masthead { display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 24px; }
+  .brand > img { width: 104px; height: 104px; display: block; }
+  .wordmark { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 68px; letter-spacing: -0.025em; line-height: 1; }
+  .wordmark .t { color: var(--accent); }
+  .brand .sub { font-size: 25px; font-weight: 500; color: var(--muted); margin-top: 8px; }
+  .team { text-align: right; }
+  .team .name { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 54px; letter-spacing: -0.02em; line-height: 1; }
+  .team .meta { font-size: 25px; font-weight: 500; color: var(--muted); margin-top: 10px; }
+
+  /* hero */
+  .hero { text-align: center; margin-top: 16px; }
+  .hero h1 {
+    font-family: "Outfit", sans-serif; font-weight: 700;
+    font-size: 78px; line-height: 1.04; letter-spacing: -0.035em;
+  }
+  .hero h1 .b { display: block; color: var(--accent); }
+  .hero .lede {
+    font-size: 34px; font-weight: 500; line-height: 1.4; color: var(--ink);
+    margin: 22px auto 0; max-width: 1330px;
+  }
+
+  /* the thread */
+  .thread { position: relative; margin-top: 22px; }
+  .chain { display: block; }
+  .stations { display: flex; justify-content: space-between; margin-top: 8px; }
+  .station { width: 260px; text-align: center; }
+  .station .n { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 34px; letter-spacing: -0.01em; }
+  .station .d { font-size: 25px; font-weight: 600; color: var(--ink); margin-top: 6px; line-height: 1.26; }
+  .deadline {
+    position: absolute; z-index: 3; top: -26px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: #fff; white-space: nowrap;
+    font-family: "Outfit", sans-serif; font-weight: 700; font-size: 29px;
+    padding: 9px 28px; border-radius: 999px;
+  }
+  .deadline::after {
+    content: ""; position: absolute; left: 50%; top: 100%;
+    width: 3px; height: 16px; background: var(--accent); transform: translateX(-50%);
+  }
+
+  /* proof from the running prototype */
+  .proofs { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 10px; align-items: start; }
+  .proofs figure { margin: 0; }
+  .proofs img {
+    width: 100%; height: auto; display: block; border: 1px solid var(--border);
+    border-radius: 8px; background: var(--card);
+  }
+  .proofs figcaption {
+    font-size: 20px; font-weight: 700; line-height: 1.22;
+    color: var(--ink); margin-top: 8px;
+  }
+  .proofs figcaption span { font-weight: 500; color: var(--muted); }
+
+  /* pillars */
+  .pillars {
+    flex: 1; min-height: 0; margin-top: 12px;
+    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto;
+    gap: 26px;
+  }
+  .card {
+    position: relative; overflow: hidden; isolation: isolate;
+    background: rgba(255, 253, 250, 0.9);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 18px rgba(40, 25, 19, 0.07);
+    padding: 16px 26px 14px;
+    display: flex; flex-direction: column;
+  }
+  .card-art {
+    position: absolute; right: 0; bottom: 0; width: 82%; z-index: -2;
+    opacity: 0.62; pointer-events: none;
+  }
+  .card-scrim {
+    position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      linear-gradient(100deg, rgba(255,253,250,0.98) 40%, rgba(255,253,250,0.86) 68%, rgba(255,253,250,0.7) 100%),
+      linear-gradient(to bottom, rgba(255,253,250,0.94) 30%, rgba(255,253,250,0.34) 100%);
+  }
+  .card-head { display: flex; align-items: flex-start; gap: 20px; }
+  .card-head img { width: 76px; height: 76px; display: block; flex: none; }
+  .card-head .tt { padding-top: 2px; }
+  .card-head .num { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 23px; color: var(--accent); letter-spacing: 0.01em; }
+  .card-head h2 { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 44px; letter-spacing: -0.022em; line-height: 1.08; margin-top: 5px; }
+  .card-head .sub { font-size: 26px; font-weight: 500; line-height: 1.22; color: var(--muted); margin-top: 3px; max-width: 44ch; }
+
+  /* pillar 1 table */
+  table.demands { width: 100%; border-collapse: collapse; margin-top: 10px; font-variant-numeric: tabular-nums; }
+  table.demands th {
+    font-family: "Outfit", sans-serif; font-weight: 700; font-size: 23px; color: #fff;
+    background: var(--accent); text-align: center; padding: 5px 6px;
+  }
+  table.demands th:first-child { background: transparent; color: var(--muted); font-family: "Work Sans", sans-serif; font-weight: 600; text-align: left; }
+  table.demands th.r1 { border-radius: 6px 0 0 6px; }
+  table.demands th.r2 { border-radius: 0 6px 6px 0; }
+  table.demands td { border-bottom: 1px solid var(--border); padding: 2px 6px; font-size: 27px; font-weight: 500; }
+  table.demands td.mark, table.demands td.no { text-align: center; }
+  table.demands td.no { color: var(--muted); }
+  table.demands tr:last-child td { border-bottom: 0; }
+  .takeaway { font-weight: 700; font-size: 25px; line-height: 1.24; margin-top: auto; padding-top: 8px; }
+
+  /* pillar 2 stats */
+  .stats { margin-top: 8px; display: flex; flex-direction: column; gap: 5px; }
+  .stat {
+    display: flex; align-items: center; gap: 22px;
+    background: #f6efe5; border-radius: 8px; padding: 7px 20px;
+  }
+  .stat .v { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 50px; letter-spacing: -0.02em; color: var(--slate); min-width: 158px; font-variant-numeric: tabular-nums; }
+  .stat .l { font-size: 24px; font-weight: 500; line-height: 1.18; color: var(--muted); }
+
+  /* pillar 3 points */
+  .points { margin-top: 14px; display: flex; flex-direction: column; gap: 14px; }
+  .point { display: flex; gap: 16px; align-items: flex-start; }
+  .point .tick { flex: none; margin-top: 4px; }
+  .point p { font-size: 26px; font-weight: 500; line-height: 1.24; }
+  .point b { font-weight: 700; color: var(--ink); }
+  .versus { margin-top: auto; padding-top: 10px; font-size: 27px; font-weight: 500; line-height: 1.45; border-top: 1px solid var(--border); }
+
+  /* pillar 4 impact */
+  .impact-top {
+    display: grid; grid-template-columns: 1fr 1px 1fr; column-gap: 26px;
+    align-items: baseline; margin-top: 10px; margin-bottom: 10px;
+  }
+  .impact-top .v { font-family: "Outfit", sans-serif; font-weight: 800; grid-row: 1; font-size: 58px; line-height: 1; letter-spacing: -0.03em; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .impact-top .l { grid-row: 2; font-size: 22px; font-weight: 500; color: var(--muted); margin-top: 6px; line-height: 1.24; }
+  .impact-top .rule { grid-column: 2; grid-row: 1 / 3; width: 1px; align-self: stretch; background: var(--border); }
+  .impact-top .v.lead { font-size: 78px; }
+  .money-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .money-row { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; background: #f6efe5; border-radius: 8px; padding: 11px 16px; margin-top: 0; }
+  .money-row .v { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 30px; color: var(--accent); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .money-row .l { font-size: 21px; font-weight: 500; line-height: 1.24; color: var(--muted); }
+  .measure { font-size: 20px; font-weight: 500; line-height: 1.26; color: var(--muted); margin-top: auto; padding-top: 10px; }
+
+  /* footer */
+  .footer {
+    margin-top: 24px; display: flex; align-items: center; justify-content: space-between;
+    gap: 40px; padding: 16px 6px 0;
+    border-top: 1px solid var(--border);
+  }
+  .qr-group { display: flex; align-items: center; gap: 20px; }
+  .qr-group img { width: 164px; height: 164px; display: block; border: 1px solid var(--border); }
+  .qr-group .t1 { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 30px; color: var(--ink); }
+  .qr-group .t2 { font-size: 26px; font-weight: 600; color: var(--accent); margin-top: 6px; }
+  .cred { text-align: center; }
+  .cred .tag { font-family: "Outfit", sans-serif; font-weight: 800; font-size: 42px; color: var(--accent); letter-spacing: -0.015em; }
+  .cred .c2 { font-size: 25px; font-weight: 600; color: var(--ink); margin-top: 9px; }
+  .cred .kolaxus { margin-top: 16px; display: inline-flex; align-items: center; gap: 20px; }
+  .cred .kolaxus span { font-size: 23px; font-weight: 600; color: var(--ink); }
+  .cred .kolaxus img { height: 76px; display: block; }
+  .cred .kolaxus img.uriis { height: 124px; }
+  .sdg-group { text-align: right; }
+  .sdg-group .lab { font-size: 23px; font-weight: 600; color: var(--ink); margin-bottom: 12px; }
+  .sdg-row { display: flex; gap: 14px; justify-content: flex-end; }
+  .sdg-cell { text-align: center; }
+  .sdg-cell img { width: 120px; height: 120px; display: block; }
+  .sdg-cell .tg { font-size: 22px; font-weight: 600; color: var(--ink); margin-top: 8px; }
+
+  .disclaimer {
+    margin-top: 14px; text-align: center;
+    font-size: 25px; font-weight: 600; color: var(--ink);
+  }
+</style>
+</head>
+<body>
+<div id="page">
+
+  <img class="backdrop" src="../../codex-generated/b-backdrop.png" alt="" onerror="this.remove()" />
+
+  <div class="footer-veil"></div>
+
+  <div class="content">
+
+    <!-- masthead -->
+    <div class="masthead">
+      <div class="brand">
+        <img src="../mytakziah-mark-2400.png" alt="MyTakziah mark, three woven strands" />
+        <div>
+          <div class="wordmark">My<span class="t">Takziah</span></div>
+          <div class="sub">A proposed addition to the MyGOV family</div>
+        </div>
+      </div>
+      <div class="team">
+        <div class="name">Team Survive</div>
+      </div>
+    </div>
+
+    <!-- hero -->
+    <div class="hero">
+      <h1>Grief is hard enough.<span class="b">The paperwork shouldn't be.</span></h1>
+      <p class="lede">Three agencies demand the same five facts thirteen times. MyTakziah takes them once, and sends nothing until you approve.</p>
+    </div>
+
+    <!-- the thread: one connected chain, drawn as a single SVG so it cannot come apart -->
+    <div class="thread">
+      <div class="deadline">6 months</div>
+      <svg class="chain" width="1546" height="146" viewBox="0 0 1546 146" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 130 80 H 1416" stroke="#bc4d1a" stroke-width="9" stroke-linecap="round"/>
+        <path d="M 281.75 69 L 299.75 80 L 281.75 91 Z" fill="#bc4d1a"/>
+        <path d="M 603.25 69 L 621.25 80 L 603.25 91 Z" fill="#bc4d1a"/>
+        <path d="M 924.75 69 L 942.75 80 L 924.75 91 Z" fill="#bc4d1a"/>
+        <path d="M 1246.25 69 L 1264.25 80 L 1246.25 91 Z" fill="#bc4d1a"/>
+        <clipPath id="c0"><circle cx="130" cy="80" r="49"/></clipPath>
+        <circle cx="130" cy="80" r="57" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5"/>
+        <image href="../../codex-generated/b-med-evidence.png" x="81" y="31" width="98" height="98" clip-path="url(#c0)" preserveAspectRatio="xMidYMid slice"/>
+        <clipPath id="c1"><circle cx="451.5" cy="80" r="49"/></clipPath>
+        <circle cx="451.5" cy="80" r="57" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5"/>
+        <image href="../../codex-generated/b-med-registry.png" x="402.5" y="31" width="98" height="98" clip-path="url(#c1)" preserveAspectRatio="xMidYMid slice"/>
+        <clipPath id="c2"><circle cx="773" cy="80" r="49"/></clipPath>
+        <circle cx="773" cy="80" r="57" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5"/>
+        <image href="../../codex-generated/b-med-savings.png" x="724" y="31" width="98" height="98" clip-path="url(#c2)" preserveAspectRatio="xMidYMid slice"/>
+        <clipPath id="c3"><circle cx="1094.5" cy="80" r="49"/></clipPath>
+        <circle cx="1094.5" cy="80" r="57" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5"/>
+        <image href="../../codex-generated/b-med-protection.png" x="1045.5" y="31" width="98" height="98" clip-path="url(#c3)" preserveAspectRatio="xMidYMid slice"/>
+        <clipPath id="c4"><circle cx="1416" cy="80" r="49"/></clipPath>
+        <circle cx="1416" cy="80" r="57" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5"/>
+        <image href="../../codex-generated/b-med-timeline.png" x="1367" y="31" width="98" height="98" clip-path="url(#c4)" preserveAspectRatio="xMidYMid slice"/>
+      </svg>
+      <div class="stations">
+        <div class="station"><div class="n">Evidence, once</div><div class="d">given a single time</div></div>
+        <div class="station"><div class="n">JPN</div><div class="d">register the death</div></div>
+        <div class="station"><div class="n">KWSP</div><div class="d">savings and death benefit</div></div>
+        <div class="station"><div class="n">PERKESO</div><div class="d">survivor and funeral</div></div>
+        <div class="station"><div class="n">One timeline</div><div class="d">you approve, it submits, you track</div></div>
+      </div>
+    </div>
+
+    <!-- proof: real screens from the running prototype -->
+    <div class="proofs">
+      <figure>
+        <img src="./assets/proto-entitlements.png" alt="Entitlement card from the prototype" onerror="this.parentElement.remove()" />
+        <figcaption>Ranked by deadline, never promised. <span>Every entitlement reads potentially eligible, shows what we cannot know, and links the published rule.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="./assets/proto-consent.png" alt="Per agency consent from the prototype" onerror="this.parentElement.remove()" />
+        <figcaption>Nothing is sent until you agree. <span>Each agency sees exactly what it needs and nothing else. You consent to each one separately.</span></figcaption>
+      </figure>
+    </div>
+
+    <!-- four pillars -->
+    <div class="pillars">
+
+      <div class="card">
+        <img class="card-art" src="../../codex-generated/b-card-problem.png" alt="" onerror="this.remove()" />
+        <div class="card-scrim"></div>
+        <div class="card-head">
+          <img src="../../codex-generated/pillar-problem.png" alt="" onerror="this.style.visibility='hidden'" />
+          <div class="tt">
+            <div class="num">1. Problem</div>
+            <h2>The same five facts, demanded thirteen times.</h2>
+                      </div>
+        </div>
+        <table class="demands">
+          <tr>
+            <th>Demanded of the family</th>
+            <th class="r1">JPN</th><th>KWSP</th><th class="r2">PERKESO</th>
+          </tr>
+          <tr><td>Who died</td><td class="mark">Yes</td><td class="mark">Yes</td><td class="mark">Yes</td></tr>
+          <tr><td>Who you are</td><td class="mark">Yes</td><td class="mark">Yes</td><td class="mark">Yes</td></tr>
+          <tr><td>Proof of the death</td><td class="mark">Yes</td><td class="mark">Yes</td><td class="mark">Yes</td></tr>
+          <tr><td>How you are related</td><td class="no">-</td><td class="mark">Yes</td><td class="mark">Yes</td></tr>
+          <tr><td>Where to pay</td><td class="no">-</td><td class="mark">Yes</td><td class="mark">Yes</td></tr>
+        </table>
+        <p class="takeaway">Two mandatory in-person trips with original documents. Miss the six-month EPF window and the RM2,500 is gone.</p>
+      </div>
+
+      <div class="card">
+        <img class="card-art" src="../../codex-generated/b-card-user.png" alt="" onerror="this.remove()" />
+        <div class="card-scrim"></div>
+        <div class="card-head">
+          <img src="../../codex-generated/pillar-user.png" alt="" onerror="this.style.visibility='hidden'" />
+          <div class="tt">
+            <div class="num">2. Target User</div>
+            <h2>Who carries it</h2>
+            <p class="sub">The surviving spouse, usually older, usually alone with the paperwork.</p>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="v">69.0</div><div class="l">median age at death in Malaysia, in years</div></div>
+          <div class="stat"><div class="v">91.6%</div><div class="l">of Malaysians aged 60 and over use the internet</div></div>
+          <div class="stat"><div class="v">33.6%</div><div class="l">of them deal with government online, against 38.9% overall</div></div>
+        </div>
+        <p class="takeaway">They are connected. They are still the least likely to transact. The barrier is the process, not the device.</p>
+      </div>
+
+      <div class="card">
+        <img class="card-art" src="../../codex-generated/b-card-innovation.png" alt="" onerror="this.remove()" />
+        <div class="card-scrim"></div>
+        <div class="card-head">
+          <img src="../../codex-generated/pillar-innovation.png" alt="" onerror="this.style.visibility='hidden'" />
+          <div class="tt">
+            <div class="num">3. Innovation</div>
+            <h2>A chatbot tells you what to do. MyTakziah does it.</h2>
+            <p class="sub">The once-only principle, applied to one life event.</p>
+          </div>
+        </div>
+        <div class="points">
+          <div class="point">
+            <svg class="tick" width="20" height="16" viewBox="0 0 20 16"><path d="M2 8.5 L7 14 L18 2" stroke="#bc4d1a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p><b>Published rules, not a model deciding.</b> Every condition cites its source.</p>
+          </div>
+          <div class="point">
+            <svg class="tick" width="20" height="16" viewBox="0 0 20 16"><path d="M2 8.5 L7 14 L18 2" stroke="#bc4d1a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p><b>Ranked by deadline, not by value.</b> The EPF window is six months.</p>
+          </div>
+        </div>
+        <p class="versus">The UK's Tell Us Once <b>notifies</b> agencies of a death. MyTakziah <b>prepares and files the claim</b>.</p>
+      </div>
+
+      <div class="card">
+        <img class="card-art" src="../../codex-generated/b-card-impact.png" alt="" onerror="this.remove()" />
+        <div class="card-scrim"></div>
+        <div class="card-head">
+          <img src="../../codex-generated/pillar-impact.png" alt="" onerror="this.style.visibility='hidden'" />
+          <div class="tt">
+            <div class="num">4. Impact</div>
+            <h2>Every death starts the same paperwork.</h2>
+          </div>
+        </div>
+        <div class="impact-top">
+          <div class="v lead" style="grid-column: 1;">RM3.05b</div>
+          <div class="rule"></div>
+          <div class="v" style="grid-column: 3;">198,992</div>
+          <div class="l" style="grid-column: 1;">EPF death withdrawals across 85,731 claims, 2023</div>
+          <div class="l" style="grid-column: 3;">deaths in Malaysia, 2024</div>
+        </div>
+        <div class="money-grid">
+          <div class="money-row">
+            <div class="v">RM2,500</div>
+            <div class="l">EPF Death Assistance, lost if not claimed within six months</div>
+          </div>
+          <div class="money-row">
+            <div class="v">Up to RM3,000</div>
+            <div class="l">PERKESO funeral benefit</div>
+          </div>
+        </div>
+        <p class="measure">Not yet measured: items re-entered, trips, and claims inside the window.</p>
+      </div>
+
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+      <div class="qr-group">
+        <img src="../mytakziah-qr.png" alt="QR code for the MyTakziah prototype" />
+        <div>
+          <div class="t1">Scan to try the prototype</div>
+          <div class="t2">mytakziah.vercel.app</div>
+        </div>
+      </div>
+      <div class="cred">
+        <div class="c2">URIIS Student Biz Innov Challenge 2026</div>
+        <div class="kolaxus">
+          <img class="uriis" src="../uriis-logo-transparent.png" alt="URIIS 2026" />
+          <img src="../kolaxus-logo-transparent.png" alt="Kolaxus" />
+        </div>
+      </div>
+      <div class="sdg-group">
+        <div class="lab">Aligned with the UN SDGs</div>
+        <div class="sdg-row">
+          <div class="sdg-cell"><img src="../sdg-16.png" alt="SDG 16, Peace, Justice and Strong Institutions" /><div class="tg">Target 16.6</div></div>
+          <div class="sdg-cell"><img src="../sdg-1.png" alt="SDG 1, No Poverty" /><div class="tg">Target 1.3</div></div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+    <div class="edge e-bot"></div>
+    <div class="edge e-left"></div>
+    <div class="edge e-right"></div>
+  </div>
+
+  <img class="paper" src="../../codex-generated/paper-texture.png" alt="" onerror="this.remove()" />
+</div>
+
+</body>
+</html>

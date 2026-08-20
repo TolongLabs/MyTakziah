@@ -1,6 +1,6 @@
 # Canvas Versions
 
-Seven A3 candidates for the Innovation Canvas. **The team picks one; the rest are kept for the
+Eight A3 candidates for the Innovation Canvas. **The team picks one; the rest are kept for the
 record.** Decision owner is @AlaskanTuna, per issue #13.
 
 Every file here is A3 portrait, **3508 by 4961 pixels at 300 DPI**, PNG, one page, and under the
@@ -16,7 +16,8 @@ Every file here is A3 portrait, **3508 by 4961 pixels at 300 DPI**, PNG, one pag
 | v4             | `mytakziah-v4-a3.png` | Code + art  | Illustrated rebuild. Watercolour backdrop, connected chain, four cards.                        | Grief is hard enough. The paperwork shouldn't be. |
 | v5             | `mytakziah-v5-a3.png` | Code + art  | As v4, plus a watercolour scene behind each pillar card.                                       | Grief is hard enough. The paperwork shouldn't be. |
 | v6             | `mytakziah-v6-a3.png` | Code + art  | As v4, in a layered paper-cut style, with each card led by an illustrated banner.              | Grief is hard enough. The paperwork shouldn't be. |
-| **v7, latest** | `mytakziah-v7-a3.png` | Code + art  | v5 rebuilt for legibility: bigger, heavier, darker type, two-column pillars, money-led Impact. | Grief is hard enough. The paperwork shouldn't be. |
+| v7             | `mytakziah-v7-a3.png` | Code + art  | v5 rebuilt for legibility: bigger, heavier, darker type, two-column pillars, money-led Impact. | Grief is hard enough. The paperwork shouldn't be. |
+| **v8, latest** | `mytakziah-v8-a3.png` | Code + art  | v7 plus two real screens from the running prototype, and a sharper problem statement.          | Grief is hard enough. The paperwork shouldn't be. |
 
 **v2 has no editable source in this repo**, because it came out of an image model. Every other
 version has a matching `.html` that re-exports the PNG exactly, so its copy and figures can still be
@@ -24,14 +25,14 @@ corrected before submission.
 
 ## How They Check Out
 
-| Check                                          | v1  | v2  | v3  | v4  | v5  | v6  | v7  |
-| ---------------------------------------------- | --- | --- | --- | --- | --- | --- | --- |
-| A3 portrait, 3508 by 4961, 300 DPI             | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
-| Under 25 MB                                    | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
-| Vector-crisp text at print size                | Yes | No  | Yes | Yes | Yes | Yes | Yes |
-| Prototype QR present and decodes               | No  | No  | Yes | Yes | Yes | Yes | Yes |
-| Editable source in repo                        | Yes | No  | Yes | Yes | Yes | Yes | Yes |
-| No em dash, no emoji, no banned agency wording | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| Check                                          | v1  | v2  | v3  | v4  | v5  | v6  | v7  | v8  |
+| ---------------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- |
+| A3 portrait, 3508 by 4961, 300 DPI             | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| Under 25 MB                                    | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| Vector-crisp text at print size                | Yes | No  | Yes | Yes | Yes | Yes | Yes | Yes |
+| Prototype QR present and decodes               | No  | No  | Yes | Yes | Yes | Yes | Yes | Yes |
+| Editable source in repo                        | Yes | No  | Yes | Yes | Yes | Yes | Yes | Yes |
+| No em dash, no emoji, no banned agency wording | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 
 ## Body Text Size, Measured
 
@@ -46,7 +47,8 @@ body size, not the headline or the display numbers.
 | v4      | 11.0 pt, about 3.9 mm                                         |
 | v5      | 11.0 pt, about 3.9 mm                                         |
 | v6      | 11.0 pt, about 3.9 mm                                         |
-| **v7**  | **about 13 pt, 4.6 mm**                                       |
+| v7      | about 13 pt, 4.6 mm                                           |
+| **v8**  | **about 13 pt, 4.6 mm**                                       |
 
 **Correction.** An earlier note on issue #13 said v4 to v6 set body text "at 5 mm or more". That was
 wrong. They set it at 11 pt, roughly 3.9 mm. v7 is the first version at about 13 pt.
@@ -101,24 +103,32 @@ the order explicit:
 - The bottom disclaimer drops "Drafts only", which contradicted the above, in favour of
   "Nothing is sent without your approval".
 
-## v7 Rework, Latest Pass
+## v8, What It Adds Over v7
+
+**v7 is unchanged and still on `main`.** v8 is a separate candidate built from it.
 
 - **Removed at the team's request:** the "URIIS 2026, Track 02" line, the "Small Ideas. Big Impact."
   tagline, the "Submitted through" label, and the bottom disclaimer strip.
 - **Core message sharpened.** The lede now names the problem and the safeguard in one sentence, and
-  the Problem pillar leads on a number derived from its own table: the five facts are demanded
-  thirteen times across the three agencies (3 + 3 + 3 + 2 + 2). The cost of failure is stated:
-  miss the six-month EPF window and the RM2,500 is gone.
-- **Two real screens from the running prototype** now sit between the thread and the pillars, cropped
-  from <https://mytakziah.vercel.app>. One shows an entitlement reading "Potentially Eligible,
-  Confirmation Required" with its deadline and source link. The other shows "No consent given yet.
-  Nothing is sent to JPN." beside the per-agency consent action. They are the evidence for the two
-  claims judges are most likely to challenge. Sources in `assets/proto-*.png`.
+  the Problem pillar leads on a number derived from its own table: the same five facts are demanded
+  thirteen times across the three agencies (3 + 3 + 3 + 2 + 2). The cost of failure is stated: miss
+  the six-month EPF window and the RM2,500 is gone.
+- **Two real screens from the running prototype**, captured from <https://mytakziah.vercel.app> and
+  shown between the thread and the pillars. One is a complete entitlement card: the deadline chip,
+  "Potentially Eligible, Confirmation Required", the criteria, a "What We Cannot Know" note, and the
+  live source link. The other is a complete consent panel: the per-agency tabs, the exact fields JPN
+  would receive, "No consent given yet. Nothing is sent to JPN.", and the consent action.
+- **Two Innovation bullets were removed because the screens now prove them.** Consent-per-agency and
+  never-auto-approved were assertions; they are now visible in the product, so the pillar shows
+  rather than tells and the space pays for the screens.
+
+Screens live in `assets/proto-entitlements.png` and `assets/proto-consent.png`. To refresh them, run
+the prototype and re-capture; the crop regions are recorded in the commit that added them.
 
 **Note on the removed disclaimer.** `docs/decisions.md` records a standing caution against implying
-official endorsement. The masthead still carries "A proposed addition to the MyGOV family", which is
-now the only non-endorsement signal on the sheet. If that reads as too weak, the shortest fix is to
-restore one line above the footer.
+official endorsement. In v8 the masthead's "A proposed addition to the MyGOV family" is the only
+non-endorsement signal left on the sheet. If that reads as too weak, restoring one line above the
+footer is the shortest fix. v7 still carries the full strip.
 
 ## Rebuilding An Export
 

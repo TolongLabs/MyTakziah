@@ -71,7 +71,7 @@
   .hero { text-align: center; margin-top: 16px; }
   .hero h1 {
     font-family: "Outfit", sans-serif; font-weight: 700;
-    font-size: 84px; line-height: 1.04; letter-spacing: -0.035em;
+    font-size: 96px; line-height: 1.04; letter-spacing: -0.035em;
   }
   .hero h1 .b { display: block; color: var(--accent); }
   .hero .lede {
@@ -80,14 +80,14 @@
   }
 
   /* the thread */
-  .thread { position: relative; margin-top: 26px; }
+  .thread { position: relative; margin-top: 30px; }
   .chain { display: block; }
   .stations { display: flex; justify-content: space-between; margin-top: 8px; }
   .station { width: 260px; text-align: center; }
   .station .n { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 34px; letter-spacing: -0.01em; }
   .station .d { font-size: 25px; font-weight: 600; color: var(--ink); margin-top: 6px; line-height: 1.26; }
   .deadline {
-    position: absolute; z-index: 3; top: -26px; left: 50%; transform: translateX(-50%);
+    position: absolute; z-index: 3; top: -28px; left: 50%; transform: translateX(-50%);
     background: var(--accent); color: #fff; white-space: nowrap;
     font-family: "Outfit", sans-serif; font-weight: 700; font-size: 29px;
     padding: 9px 28px; border-radius: 999px;
@@ -97,22 +97,9 @@
     width: 3px; height: 16px; background: var(--accent); transform: translateX(-50%);
   }
 
-  /* proof from the running prototype */
-  .proofs { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 10px; align-items: start; }
-  .proofs figure { margin: 0; }
-  .proofs img {
-    width: 100%; height: auto; display: block; border: 1px solid var(--border);
-    border-radius: 8px; background: var(--card);
-  }
-  .proofs figcaption {
-    font-size: 20px; font-weight: 700; line-height: 1.22;
-    color: var(--ink); margin-top: 8px;
-  }
-  .proofs figcaption span { font-weight: 500; color: var(--muted); }
-
   /* pillars */
   .pillars {
-    flex: 1; min-height: 0; margin-top: 16px;
+    flex: 1; min-height: 0; margin-top: 24px;
     display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto;
     gap: 26px;
   }
@@ -122,7 +109,7 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: 0 4px 18px rgba(40, 25, 19, 0.07);
-    padding: 18px 26px 16px;
+    padding: 20px 28px 18px;
     display: flex; flex-direction: column;
   }
   .card-art {
@@ -139,26 +126,26 @@
   .card-head img { width: 76px; height: 76px; display: block; flex: none; }
   .card-head .tt { padding-top: 2px; }
   .card-head .num { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 23px; color: var(--accent); letter-spacing: 0.01em; }
-  .card-head h2 { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 44px; letter-spacing: -0.022em; line-height: 1.08; margin-top: 5px; }
-  .card-head .sub { font-size: 26px; font-weight: 500; line-height: 1.22; color: var(--muted); margin-top: 3px; max-width: 44ch; }
+  .card-head h2 { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 46px; letter-spacing: -0.022em; line-height: 1.1; margin-top: 6px; }
+  .card-head .sub { font-size: 27px; font-weight: 500; line-height: 1.26; color: var(--muted); margin-top: 4px; max-width: 44ch; }
 
   /* pillar 1 table */
-  table.demands { width: 100%; border-collapse: collapse; margin-top: 10px; font-variant-numeric: tabular-nums; }
+  table.demands { width: 100%; border-collapse: collapse; margin-top: 12px; font-variant-numeric: tabular-nums; }
   table.demands th {
     font-family: "Outfit", sans-serif; font-weight: 700; font-size: 23px; color: #fff;
-    background: var(--accent); text-align: center; padding: 5px 6px;
+    background: var(--accent); text-align: center; padding: 7px 6px;
   }
   table.demands th:first-child { background: transparent; color: var(--muted); font-family: "Work Sans", sans-serif; font-weight: 600; text-align: left; }
   table.demands th.r1 { border-radius: 6px 0 0 6px; }
   table.demands th.r2 { border-radius: 0 6px 6px 0; }
-  table.demands td { border-bottom: 1px solid var(--border); padding: 4px 6px; font-size: 28px; font-weight: 500; }
+  table.demands td { border-bottom: 1px solid var(--border); padding: 6px 6px; font-size: 28px; font-weight: 500; }
   table.demands td.mark, table.demands td.no { text-align: center; }
   table.demands td.no { color: var(--muted); }
   table.demands tr:last-child td { border-bottom: 0; }
-  .takeaway { font-weight: 700; font-size: 26px; line-height: 1.26; margin-top: auto; padding-top: 8px; }
+  .takeaway { font-weight: 700; font-size: 27px; line-height: 1.32; margin-top: auto; padding-top: 12px; }
 
   /* pillar 2 stats */
-  .stats { margin-top: 10px; display: flex; flex-direction: column; gap: 7px; }
+  .stats { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
   .stat {
     display: flex; align-items: center; gap: 22px;
     background: #f6efe5; border-radius: 8px; padding: 7px 20px;
@@ -167,7 +154,7 @@
   .stat .l { font-size: 26px; font-weight: 500; line-height: 1.26; color: var(--muted); }
 
   /* pillar 3 points */
-  .points { margin-top: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; }
+  .points { margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 22px; }
   .point { display: flex; gap: 16px; align-items: flex-start; }
   .point .tick { flex: none; margin-top: 4px; }
   .point p { font-size: 26px; font-weight: 500; line-height: 1.24; }
@@ -239,39 +226,40 @@
       </div>
       <div class="team">
         <div class="name">Team Survive</div>
+        <div class="meta">URIIS 2026, Track 02</div>
       </div>
     </div>
 
     <!-- hero -->
     <div class="hero">
       <h1>Grief is hard enough.<span class="b">The paperwork shouldn't be.</span></h1>
-      <p class="lede">Three agencies demand the same five facts thirteen times. MyTakziah takes them once, and sends nothing until you approve.</p>
+      <p class="lede">No family should prove their loss over and over again. One set of evidence, told to government just once, with consent.</p>
     </div>
 
     <!-- the thread: one connected chain, drawn as a single SVG so it cannot come apart -->
     <div class="thread">
       <div class="deadline">6 months</div>
-      <svg class="chain" width="1546" height="146" viewBox="0 0 1546 146" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 130 80 H 1416" stroke="#bc4d1a" stroke-width="9" stroke-linecap="round"/>
-        <path d="M 281.75 69 L 299.75 80 L 281.75 91 Z" fill="#bc4d1a"/>
-        <path d="M 603.25 69 L 621.25 80 L 603.25 91 Z" fill="#bc4d1a"/>
-        <path d="M 924.75 69 L 942.75 80 L 924.75 91 Z" fill="#bc4d1a"/>
-        <path d="M 1246.25 69 L 1264.25 80 L 1246.25 91 Z" fill="#bc4d1a"/>
-        <clipPath id="c0"><circle cx="130" cy="80" r="49"/></clipPath>
-        <circle cx="130" cy="80" r="57" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5"/>
-        <image href="../../codex-generated/b-med-evidence.png" x="81" y="31" width="98" height="98" clip-path="url(#c0)" preserveAspectRatio="xMidYMid slice"/>
-        <clipPath id="c1"><circle cx="451.5" cy="80" r="49"/></clipPath>
-        <circle cx="451.5" cy="80" r="57" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5"/>
-        <image href="../../codex-generated/b-med-registry.png" x="402.5" y="31" width="98" height="98" clip-path="url(#c1)" preserveAspectRatio="xMidYMid slice"/>
-        <clipPath id="c2"><circle cx="773" cy="80" r="49"/></clipPath>
-        <circle cx="773" cy="80" r="57" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5"/>
-        <image href="../../codex-generated/b-med-savings.png" x="724" y="31" width="98" height="98" clip-path="url(#c2)" preserveAspectRatio="xMidYMid slice"/>
-        <clipPath id="c3"><circle cx="1094.5" cy="80" r="49"/></clipPath>
-        <circle cx="1094.5" cy="80" r="57" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5"/>
-        <image href="../../codex-generated/b-med-protection.png" x="1045.5" y="31" width="98" height="98" clip-path="url(#c3)" preserveAspectRatio="xMidYMid slice"/>
-        <clipPath id="c4"><circle cx="1416" cy="80" r="49"/></clipPath>
-        <circle cx="1416" cy="80" r="57" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5"/>
-        <image href="../../codex-generated/b-med-timeline.png" x="1367" y="31" width="98" height="98" clip-path="url(#c4)" preserveAspectRatio="xMidYMid slice"/>
+      <svg class="chain" width="1546" height="174" viewBox="0 0 1546 174" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 130 94 H 1416" stroke="#bc4d1a" stroke-width="9" stroke-linecap="round"/>
+        <path d="M 281.75 81 L 299.75 94 L 281.75 107 Z" fill="#bc4d1a"/>
+        <path d="M 603.25 81 L 621.25 94 L 603.25 107 Z" fill="#bc4d1a"/>
+        <path d="M 924.75 81 L 942.75 94 L 924.75 107 Z" fill="#bc4d1a"/>
+        <path d="M 1246.25 81 L 1264.25 94 L 1246.25 107 Z" fill="#bc4d1a"/>
+        <clipPath id="c0"><circle cx="130" cy="94" r="60"/></clipPath>
+        <circle cx="130" cy="94" r="69" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5"/>
+        <image href="../../codex-generated/b-med-evidence.png" x="70" y="34" width="120" height="120" clip-path="url(#c0)" preserveAspectRatio="xMidYMid slice"/>
+        <clipPath id="c1"><circle cx="451.5" cy="94" r="60"/></clipPath>
+        <circle cx="451.5" cy="94" r="69" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5"/>
+        <image href="../../codex-generated/b-med-registry.png" x="391.5" y="34" width="120" height="120" clip-path="url(#c1)" preserveAspectRatio="xMidYMid slice"/>
+        <clipPath id="c2"><circle cx="773" cy="94" r="60"/></clipPath>
+        <circle cx="773" cy="94" r="69" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5"/>
+        <image href="../../codex-generated/b-med-savings.png" x="713" y="34" width="120" height="120" clip-path="url(#c2)" preserveAspectRatio="xMidYMid slice"/>
+        <clipPath id="c3"><circle cx="1094.5" cy="94" r="60"/></clipPath>
+        <circle cx="1094.5" cy="94" r="69" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5"/>
+        <image href="../../codex-generated/b-med-protection.png" x="1034.5" y="34" width="120" height="120" clip-path="url(#c3)" preserveAspectRatio="xMidYMid slice"/>
+        <clipPath id="c4"><circle cx="1416" cy="94" r="60"/></clipPath>
+        <circle cx="1416" cy="94" r="69" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5"/>
+        <image href="../../codex-generated/b-med-timeline.png" x="1356" y="34" width="120" height="120" clip-path="url(#c4)" preserveAspectRatio="xMidYMid slice"/>
       </svg>
       <div class="stations">
         <div class="station"><div class="n">Evidence, once</div><div class="d">given a single time</div></div>
@@ -280,18 +268,6 @@
         <div class="station"><div class="n">PERKESO</div><div class="d">survivor and funeral</div></div>
         <div class="station"><div class="n">One timeline</div><div class="d">you approve, it submits, you track</div></div>
       </div>
-    </div>
-
-    <!-- proof: real screens from the running prototype -->
-    <div class="proofs">
-      <figure>
-        <img src="./assets/proto-entitlements.png" alt="Entitlement card from the prototype" onerror="this.parentElement.remove()" />
-        <figcaption>Nothing is promised. <span>Every entitlement reads potentially eligible, carries its deadline, and links the published rule it came from.</span></figcaption>
-      </figure>
-      <figure>
-        <img src="./assets/proto-consent.png" alt="Per agency consent from the prototype" onerror="this.parentElement.remove()" />
-        <figcaption>Nothing moves without you. <span>Each agency gets only what it needs, and only once you agree to that agency.</span></figcaption>
-      </figure>
     </div>
 
     <!-- four pillars -->
@@ -304,8 +280,8 @@
           <img src="../../codex-generated/pillar-problem.png" alt="" onerror="this.style.visibility='hidden'" />
           <div class="tt">
             <div class="num">1. Problem</div>
-            <h2>The same five facts, demanded thirteen times.</h2>
-            <p class="sub">Three agencies. Three forms. None of them talks to the others.</p>
+            <h2>Three agencies. Three forms.</h2>
+            <p class="sub">The same information, demanded again at each agency.</p>
           </div>
         </div>
         <table class="demands">
@@ -319,7 +295,7 @@
           <tr><td>How you are related</td><td class="no">-</td><td class="mark">Yes</td><td class="mark">Yes</td></tr>
           <tr><td>Where to pay</td><td class="no">-</td><td class="mark">Yes</td><td class="mark">Yes</td></tr>
         </table>
-        <p class="takeaway">Two mandatory in-person trips with original documents. Miss the six-month EPF window and the RM2,500 is gone.</p>
+        <p class="takeaway">At least two mandatory in-person trips, carrying original documents, to two agencies, to prove one death.</p>
       </div>
 
       <div class="card">
@@ -415,9 +391,11 @@
         </div>
       </div>
       <div class="cred">
+        <div class="tag">Small Ideas. Big Impact.</div>
         <div class="c2">URIIS Student Biz Innov Challenge 2026</div>
         <div class="kolaxus">
           <img class="uriis" src="../uriis-logo-transparent.png" alt="URIIS 2026" />
+          <span>Submitted through</span>
           <img src="../kolaxus-logo-transparent.png" alt="Kolaxus" />
         </div>
       </div>
@@ -430,6 +408,7 @@
       </div>
     </div>
 
+    <p class="disclaimer">Rules published and cited. Consent per agency. Nothing is sent without your approval. Not an official government service.</p>
 
   </div>
 
