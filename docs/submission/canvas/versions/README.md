@@ -1,6 +1,6 @@
 # Canvas Versions
 
-Nine A3 candidates for the Innovation Canvas. **The team picks one; the rest are kept for the
+Ten A3 candidates for the Innovation Canvas. **The team picks one; the rest are kept for the
 record.** Decision owner is @AlaskanTuna, per issue #13.
 
 Every file here is A3 portrait, **3508 by 4961 pixels at 300 DPI**, PNG, one page, and under the
@@ -8,17 +8,18 @@ Every file here is A3 portrait, **3508 by 4961 pixels at 300 DPI**, PNG, one pag
 
 ## The Candidates
 
-| Version        | File                  | Source      | Look                                                                                           | Hero Line                                         |
-| -------------- | --------------------- | ----------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| v1             | `mytakziah-v1-a3.png` | Code + art  | Serif hero, gold corner ornament, horizontal thread, illustrated scene at the base.            | One death. Tell government once.                  |
-| v2             | `mytakziah-v2-a3.png` | Image model | The illustrated "full-v2". Songket border, medallion chain, watercolour base.                  | Grief is hard enough. The paperwork shouldn't be. |
-| v3             | `mytakziah-v3-a3.png` | Code        | Editorial and austere. Three columns, one vertical thread, no illustration.                    | One death. Tell government once.                  |
-| v4             | `mytakziah-v4-a3.png` | Code + art  | Illustrated rebuild. Watercolour backdrop, connected chain, four cards.                        | Grief is hard enough. The paperwork shouldn't be. |
-| v5             | `mytakziah-v5-a3.png` | Code + art  | As v4, plus a watercolour scene behind each pillar card.                                       | Grief is hard enough. The paperwork shouldn't be. |
-| v6             | `mytakziah-v6-a3.png` | Code + art  | As v4, in a layered paper-cut style, with each card led by an illustrated banner.              | Grief is hard enough. The paperwork shouldn't be. |
-| v7             | `mytakziah-v7-a3.png` | Code + art  | v5 rebuilt for legibility: bigger, heavier, darker type, two-column pillars, money-led Impact. | Grief is hard enough. The paperwork shouldn't be. |
-| v8             | `mytakziah-v8-a3.png` | Code + art  | v7 plus two real screens from the running prototype, and a sharper problem statement.          | Grief is hard enough. The paperwork shouldn't be. |
-| **v9, latest** | `mytakziah-v9-a3.png` | Code + art  | v8 rebuilt: fan diagram, one type scale, three desktop screens below the quad, songket crown.  | Grief is hard enough. The paperwork shouldn't be. |
+| Version        | File                   | Source      | Look                                                                                           | Hero Line                                         |
+| -------------- | ---------------------- | ----------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| v1             | `mytakziah-v1-a3.png`  | Code + art  | Serif hero, gold corner ornament, horizontal thread, illustrated scene at the base.            | One death. Tell government once.                  |
+| v2             | `mytakziah-v2-a3.png`  | Image model | The illustrated "full-v2". Songket border, medallion chain, watercolour base.                  | Grief is hard enough. The paperwork shouldn't be. |
+| v3             | `mytakziah-v3-a3.png`  | Code        | Editorial and austere. Three columns, one vertical thread, no illustration.                    | One death. Tell government once.                  |
+| v4             | `mytakziah-v4-a3.png`  | Code + art  | Illustrated rebuild. Watercolour backdrop, connected chain, four cards.                        | Grief is hard enough. The paperwork shouldn't be. |
+| v5             | `mytakziah-v5-a3.png`  | Code + art  | As v4, plus a watercolour scene behind each pillar card.                                       | Grief is hard enough. The paperwork shouldn't be. |
+| v6             | `mytakziah-v6-a3.png`  | Code + art  | As v4, in a layered paper-cut style, with each card led by an illustrated banner.              | Grief is hard enough. The paperwork shouldn't be. |
+| v7             | `mytakziah-v7-a3.png`  | Code + art  | v5 rebuilt for legibility: bigger, heavier, darker type, two-column pillars, money-led Impact. | Grief is hard enough. The paperwork shouldn't be. |
+| v8             | `mytakziah-v8-a3.png`  | Code + art  | v7 plus two real screens from the running prototype, and a sharper problem statement.          | Grief is hard enough. The paperwork shouldn't be. |
+| v9             | `mytakziah-v9-a3.png`  | Code + art  | v8 rebuilt: fan diagram, one type scale, three desktop screens below the quad, songket crown.  | Grief is hard enough. The paperwork shouldn't be. |
+| **v10, final** | `mytakziah-v10-a3.png` | Code + art  | v9 with the concept named, the four card sub lines cut, and the proof cards trimmed to fit.    | Grief is hard enough. The paperwork shouldn't be. |
 
 **v2 has no editable source in this repo**, because it came out of an image model. Every other
 version has a matching `.html` that re-exports the PNG exactly, so its copy and figures can still be
@@ -26,9 +27,9 @@ corrected before submission.
 
 ## How They Check Out
 
-| Check                                          | v1  | v2  | v3  | v4  | v5  | v6  | v7  | v8  | v9  |
-| ---------------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| A3 portrait, 3508 by 4961, 300 DPI             | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| Check                                          | v1  | v2  | v3  | v4  | v5  | v6  | v7  | v8  | v9  | v10 |
+| ---------------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| A3 portrait, 3508 by 4961, 300 DPI             | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | Under 25 MB                                    | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | Vector-crisp text at print size                | Yes | No  | Yes | Yes | Yes | Yes | Yes | Yes |
 | Prototype QR present and decodes               | No  | No  | Yes | Yes | Yes | Yes | Yes | Yes |
@@ -214,3 +215,38 @@ Screens are captured from the running prototype at `bun run frontend:dev`, viewp
 `device_scale_factor` 2, with the app shell chrome hidden, clipped to 16 by 9 off the `main`
 element. The page itself exports the same way as every other version: screenshot `#page` at 1754 by
 2480.5 with `deviceScaleFactor: 2`, then flatten to RGB and tag 300 DPI.
+
+## What Changed In v10, And Why It Is The One
+
+**The Concept is now named.** `../../README.md` lists the required canvas content as The Concept,
+Problem, Target User, Innovation and Impact. v9 carried the concept in the hero and the fan without
+labelling it, so a judge working down a checklist could have failed to tick it. The fan now sits
+under a "The Concept" eyebrow. Nothing else moved to make room.
+
+**The four card sub lines are gone.** Each pillar now runs eyebrow, title, evidence, closing line,
+with nothing between the title and the evidence. The cards gained roughly 30 pixels of internal room
+as a result.
+
+**The proof cards no longer hold a fixed 4 by 3.** That aspect was leaving a dead strip beneath every
+two-line caption. Released, the grid still stretches all three to one height, so they stay level at
+372 pixels instead of 395.
+
+### How It Compares To The Field
+
+The 28 sheets in `../references/` were reviewed before v10 was fixed. Two teams occupy the same
+thesis: **MyGateway**, "One AI Gateway to Government Services", and **RakyatResolve**, "one case, one
+evidence pack, one path to resolution". Neither narrows to a domain. MyGateway's own problem art
+reads "AGENCY A, AGENCY B, PORTAL Z" because no agency is ever named, and its concept ends at
+"Guided Roadmap Generation", which is the advice pattern our positioning rule exists to refuse.
+RakyatResolve is sharper but still covers "three connected public-service pathways" that go unnamed,
+and its five impact percentages are projections for a hypothetical pilot.
+
+**Across both of those sheets there is not one named agency, form code, deadline or ringgit figure.**
+This canvas names JPN, KWSP and PERKESO, prints JPN.LM02 and KWSP 9KM (AHL), carries seven days and
+six months against a RM2,500 loss, and shows RM3.24 billion across 85,532 verified claims behind a
+QR to a running prototype.
+
+**Two weaknesses to hold in mind.** The sheet carries no Feasibility block, and feasibility is 25 per
+cent of the judging; it is thorough in the PDF but invisible to a canvas-only viewer. And narrow can
+read as small next to "2.2 million users", so the answer to that is 198,992 deaths a year and money
+already funded and already moving.
