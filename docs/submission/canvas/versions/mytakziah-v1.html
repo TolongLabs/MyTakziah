@@ -19,8 +19,16 @@
         --teal-deep: #1f4a48;
         --gold: #b0862f;
       }
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      html, body { width: 877px; height: 1240px; }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 877px;
+        height: 1240px;
+      }
       body {
         font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
         color: var(--ink);
@@ -28,7 +36,9 @@
         text-rendering: geometricPrecision;
         overflow: hidden;
       }
-      .serif { font-family: Georgia, "Times New Roman", serif; }
+      .serif {
+        font-family: Georgia, "Times New Roman", serif;
+      }
       .poster {
         position: relative;
         width: 877px;
@@ -51,52 +61,114 @@
         justify-content: space-between;
         align-items: flex-start;
       }
-      .brand { display: flex; align-items: center; gap: 12px; }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
       .mark {
-        width: 46px; height: 46px; flex: 0 0 auto;
-        filter: drop-shadow(0 2px 3px rgba(51,37,26,0.16));
+        width: 46px;
+        height: 46px;
+        flex: 0 0 auto;
+        filter: drop-shadow(0 2px 3px rgba(51, 37, 26, 0.16));
       }
       .brand .name {
-        font-family: Georgia, serif; font-size: 33px; font-weight: 700;
-        line-height: 0.95; letter-spacing: -0.015em; color: var(--teal-deep);
+        font-family: Georgia, serif;
+        font-size: 33px;
+        font-weight: 700;
+        line-height: 0.95;
+        letter-spacing: -0.015em;
+        color: var(--teal-deep);
       }
-      .brand .name span { color: var(--terra); }
-      .brand .sub { margin-top: 4px; font-size: 10px; color: var(--ink-soft); letter-spacing: 0.02em; }
+      .brand .name span {
+        color: var(--terra);
+      }
+      .brand .sub {
+        margin-top: 4px;
+        font-size: 10px;
+        color: var(--ink-soft);
+        letter-spacing: 0.02em;
+      }
       .mast .team {
-        text-align: right; font-size: 9.2px; line-height: 1.7; color: var(--ink-soft);
-        letter-spacing: 0.13em; text-transform: uppercase;
+        text-align: right;
+        font-size: 9.2px;
+        line-height: 1.7;
+        color: var(--ink-soft);
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
       }
-      .mast .team b { color: var(--teal-deep); }
+      .mast .team b {
+        color: var(--teal-deep);
+      }
 
       /* Hero */
-      .hero { margin-top: 22px; display: flex; align-items: flex-end; justify-content: space-between; gap: 22px; }
+      .hero {
+        margin-top: 22px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 22px;
+      }
       .hero h1 {
-        font-family: Georgia, serif; font-weight: 700; font-size: 50px;
-        line-height: 0.98; letter-spacing: -0.025em; color: var(--ink);
+        font-family: Georgia, serif;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 0.98;
+        letter-spacing: -0.025em;
+        color: var(--ink);
       }
-      .hero h1 em { font-style: normal; color: var(--terra); }
+      .hero h1 em {
+        font-style: normal;
+        color: var(--terra);
+      }
       .hero .say {
-        max-width: 236px; font-size: 11px; line-height: 1.5; color: var(--ink-soft); padding-bottom: 5px;
+        max-width: 236px;
+        font-size: 11px;
+        line-height: 1.5;
+        color: var(--ink-soft);
+        padding-bottom: 5px;
       }
-      .hero .say b { color: var(--ink); font-weight: 600; }
+      .hero .say b {
+        color: var(--ink);
+        font-weight: 600;
+      }
 
       /* Thread band, on a soft translucent card so it reads over the plate */
       .thread {
         margin-top: 20px;
-        background: linear-gradient(180deg, rgba(255,251,242,0.9), rgba(255,248,236,0.82));
-        border: 1px solid rgba(228,211,180,0.9);
+        background: linear-gradient(180deg, rgba(255, 251, 242, 0.9), rgba(255, 248, 236, 0.82));
+        border: 1px solid rgba(228, 211, 180, 0.9);
         border-radius: 16px;
-        box-shadow: 0 10px 26px rgba(51,37,26,0.1);
+        box-shadow: 0 10px 26px rgba(51, 37, 26, 0.1);
         padding: 15px 20px 14px;
         backdrop-filter: blur(1.5px);
       }
-      .thread .h { display: flex; align-items: baseline; justify-content: space-between; }
-      .thread .h h2 { font-family: Georgia, serif; font-size: 15.5px; font-weight: 700; }
-      .thread .h h2 b { color: var(--terra); }
-      .thread .h .k {
-        font-size: 8.6px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); font-weight: 800;
+      .thread .h {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
       }
-      .thread svg { display: block; width: 100%; height: 150px; margin-top: 4px; }
+      .thread .h h2 {
+        font-family: Georgia, serif;
+        font-size: 15.5px;
+        font-weight: 700;
+      }
+      .thread .h h2 b {
+        color: var(--terra);
+      }
+      .thread .h .k {
+        font-size: 8.6px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--teal);
+        font-weight: 800;
+      }
+      .thread svg {
+        display: block;
+        width: 100%;
+        height: 150px;
+        margin-top: 4px;
+      }
 
       /* Panels 2x2 */
       .panels {
@@ -111,59 +183,219 @@
         background: var(--paper);
         border: 1px solid var(--hair);
         border-radius: 14px;
-        box-shadow: 0 8px 20px rgba(51,37,26,0.09);
+        box-shadow: 0 8px 20px rgba(51, 37, 26, 0.09);
         padding: 14px 16px;
-        display: flex; flex-direction: column; min-height: 0; overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        overflow: hidden;
       }
       .lab {
-        display: inline-flex; align-items: center; gap: 7px;
-        font-size: 9px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
-        color: var(--terra-deep); margin-bottom: 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--terra-deep);
+        margin-bottom: 8px;
       }
-      .lab svg { width: 17px; height: 17px; }
-      .card h3 { font-family: Georgia, serif; font-size: 14.5px; line-height: 1.14; font-weight: 700; margin-bottom: 8px; }
-      .card p { font-size: 9.8px; line-height: 1.44; }
-      .card p.s { color: var(--ink-soft); }
-      .em { margin-top: auto; padding-top: 7px; font-size: 9.8px; line-height: 1.36; font-weight: 650; }
+      .lab svg {
+        width: 17px;
+        height: 17px;
+      }
+      .card h3 {
+        font-family: Georgia, serif;
+        font-size: 14.5px;
+        line-height: 1.14;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .card p {
+        font-size: 9.8px;
+        line-height: 1.44;
+      }
+      .card p.s {
+        color: var(--ink-soft);
+      }
+      .em {
+        margin-top: auto;
+        padding-top: 7px;
+        font-size: 9.8px;
+        line-height: 1.36;
+        font-weight: 650;
+      }
 
-      table { width: 100%; border-collapse: collapse; margin: 1px 0 6px; font-size: 9.2px; }
-      th, td { padding: 3.6px 3px; text-align: center; border-bottom: 1px solid var(--hair); }
-      th:first-child, td:first-child { text-align: left; color: var(--ink); }
-      thead th { font-size: 8px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft); font-weight: 800; border-bottom: 1.5px solid var(--ink); }
-      tbody tr:last-child td { border-bottom: none; }
-      .again { color: var(--terra-deep); font-weight: 800; }
-      td.n { color: #b6a48c; }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1px 0 6px;
+        font-size: 9.2px;
+      }
+      th,
+      td {
+        padding: 3.6px 3px;
+        text-align: center;
+        border-bottom: 1px solid var(--hair);
+      }
+      th:first-child,
+      td:first-child {
+        text-align: left;
+        color: var(--ink);
+      }
+      thead th {
+        font-size: 8px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        font-weight: 800;
+        border-bottom: 1.5px solid var(--ink);
+      }
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+      .again {
+        color: var(--terra-deep);
+        font-weight: 800;
+      }
+      td.n {
+        color: #b6a48c;
+      }
 
-      .stats { display: grid; grid-template-columns: 0.8fr 1fr; gap: 8px 14px; margin: 1px 0 4px; }
-      .st { border-top: 1px solid rgba(44,100,97,0.3); padding-top: 6px; }
-      .st.big { grid-row: span 2; }
-      .st .n { font-family: Georgia, serif; font-weight: 700; font-size: 25px; line-height: 0.9; color: var(--teal); }
-      .st.big .n { font-size: 34px; color: var(--terra-deep); }
-      .st .c { margin-top: 4px; font-size: 8.4px; line-height: 1.26; color: var(--ink-soft); font-weight: 600; }
+      .stats {
+        display: grid;
+        grid-template-columns: 0.8fr 1fr;
+        gap: 8px 14px;
+        margin: 1px 0 4px;
+      }
+      .st {
+        border-top: 1px solid rgba(44, 100, 97, 0.3);
+        padding-top: 6px;
+      }
+      .st.big {
+        grid-row: span 2;
+      }
+      .st .n {
+        font-family: Georgia, serif;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 0.9;
+        color: var(--teal);
+      }
+      .st.big .n {
+        font-size: 34px;
+        color: var(--terra-deep);
+      }
+      .st .c {
+        margin-top: 4px;
+        font-size: 8.4px;
+        line-height: 1.26;
+        color: var(--ink-soft);
+        font-weight: 600;
+      }
 
-      ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; margin-top: 1px; }
-      ul li { display: grid; grid-template-columns: 16px 1fr; gap: 7px; font-size: 9.4px; line-height: 1.28; color: var(--ink-soft); font-weight: 600; }
-      ul li svg { width: 15px; height: 15px; stroke: var(--terra); stroke-width: 1.7; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-      ul li b { color: var(--ink); font-weight: 750; }
+      ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 12px;
+        margin-top: 1px;
+      }
+      ul li {
+        display: grid;
+        grid-template-columns: 16px 1fr;
+        gap: 7px;
+        font-size: 9.4px;
+        line-height: 1.28;
+        color: var(--ink-soft);
+        font-weight: 600;
+      }
+      ul li svg {
+        width: 15px;
+        height: 15px;
+        stroke: var(--terra);
+        stroke-width: 1.7;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      ul li b {
+        color: var(--ink);
+        font-weight: 750;
+      }
 
-      .twohero { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 2px 0 9px; }
-      .bn { font-family: Georgia, serif; font-weight: 700; font-size: 31px; line-height: 0.84; letter-spacing: -0.02em; color: var(--terra-deep); }
-      .bn span { font-size: 16px; letter-spacing: 0; }
-      .bl { margin-top: 6px; font-size: 8.6px; line-height: 1.26; color: var(--ink-soft); font-weight: 600; }
-      .facts { display: flex; flex-direction: column; gap: 6px; margin-top: auto; }
-      .facts div { position: relative; padding-left: 13px; font-size: 9.3px; line-height: 1.3; }
-      .facts div::before { content:""; position:absolute; left:0; top:5px; width:6px; height:6px; background: var(--gold); border-radius: 2px; transform: rotate(45deg); }
-      .facts b { font-weight: 750; }
+      .twohero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 2px 0 9px;
+      }
+      .bn {
+        font-family: Georgia, serif;
+        font-weight: 700;
+        font-size: 31px;
+        line-height: 0.84;
+        letter-spacing: -0.02em;
+        color: var(--terra-deep);
+      }
+      .bn span {
+        font-size: 16px;
+        letter-spacing: 0;
+      }
+      .bl {
+        margin-top: 6px;
+        font-size: 8.6px;
+        line-height: 1.26;
+        color: var(--ink-soft);
+        font-weight: 600;
+      }
+      .facts {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: auto;
+      }
+      .facts div {
+        position: relative;
+        padding-left: 13px;
+        font-size: 9.3px;
+        line-height: 1.3;
+      }
+      .facts div::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 5px;
+        width: 6px;
+        height: 6px;
+        background: var(--gold);
+        border-radius: 2px;
+        transform: rotate(45deg);
+      }
+      .facts b {
+        font-weight: 750;
+      }
 
       /* Footer over the skyline */
       footer {
         margin-top: auto;
-        display: flex; justify-content: space-between; align-items: center;
-        font-size: 9px; color: var(--teal-deep); letter-spacing: 0.03em;
-        text-shadow: 0 1px 2px rgba(255,250,240,0.8);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 9px;
+        color: var(--teal-deep);
+        letter-spacing: 0.03em;
+        text-shadow: 0 1px 2px rgba(255, 250, 240, 0.8);
       }
-      footer b { color: var(--terra-deep); }
-      footer .r { font-family: Georgia, serif; font-size: 13px; font-weight: 700; }
+      footer b {
+        color: var(--terra-deep);
+      }
+      footer .r {
+        font-family: Georgia, serif;
+        font-size: 13px;
+        font-weight: 700;
+      }
     </style>
   </head>
   <body>
@@ -173,7 +405,13 @@
           <div class="brand">
             <svg class="mark" viewBox="0 0 48 48" fill="none">
               <circle cx="24" cy="24" r="22" fill="#fffaf0" stroke="#e4d3b4" stroke-width="1.3" />
-              <path d="M13 29 C13 17 31 16 33 24 C35 34 18 36 17 25 C16 14 35 15 36 28" stroke="#bc4d1a" stroke-width="3" stroke-linecap="round" fill="none" />
+              <path
+                d="M13 29 C13 17 31 16 33 24 C35 34 18 36 17 25 C16 14 35 15 36 28"
+                stroke="#bc4d1a"
+                stroke-width="3"
+                stroke-linecap="round"
+                fill="none"
+              />
               <circle cx="13" cy="29" r="2.6" fill="#bc4d1a" />
             </svg>
             <div>
@@ -181,13 +419,18 @@
               <div class="sub">A proposed addition to the MyGOV family</div>
             </div>
           </div>
-          <div class="team">Team <b>Survive</b><br />URIIS 2026 &middot; Track 02<br />One-Stop Government Services</div>
+          <div class="team">
+            Team <b>Survive</b><br />URIIS 2026 &middot; Track 02<br />One-Stop Government Services
+          </div>
         </header>
 
         <section class="hero">
           <h1 class="serif">One death.<br />Tell government <em>once.</em></h1>
-          <div class="say">A family gives its evidence a single time. MyTakziah prepares the claims at JPN, KWSP and
-            PERKESO, submits them with consent, and tracks them in one timeline. <b>The agency still decides.</b></div>
+          <div class="say">
+            A family gives its evidence a single time. MyTakziah prepares the claims at JPN, KWSP
+            and PERKESO, submits them with consent, and tracks them in one timeline.
+            <b>The agency still decides.</b>
+          </div>
         </section>
 
         <section class="thread">
@@ -196,92 +439,365 @@
             <span class="k">The Concept</span>
           </div>
           <svg viewBox="0 0 760 150" fill="none" preserveAspectRatio="xMidYMid meet">
-            <path d="M56 84 C120 44 165 120 232 84 C300 48 344 120 410 84 C478 48 522 120 588 84 C648 52 686 82 712 84" stroke="#bc4d1a" stroke-width="3.4" stroke-linecap="round" />
+            <path
+              d="M56 84 C120 44 165 120 232 84 C300 48 344 120 410 84 C478 48 522 120 588 84 C648 52 686 82 712 84"
+              stroke="#bc4d1a"
+              stroke-width="3.4"
+              stroke-linecap="round"
+            />
             <!-- 6 months pill above KWSP -->
             <rect x="375" y="30" width="70" height="19" rx="9.5" fill="#bc4d1a" />
-            <text x="410" y="43.5" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="800" fill="#fffaf0">6 months</text>
+            <text
+              x="410"
+              y="43.5"
+              text-anchor="middle"
+              font-family="Segoe UI, Arial, sans-serif"
+              font-size="11"
+              font-weight="800"
+              fill="#fffaf0"
+            >
+              6 months
+            </text>
             <path d="M410 49 V63" stroke="#bc4d1a" stroke-width="1.8" stroke-dasharray="2.5 3.5" />
 
             <g transform="translate(56 84)">
-              <circle r="25" fill="#bc4d1a" /><circle r="32" stroke="#bc4d1a" stroke-width="1.1" opacity="0.4" />
-              <g stroke="#fffaf0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M-11 -7 H-2 L1 -3 H11 V9 H-11 Z" /><path d="M-5 1 H6 M-5 5 H6" /></g>
+              <circle r="25" fill="#bc4d1a" />
+              <circle r="32" stroke="#bc4d1a" stroke-width="1.1" opacity="0.4" />
+              <g
+                stroke="#fffaf0"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              >
+                <path d="M-11 -7 H-2 L1 -3 H11 V9 H-11 Z" />
+                <path d="M-5 1 H6 M-5 5 H6" />
+              </g>
             </g>
-            <text x="56" y="126" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#33251a">Evidence, once</text>
-            <text x="56" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#6f5c49">the family, once</text>
+            <text
+              x="56"
+              y="126"
+              text-anchor="middle"
+              font-family="Segoe UI, Arial, sans-serif"
+              font-size="11.5"
+              font-weight="800"
+              fill="#33251a"
+            >
+              Evidence, once
+            </text>
+            <text
+              x="56"
+              y="140"
+              text-anchor="middle"
+              font-family="Segoe UI, Arial, sans-serif"
+              font-size="9"
+              fill="#6f5c49"
+            >
+              the family, once
+            </text>
 
             <g transform="translate(232 84)">
               <circle r="24" fill="#fffaf0" stroke="#bc4d1a" stroke-width="2.8" />
-              <g stroke="#8f3513" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M-8 -11 H5 L10 -6 V12 H-8 Z" /><path d="M5 -11 V-6 H10" /><path d="M-4 0 H5 M-4 5 H5" /></g>
+              <g
+                stroke="#8f3513"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              >
+                <path d="M-8 -11 H5 L10 -6 V12 H-8 Z" />
+                <path d="M5 -11 V-6 H10" />
+                <path d="M-4 0 H5 M-4 5 H5" />
+              </g>
             </g>
-            <text x="232" y="126" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#33251a">JPN</text>
-            <text x="232" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#6f5c49">register the death</text>
+            <text
+              x="232"
+              y="126"
+              text-anchor="middle"
+              font-family="Segoe UI, Arial, sans-serif"
+              font-size="11.5"
+              font-weight="800"
+              fill="#33251a"
+            >
+              JPN
+            </text>
+            <text
+              x="232"
+              y="140"
+              text-anchor="middle"
+              font-family="Segoe UI, Arial, sans-serif"
+              font-size="9"
+              fill="#6f5c49"
+            >
+              register the death
+            </text>
 
             <g transform="translate(410 84)">
               <circle r="24" fill="#fffaf0" stroke="#bc4d1a" stroke-width="2.8" />
-              <g stroke="#8f3513" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="0" cy="0" r="8" /><path d="M-3 -3.5 C -3 -6, 3 -6, 3 -3 M3 3.5 C 3 6, -3 6, -3 3 M0 -7 V7" /></g>
+              <g
+                stroke="#8f3513"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              >
+                <circle cx="0" cy="0" r="8" />
+                <path d="M-3 -3.5 C -3 -6, 3 -6, 3 -3 M3 3.5 C 3 6, -3 6, -3 3 M0 -7 V7" />
+              </g>
             </g>
-            <text x="410" y="126" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#33251a">KWSP</text>
-            <text x="410" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#6f5c49">savings &amp; RM2,500</text>
+            <text
+              x="410"
+              y="126"
+              text-anchor="middle"
+              font-family="Segoe UI, Arial, sans-serif"
+              font-size="11.5"
+              font-weight="800"
+              fill="#33251a"
+            >
+              KWSP
+            </text>
+            <text
+              x="410"
+              y="140"
+              text-anchor="middle"
+              font-family="Segoe UI, Arial, sans-serif"
+              font-size="9"
+              fill="#6f5c49"
+            >
+              savings &amp; RM2,500
+            </text>
 
             <g transform="translate(588 84)">
               <circle r="24" fill="#fffaf0" stroke="#bc4d1a" stroke-width="2.8" />
-              <g stroke="#8f3513" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M0 -12 C6 -8 10 -8 10 -8 V-2 C10 6 6 10 0 13 C-6 10 -10 6 -10 -2 V-8 C-10 -8 -6 -8 0 -12 Z" /><path d="M-4 0 L-1 3.5 L5 -4" /></g>
+              <g
+                stroke="#8f3513"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              >
+                <path
+                  d="M0 -12 C6 -8 10 -8 10 -8 V-2 C10 6 6 10 0 13 C-6 10 -10 6 -10 -2 V-8 C-10 -8 -6 -8 0 -12 Z"
+                />
+                <path d="M-4 0 L-1 3.5 L5 -4" />
+              </g>
             </g>
-            <text x="588" y="126" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="800" fill="#33251a">PERKESO</text>
-            <text x="588" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#6f5c49">survivor &amp; funeral</text>
+            <text
+              x="588"
+              y="126"
+              text-anchor="middle"
+              font-family="Segoe UI, Arial, sans-serif"
+              font-size="11.5"
+              font-weight="800"
+              fill="#33251a"
+            >
+              PERKESO
+            </text>
+            <text
+              x="588"
+              y="140"
+              text-anchor="middle"
+              font-family="Segoe UI, Arial, sans-serif"
+              font-size="9"
+              fill="#6f5c49"
+            >
+              survivor &amp; funeral
+            </text>
 
             <g transform="translate(712 84)">
               <rect x="-15" y="-15" width="30" height="30" rx="8" fill="#2c6461" />
-              <g stroke="#fffaf0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M-9 -6 H-5 M-9 0 H-5 M-9 6 H-5" /><path d="M-1 -6 H9 M-1 0 H9 M-1 6 H5" /></g>
+              <g
+                stroke="#fffaf0"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              >
+                <path d="M-9 -6 H-5 M-9 0 H-5 M-9 6 H-5" />
+                <path d="M-1 -6 H9 M-1 0 H9 M-1 6 H5" />
+              </g>
             </g>
-            <text x="712" y="126" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="800" fill="#33251a">one timeline</text>
+            <text
+              x="712"
+              y="126"
+              text-anchor="middle"
+              font-family="Segoe UI, Arial, sans-serif"
+              font-size="11"
+              font-weight="800"
+              fill="#33251a"
+            >
+              one timeline
+            </text>
           </svg>
         </section>
 
         <section class="panels">
           <article class="card">
-            <span class="lab"><svg viewBox="0 0 18 18" stroke="#bc4d1a" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2.5h6l3 3v10H4z"/><path d="M10 2.5v3h3"/><path d="M6.5 9h5M6.5 12h5"/></svg> The Problem</span>
+            <span class="lab"
+              ><svg
+                viewBox="0 0 18 18"
+                stroke="#bc4d1a"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 2.5h6l3 3v10H4z" />
+                <path d="M10 2.5v3h3" />
+                <path d="M6.5 9h5M6.5 12h5" />
+              </svg>
+              The Problem</span
+            >
             <h3 class="serif">The same information, demanded again at each agency.</h3>
             <table>
-              <thead><tr><th></th><th>JPN</th><th>KWSP</th><th>PERKESO</th></tr></thead>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>JPN</th>
+                  <th>KWSP</th>
+                  <th>PERKESO</th>
+                </tr>
+              </thead>
               <tbody>
-                <tr><td>Identity details</td><td class="again">Again</td><td class="again">Again</td><td class="again">Again</td></tr>
-                <tr><td>Death details</td><td class="again">Again</td><td class="again">Again</td><td class="again">Again</td></tr>
-                <tr><td>Relationship details</td><td class="n">&ndash;</td><td class="again">Again</td><td class="again">Again</td></tr>
-                <tr><td>Payment details</td><td class="n">&ndash;</td><td class="again">Again</td><td class="again">Again</td></tr>
+                <tr>
+                  <td>Identity details</td>
+                  <td class="again">Again</td>
+                  <td class="again">Again</td>
+                  <td class="again">Again</td>
+                </tr>
+                <tr>
+                  <td>Death details</td>
+                  <td class="again">Again</td>
+                  <td class="again">Again</td>
+                  <td class="again">Again</td>
+                </tr>
+                <tr>
+                  <td>Relationship details</td>
+                  <td class="n">&ndash;</td>
+                  <td class="again">Again</td>
+                  <td class="again">Again</td>
+                </tr>
+                <tr>
+                  <td>Payment details</td>
+                  <td class="n">&ndash;</td>
+                  <td class="again">Again</td>
+                  <td class="again">Again</td>
+                </tr>
               </tbody>
             </table>
-            <p class="em">At least <b>two mandatory in-person trips</b>, carrying original documents.</p>
+            <p class="em">
+              At least <b>two mandatory in-person trips</b>, carrying original documents.
+            </p>
           </article>
 
           <article class="card">
-            <span class="lab" style="color:var(--teal-deep)"><svg viewBox="0 0 18 18" stroke="#2c6461" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6" r="3"/><path d="M3.5 15c0-3 2.4-4.6 5.5-4.6s5.5 1.6 5.5 4.6"/></svg> Who Carries It</span>
+            <span class="lab" style="color: var(--teal-deep)"
+              ><svg
+                viewBox="0 0 18 18"
+                stroke="#2c6461"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="9" cy="6" r="3" />
+                <path d="M3.5 15c0-3 2.4-4.6 5.5-4.6s5.5 1.6 5.5 4.6" />
+              </svg>
+              Who Carries It</span
+            >
             <h3 class="serif">The surviving spouse, older, alone with the paperwork.</h3>
             <div class="stats">
-              <div class="st big"><div class="n">69.0</div><div class="c">median age<br />at death</div></div>
-              <div class="st"><div class="n">91.6%</div><div class="c">of over-60s use the internet</div></div>
-              <div class="st"><div class="n" style="font-size:20px">33.6%</div><div class="c">of over-60 internet users deal with government online, vs 38.9% overall</div></div>
+              <div class="st big">
+                <div class="n">69.0</div>
+                <div class="c">median age<br />at death</div>
+              </div>
+              <div class="st">
+                <div class="n">91.6%</div>
+                <div class="c">of over-60s use the internet</div>
+              </div>
+              <div class="st">
+                <div class="n" style="font-size: 20px">33.6%</div>
+                <div class="c">
+                  of over-60 internet users deal with government online, vs 38.9% overall
+                </div>
+              </div>
             </div>
             <p class="em">The barrier is the process, <b>not the device.</b></p>
           </article>
 
           <article class="card">
-            <span class="lab" style="color:var(--gold)"><svg viewBox="0 0 18 18" stroke="#b0862f" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2l1.9 3.9 4.3.5-3.2 3 .8 4.3L9 11.6 5.2 13.7l.8-4.3-3.2-3 4.3-.5z"/></svg> The Innovation</span>
+            <span class="lab" style="color: var(--gold)"
+              ><svg
+                viewBox="0 0 18 18"
+                stroke="#b0862f"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M9 2l1.9 3.9 4.3.5-3.2 3 .8 4.3L9 11.6 5.2 13.7l.8-4.3-3.2-3 4.3-.5z" />
+              </svg>
+              The Innovation</span
+            >
             <h3 class="serif">A chatbot tells you what to do. MyTakziah does it.</h3>
             <ul>
-              <li><svg viewBox="0 0 16 16"><path d="M4 2h6l2.5 2.5V14H4z"/><path d="M10 2v2.5h2.5"/><path d="M6 8h4M6 10.5h4"/></svg><span><b>Published rules</b> with source links</span></li>
-              <li><svg viewBox="0 0 16 16"><circle cx="8" cy="9" r="5"/><path d="M8 9V6M8 9l2.5 1.5M6 2.5h4"/></svg><span><b>Ranked by deadline,</b> not value</span></li>
-              <li><svg viewBox="0 0 16 16"><path d="M8 2l5 2v3.5c0 3-2.2 5.3-5 6.5-2.8-1.2-5-3.5-5-6.5V4z"/><path d="M6 8l1.5 1.5L11 6"/></svg><span><b>Consent</b> per agency</span></li>
-              <li><svg viewBox="0 0 16 16"><path d="M4 2h6l2.5 2.5V14H4z"/><path d="M10 2v2.5h2.5"/><path d="M6 10l1.4 1.4L11 8"/></svg><span><b>Drafts,</b> never auto-approval</span></li>
+              <li>
+                <svg viewBox="0 0 16 16">
+                  <path d="M4 2h6l2.5 2.5V14H4z" />
+                  <path d="M10 2v2.5h2.5" />
+                  <path d="M6 8h4M6 10.5h4" /></svg
+                ><span><b>Published rules</b> with source links</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 16 16">
+                  <circle cx="8" cy="9" r="5" />
+                  <path d="M8 9V6M8 9l2.5 1.5M6 2.5h4" /></svg
+                ><span><b>Ranked by deadline,</b> not value</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 16 16">
+                  <path d="M8 2l5 2v3.5c0 3-2.2 5.3-5 6.5-2.8-1.2-5-3.5-5-6.5V4z" />
+                  <path d="M6 8l1.5 1.5L11 6" /></svg
+                ><span><b>Consent</b> per agency</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 16 16">
+                  <path d="M4 2h6l2.5 2.5V14H4z" />
+                  <path d="M10 2v2.5h2.5" />
+                  <path d="M6 10l1.4 1.4L11 8" /></svg
+                ><span><b>Drafts,</b> never auto-approval</span>
+              </li>
             </ul>
-            <p class="em s">Tell Us Once <b style="color:var(--ink)">notifies</b> a death. MyTakziah <b style="color:var(--terra)">claims</b>.</p>
+            <p class="em s">
+              Tell Us Once <b style="color: var(--ink)">notifies</b> a death. MyTakziah
+              <b style="color: var(--terra)">claims</b>.
+            </p>
           </article>
 
           <article class="card">
-            <span class="lab"><svg viewBox="0 0 18 18" stroke="#bc4d1a" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 15.5h13"/><path d="M5 15.5V9M8 15.5V5M11 15.5V11M14.5 15.5V7"/></svg> The Impact</span>
+            <span class="lab"
+              ><svg
+                viewBox="0 0 18 18"
+                stroke="#bc4d1a"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M2.5 15.5h13" />
+                <path d="M5 15.5V9M8 15.5V5M11 15.5V11M14.5 15.5V7" />
+              </svg>
+              The Impact</span
+            >
             <div class="twohero">
-              <div><div class="bn">198,992</div><div class="bl">deaths in Malaysia, 2024</div></div>
-              <div><div class="bn">RM3.05<span>&nbsp;bil</span></div><div class="bl">in EPF death withdrawals, across 85,731 claims (2023)</div></div>
+              <div>
+                <div class="bn">198,992</div>
+                <div class="bl">deaths in Malaysia, 2024</div>
+              </div>
+              <div>
+                <div class="bn">RM3.05<span>&nbsp;bil</span></div>
+                <div class="bl">in EPF death withdrawals, across 85,731 claims (2023)</div>
+              </div>
             </div>
             <div class="facts">
               <div><b>RM2,500</b> EPF Death Assistance, lost if unclaimed within six months</div>
@@ -291,7 +807,10 @@
         </section>
 
         <footer>
-          <div>Rules published and cited &middot; consent per agency &middot; drafts only &middot; <b>not an official government service</b></div>
+          <div>
+            Rules published and cited &middot; consent per agency &middot; drafts only &middot;
+            <b>not an official government service</b>
+          </div>
           <div class="r">Small Ideas. Big Impact.</div>
         </footer>
       </div>
