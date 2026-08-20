@@ -3,6 +3,28 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
+/* Official goal colours and target wording, from sdgs.un.org. The UN permits
+   illustrative use of the goals without written permission; nothing here
+   reproduces UN artwork. */
+const GOALS = [
+  {
+    number: 16,
+    name: "Peace, Justice and Strong Institutions",
+    colour: "#00689D",
+    target: "16.6",
+    text: "Develop effective, accountable and transparent institutions at all levels",
+    how: "MyTakziah publishes the rule behind every requirement, receipts every submission and shows all three agencies in one status list. It never marks a claim approved, because the agency decides. Transparency here means a family can check the rule, not that it is asked to trust the system.",
+  },
+  {
+    number: 1,
+    name: "No Poverty",
+    colour: "#E5243B",
+    target: "1.3",
+    text: "Implement nationally appropriate social protection systems and measures for all, including floors, and by 2030 achieve substantial coverage of the poor and the vulnerable",
+    how: "Malaysia's survivor benefits already exist and are already funded. The gap is coverage, and an entitlement that is never claimed pays nothing. Documented cases include a widow who reached her claim twenty-three years late.",
+  },
+];
+
 /** The long-form disclosure the footer no longer carries. Everything a judge
  *  might reasonably ask about what this demo is and is not. */
 export function About({ onBack }: { onBack: () => void }) {
@@ -20,6 +42,49 @@ export function About({ onBack }: { onBack: () => void }) {
         Survive. It proposes that a family should give its evidence to government once after a
         death, rather than three times.
       </p>
+
+      <Card className="mt-8">
+        <CardHeader>
+          <CardTitle className="text-base">Where This Sits in the Global Goals</CardTitle>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Two goals, each quoted at target level. The competition does not ask for these, and a
+            longer list would be easier to write and worth less.
+          </p>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          {GOALS.map((g) => (
+            <div className="flex flex-col gap-4 sm:flex-row" key={g.number}>
+              {/* The two hex values are the UN's official goal colours and are
+                  deliberately outside our palette. They identify the goal, so a
+                  future palette pass must not harmonise them. Both clear 4.5:1
+                  against white. */}
+              <div
+                className="flex size-28 shrink-0 flex-col justify-between rounded-[var(--radius-control)] p-3 text-white"
+                style={{ backgroundColor: g.colour }}
+              >
+                <span className="font-[family-name:var(--font-display)] text-4xl leading-none font-bold">
+                  {g.number}
+                </span>
+                <span className="text-[0.65rem] leading-tight font-semibold">{g.name}</span>
+              </div>
+
+              <div className="min-w-0">
+                <p className="text-sm font-medium">
+                  Target {g.target}. <span className="font-normal italic">"{g.text}"</span>
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">{g.how}</p>
+              </div>
+            </div>
+          ))}
+
+          <p className="border-t pt-4 text-sm text-muted-foreground">
+            <span className="font-medium text-foreground">What We Do Not Claim. </span>
+            Not SDG 10, because the first release covers Peninsular Malaysia and defers Sabah and
+            Sarawak to a second phase. Not SDG 5, because we hold no gender-disaggregated evidence,
+            only the fact that PERKESO publishes a sole widow declaration form.
+          </p>
+        </CardContent>
+      </Card>
 
       <Card className="mt-8">
         <CardHeader>

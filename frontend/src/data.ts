@@ -41,7 +41,7 @@ export const FIELD_GROUPS: FieldGroup[] = [
     id: "death",
     label: "Proof of the Death",
     hint: "The Fact of the Death",
-    fields: [{ name: "Death Register Reference", placeholder: "NRD.LM02 reference" }],
+    fields: [{ name: "Death Register Reference", placeholder: "JPN.LM02 reference" }],
     demandedBy: ["JPN", "KWSP", "PERKESO"],
   },
   {
@@ -125,7 +125,7 @@ export const ENTITLEMENTS: Entitlement[] = [
 /* What each agency would receive. Nothing is shared that the agency does not require. */
 export const AGENCY_PAYLOADS: Record<Agency, { form: string; receives: string[] }> = {
   JPN: {
-    form: "NRD.LM02, at the registration counter",
+    form: "JPN.LM02, at the registration counter",
     receives: ["Who Died", "Who You Are", "Proof of the Death"],
   },
   KWSP: {

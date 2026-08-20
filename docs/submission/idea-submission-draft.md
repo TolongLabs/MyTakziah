@@ -298,6 +298,25 @@ These are **proposed future measures, not results**. Nothing here has been measu
 | Proportion of claims submitted inside the six-month EPF window | The only verified family deadline                    |
 | Rate of incomplete or rejected submissions                     | PERKESO states it may reject incomplete applications |
 
+### Alignment With The Sustainable Development Goals
+
+The official template does not ask for this. We name two goals rather than a longer list, each
+quoted at target level, because a list of seven would be easier to write and worth less.
+
+| Goal                                               | Target | Official Wording                                                                                                                                                             | How MyTakziah Relates                                                                                                                                                                       |
+| -------------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **SDG 16**, Peace, Justice and Strong Institutions | 16.6   | "Develop effective, accountable and transparent institutions at all levels"                                                                                                  | Every requirement carries the published rule behind it, every submission is receipted and tracked in one place, and no claim is ever marked approved because the agency keeps that decision |
+| **SDG 1**, No Poverty                              | 1.3    | "Implement nationally appropriate social protection systems and measures for all, including floors, and by 2030 achieve substantial coverage of the poor and the vulnerable" | Malaysia's survivor benefits already exist and are already funded. The gap is coverage, and an entitlement that is never claimed pays nothing                                               |
+
+**We do not claim SDG 10.** The first release covers Peninsular Malaysia and defers Sabah and
+Sarawak to a second phase, so a reduced-inequality claim would outrun the scope we recorded.
+
+**We do not claim SDG 5.** Widows are plausibly the majority of claimants, and PERKESO publishes a
+sole widow declaration form, but we hold no gender-disaggregated evidence and will not present a
+plausible pattern as a measured one.
+
+Source: United Nations, "The 17 Goals", <https://sdgs.un.org/goals>, accessed 20 August 2026.
+
 ### The Limit We State Rather Than Hide
 
 `[NEEDS SOURCE]` **No Malaysian measurement exists of how long bereavement administration takes,

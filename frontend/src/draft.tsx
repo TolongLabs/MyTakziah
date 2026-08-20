@@ -14,7 +14,7 @@ import { docsFor, type Answers } from "@/plan";
  * What would actually go on one agency's form, opened from a draft card.
  *
  * **This is deliberately not a facsimile of the government form.** We have
- * verified field lists for NRD.LM02, KWSP 9KM (AHL) and Borang 24 and 26, but no
+ * verified field lists for JPN.LM02, KWSP 9KM (AHL) and Borang 24 and 26, but no
  * layouts, and a hand-drawn imitation of an official Malaysian form would be
  * inaccurate, would fail in front of anyone who has seen the real one, and cuts
  * against the recorded decision not to imply official standing. So it states

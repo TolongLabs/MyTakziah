@@ -55,7 +55,7 @@ export function FrameVerified({ onNext }: { onNext: () => void }) {
             ["Deceased", "Fatimah binti Abdullah (illustrative)"],
             ["Date of Verification", "14 August 2026"],
             ["Issuing Body", "Hospital Kuala Lumpur"],
-            ["Reference", "NRD.LM02 (Pin.1/11)"],
+            ["Reference", "JPN.LM02 (Pin.1/11)"],
           ].map(([k, v]) => (
             <div key={k} className="flex justify-between gap-6">
               <span className="text-muted-foreground">{k}</span>

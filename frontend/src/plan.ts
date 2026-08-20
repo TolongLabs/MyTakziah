@@ -62,7 +62,7 @@ export type Doc = {
 export const DOCUMENTS: Doc[] = [
   {
     id: "nrd-lm02",
-    label: "Death Register or Burial Permit, NRD.LM02, blue copy",
+    label: "Death Register or Burial Permit, JPN.LM02, blue copy",
     note: "Issued by the hospital, PDRM or DBKL that verified the death",
     agencies: ["JPN"],
   },
@@ -70,7 +70,7 @@ export const DOCUMENTS: Doc[] = [
     id: "cause",
     label: "Medical certification of the cause of death",
     hint: "hospital deaths only",
-    note: "Form NRD.LM09, or NRD.LM10 after a post-mortem. Only if the death was in hospital",
+    note: "Form JPN.LM09, or JPN.LM10 after a post-mortem. Only if the death was in hospital",
     agencies: ["JPN"],
   },
   {
