@@ -72,8 +72,14 @@ export function SidebarIsland({
       onPointerLeave={() => schedule(false)}
       style={{ zIndex: "var(--z-island)" }}
     >
-      <div className="flex items-center gap-2 rounded-[var(--radius-control)] px-2 py-3">
-        <img alt="" className="size-9 shrink-0" src="/logo-mark.png" />
+      {/* pl-1 puts the 36px mark on the same optical centre as the 20px nav
+          icons below it, which sit at 22px from the rail edge. */}
+      <div className="flex items-center gap-2 rounded-[var(--radius-control)] py-3 pr-2 pl-1">
+        {/* max-w-none defeats Preflight's `img { max-width: 100% }`. Collapsed,
+            the row's content box is 30px, which clamped the width to 30 while
+            size-9 held the height at 36 and object-fit: fill squashed the mark
+            by 17%. shrink-0 does not help: this is not flex shrinking. */}
+        <img alt="" className="size-9 max-w-none shrink-0" src="/logo-mark.png" />
         <span
           className={cn(
             "text-lg font-semibold tracking-tight whitespace-nowrap transition-opacity duration-150",
