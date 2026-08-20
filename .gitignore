@@ -28,3 +28,6 @@ Thumbs.db
 
 # Private contact details, per AGENTS.md "No Secrets in Repo"
 docs/submission/team-contact.local.md
+
+# Vercel
+.vercel
