@@ -101,6 +101,25 @@ the order explicit:
 - The bottom disclaimer drops "Drafts only", which contradicted the above, in favour of
   "Nothing is sent without your approval".
 
+## v7 Rework, Latest Pass
+
+- **Removed at the team's request:** the "URIIS 2026, Track 02" line, the "Small Ideas. Big Impact."
+  tagline, the "Submitted through" label, and the bottom disclaimer strip.
+- **Core message sharpened.** The lede now names the problem and the safeguard in one sentence, and
+  the Problem pillar leads on a number derived from its own table: the five facts are demanded
+  thirteen times across the three agencies (3 + 3 + 3 + 2 + 2). The cost of failure is stated:
+  miss the six-month EPF window and the RM2,500 is gone.
+- **Two real screens from the running prototype** now sit between the thread and the pillars, cropped
+  from <https://mytakziah.vercel.app>. One shows an entitlement reading "Potentially Eligible,
+  Confirmation Required" with its deadline and source link. The other shows "No consent given yet.
+  Nothing is sent to JPN." beside the per-agency consent action. They are the evidence for the two
+  claims judges are most likely to challenge. Sources in `assets/proto-*.png`.
+
+**Note on the removed disclaimer.** `docs/decisions.md` records a standing caution against implying
+official endorsement. The masthead still carries "A proposed addition to the MyGOV family", which is
+now the only non-endorsement signal on the sheet. If that reads as too weak, the shortest fix is to
+restore one line above the footer.
+
 ## Rebuilding An Export
 
 Edit the version's `.html`, then screenshot the `#page` element at 1754 by 2480.5 with
