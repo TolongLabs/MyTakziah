@@ -19,8 +19,9 @@ Print the value in the **Printable Wording** column, not the value in the issue.
 | --------------------------------- | --------------------------------------------- | ----------------------- | ----------------------------------------- |
 | Deaths In Malaysia 2024           | 198,992                                       | Confirmed               | 198,992                                   |
 | Median Age At Death               | 69                                            | Confirmed               | 69.0 years                                |
-| EPF Death Withdrawals 2024, Count | 87,776                                        | **Rejected, corrected** | 85,532, confirmation required             |
-| EPF Death Withdrawals 2024, Value | RM3.20 billion                                | **Rejected, corrected** | RM3.24 billion, confirmation required     |
+| EPF Death Withdrawals 2024, Count | 87,776                                        | **Rejected, corrected** | **85,532, confirmed 2026-08-21**          |
+| EPF Death Withdrawals 2024, Value | RM3.20 billion                                | **Rejected, corrected** | **RM3,243,030,617, confirmed 2026-08-21** |
+| EPF Death Assistance 2024, Count  | not previously held                           | **New, confirmed**      | **27,006 payments, RM67,515,000**         |
 | EPF Death Assistance Terms        | RM2,500, six months, before 60, discretionary | Confirmed, all four     | as claimed                                |
 | PERKESO Funeral Benefit           | up to RM3,000                                 | Confirmed               | up to RM3,000, effective 1 June 2024      |
 | Over-60s Government Interaction   | 33.6% vs 38.9%                                | Confirmed, base wrong   | 33.6% vs 38.9% **of internet users**      |
@@ -46,17 +47,13 @@ The full primary series, read directly from the EPF Integrated Annual Report 202
 
 Note that 2022 is higher than 2023. The series is not a rising trend and must not be described as one.
 
-### The 2024 Figure, And What Is Still Open
+### The 2024 Figure: Closed 2026-08-21
 
-`kwsp.gov.my` blocks automated retrieval, so the EPF Integrated Annual Report 2024 performance document could not be opened directly. Web search returned **85,532 death withdrawals worth RM3,243,030,617 in 2024** from that document.
+**Resolved.** `kwsp.gov.my` blocked automated retrieval on four separate attempts across three days, including a live browser session and a curl request carrying browser headers. A team member downloaded the document directly and it was read from the local copy, archived at `kwsp-five-year-financial-highlights.pdf` alongside this note.
 
-That is corroborated but not directly verified. The corroboration is strong for one specific reason: the same search returned 2023 comparatives for other schemes, "55 Years" at 943,376 and RM19,459,405,284 and "50 Years" at 127,107 and RM4,184,409,113, and both match the Integrated Annual Report 2023 figures extracted independently here, to the ringgit. A tool reading a different or invented document would not reproduce those.
+**Verified from the primary document: 85,532 death withdrawals worth RM3,243,030,617 in 2024.** The earlier corroborated-but-unverified reading was correct to the ringgit, and the issue #3 figures of 87,776 and RM3.20 billion remain rejected.
 
-**Action for a team member, five minutes.** Open `https://www.kwsp.gov.my/documents/d/guest/6-kwsp24_e-performance` in a normal browser, find "Withdrawal By Schemes", read the Death row for 2024, and record it here. Until that is done, treat the 2024 figure as `[NEEDS SOURCE]`.
-
-**Re-checked 2026-08-20 (issue #20).** An automated re-attempt to open that performance document returned HTTP 403, and web.archive.org was not reachable by the tools used. The block persists, so this still needs a human with a normal browser. The verified 2023 fallback stands until then.
-
-**Safe fallback if nobody opens it.** Print the 2023 figures, which are fully verified from a primary source: **85,731 death withdrawals worth RM3.05 billion in 2023**. A verified 2023 number is worth more than an unverified 2024 number.
+The 2023 comparatives in the same table match this note's independently extracted 2023 series exactly, which closes the verification loop.
 
 ## The Base Error On The DOSM Digital Divide Figure
 
@@ -140,9 +137,35 @@ Issue #3 named two traps. Both are real and the verification confirms why.
 
 ## Open Gaps
 
-- `[NEEDS SOURCE]` EPF death withdrawal count and value for 2024, pending a human opening the KWSP performance document.
+- **Closed 2026-08-21.** A team member downloaded the KWSP five-year financial highlights and the full Withdrawal by Schemes series is now verified from the primary document.
+
+### EPF Death Withdrawals, Verified Five-Year Series
+
+| Year | Transactions | Value           |
+| ---- | -----------: | --------------- |
+| 2024 |       85,532 | RM3,243,030,617 |
+| 2023 |       85,731 | RM3,050,681,920 |
+| 2022 |       91,414 | RM3,166,318,390 |
+| 2021 |       65,280 | RM2,462,513,423 |
+| 2020 |       61,392 | RM1,928,253,887 |
+
+**The series does not rise monotonically.** 2022 recorded more transactions than either 2023 or 2024. The existing warning in this file stands: never describe this as a growing trend.
+
+### The Number That Matters More, And The Discipline It Needs
+
+The same document carries a separate "Death and Incapacitation Benefits" block. Its Death Benefits line is **27,006 payments worth RM67,515,000 in 2024**, which divides to **exactly RM2,500.00 per payment**. That identifies it as the Death Assistance.
+
+**So in 2024 the EPF processed 85,532 death withdrawals and made 27,006 Death Assistance payments, a ratio of 31.6 per cent.**
+
+`[ASSUMPTION]` **Do not present that gap as missed deadlines.** Death Assistance also requires the member to have died **before age 60**, and the median age at death in Malaysia is 69.0, so the age condition alone must account for a large share of it. EPF also states the payment is discretionary. **No published breakdown separates the age condition, the discretion and the six-month window.**
+
+**The defensible claim is the gap plus the silence, not a cause:** most EPF death withdrawals are not accompanied by a Death Assistance payment, and EPF does not publish why. Attributing it to the deadline would be exactly the kind of unevidenced leap this file exists to prevent.
+
+**Five-year Death Assistance series, for context:** 2024 27,006; 2023 26,745; 2022 28,243; 2021 25,001; 2020 20,310.
+
 - `[NEEDS SOURCE]` DOSM released an ICT Use and Access by Individuals and Households Survey Report, 2025 on 23 April 2026, covering reference year 2025. Its summary release does not carry the e-government activity breakdown, and the full report could not be located. If it carries an updated Table 2.14, the 33.6 and 38.9 figures should be refreshed. This is a nice-to-have, not a blocker.
-- `[NEEDS SOURCE]` The statutory deadline for registering a death under the Births and Deaths Registration Act 1957 is not stated on the JPN service page. See `agency-rule-map.md`.
+- **Closed 2026-08-21.** The death registration deadline is **seven days**, cited to JPN's own Late Registration Of Death (Peninsular) page rather than to the Act, because the 2016 amendment that would put seven days into section 19(2) commences by ministerial notification and gazettement was not confirmed. Working in `incumbent-and-deadline-verification.md`.
+- **New verified figure, 2026-08-21: 72,929 late death registrations recorded between 2003 and 2014**, from the explanatory statement to the Births and Deaths Registration (Amendment) Bill 2016. Roughly 6,000 a year. It measures late registration at JPN only and does **not** license any claim about missed KWSP or PERKESO claims. The Bill also names "rituals, religious obligations and customs with regard to the management of a death" as the reason families could not meet the old window, which is Parliament stating our problem in its own words.
 
 ## Sources
 

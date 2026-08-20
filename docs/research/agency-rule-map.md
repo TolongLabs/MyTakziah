@@ -19,13 +19,15 @@ This is not a design preference. It is the direct answer to the two MyGOV chatbo
 
 Ranked by urgency, because prototype screen 3 ranks by deadline first and value second.
 
-| Deadline                                           | Agency  | Length                                            | Status           | Consequence Of Missing It               |
-| -------------------------------------------------- | ------- | ------------------------------------------------- | ---------------- | --------------------------------------- |
-| Death Withdrawal Application, For Death Assistance | KWSP    | **Six months from death**                         | **Verified**     | RM2,500 Death Assistance is lost        |
-| Registration Of The Death                          | JPN     | Short, ordinary window                            | `[NEEDS SOURCE]` | Falls into Late or Delayed Registration |
-| Benefit Claim Submission                           | PERKESO | Stipulated period, unquantified on official pages | `[NEEDS SOURCE]` | PERKESO may reject the application      |
+| Deadline                                           | Agency  | Length                                            | Status                                           | Consequence Of Missing It                                                                                                                                                                                                                                        |
+| -------------------------------------------------- | ------- | ------------------------------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Death Withdrawal Application, For Death Assistance | KWSP    | **Six months from death**                         | **Verified**                                     | RM2,500 Death Assistance is lost                                                                                                                                                                                                                                 |
+| Registration Of The Death                          | JPN     | **The 7th day after the death**                   | **Boundary verified, consequence not published** | JPN's Late Registration procedure (JPN.LM28, two sponsors, RM50 application fee) applies by its own wording only to deaths before 1 December 2011. Peninsular Malaysia has no published Delayed procedure. **State the boundary, do not invent the consequence** |
+| Benefit Claim Submission                           | PERKESO | Stipulated period, unquantified on official pages | `[NEEDS SOURCE]`                                 | PERKESO may reject the application                                                                                                                                                                                                                               |
 
-**Only one family-facing deadline is fully verified, and it is the six-month EPF window.** Build the urgency argument on that one. Do not print a number for the other two until someone confirms them.
+**Only one deadline is verified end to end, boundary and consequence together, and it is the six-month EPF window.** Build the urgency argument on that one. JPN's seventh day is a verified boundary with an unpublished consequence, and PERKESO publishes neither. Cite JPN's seven days to JPN's own pages, never to a section of Act 299. See `incumbent-and-deadline-verification.md`.
+
+**The pattern across the three is itself an argument.** Two of the three agencies enforce timing they do not fully publish. A family cannot meet a deadline it cannot find.
 
 Two further time limits exist but are not the family's to meet, and must not be presented as if they were: the death verification agency sends its copy to JPN within 7 working days, and an employer must report a work accident to PERKESO within 30 days.
 
@@ -72,10 +74,17 @@ Religion changes what happens if the nominee has also died:
 
 **Without nomination:**
 
-| Member Status | Who May Apply                                                                        |
-| ------------- | ------------------------------------------------------------------------------------ |
-| Married       | The member's widow or widower, children or their guardian, parents, or Administrator |
-| Unmarried     | The member's parents, or Administrator                                               |
+| Member Status | Who May Apply                                   |
+| ------------- | ----------------------------------------------- |
+| Married       | The member's widow or widower, or Administrator |
+| Unmarried     | The member's parents, or Administrator          |
+
+**Corrected 2026-08-21 against the live KWSP page.** The earlier version of this table listed
+"children or their guardian, parents" in the Married row. **The official page does not.** For a
+married member it names only the widow or widower and the Administrator. Children, guardians and
+siblings appear nowhere in the without-nomination lists. **Any screen or table that offers a child
+as a without-nomination claimant is wrong and must be corrected before the canvas screenshots are
+taken.**
 
 Where the member left no nomination, any individual appointed by the court acts to apply for the Death Withdrawal.
 
@@ -197,9 +206,13 @@ Apply these in the PDF, the canvas, the prototype and the video script. One pers
 
 ## Open Gaps
 
-- `[NEEDS SOURCE]` The statutory window for ordinary death registration under the Births and Deaths Registration Act 1957. JPN's service page does not state it, and the official Act text could not be retrieved. Search results indicate a three-day ordinary window with a further short delayed-registration period, but that reading came from third-party hosts of the Act and **must not be printed until confirmed** against the official text. See the browser-verification log below for the 2026-08-20 re-check.
-- `[NEEDS SOURCE]` The PERKESO claim submission deadline. The official checklist states only that PERKESO may reject applications later than "tempoh masa yang ditetapkan", the stipulated period, without quantifying it. A 12-month figure circulates on social media and is not a source. Re-checked 2026-08-20: still no official quantification, see log below.
-- `[NEEDS SOURCE]` The KWSP page lists the without-nomination claimants twice and the two lists differ: one includes siblings, the other does not. Confirm which applies before any screen or table repeats it. Re-checked 2026-08-20: could not reopen the official page, see log below.
+- **Resolved 2026-08-21.** The family-facing window is **seven days**, sourced to JPN's own Late Registration Of Death (Peninsular) page: late registration applies when registration is made after the 7th day of the death. The statutory position is separate and remains uncited: original Act 299 section 19(2) said "twelve hours", and the Births and Deaths Registration (Amendment) Bill 2016 substitutes "seven days", but that Bill commences on a date to be appointed by the Minister in the Gazette and gazettement was not confirmed. **Print the seven days as JPN's published rule, not as a section of the Act.** Full working in `incumbent-and-deadline-verification.md`.
+- **Resolved 2026-08-21 by browser, and it changes the claim.** JPN's Late Registration of Death (Peninsular) page states the procedure covers a death "diregisterkan after hari ke 7 (death that berlaku **before 1 Disember 2011 sahaja**)". It requires two sponsors who are next of kin and an **application fee of RM50.00** (not an RM10 processing fee plus a separate fine; that reading came from a search summary and was wrong). Forms named: JPN.LM02 (Pin.1/11), **JPN.LM28**, and JPN.LM09 or JPN.LM10 for hospital deaths.
+- **The consequence for a present-day death is genuinely unpublished.** JPN's Peninsular death index lists Ordinary and Late registration and **no Delayed procedure**; Delayed Registration is published only for Sabah and Sarawak. So a family passing day seven today cannot learn from JPN's pages what happens next. **Print the boundary, never the consequence.** This mirrors the PERKESO finding: enforceable timing, unpublished consequence, and that pairing is itself an argument for the concept.
+- `[NEEDS SOURCE]` The PERKESO claim submission deadline. The official checklist states only that PERKESO may reject applications later than "tempoh masa yang ditetapkan", the stipulated period, without quantifying it. A 12-month figure circulates on social media and is not a source. Re-checked 2026-08-20: still no official quantification, see log below. **Re-checked again 2026-08-21 with a targeted search: the only quantified PERKESO windows found belong to other schemes, 60 days for EIS job loss and 12 months for a SIP accident, and neither applies to a death claim. Treat this as confirmed unpublished rather than merely unresearched, and say so: a deadline that is enforceable but not published is itself part of the problem.**
+- **Resolved 2026-08-21 by browser.** The live KWSP Death Withdrawal page carries **one** without-nomination list, not two, and it is the narrow one: widow or widower plus Administrator if married, parents plus Administrator if unmarried. No siblings, no children, no guardians. The table above has been corrected. The earlier "two lists differ" note came from a stale archived capture.
+- **Also confirmed 2026-08-21:** KWSP publishes **separate declaration of responsibility forms by religion**, Appendix A for Muslims and Appendix B for non-Muslims, alongside the KWSP 9KM (AHL) form. This is direct evidence for the design claim that religion is a branch condition rather than an edge case, and it is worth citing when that claim is questioned.
+- **Also confirmed 2026-08-21:** the page's only application action is a link labelled **"Apply For Manual Withdrawal"** pointing at the KWSP 9KM (AHL) form PDF. There is no online application route for Death Withdrawal, in contrast to nomination and other withdrawals which i-Akaun handles digitally.
 - `[ASSUMPTION]` Both PERKESO checklists located are current. Borang 34's checklist is dated 9 December 2024; the Borang 24 and 26 checklist is undated.
 
 ## Browser-Verification Log, 2026-08-20 (Issue #20)
