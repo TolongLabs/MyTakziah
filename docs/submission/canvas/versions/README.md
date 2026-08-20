@@ -1,6 +1,6 @@
 # Canvas Versions
 
-Eight A3 candidates for the Innovation Canvas. **The team picks one; the rest are kept for the
+Nine A3 candidates for the Innovation Canvas. **The team picks one; the rest are kept for the
 record.** Decision owner is @AlaskanTuna, per issue #13.
 
 Every file here is A3 portrait, **3508 by 4961 pixels at 300 DPI**, PNG, one page, and under the
@@ -17,7 +17,8 @@ Every file here is A3 portrait, **3508 by 4961 pixels at 300 DPI**, PNG, one pag
 | v5             | `mytakziah-v5-a3.png` | Code + art  | As v4, plus a watercolour scene behind each pillar card.                                       | Grief is hard enough. The paperwork shouldn't be. |
 | v6             | `mytakziah-v6-a3.png` | Code + art  | As v4, in a layered paper-cut style, with each card led by an illustrated banner.              | Grief is hard enough. The paperwork shouldn't be. |
 | v7             | `mytakziah-v7-a3.png` | Code + art  | v5 rebuilt for legibility: bigger, heavier, darker type, two-column pillars, money-led Impact. | Grief is hard enough. The paperwork shouldn't be. |
-| **v8, latest** | `mytakziah-v8-a3.png` | Code + art  | v7 plus two real screens from the running prototype, and a sharper problem statement.          | Grief is hard enough. The paperwork shouldn't be. |
+| v8             | `mytakziah-v8-a3.png` | Code + art  | v7 plus two real screens from the running prototype, and a sharper problem statement.          | Grief is hard enough. The paperwork shouldn't be. |
+| **v9, latest** | `mytakziah-v9-a3.png` | Code + art  | v8 rebuilt: fan diagram, one type scale, three desktop screens below the quad, songket crown.  | Grief is hard enough. The paperwork shouldn't be. |
 
 **v2 has no editable source in this repo**, because it came out of an image model. Every other
 version has a matching `.html` that re-exports the PNG exactly, so its copy and figures can still be
@@ -25,9 +26,9 @@ corrected before submission.
 
 ## How They Check Out
 
-| Check                                          | v1  | v2  | v3  | v4  | v5  | v6  | v7  | v8  |
-| ---------------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- |
-| A3 portrait, 3508 by 4961, 300 DPI             | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| Check                                          | v1  | v2  | v3  | v4  | v5  | v6  | v7  | v8  | v9  |
+| ---------------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| A3 portrait, 3508 by 4961, 300 DPI             | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | Under 25 MB                                    | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | Vector-crisp text at print size                | Yes | No  | Yes | Yes | Yes | Yes | Yes | Yes |
 | Prototype QR present and decodes               | No  | No  | Yes | Yes | Yes | Yes | Yes | Yes |
@@ -163,3 +164,53 @@ Generated artwork lives in `../../codex-generated/`. Prefixes: no prefix for v4,
   registration is in person. So filing is the proposed service, not demonstrated integration, and
   nobody should defend it in question and answer as something that already works end to end.
 - **Team member names are still `TODO`** and appear on none of these versions.
+
+## What Changed In v9
+
+**The diagram was wrong, and that was the most important fix.** v8 drew a left-to-right chain,
+Evidence to JPN to KWSP to PERKESO to One timeline, which says evidence passes from one agency to
+the next. The prototype does nothing of the sort: the three agencies are parallel, three tabs at
+the consent step and three tracks on one timeline, each consented separately. v9 draws a **fan**,
+one set of evidence out to three agencies at once and three replies back as one status. The old
+chain also mixed categories, stringing two product steps and three agencies onto one line.
+
+**One type scale, by role.** v8 carried nineteen distinct sizes, including eight different values
+between 19px and 27px doing the same job. v9 has eleven, each with exactly one role, declared at the
+top of the file. Verified against the rendered DOM, not the stylesheet.
+
+**Screens moved below the quad and became desktop captures**, 16 by 9 inside 4 by 3 cards with the
+caption inside each card. Each caption now closes a loop the quad opens, in the quad's own words:
+thirteen demands answered once, told what expires first, three claims on one screen. They are
+deliberately decorative rather than readable, because at three across on A3 the interface text lands
+near 3pt; the QR and the printed URL carry anyone who wants the detail.
+
+**Pillar content was rebuilt to argue rather than to list.** The Problem table now counts to
+thirteen instead of asserting it. Target User is a funnel in plain ratios, 9 in 10 online then 1 in
+3 of those dealing with government online, which keeps the two different survey bases legible as a
+nesting instead of inviting a false side-by-side comparison. Innovation leads on outcomes. Impact
+closes on the line that ties all four together.
+
+**A songket-style eight-point lattice crowns the sheet**, hand-authored SVG at 0.13 opacity, masked
+to fade out before the quad. Pure tessellation: no crescent, no calligraphy, no arch. The standalone
+tile is `assets/songket-lattice.svg` and uses `currentColor`, so the deck and the video can reuse it.
+
+**Two asset notes.** The pillar icons in `../../codex-generated/` are RGBA but fully opaque, with
+their background baked at `#f9f3ea`, the page ground. On the lighter card they showed as a visible
+tile. v9 uses keyed copies in `assets/pillar-*.png`; the originals are untouched so v4 through v8
+still export exactly as before. Side margins moved from 96px to 68px, which is 16.3mm down to
+11.5mm on A3, still a safe print margin.
+
+**v9 exports RGB, not RGBA.** Earlier versions carried an alpha channel into the PNG, which is one
+less thing for a printer or the Kolaxus uploader to interpret.
+
+**One thing v9 dropped on purpose.** The masthead no longer carries a non-endorsement line. The team
+decided the slides and the pitch video will carry it instead. `../../decisions.md` has a standing
+caution against implying official endorsement, so reverse this consciously if the canvas is ever
+going to travel on its own.
+
+## Rebuilding v9
+
+Screens are captured from the running prototype at `bun run frontend:dev`, viewport 1280 wide,
+`device_scale_factor` 2, with the app shell chrome hidden, clipped to 16 by 9 off the `main`
+element. The page itself exports the same way as every other version: screenshot `#page` at 1754 by
+2480.5 with `deviceScaleFactor: 2`, then flatten to RGB and tag 300 DPI.

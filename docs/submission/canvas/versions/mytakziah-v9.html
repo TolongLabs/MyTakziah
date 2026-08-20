@@ -1,0 +1,1210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MyTakziah Innovation Canvas v9, A3 Portrait</title>
+    <link rel="stylesheet" href="./assets/fonts-embedded.css" />
+    <style>
+      :root {
+        --ground: #f9f3ea;
+        --ink: #281913;
+        --card: #fffdfa;
+        --muted: #5c4a40;
+        --border: #e1d7cd;
+        --accent: #bc4d1a;
+        --ochre: #e08a4c;
+        --slate: #376d7c;
+        --radius: 10px;
+
+        /* One type scale, used everywhere. v8 carried eight different body sizes
+       between 19 and 27 for the same role; every size below is deliberate and
+       nothing may be set outside this list. */
+        --t-hero: 68px; /* hero headline, nothing else */
+        --t-fig-xl: 66px; /* the one largest impact figure */
+        --t-brand: 66px; /* the wordmark, nothing else */
+        --t-fig: 52px; /* every pillar figure */
+        --t-title: 42px; /* every pillar title, and the team name */
+        --t-station: 32px; /* chain node names */
+        --t-lede: 30px; /* hero standfirst */
+        --t-body: 26px; /* every piece of running text on the sheet */
+        --t-eyebrow: 23px; /* numbered eyebrows and table headers */
+        --t-label: 22px; /* every secondary label, caption and footer line */
+
+        --gap: 20px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        background: #d8d2c7;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      #page {
+        position: relative;
+        width: 1754px;
+        height: 2480.5px; /* doubles to 4961, exact A3 portrait at 300 DPI */
+        background: var(--ground);
+        color: var(--ink);
+        font-family: "Work Sans", sans-serif;
+        font-weight: 500;
+        overflow: hidden;
+      }
+
+      /* ---------- layers ---------- */
+      .backdrop {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+      .lattice {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 900px;
+        z-index: 5;
+        pointer-events: none;
+        opacity: 0.13;
+      }
+      .footer-veil {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 470px;
+        z-index: 10;
+        pointer-events: none;
+        background: linear-gradient(
+          to bottom,
+          rgba(249, 243, 234, 0) 0%,
+          rgba(249, 243, 234, 0.72) 34%,
+          rgba(249, 243, 234, 0.93) 68%,
+          rgba(249, 243, 234, 0.97) 100%
+        );
+      }
+      .paper {
+        position: absolute;
+        inset: 0;
+        z-index: 60;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        mix-blend-mode: multiply;
+        opacity: 0.3;
+      }
+
+      .content {
+        position: relative;
+        z-index: 20;
+        height: 100%;
+        padding: 32px 68px 28px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ---------- masthead ---------- */
+      .masthead {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .brand > img {
+        width: 84px;
+        height: 84px;
+        display: block;
+      }
+      .wordmark {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: var(--t-brand);
+        letter-spacing: -0.025em;
+        line-height: 1;
+      }
+      .wordmark .t {
+        color: var(--accent);
+      }
+      .team {
+        text-align: right;
+      }
+      .team .name {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: var(--t-title);
+        letter-spacing: -0.02em;
+        line-height: 1;
+      }
+
+      /* ---------- hero ---------- */
+      .hero {
+        text-align: center;
+        margin-top: 34px;
+      }
+      .hero h1 {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: var(--t-hero);
+        line-height: 1.04;
+        letter-spacing: -0.035em;
+      }
+      .hero h1 .b {
+        display: block;
+        color: var(--accent);
+      }
+      .hero .lede {
+        font-size: var(--t-lede);
+        font-weight: 500;
+        line-height: 1.36;
+        margin: 16px auto 0;
+        max-width: 1400px;
+      }
+
+      /* ---------- the thread ---------- */
+      .thread {
+        position: relative;
+        margin-top: 26px;
+      }
+      .chain {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .sv-n {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: var(--t-station);
+        fill: #281913;
+        letter-spacing: -0.01em;
+      }
+      .sv-d {
+        font-family: "Work Sans", sans-serif;
+        font-weight: 600;
+        font-size: var(--t-label);
+        fill: #281913;
+      }
+      .sv-chip {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: var(--t-label);
+        fill: #fff;
+      }
+
+      /* ---------- proof: real screens from the running prototype ---------- */
+
+      .proofs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--gap);
+        margin-top: 18px;
+      }
+      /* The proof row uses the same shell as the pillars above it, so the screens
+     read as a third row of the same grid rather than as a foreign band, and each
+     caption sits inside the card with the screen it describes. */
+      .proofs figure {
+        /* The card is 4 by 3; the screen inside it is 16 by 9 with its caption
+       beneath, so all three cards are one height regardless of caption length. */
+        margin: 0;
+        aspect-ratio: 4 / 3;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 253, 250, 0.9);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: 0 4px 18px rgba(40, 25, 19, 0.07);
+        padding: 12px;
+      }
+      .proofs img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: top left;
+        display: block;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--card);
+      }
+      .proofs figcaption {
+        font-size: var(--t-label);
+        font-weight: 700;
+        line-height: 1.24;
+        margin-top: 10px;
+      }
+      .proofs figcaption span {
+        font-weight: 500;
+        color: var(--muted);
+      }
+
+      /* ---------- pillars ---------- */
+      .pillars {
+        flex: 1;
+        min-height: 0;
+        margin-top: 22px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: var(--gap);
+      }
+      .card {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        background: rgba(255, 253, 250, 0.9);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: 0 4px 18px rgba(40, 25, 19, 0.07);
+        padding: 16px 22px; /* symmetric, unlike v8's 14/24/12 */
+        display: flex;
+        flex-direction: column;
+      }
+      .card-art {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 82%;
+        z-index: -2;
+        opacity: 0.62;
+        pointer-events: none;
+      }
+      .card-scrim {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background:
+          linear-gradient(
+            100deg,
+            rgba(255, 253, 250, 0.98) 40%,
+            rgba(255, 253, 250, 0.86) 68%,
+            rgba(255, 253, 250, 0.7) 100%
+          ),
+          linear-gradient(to bottom, rgba(255, 253, 250, 0.94) 30%, rgba(255, 253, 250, 0.34) 100%);
+      }
+      .card-head {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+      }
+      .card-head img {
+        width: 68px;
+        height: 68px;
+        display: block;
+        flex: none;
+      }
+      .card-head .num {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: var(--t-eyebrow);
+        color: var(--accent);
+      }
+      .card-head h2 {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: var(--t-title);
+        letter-spacing: -0.022em;
+        line-height: 1.08;
+        margin-top: 4px;
+      }
+      /* Every card carries exactly one sub line. In v8 two cards had one and two
+     did not, so the four heads were different heights on a two-by-two grid. */
+      .card-head .sub {
+        font-size: var(--t-label);
+        font-weight: 500;
+        line-height: 1.22;
+        color: var(--muted);
+        margin-top: 5px;
+        max-width: 46ch;
+      }
+
+      /* one closing line per card, identical treatment in all four */
+      .card-foot {
+        margin-top: auto;
+        padding-top: 8px;
+        border-top: 1px solid var(--border);
+        font-size: var(--t-body);
+        font-weight: 500;
+        line-height: 1.26;
+      }
+      .card-foot b {
+        font-weight: 700;
+      }
+
+      /* pillar 1 table */
+      table.demands {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 6px;
+        font-variant-numeric: tabular-nums;
+      }
+      table.demands th {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: var(--t-eyebrow);
+        color: #fff;
+        background: var(--accent);
+        text-align: center;
+        padding: 2px 6px;
+      }
+      table.demands th:first-child {
+        background: transparent;
+        color: var(--muted);
+        font-family: "Work Sans", sans-serif;
+        font-weight: 600;
+        text-align: left;
+      }
+      table.demands th.r1 {
+        border-radius: 6px 0 0 6px;
+      }
+      table.demands th.r2 {
+        border-radius: 0 6px 6px 0;
+      }
+      table.demands td {
+        border-bottom: 1px solid var(--border);
+        padding: 0 6px;
+        font-size: var(--t-body);
+        font-weight: 500;
+      }
+      table.demands td.mark,
+      table.demands td.no,
+      table.demands td.ct {
+        text-align: center;
+      }
+      table.demands td.no {
+        color: var(--muted);
+      }
+      /* A filled dot per demand, and a running count, so "thirteen times" is
+     arithmetic the reader can do on the sheet rather than a claim to accept. */
+      table.demands td.mark i {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+      table.demands td.ct {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        color: var(--accent);
+      }
+      table.demands th.ct {
+        background: transparent;
+        color: var(--muted);
+        font-family: "Work Sans", sans-serif;
+        font-weight: 600;
+        text-align: center;
+      }
+      table.demands tr.total td {
+        border-bottom: 0;
+        padding-top: 4px;
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+      }
+      table.demands tr.total td.sum {
+        color: var(--accent);
+        font-size: var(--t-fig);
+        text-align: center;
+        line-height: 1;
+      }
+      table.demands tr.total td.lab {
+        color: var(--muted);
+        font-weight: 600;
+        font-family: "Work Sans", sans-serif;
+      }
+      table.demands tr:last-child td {
+        border-bottom: 0;
+      }
+
+      /* one figure-and-label component, shared by pillars 2 and 4 */
+      .figs {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .fig-row {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        background: #f6efe5;
+        border-radius: 8px;
+        padding: 6px 18px;
+      }
+      .fig-row .v {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: var(--t-fig);
+        letter-spacing: -0.02em;
+        flex: none;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+      }
+      .fig-row .l {
+        font-size: var(--t-label);
+        font-weight: 500;
+        line-height: 1.18;
+        color: var(--muted);
+      }
+      .fig-row.slate .v {
+        color: var(--slate);
+      }
+      .fig-row.accent .v {
+        color: var(--accent);
+      }
+
+      /* Pillar 2 leads on one statistic and shows its complement, rather than
+     stacking three equal rows and stating the insight underneath. The bar is
+     one measure against its own base: 91.6% counts all over-60s while 33.6%
+     counts over-60 internet users, so the two must never share a scale. */
+      .funnel {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .fn {
+        display: flex;
+        align-items: baseline;
+        gap: 18px;
+      }
+      /* Step two counts a subset of step one, so it is indented and reads as "of
+     those". The two bases must never be drawn on one shared scale. */
+      .fn.sub-step {
+        padding-left: 34px;
+        border-left: 4px solid #ece2d4;
+        margin-left: 18px;
+      }
+      .fn .v {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: var(--t-fig-xl);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: var(--slate);
+        white-space: nowrap;
+      }
+      .fn .l {
+        font-size: var(--t-label);
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--muted);
+      }
+      .lead-stat .v {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: var(--t-fig);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: var(--slate);
+        font-variant-numeric: tabular-nums;
+      }
+      .lead-stat .l {
+        font-size: var(--t-label);
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--muted);
+      }
+      .track {
+        flex: none;
+        margin-top: 20px;
+        height: 24px;
+        border-radius: 999px;
+        background: #ece2d4;
+        overflow: hidden;
+      }
+      .track span {
+        display: block;
+        height: 100%;
+        background: var(--slate);
+        border-radius: 999px;
+      }
+      .track-note {
+        margin-top: 12px;
+        font-size: var(--t-body);
+        font-weight: 700;
+      }
+      .track-note span {
+        font-weight: 500;
+        color: var(--muted);
+      }
+      .side-facts {
+        margin-top: 8px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .side-facts div {
+        background: #f6efe5;
+        border-radius: 8px;
+        padding: 5px 14px;
+      }
+      .side-facts .v {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: var(--t-station);
+        color: var(--slate);
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+      }
+      .side-facts .l {
+        font-size: var(--t-label);
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+
+      /* pillar 3 points */
+      .points {
+        margin-top: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+      }
+      .point {
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+      }
+      .point .tick {
+        flex: none;
+        margin-top: 5px;
+      }
+      .point p {
+        font-size: var(--t-body);
+        font-weight: 500;
+        line-height: 1.24;
+      }
+      .point b {
+        font-weight: 700;
+      }
+
+      .money {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .money-cell {
+        background: #f6efe5;
+        border-radius: 8px;
+        padding: 8px 16px;
+      }
+      .money-cell .v {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: var(--t-body);
+        color: var(--accent);
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+      }
+      .money-cell .l {
+        font-size: var(--t-label);
+        font-weight: 500;
+        line-height: 1.22;
+        color: var(--muted);
+        margin-top: 3px;
+      }
+
+      /* pillar 4 impact headline pair */
+      .impact-top {
+        display: grid;
+        grid-template-columns: 1fr 1px 1fr;
+        column-gap: 24px;
+        align-items: baseline;
+        margin-top: 10px;
+      }
+      .impact-top .v {
+        font-family: "Outfit", sans-serif;
+        font-weight: 800;
+        grid-row: 1;
+        font-size: var(--t-fig);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: var(--accent);
+        font-variant-numeric: tabular-nums;
+      }
+      .impact-top .v.lead {
+        font-size: var(--t-fig-xl);
+      }
+      .impact-top .l {
+        grid-row: 2;
+        font-size: var(--t-label);
+        font-weight: 500;
+        color: var(--muted);
+        margin-top: 4px;
+        line-height: 1.24;
+      }
+      .impact-top .rule {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        width: 1px;
+        align-self: stretch;
+        background: var(--border);
+      }
+      /* ---------- footer ---------- */
+      .footer {
+        margin-top: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 36px;
+        padding: 16px 6px 0;
+        border-top: 1px solid var(--border);
+      }
+      .qr-group {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .qr-group img {
+        width: 132px;
+        height: 132px;
+        display: block;
+        border: 1px solid var(--border);
+      }
+      .qr-group .t1 {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: var(--t-body);
+      }
+      .qr-group .t2 {
+        font-size: var(--t-label);
+        font-weight: 600;
+        color: var(--accent);
+        margin-top: 5px;
+      }
+      .cred {
+        text-align: center;
+      }
+      .cred .c2 {
+        font-size: var(--t-label);
+        font-weight: 600;
+      }
+      .cred .marks {
+        margin-top: 12px;
+        display: inline-flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .cred .marks img {
+        height: 60px;
+        display: block;
+      }
+      .cred .marks img.uriis {
+        height: 96px;
+      }
+      .sdg-group {
+        text-align: right;
+      }
+      .sdg-group .lab {
+        font-size: var(--t-label);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .sdg-row {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-end;
+      }
+      .sdg-cell {
+        text-align: center;
+      }
+      .sdg-cell img {
+        width: 100px;
+        height: 100px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <img
+        class="backdrop"
+        src="../../codex-generated/b-backdrop.png"
+        alt=""
+        onerror="this.remove()"
+      />
+      <svg
+        class="lattice"
+        viewBox="0 0 1754 900"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <defs>
+          <g id="s8" fill="none" stroke="#bc4d1a" stroke-width="2.4" stroke-linejoin="round">
+            <rect x="-42" y="-42" width="84" height="84" />
+            <rect x="-42" y="-42" width="84" height="84" transform="rotate(45)" />
+            <rect x="-21" y="-21" width="42" height="42" transform="rotate(22.5)" />
+          </g>
+          <pattern id="songket" width="240" height="240" patternUnits="userSpaceOnUse">
+            <g
+              fill="none"
+              stroke="#bc4d1a"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              opacity="0.65"
+            >
+              <path d="M0 120 H240 M120 0 V240 M0 0 L240 240 M240 0 L0 240" />
+            </g>
+            <use href="#s8" x="120" y="120" />
+            <use href="#s8" x="0" y="0" />
+            <use href="#s8" x="240" y="0" />
+            <use href="#s8" x="0" y="240" />
+            <use href="#s8" x="240" y="240" />
+          </pattern>
+          <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#fff" stop-opacity="1" />
+            <stop offset="0.55" stop-color="#fff" stop-opacity="0.45" />
+            <stop offset="1" stop-color="#fff" stop-opacity="0" />
+          </linearGradient>
+          <mask id="fadeMask"><rect width="1754" height="900" fill="url(#fade)" /></mask>
+        </defs>
+        <rect width="1754" height="900" fill="url(#songket)" mask="url(#fadeMask)" />
+      </svg>
+
+      <div class="footer-veil"></div>
+
+      <div class="content">
+        <!-- masthead -->
+        <div class="masthead">
+          <div class="brand">
+            <img src="assets/mytakziah-mark-2400.png" alt="MyTakziah mark, three woven strands" />
+            <div class="wordmark">My<span class="t">Takziah</span></div>
+          </div>
+          <div class="team">
+            <div class="name">Team Survive</div>
+          </div>
+        </div>
+
+        <!-- hero -->
+        <div class="hero">
+          <h1>Grief is hard enough.<span class="b">The paperwork shouldn't be.</span></h1>
+          <p class="lede">
+            One part of government already knows. It never tells the other two, so a grieving family
+            tells them again. And again.
+          </p>
+        </div>
+
+        <!-- The shape is a fan, not a chain: one set of evidence goes to three
+         agencies at the same time, and three replies come back as one status.
+         A left-to-right chain would say evidence passes from JPN to KWSP to
+         PERKESO, which is not what happens and not what the prototype does. -->
+        <div class="thread">
+          <svg class="chain" viewBox="0 0 1546 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#bc4d1a" stroke-width="7" fill="none" stroke-linecap="round">
+              <path d="M 206 140 C 380 140, 430 40, 600 40" />
+              <path d="M 206 140 L 600 140" />
+              <path d="M 206 140 C 380 140, 430 240, 600 240" />
+              <path d="M 1012 40 C 1200 40, 1230 140, 1344 140" />
+              <path d="M 1012 140 L 1344 140" />
+              <path d="M 1012 240 C 1200 240, 1230 140, 1344 140" />
+            </g>
+            <g fill="#bc4d1a">
+              <path d="M 576 30 L 600 40 L 576 50 Z" />
+              <path d="M 576 130 L 600 140 L 576 150 Z" />
+              <path d="M 576 230 L 600 240 L 576 250 Z" />
+              <path d="M 1322 130 L 1346 140 L 1322 150 Z" />
+            </g>
+
+            <clipPath id="n0"><circle cx="150" cy="140" r="46" /></clipPath>
+            <circle cx="150" cy="140" r="54" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5" />
+            <image
+              href="../../codex-generated/b-med-evidence.png"
+              x="104"
+              y="94"
+              width="92"
+              height="92"
+              clip-path="url(#n0)"
+              preserveAspectRatio="xMidYMid slice"
+            />
+            <text x="150" y="228" text-anchor="middle" class="sv-n">Evidence, once</text>
+            <text x="150" y="258" text-anchor="middle" class="sv-d">given a single time</text>
+
+            <clipPath id="n1"><circle cx="638" cy="40" r="32" /></clipPath>
+            <circle cx="638" cy="40" r="38" fill="#fffdfa" stroke="#bc4d1a" stroke-width="4" />
+            <image
+              href="../../codex-generated/b-med-registry.png"
+              x="606"
+              y="8"
+              width="64"
+              height="64"
+              clip-path="url(#n1)"
+              preserveAspectRatio="xMidYMid slice"
+            />
+            <text x="694" y="30" class="sv-n">JPN</text>
+            <text x="694" y="72" class="sv-d">register the death</text>
+            <rect x="768" y="6" width="120" height="34" rx="17" fill="#bc4d1a" />
+            <text x="828" y="30" text-anchor="middle" class="sv-chip">7 days</text>
+
+            <clipPath id="n2"><circle cx="638" cy="140" r="32" /></clipPath>
+            <circle cx="638" cy="140" r="38" fill="#fffdfa" stroke="#bc4d1a" stroke-width="4" />
+            <image
+              href="../../codex-generated/b-med-savings.png"
+              x="606"
+              y="108"
+              width="64"
+              height="64"
+              clip-path="url(#n2)"
+              preserveAspectRatio="xMidYMid slice"
+            />
+            <text x="694" y="130" class="sv-n">KWSP</text>
+            <text x="694" y="172" class="sv-d">savings and death benefit</text>
+            <rect x="804" y="106" width="148" height="34" rx="17" fill="#bc4d1a" />
+            <text x="878" y="130" text-anchor="middle" class="sv-chip">6 months</text>
+
+            <clipPath id="n3"><circle cx="638" cy="240" r="32" /></clipPath>
+            <circle cx="638" cy="240" r="38" fill="#fffdfa" stroke="#bc4d1a" stroke-width="4" />
+            <image
+              href="../../codex-generated/b-med-protection.png"
+              x="606"
+              y="208"
+              width="64"
+              height="64"
+              clip-path="url(#n3)"
+              preserveAspectRatio="xMidYMid slice"
+            />
+            <text x="694" y="230" class="sv-n">PERKESO</text>
+            <text x="694" y="272" class="sv-d">survivor and funeral</text>
+
+            <clipPath id="n4"><circle cx="1400" cy="140" r="46" /></clipPath>
+            <circle cx="1400" cy="140" r="54" fill="#fffdfa" stroke="#bc4d1a" stroke-width="5" />
+            <image
+              href="../../codex-generated/b-med-timeline.png"
+              x="1354"
+              y="94"
+              width="92"
+              height="92"
+              clip-path="url(#n4)"
+              preserveAspectRatio="xMidYMid slice"
+            />
+            <text x="1400" y="228" text-anchor="middle" class="sv-n">One timeline</text>
+            <text x="1400" y="258" text-anchor="middle" class="sv-d">all three, one place</text>
+          </svg>
+        </div>
+
+        <!-- four pillars -->
+        <div class="pillars">
+          <div class="card">
+            <img
+              class="card-art"
+              src="../../codex-generated/b-card-problem.png"
+              alt=""
+              onerror="this.remove()"
+            />
+            <div class="card-scrim"></div>
+            <div class="card-head">
+              <img
+                src="./assets/pillar-problem.png"
+                alt=""
+                onerror="this.style.visibility = 'hidden'"
+              />
+              <div>
+                <div class="num">1. Problem</div>
+                <h2>The same five facts, demanded thirteen times.</h2>
+                <p class="sub">Every row below is something you already told someone.</p>
+              </div>
+            </div>
+            <table class="demands">
+              <tr>
+                <th>Demanded of the family</th>
+                <th class="r1">JPN</th>
+                <th>KWSP</th>
+                <th class="r2">PERKESO</th>
+                <th class="ct">Times</th>
+              </tr>
+              <tr>
+                <td>Who died</td>
+                <td class="mark"><i></i></td>
+                <td class="mark"><i></i></td>
+                <td class="mark"><i></i></td>
+                <td class="ct">3</td>
+              </tr>
+              <tr>
+                <td>Who you are</td>
+                <td class="mark"><i></i></td>
+                <td class="mark"><i></i></td>
+                <td class="mark"><i></i></td>
+                <td class="ct">3</td>
+              </tr>
+              <tr>
+                <td>Proof of the death</td>
+                <td class="mark"><i></i></td>
+                <td class="mark"><i></i></td>
+                <td class="mark"><i></i></td>
+                <td class="ct">3</td>
+              </tr>
+              <tr>
+                <td>How you are related</td>
+                <td class="no">-</td>
+                <td class="mark"><i></i></td>
+                <td class="mark"><i></i></td>
+                <td class="ct">2</td>
+              </tr>
+              <tr>
+                <td>Where to pay</td>
+                <td class="no">-</td>
+                <td class="mark"><i></i></td>
+                <td class="mark"><i></i></td>
+                <td class="ct">2</td>
+              </tr>
+              <tr class="total">
+                <td class="lab" colspan="4">Times the same family is asked</td>
+                <td class="sum">13</td>
+              </tr>
+            </table>
+            <p class="card-foot">
+              <b>At least two in person, with originals,</b> in the weeks after the funeral. Miss
+              six months and the RM2,500 is gone.
+            </p>
+          </div>
+
+          <div class="card">
+            <img
+              class="card-art"
+              src="../../codex-generated/b-card-user.png"
+              alt=""
+              onerror="this.remove()"
+            />
+            <div class="card-scrim"></div>
+            <div class="card-head">
+              <img
+                src="./assets/pillar-user.png"
+                alt=""
+                onerror="this.style.visibility = 'hidden'"
+              />
+              <div>
+                <div class="num">2. Target User</div>
+                <h2>Who carries it</h2>
+                <p class="sub">The surviving spouse. Usually older. Usually alone with it.</p>
+              </div>
+            </div>
+            <div class="funnel">
+              <div class="fn">
+                <div class="v">9 in 10</div>
+                <div class="l">Malaysians aged 60 and over are online</div>
+              </div>
+              <div class="fn sub-step">
+                <div class="v">1 in 3</div>
+                <div class="l">of those deal with government online</div>
+              </div>
+            </div>
+            <div class="track"><span style="width: 33.6%"></span></div>
+            <p class="track-note">
+              So two in three do not. <span>Median age at death in Malaysia is 69.0 years.</span>
+            </p>
+            <p class="card-foot">
+              They are not offline. <b>It is the process that shuts them out, not the device.</b>
+            </p>
+          </div>
+
+          <div class="card">
+            <img
+              class="card-art"
+              src="../../codex-generated/b-card-innovation.png"
+              alt=""
+              onerror="this.remove()"
+            />
+            <div class="card-scrim"></div>
+            <div class="card-head">
+              <img
+                src="./assets/pillar-innovation.png"
+                alt=""
+                onerror="this.style.visibility = 'hidden'"
+              />
+              <div>
+                <div class="num">3. Innovation</div>
+                <h2>A chatbot tells you what to do. MyTakziah does it.</h2>
+                <p class="sub">Not advice. The paperwork, done.</p>
+              </div>
+            </div>
+            <div class="points">
+              <div class="point">
+                <svg class="tick" width="20" height="16" viewBox="0 0 20 16">
+                  <path
+                    d="M2 8.5 L7 14 L18 2"
+                    stroke="#bc4d1a"
+                    stroke-width="3"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>
+                  <b>One telling, three claims.</b> Your evidence reaches JPN, KWSP and PERKESO at
+                  once.
+                </p>
+              </div>
+              <div class="point">
+                <svg class="tick" width="20" height="16" viewBox="0 0 20 16">
+                  <path
+                    d="M2 8.5 L7 14 L18 2"
+                    stroke="#bc4d1a"
+                    stroke-width="3"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>
+                  <b>Nothing expires while you grieve.</b> Soonest deadline first, seven days before
+                  six months.
+                </p>
+              </div>
+              <div class="point">
+                <svg class="tick" width="20" height="16" viewBox="0 0 20 16">
+                  <path
+                    d="M2 8.5 L7 14 L18 2"
+                    stroke="#bc4d1a"
+                    stroke-width="3"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>
+                  <b>You can check every word of it.</b> Each condition links the government rule it
+                  came from.
+                </p>
+              </div>
+            </div>
+            <p class="card-foot">
+              Malaysia already has the identity, the data sharing and the law.
+              <b>What it does not have is a journey.</b>
+            </p>
+          </div>
+
+          <div class="card">
+            <img
+              class="card-art"
+              src="../../codex-generated/b-card-impact.png"
+              alt=""
+              onerror="this.remove()"
+            />
+            <div class="card-scrim"></div>
+            <div class="card-head">
+              <img
+                src="./assets/pillar-impact.png"
+                alt=""
+                onerror="this.style.visibility = 'hidden'"
+              />
+              <div>
+                <div class="num">4. Impact</div>
+                <h2>Every death starts the same paperwork.</h2>
+                <p class="sub">The money is already there, and already moving.</p>
+              </div>
+            </div>
+            <div class="impact-top">
+              <div class="v lead" style="grid-column: 1">RM3.24b</div>
+              <div class="rule"></div>
+              <div class="v" style="grid-column: 3">198,992</div>
+              <div class="l" style="grid-column: 1">
+                EPF death withdrawals across 85,532 claims, 2024
+              </div>
+              <div class="l" style="grid-column: 3">deaths in Malaysia, 2024</div>
+            </div>
+            <div class="money">
+              <div class="money-cell">
+                <div class="v">RM2,500</div>
+                <div class="l">EPF Death Assistance, lost after six months</div>
+              </div>
+              <div class="money-cell">
+                <div class="v">Up to RM3,000</div>
+                <div class="l">PERKESO funeral benefit</div>
+              </div>
+            </div>
+            <p class="card-foot">
+              None of this is new money.
+              <b>The gap is whether a grieving family knows to claim it.</b>
+            </p>
+          </div>
+        </div>
+
+        <!-- proof: three real screens from the running prototype -->
+        <div class="proofs">
+          <figure>
+            <img
+              src="./assets/desk-provide.png"
+              alt="The provide-once screen in the prototype"
+              onerror="this.parentElement.remove()"
+            />
+            <figcaption>
+              Thirteen demands, answered once.
+              <span>Given a single time, to all three agencies.</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="./assets/desk-deadline.png"
+              alt="Entitlements ranked by deadline in the prototype"
+              onerror="this.parentElement.remove()"
+            />
+            <figcaption>
+              Told what you are owed, and what expires first.
+              <span>Seven days before six months.</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="./assets/desk-timeline.png"
+              alt="One consolidated status timeline in the prototype"
+              onerror="this.parentElement.remove()"
+            />
+            <figcaption>
+              Three claims, one screen.
+              <span>Instead of three reference numbers and three phone lines.</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- footer -->
+        <div class="footer">
+          <div class="qr-group">
+            <img src="assets/mytakziah-qr.png" alt="QR code for the MyTakziah prototype" />
+            <div>
+              <div class="t1">Scan to try the prototype</div>
+              <div class="t2">mytakziah.vercel.app</div>
+            </div>
+          </div>
+          <div class="cred">
+            <div class="c2">URIIS Student Biz Innov Challenge 2026</div>
+            <div class="marks">
+              <img class="uriis" src="assets/uriis-logo-transparent.png" alt="URIIS 2026" />
+              <img src="assets/kolaxus-logo-transparent.png" alt="Kolaxus" />
+            </div>
+          </div>
+          <div class="sdg-group">
+            <div class="lab">Aligned with the UN SDGs</div>
+            <div class="sdg-row">
+              <div class="sdg-cell">
+                <img src="assets/sdg-16.png" alt="SDG 16, Peace, Justice and Strong Institutions" />
+              </div>
+              <div class="sdg-cell"><img src="assets/sdg-1.png" alt="SDG 1, No Poverty" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <img
+        class="paper"
+        src="../../codex-generated/paper-texture.png"
+        alt=""
+        onerror="this.remove()"
+      />
+    </div>
+  </body>
+</html>
