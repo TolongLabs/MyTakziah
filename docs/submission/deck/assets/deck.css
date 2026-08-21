@@ -575,13 +575,13 @@ table.grid .n {
    wordmark and pinned to its cap height. Third-party mark: shown as supplied,
    never recoloured into the warm palette. */
 .cover-host {
+  position: absolute;
+  top: 46px;
+  right: 88px;
+  z-index: 6;
   display: flex;
   align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-  margin-left: auto;
-  align-self: flex-start;
-  padding-top: 6px;
+  gap: 13px;
 }
 .cover-host > span {
   font-family: var(--font-sans);
