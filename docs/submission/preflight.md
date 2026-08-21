@@ -4,7 +4,7 @@ Run this checklist on the actual exported files before uploading to Kolaxus.
 
 **Official Deadline:** 21 August 2026 at 11:59 PM
 
-**Current Urgency:** D-3 as of 18 August 2026
+**Current Urgency:** **Deadline day, 21 August 2026.** Submission window closes 11:59 PM tonight.
 
 **Extension:** None
 
@@ -80,6 +80,11 @@ Complete this record after reviewing both required artifacts against the four ju
 
 Inspect the exported file itself.
 
+> **BLOCKER as of 2026-08-21.** No exported PDF exists anywhere in the repository. The content is
+> written and complete in `idea-submission-draft.md`, Team Information plus Sections 1 to 8, with
+> Section 8 verified at **96 words**. What is missing is the export into the official template and
+> out to PDF. **This is the only mandatory artifact not yet in a submittable format.**
+
 | Property               | Required    | Observed | Verified By | Date |
 | ---------------------- | ----------- | -------- | ----------- | ---- |
 | Format                 | PDF only    | TODO     | TODO        | TODO |
@@ -91,14 +96,27 @@ Inspect the exported file itself.
 
 Inspect the exported image itself.
 
-| Property            | Required        | Observed | Verified By | Date |
-| ------------------- | --------------- | -------- | ----------- | ---- |
-| Format              | JPG or PNG only | TODO     | TODO        | TODO |
-| Page or Image Count | one             | TODO     | TODO        | TODO |
-| Page Size           | A3              | TODO     | TODO        | TODO |
-| Orientation         | portrait        | TODO     | TODO        | TODO |
-| Opens Successfully  | yes             | TODO     | TODO        | TODO |
-| Text Legible        | yes             | TODO     | TODO        | TODO |
+**File inspected:** `canvas/versions/mytakziah-v10-a3.png`, the final selected by @AlaskanTuna.
+
+| Property            | Required        | Observed                       | Verified By          | Date       |
+| ------------------- | --------------- | ------------------------------ | -------------------- | ---------- |
+| Format              | JPG or PNG only | PNG                            | automated inspection | 2026-08-21 |
+| File Size           | under 25 MB     | 8.1 MB                         | automated inspection | 2026-08-21 |
+| Page or Image Count | one             | one image                      | automated inspection | 2026-08-21 |
+| Page Size           | A3              | 3508 x 4961 px at 300 DPI      | automated inspection | 2026-08-21 |
+| Orientation         | portrait        | portrait                       | automated inspection | 2026-08-21 |
+| Opens Successfully  | yes             | yes                            | automated inspection | 2026-08-21 |
+| Text Legible        | yes             | body 12.5 pt, smallest 10.6 pt | automated inspection | 2026-08-21 |
+| Prototype QR        | scans           | decodes to the prototype URL   | automated inspection | 2026-08-21 |
+
+**Measured detail.** The PNG carries a 300 DPI `pHYs` tag, so A3 is correct in physical units and
+not only in pixels. Body copy sits at 12.5 pt on the printed sheet and the smallest text at 10.6 pt,
+both above the 12 pt guideline for body and readable at arm's length. The QR decodes to
+`https://mytakziah.vercel.app` straight out of the exported file, at 2.2 cm printed, above the
+1.5 cm floor recorded in `brand/mytakziah-qr.md`, with roughly 15:1 contrast.
+
+**Still needs a human:** open the file on a phone and confirm it reads there too, and confirm this
+is the intended final version before it is attached.
 
 ## Optional Supporting Materials
 
