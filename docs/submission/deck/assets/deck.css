@@ -100,6 +100,22 @@ section.slide:not(.dark):not(.nolattice)::before {
   background-size: 440px 440px;
   opacity: 0.032;
 }
+/* The close slide is a photograph, so it sits outside the lattice rule above.
+   It still carries the weave across the top band, where the cream wash is at 86
+   per cent and the image is barely present. The mask fades it out before it
+   reaches the part of the frame that reads as a photograph. */
+section.slide.close::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url("./lattice.svg");
+  background-size: 440px 440px;
+  opacity: 0.055;
+  mask-image: linear-gradient(180deg, #000 0%, #000 30%, transparent 64%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 30%, transparent 64%);
+}
 section.slide.dark {
   background: radial-gradient(120% 95% at 6% -10%, #402a20 0%, var(--night) 56%, #1b100c 100%);
   color: var(--ground);
@@ -444,10 +460,26 @@ em.hl {
 }
 
 /* ---------- tables ---------- */
+/* Every table carries a surface of its own. On the lattice ground a transparent
+   table reads as unfinished and the weave runs straight through the figures, so
+   the table gets the same opaque card the panels beside it already use. Solid,
+   not a tint: this deck is printed to PDF, where a backdrop blur does not
+   survive the print path and a half-transparent fill drops contrast. */
 table.grid {
   width: 100%;
-  border-collapse: collapse;
+  /* separate, not collapse, so the card's radius actually clips the compare
+     column's tinted band at the corners */
+  border-collapse: separate;
+  border-spacing: 0;
   font-size: var(--t-body);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.dark table.grid {
+  background: #2e1d16;
+  border-color: rgba(249, 243, 234, 0.16);
 }
 table.grid th {
   font-family: var(--font-display);
@@ -457,7 +489,7 @@ table.grid th {
   text-transform: uppercase;
   text-align: left;
   color: var(--muted);
-  padding: 0 0 13px;
+  padding: 19px 0 13px;
   border-bottom: 1.5px solid var(--ink);
 }
 .dark table.grid th {
@@ -470,6 +502,18 @@ table.grid td {
   color: var(--ink-2);
   vertical-align: top;
   line-height: 1.4;
+}
+/* The card holds its own gutter, so the outer columns pad rather than the wrapper. */
+table.grid th:first-child,
+table.grid td:first-child {
+  padding-left: 26px;
+}
+table.grid th:last-child,
+table.grid td:last-child {
+  padding-right: 26px;
+}
+table.grid tr:last-child td {
+  padding-bottom: 19px;
 }
 .dark table.grid td {
   border-bottom-color: rgba(249, 243, 234, 0.14);
@@ -497,7 +541,7 @@ table.grid.compare td:last-child {
   padding-right: 24px;
 }
 table.grid.compare th:last-child {
-  padding-top: 16px;
+  padding-top: 19px;
 }
 table.grid.compare td {
   padding-top: 18px;
@@ -532,11 +576,10 @@ table.grid .n {
 /* ---------- cover ----------
    Light by default. The subject is bereavement, so the deck opens warm and
    bright rather than funereal; the recorded theme decision is light anyway. */
-.cover {
+section.slide.cover {
   background:
     radial-gradient(74% 64% at 88% 8%, #fdf6ec 0%, transparent 58%),
-    radial-gradient(58% 56% at 102% 100%, #f6e6d3 0%, transparent 56%),
-    var(--ground);
+    radial-gradient(58% 56% at 102% 100%, #f6e6d3 0%, transparent 56%), var(--ground);
 }
 .cover .pad {
   padding: 0;
@@ -780,7 +823,12 @@ table.grid .n {
   height: 720px;
   transform: translate(-50%, -50%);
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(224, 138, 76, 0.2) 0%, rgba(188, 77, 26, 0.09) 46%, transparent 68%);
+  background: radial-gradient(
+    circle,
+    rgba(224, 138, 76, 0.2) 0%,
+    rgba(188, 77, 26, 0.09) 46%,
+    transparent 68%
+  );
   z-index: 0;
 }
 .cover-ring {
@@ -859,6 +907,45 @@ table.grid .n {
   font-size: 20px;
   letter-spacing: 0.02em;
   fill: #fff;
+}
+
+/* ---------- prototype proof strip ---------- */
+/* The same shell the A3 canvas uses: a 16 by 9 screen on a card of its own, with
+   its caption inside that card. The screenshots are captured at 16 by 9, so the
+   frame no longer crops one mid-sentence, and all three cards hold one height
+   whatever the caption runs to. Hairline and one radius, never a soft shadow. */
+.proofs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: auto;
+}
+.proofs figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+}
+.proofs img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top left;
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
+.proofs figcaption {
+  font-size: var(--t-small);
+  line-height: 1.4;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.proofs figcaption b {
+  color: var(--ink);
 }
 
 /* ---------- step rail ---------- */
