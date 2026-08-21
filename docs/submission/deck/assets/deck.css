@@ -1424,16 +1424,27 @@ body.show-notes #notes {
   align-content: start;
 }
 .challenges .ch-col {
-  padding: 0 30px 0 0;
+  padding: 0 26px 22px 26px;
 }
-.challenges .ch-col + .ch-col {
-  padding-left: 30px;
+/* Four to a row, two rows. The dividers have to know where a row starts, so the
+   left rule skips the first column and the top rule skips the first row. */
+.challenges .ch-col:nth-child(4n + 1) {
+  padding-left: 0;
+}
+.challenges .ch-col:not(:nth-child(4n + 1)) {
   border-left: 1px solid var(--border);
+}
+.challenges .ch-col:nth-child(4n) {
+  padding-right: 0;
+}
+.challenges .ch-col:nth-child(n + 5) {
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
 }
 .challenges .ch-q {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1.12;
   letter-spacing: -0.018em;
   color: var(--accent);
