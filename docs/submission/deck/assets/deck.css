@@ -883,9 +883,8 @@ section.slide.cover {
    straight through and body text drops below 4.5:1. They get an opaque fill of
    their own and let the photograph show only around them. */
 .on-photo {
-  background: rgba(24, 14, 10, 0.9) !important;
-  border-color: rgba(249, 243, 234, 0.2) !important;
-  backdrop-filter: blur(3px);
+  background: #1b110c !important;
+  border-color: #4c3f37 !important;
 }
 .on-photo .cp,
 .on-photo .sub {
@@ -997,6 +996,12 @@ section.slide.cover {
 }
 .aud li:last-child {
   border-bottom: none;
+}
+/* The same list on a dark ground: the ink and the hairline both have to flip. */
+.dark .aud li,
+.on-photo .aud li {
+  color: rgba(249, 243, 234, 0.9);
+  border-bottom-color: rgba(249, 243, 234, 0.16);
 }
 .aud-key {
   font-family: var(--font-display);

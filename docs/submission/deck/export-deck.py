@@ -15,11 +15,12 @@ gets degraded and printed.
 1.  Every raster is downsampled to twice the size it is actually drawn at on the
     1920 by 1080 stage. A 2400px mark drawn into a 96px box costs 140 KB in the
     PDF and resolves no better than a 192px one.
-2.  The songket lattice is baked into a pre-multiplied PNG tile. As an SVG under
-    `opacity`, Chrome flattens the slide into a transparency group and prints
-    roughly 150 KB of raster; as an opaque-alpha tile it embeds once. The tile
-    carries the opacity, so the result is identical. Only the cover and the close
-    slide carry the lattice.
+2.  The cover, the problem slide and the close slide have their grounds
+    flattened to one opaque JPEG each. Their text stays vector and selectable;
+    only what sits behind it becomes an image. Without this a viewer spends 9 to
+    17 seconds rasterizing each of those pages, against 1 second for a plain
+    slide, because a radial shading, a photograph under an alpha gradient and a
+    masked lattice all cost per-pixel work across a 20 inch page.
 
 Two things that used to break this file are now fixed in the deck itself rather
 than here, and both are worth knowing before touching the cover. The hero's
@@ -30,11 +31,13 @@ PDF writer silently drops a radial gradient on a transformed absolutely
 positioned box while rendering it correctly on screen.
 """
 
+import io
 import pathlib
 import re
 import shutil
 import tempfile
 
+import pikepdf
 from PIL import Image
 from playwright.sync_api import sync_playwright
 
@@ -73,36 +76,39 @@ MEASURE = """() => {
   return seen;
 }"""
 
-# The lattice, pre-multiplied. Opacity and the dark slides' invert now live in
-# the tiles, so the rule no longer opens a transparency group.
-PRINT_CSS = """
-@media print {
-  section.slide.cover::before {
-    background-image: url("./lattice-light.png") !important;
-    opacity: 1 !important;
-  }
-  section.slide.close::after {
-    background-image: url("./lattice-close.png") !important;
-    opacity: 1 !important;
-  }
-}
+# Slides whose ground is built from gradients, a photograph and a masked overlay
+# are flattened to one opaque JPEG before printing. Everything on them stays
+# vector and selectable; only the ground behind the text becomes an image.
+#
+# This is the whole reason the export does any of this. Poppler took 9.5s, 14.0s
+# and 16.5s on the cover, the problem slide and the close slide, against 1s for a
+# plain slide, because a radial shading, a full-bleed photograph under an alpha
+# gradient and a masked lattice each cost per-pixel work across a 20 inch page.
+# Flattened, those three pages cost one image draw.
+GROUND_SLIDES = ("cover", "dark", "close")
+
+# Hide the content while photographing the ground, but keep the cover's glow and
+# ring, which are ground even though they live inside the content wrapper.
+GROUND_HIDE = """
+.pad, #bar, #notes { visibility: hidden !important; }
+.cover-glow, .cover-ring { visibility: visible !important; }
 """
 
-# One tile per ground, pre-multiplied: the ink colour and the opacity the CSS
-# would otherwise apply. Keep these in step with deck.css.
-TILES = (
-    ("light", (0, 0, 0), 0.032),
-    ("close", (0, 0, 0), 0.055),
-)
-
-# lattice.svg declares its own 240 by 240 size, so a bare navigation renders it
-# at that size in the corner of the viewport rather than filling it. It has to be
-# placed in a box of the size we actually want.
-TILE_PX = 880
-TILE_HOST = f"""<!doctype html><meta charset=utf-8>
-<style>html,body{{margin:0;background:transparent}}
-img{{display:block;width:{TILE_PX}px;height:{TILE_PX}px}}</style>
-<img src="./assets/lattice.svg" alt="">"""
+GROUND_RULE = """
+#stage > section:nth-of-type({n}) {{
+  background: url("./{file}") center / cover no-repeat !important;
+}}
+#stage > section:nth-of-type({n})::before,
+#stage > section:nth-of-type({n})::after {{
+  display: none !important;
+}}
+#stage > section:nth-of-type({n}) .hero-bg,
+#stage > section:nth-of-type({n}) .hero-shade,
+#stage > section:nth-of-type({n}) .cover-glow,
+#stage > section:nth-of-type({n}) .cover-ring {{
+  display: none !important;
+}}
+"""
 
 
 def slug(label):
@@ -130,29 +136,32 @@ def shoot_slides(page):
     return len(labels)
 
 
-def bake_lattice(browser, work):
-    """Render lattice.svg at tile size, then tint and pre-multiply it per ground."""
-    host = work / "_lattice.html"
-    host.write_text(TILE_HOST)
-    page = browser.new_page(viewport={"width": TILE_PX, "height": TILE_PX})
-    page.goto(host.as_uri())
-    page.wait_for_timeout(400)
-    raw = work / "assets" / "_lattice-raw.png"
-    page.locator("img").screenshot(path=str(raw), omit_background=True)
-    page.close()
-    host.unlink()
+def bake_grounds(browser, work):
+    """Flatten the gradient and photographic grounds to one opaque JPEG each."""
+    page = browser.new_page(viewport=STAGE, device_scale_factor=1)
+    page.emulate_media(reduced_motion="reduce")
+    page.goto((work / DECK.name).as_uri())
+    page.wait_for_timeout(1200)
+    page.add_style_tag(content=GROUND_HIDE)
+    classes = page.eval_on_selector_all("section.slide", "els => els.map(e => e.className)")
 
-    tile = Image.open(raw).convert("RGBA")
-    if tile.size != (TILE_PX, TILE_PX):
-        raise SystemExit(f"lattice tile came out {tile.size}, expected {TILE_PX} square")
-    if tile.getchannel("A").getextrema()[1] == 0:
-        raise SystemExit("lattice tile is empty; the SVG did not render")
-    alpha = tile.getchannel("A")
-    for name, rgb, mult in TILES:
-        out = Image.new("RGBA", tile.size, rgb + (0,))
-        out.putalpha(alpha.point(lambda a, m=mult: round(a * m)))
-        out.save(work / "assets" / f"lattice-{name}.png", optimize=True)
-    raw.unlink()
+    rules = []
+    for i, cls in enumerate(classes):
+        if not any(c in cls.split() for c in GROUND_SLIDES):
+            continue
+        name = f"ground-{i + 1:02d}.jpg"
+        page.evaluate(
+            "k => document.querySelectorAll('section.slide')"
+            ".forEach((e, j) => e.classList.toggle('active', j === k))",
+            i,
+        )
+        page.wait_for_timeout(400)
+        out = work / "assets" / name
+        page.locator("section.slide").nth(i).screenshot(path=str(out), type="jpeg", quality=93)
+        rules.append(GROUND_RULE.format(n=i + 1, file=name))
+        print(f"   {name}  {out.stat().st_size // 1024} KB")
+    page.close()
+    return "@media print {" + "".join(rules) + "}\n"
 
 
 def shrink(work, drawn):
@@ -177,6 +186,46 @@ def shrink(work, drawn):
         print(f"   {f.name:22} {before // 1024:>5} KB to {f.stat().st_size // 1024:>4} KB")
 
 
+def recompress(path, floor=80_000, quality=90):
+    """Re-encode big lossless images as JPEG, then linearize.
+
+    Chrome writes every raster as FlateDecode. A 1258 square hero costs the viewer
+    4.7 MB of inflate plus a 1.6 MB alpha channel before it can draw anything, and
+    that alone kept the cover at three and a half seconds. DCTDecode carries the
+    same pixels at a fraction of the decode cost. Any soft mask stays where it is:
+    a greyscale plane inflates quickly and JPEG would fringe the edges.
+    """
+    saved = 0
+    with pikepdf.open(path, allow_overwriting_input=True) as pdf:
+        done = set()
+        for page in pdf.pages:
+            for _, obj in (page.get("/Resources", {}).get("/XObject", {}) or {}).items():
+                if obj.get("/Subtype") != pikepdf.Name("/Image"):
+                    continue
+                if obj.objgen in done or obj.get("/Filter") != pikepdf.Name("/FlateDecode"):
+                    continue
+                done.add(obj.objgen)
+                before = len(bytes(obj.read_raw_bytes()))
+                if before < floor:
+                    continue
+                try:
+                    pil = pikepdf.PdfImage(obj).as_pil_image().convert("RGB")
+                except Exception:
+                    continue
+                buf = io.BytesIO()
+                pil.save(buf, "JPEG", quality=quality, optimize=True, subsampling=0)
+                obj.write(buf.getvalue(), filter=pikepdf.Name("/DCTDecode"))
+                obj.ColorSpace = pikepdf.Name("/DeviceRGB")
+                obj.BitsPerComponent = 8
+                if "/DecodeParms" in obj:
+                    del obj["/DecodeParms"]
+                after = len(bytes(obj.read_raw_bytes()))
+                saved += before - after
+                print(f"   {pil.width}x{pil.height}  {before // 1024} KB to {after // 1024} KB")
+        pdf.save(path, linearize=True)
+    return saved
+
+
 def main():
     scratch = pathlib.Path(tempfile.mkdtemp(prefix="deck-print-"))
     try:
@@ -196,9 +245,10 @@ def main():
             shutil.copytree(SRC, work, ignore=shutil.ignore_patterns("*.pdf", "slides", "*.py"))
             print("Trimming the print copy")
             shrink(work, drawn)
-            bake_lattice(browser, work)
+            print("Baking the heavy grounds")
+            ground_css = bake_grounds(browser, work)
             css = work / "assets" / "deck.css"
-            css.write_text(css.read_text() + PRINT_CSS)
+            css.write_text(css.read_text() + ground_css)
 
             page = browser.new_page(viewport=STAGE)
             page.emulate_media(media="print", reduced_motion="reduce")
@@ -215,6 +265,9 @@ def main():
             browser.close()
     finally:
         shutil.rmtree(scratch, ignore_errors=True)
+
+    print("Recompressing")
+    recompress(PDF)
 
     print(f"\n{count} slides in {SLIDES}")
     print(f"{PDF.name}  {PDF.stat().st_size / 1024 / 1024:.2f} MB")

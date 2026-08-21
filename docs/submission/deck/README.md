@@ -1,6 +1,6 @@
 # Deck
 
-The MyTakziah presentation deck, fourteen slides, built as one self-contained HTML file.
+The MyTakziah presentation deck, fifteen slides, built as one self-contained HTML file.
 
 **Owner:** TODO: assign, per issue #19
 **Status:** First full build, awaiting team review
@@ -31,10 +31,23 @@ python3 docs/submission/deck/export-deck.py
 ```
 
 It writes one PNG per slide at the deck's own 1920 by 1080 stage, then prints the deck to PDF from a
-scratch copy whose rasters are downsampled to twice the size they are actually drawn at and whose
-lattice is baked into a pre-multiplied tile. That is what keeps the PDF at roughly 3.6 MB instead of
-the 7.4 MB a plain print produces. The repo's own assets are never touched. Needs Playwright and
-Pillow.
+scratch copy. The repo's own assets are never touched. Needs Playwright, Pillow and pikepdf.
+
+Three things happen to that scratch copy, and all three exist because a plain browser print is both
+heavy and slow to open. Rasters are downsampled to twice the size they are actually drawn at. The
+grounds of the cover, the problem slide and the close slide are flattened to one opaque JPEG each,
+because a radial shading, a full-bleed photograph under an alpha gradient and a masked lattice each
+cost per-pixel work across a 20 inch page; those three pages took 9.5, 14.0 and 16.5 seconds to
+rasterize against 1 second for a plain slide, which is what makes a reader show blank pages. Then
+large lossless images are re-encoded as JPEG and the file is linearized. The result is roughly
+2.0 MB against the 7.4 MB a plain print produces, and every page's text stays vector and selectable.
+
+**If a page ever starts opening slowly again, measure before guessing:**
+
+```bash
+for n in $(seq 1 15); do /usr/bin/time -f "p$n %e s" \
+  pdftoppm -png -r 150 -f $n -l $n docs/submission/deck/mytakziah-deck.pdf /tmp/t; done
+```
 
 Printing from the browser also works and is the fallback: the stylesheet sets `@page` to 1920 by
 1080, so every slide becomes one landscape page and the progress bar and notes are suppressed. Use
@@ -46,28 +59,27 @@ document built on the official 14-page template and is the artifact that must be
 
 ## Slide Order
 
-| Slide | Template Section  | What It Carries                                                      |
-| ----- | ----------------- | -------------------------------------------------------------------- |
-| 1     | Team Information  | Wordmark, tagline, the three agency strands, four members, two SDGs  |
-| 2     | 1. The Problem    | Encik Ismail's week, day one to week three                           |
-| 3     | 1. The Problem    | Five facts, thirteen demands, and the i-Akaun contrast               |
-| 4     | 1. The Problem    | Three clocks, only one fully published, and the 72,929 figure        |
-| 5     | 2. Target User    | 91.6 per cent online, 33.6 per cent transacting, what the user needs |
-| 6     | 3. Your Solution  | The five steps, and the never-approved guardrail                     |
-| 7     | 3. Your Solution  | The same week without and with, and the worst case                   |
-| 8     | 4. Innovation     | Not a chatbot, and the four design choices                           |
-| 9     | 4. Innovation     | Three proofs this is not a technology gap                            |
-| 10    | 4. Innovation     | Four fair challenges and four answers                                |
-| 11    | 5. Impact         | Scale, money already moving, the measures, the two SDGs              |
-| 12    | 6. Feasibility    | Built already, not yet proven, and the four first steps              |
-| 13    | 7. Visual Concept | The one-thread diagram and the three prototype screens               |
-| 14    | Close             | The tagline, the QR code, the team                                   |
+| Slide | Template Section     | What It Carries                                                      |
+| ----- | -------------------- | -------------------------------------------------------------------- |
+| 1     | Team Information     | Wordmark, tagline, the three agency strands, four members, two SDGs  |
+| 2     | 1. The Problem       | Encik Ismail's week, day one to week three                           |
+| 3     | 1. The Problem       | Five facts, thirteen demands, and the i-Akaun contrast               |
+| 4     | 1. The Problem       | Three clocks, only one fully published, and the 72,929 figure        |
+| 5     | 2. Target User       | 91.6 per cent online, 33.6 per cent transacting, what the user needs |
+| 6     | 3. Your Solution     | The five steps, and the never-approved guardrail                     |
+| 7     | 3. Your Solution     | The same week without and with, and the worst case                   |
+| 8     | 4. Innovation        | Not a chatbot, and the four design choices                           |
+| 9     | 4. Innovation        | Three proofs this is not a technology gap                            |
+| 10    | 4. Innovation        | Four fair challenges and four answers                                |
+| 11    | 5. Impact            | Scale, money already moving, the measures, the two SDGs              |
+| 12    | 6. Feasibility       | Built already, not yet proven, and the four first steps              |
+| 13    | 7. Visual Concept    | The one-thread diagram and the three prototype screens               |
+| 14    | 8. Why We Should Win | Four roles, and the eighty-one word answer                           |
+| 15    | Close                | The tagline, the QR code, the team                                   |
 
-Section 8, "Why Your Team Should Win", is no longer a slide. It was cut on 2026-08-21 at the team's
-request. The section is still required by the official template and still lives in the idea
-submission, which is the graded artifact; the deck simply no longer spends a slide on it. One
-consequence worth knowing before a question-and-answer round: **Layak and the two actuaries now
-appear nowhere in the deck.** Anyone presenting has to carry that credibility material by mouth.
+Slide 14 was cut on 2026-08-21 and restored the same day in a lower-key form. It carries the four
+members' disciplines and one paragraph, and it **does not mention Layak or the two actuaries**, at
+the team's request. Anyone presenting has to carry that credibility material by mouth.
 
 ## Design
 
@@ -101,18 +113,19 @@ Everything here comes from the recorded system, not from taste. Palette, type an
 
 ## Assets
 
-| Path                    | Where It Came From                                                           |
-| ----------------------- | ---------------------------------------------------------------------------- |
-| `assets/fonts.css`      | Copied from the canvas build. Outfit and Work Sans, embedded                 |
-| `assets/mark.png`       | The Anyaman weave mark, from `../brand/`                                     |
-| `assets/med-*.png`      | The watercolour medallion set, resized from `../codex-generated/`            |
-| `assets/screen-*.png`   | Prototype screenshots, captured 16 by 9 by `export-deck.py`'s recipe         |
-| `assets/slides/`        | One PNG per slide, generated. Do not edit by hand, regenerate                |
-| `assets/sdg-*.png`      | Official UN goal icons. **Do not recolour, crop or round them**              |
-| `assets/gen/*`          | Generated for this deck via the Codex CLI, art direction in this repo        |
-| `assets/cover-hero.png` | `gen/cover-hero.png` with its shadow painted in. Regenerate, never hand-edit |
+| Path                              | Where It Came From                                                           |
+| --------------------------------- | ---------------------------------------------------------------------------- |
+| `assets/fonts.css`                | Copied from the canvas build. Outfit and Work Sans, embedded                 |
+| `assets/mark.png`                 | The Anyaman weave mark, from `../brand/`                                     |
+| `assets/med-*.png`                | The watercolour medallion set, resized from `../codex-generated/`            |
+| `assets/screen-*.png`             | Prototype screenshots, captured 16 by 9 by `export-deck.py`'s recipe         |
+| `assets/slides/`                  | One PNG per slide, generated. Do not edit by hand, regenerate                |
+| `assets/sdg-*.png`                | Official UN goal icons. **Do not recolour, crop or round them**              |
+| `assets/gen/*`                    | Generated for this deck via the Codex CLI, art direction in this repo        |
+| `assets/gen/bg-problem-young.jpg` | The problem slide's ground. `bg-problem.jpg` is the elderly original, kept   |
+| `assets/cover-hero.png`           | `gen/cover-hero.png` with its shadow painted in. Regenerate, never hand-edit |
 
-`assets/gen/bg-problem.jpg` is one painted scene, not a figure composited over a background. That
+`assets/gen/bg-problem-young.jpg` is one painted scene, not a figure composited over a background. That
 matters: the earlier two-layer version read as a sticker, and a cut-out figure over a photographic
 plate is the tell that gets a deck marked as generated.
 
@@ -122,7 +135,8 @@ plate is the tell that gets a deck marked as generated.
 - [ ] **A human has opened the Tan Gek Hiang article on slide 2.** PressReader blocks automated retrieval, so it was read through a search index. `../../research/documented-accounts-bereavement.md` requires a human to confirm it before it is quoted
 - [ ] Every other figure still matches `../../research/verified-figures.md`
 - [ ] No banned word anywhere on a slide: approved, eligible, you will receive
-- [ ] Section 8 is still at or under 100 words
+- [ ] Section 8 on slide 14 is still at or under 100 words. It is eighty-one
+- [ ] Slide 2's composite is still labelled fictional, and the Saifulnizam naming risk in `../../decisions.md` is either resolved or consciously accepted
 - [ ] The fictional-composite line on slide 2 is still present and still says fictional, and Tan Gek Hiang is still distinguished from it as a real case
 - [ ] The four contact blocks on the cover are still the details the members want published
 - [ ] Print to PDF and check the exported file, not only the browser
