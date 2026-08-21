@@ -143,7 +143,9 @@ This matrix covers **Peninsular Malaysia only**. JPN's death registration proced
 
 ## Open Gaps
 
-- `[NEEDS SOURCE]` The KWSP 9KM (AHL) form itself was not opened, only KWSP's published list of required documents. `kwsp.gov.my` blocks automated retrieval, so the KWSP page was read through the Internet Archive. A team member should open both in a browser and confirm the list is unchanged. Re-checked 2026-08-20 (issue #20): `kwsp.gov.my` still returned HTTP 403 and web.archive.org was unreachable by the tools used, so the form fields remain unconfirmed against prototype screen 2.
+- **RESOLVED 2026-08-21.** The KWSP 9KM (AHL) form was obtained by a team member through a normal
+  browser and archived at `kwsp-9km-ahl-form.pdf`, version **V20260701**. The form's own fields are
+  now recorded below, and the earlier document list is confirmed unchanged.
 - `[NEEDS SOURCE]` Sabah and Sarawak death registration requirements, deliberately out of scope for v1.
 - `[ASSUMPTION]` The Borang 34 checklist dated 9 December 2024 is the current version. It is the version linked from PERKESO's live benefit application page as of the access date.
 
@@ -161,3 +163,69 @@ This is a factual, checkable accessibility observation, and it supports the argu
 4. PERKESO, "Permohonan Faedah", https://www.perkeso.gov.my/en/uncategorised/932-permohonan-faedah.html, accessed 2026-08-19. Supports the identification of Borang 34 as the form covering Pencen Penakat, and the location of the official checklists.
 5. PERKESO, "Senarai Semak Dokumen Tuntutan Faedah Orang Tanggungan dan Pengurusan Mayat", https://www.perkeso.gov.my/images/borang/FOT%20DAN%20FPM/SenaraiSemak_fpm.pdf, accessed 2026-08-19. Supports Borang 24, Borang 26, Borang BKA-1, the married and unmarried document branches, the sole widow declaration, the burial receipt condition, and the requirement to attend in person with original documents.
 6. Jabatan Pendaftaran Negara, "Death" services index, https://www.jpn.gov.my/en/services/death/, accessed 2026-08-19. Supports the existence of separate Ordinary, Late and Delayed Registration of Death procedures, and separate procedures for Peninsular Malaysia, Sabah and Sarawak.
+
+---
+
+## KWSP 9KM (AHL), Read From The Form Itself, 2026-08-21
+
+Source: `kwsp-9km-ahl-form.pdf`, version V20260701, six pages, Bahasa Malaysia. Obtained by a team
+member in a normal browser because `kwsp.gov.my` serves a bot interstitial to automated clients.
+
+### The Fields The Family Actually Fills
+
+| Section                             | Field                                                                                                                                                                                                                              |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| (A) Maklumat Ahli, the deceased     | EPF member number; identity document type and number (MyKad, MyPR, MyTentera, Kad Kuasa Polis or passport); name; **date of death**; religion; whether the member was a pensionable government employee                            |
+| (B) Maklumat Pemohon, the applicant | Identity document type and number; name; correspondence address; mobile telephone; office telephone                                                                                                                                |
+| (C) Maklumat Bayaran                | Direct credit to a bank account that must be a **KWSP panel bank**, must be **in the applicant's own name**, and must be active, evidenced by a bank book, statement, printed account-holder details or a bank confirmation letter |
+| (E)                                 | Nominee details where a Muslim member's nominee is under 18                                                                                                                                                                        |
+| (F) Pengesahan Pemohon              | Date, and **thumbprints of both thumbs in black ink**                                                                                                                                                                              |
+
+**This confirms the matrix.** The repeated items are identity of the deceased, identity of the
+applicant, proof of relationship and bank details, exactly as the table above states.
+
+### Four Findings The Published Document List Did Not Show
+
+1. **The form requires a wet-ink thumbprint of both thumbs**, pressed with a black thumbprint pad,
+   and forbids correction fluid or tape. **A claim carrying a physical thumbprint cannot be completed
+   end to end online by anyone.** This is the strongest single piece of evidence for the in-person
+   claim in the submission, and it comes from KWSP's own current form.
+
+2. **Submission channels are the KWSP counter or the post**, addressed to Jabatan Pengurusan
+   Transaksi, Menara KWSP, Shah Alam. **No online submission route appears on the form**, which
+   independently confirms the position already recorded for KWSP.
+
+3. **The six-month Death Assistance window is stated on the form**, not only on the website. Where
+   the applicant is not the person receiving the member's savings, the application and proof of
+   relationship must be submitted **"dalam tempoh 6 bulan dari tarikh kematian ahli"**, and KWSP
+   **"berhak untuk tidak membayar Bantuan Kematian jika permohonan lewat dikemukakan"**. The
+   discretionary framing the submission uses is correct.
+
+4. **Where the applicant is a dependant already receiving the savings, Death Assistance is paid
+   together with the savings and no separate application is needed.** This is a genuine simplification
+   the submission does not currently mention.
+
+### And It Confirms The Probate Boundary
+
+Supporting document 6 requires a **Surat Kuasa** in defined cases: Letter of Administration or
+probate from the High Court, a Perintah Pembahagian from the Land Office, a faraid order from the
+Syariah Court, an Amanah Raya Berhad authority, or the Sabah and Sarawak equivalents.
+
+**That is the estate machinery the submission deliberately puts out of scope**, and it appears inside
+the very first agency form. The recorded scope boundary is correct and should not be widened.
+
+---
+
+## P.U. (A) 79, Compounding Of Offences Rules 2019
+
+Source: `pu-a-79-births-deaths-compounding-2019.pdf`. **This is subsidiary legislation under
+subsection 38(1) of Act 299, not the Act itself**, so it does not state the death registration window.
+
+What it does establish: offences under **subsection 28(3) and paragraphs 34(a) to (b) and 35(a) to
+(f)** of Act 299 are compoundable; a compound offer is valid for **fourteen days**; payment may be
+made in cash at JPN, by money order or bank draft, or by credit card or electronic transfer.
+
+**It does not close the open question.** Without the text of sections 34 and 35 we cannot say which
+paragraph covers late death registration, nor what the compound amount is. The submission's position
+is unchanged and remains correct: state JPN's published seventh-day boundary, and do not invent the
+consequence.
