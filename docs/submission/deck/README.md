@@ -1,6 +1,6 @@
 # Deck
 
-The MyTakziah presentation deck, fifteen slides, built as one self-contained HTML file.
+The MyTakziah presentation deck, fourteen slides, built as one self-contained HTML file.
 
 **Owner:** TODO: assign, per issue #19
 **Status:** First full build, awaiting team review
@@ -69,15 +69,16 @@ document built on the official 14-page template and is the artifact that must be
 | 6     | 3. Your Solution     | The five steps, and the never-approved guardrail                     |
 | 7     | 3. Your Solution     | The same week without and with, and the worst case                   |
 | 8     | 4. Innovation        | Not a chatbot, and the four design choices                           |
-| 9     | 4. Innovation        | Three proofs this is not a technology gap                            |
-| 10    | 4. Innovation        | Four fair challenges and four answers                                |
-| 11    | 5. Impact            | Scale, money already moving, the measures, the two SDGs              |
-| 12    | 6. Feasibility       | Built already, not yet proven, and the four first steps              |
-| 13    | 7. Visual Concept    | The one-thread diagram and the three prototype screens               |
-| 14    | 8. Why We Should Win | Four roles, and the eighty-one word answer                           |
-| 15    | Close                | The tagline, the QR code, the team                                   |
+| 9     | 4. Innovation        | Four fair challenges and four answers                                |
+| 10    | 5. Impact            | Scale, money already moving, the measures, the two SDGs              |
+| 11    | 6. Feasibility       | Built already, not yet proven, and the four first steps              |
+| 12    | 7. Visual Concept    | The one-thread diagram and the three prototype screens               |
+| 13    | 8. Why We Should Win | Four roles, and the eighty-one word answer                           |
+| 14    | Close                | The tagline, the QR code, the team                                   |
 
-Slide 14 was cut on 2026-08-21 and restored the same day in a lower-key form. It carries the four
+The "three proofs" slide was cut on 2026-08-21: two of its three proofs were restated verbatim as
+challenges on the next slide, and its one original proof, KWSP's member-only capability, moved there
+too. Slide 13 was cut earlier the same day and restored in a lower-key form. It carries the four
 members' disciplines and one paragraph, and it **does not mention Layak or the two actuaries**, at
 the team's request. Anyone presenting has to carry that credibility material by mouth.
 
@@ -135,7 +136,7 @@ plate is the tell that gets a deck marked as generated.
 - [ ] **A human has opened the Tan Gek Hiang article on slide 2.** PressReader blocks automated retrieval, so it was read through a search index. `../../research/documented-accounts-bereavement.md` requires a human to confirm it before it is quoted
 - [ ] Every other figure still matches `../../research/verified-figures.md`
 - [ ] No banned word anywhere on a slide: approved, eligible, you will receive
-- [ ] Section 8 on slide 14 is still at or under 100 words. It is eighty-one
+- [ ] Section 8 on slide 13 is still at or under 100 words. It is eighty-one
 - [ ] Slide 2's composite is still labelled fictional, and the Saifulnizam naming risk in `../../decisions.md` is either resolved or consciously accepted
 - [ ] The fictional-composite line on slide 2 is still present and still says fictional, and Tan Gek Hiang is still distinguished from it as a real case
 - [ ] The four contact blocks on the cover are still the details the members want published

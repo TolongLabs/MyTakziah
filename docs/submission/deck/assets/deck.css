@@ -891,6 +891,55 @@ section.slide.cover {
   color: rgba(249, 243, 234, 0.9);
 }
 
+/* ---------- glyphs ---------- */
+/* Line glyphs in the same stroke language as .ic, one step larger, used where a
+   slide is otherwise a wall of type. Each one has to name the thing beside it,
+   never decorate: a chat bubble on the chatbot answer, a counter on the agency
+   card. Terracotta by default, slate where the point is a settled state. */
+.gl {
+  width: 34px;
+  height: 34px;
+  display: block;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  margin-bottom: 14px;
+}
+.gl.settled {
+  stroke: var(--slate);
+}
+.gl.sm {
+  width: 27px;
+  height: 27px;
+  margin-bottom: 9px;
+}
+.dark .gl {
+  stroke: var(--ochre);
+}
+
+/* A two bar comparison, drawn rather than asserted. The share that is connected
+   is settled; the share that actually transacts carries the accent, because that
+   gap is the thing the slide is about. */
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-top: 4px;
+}
+.bar {
+  height: 15px;
+  background: var(--ground-3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.bar > span {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+}
+
 /* ---------- the innovation flow ---------- */
 /* Two bands, and the shape carries the argument before a word is read: today's
    row has no connectors because nothing connects, and the row beneath it is one
@@ -1011,7 +1060,7 @@ section.slide.cover {
   letter-spacing: -0.02em;
   color: var(--accent);
   margin-top: auto;
-  padding-top: 10px;
+  padding-top: 8px;
 }
 .measure {
   display: grid;
