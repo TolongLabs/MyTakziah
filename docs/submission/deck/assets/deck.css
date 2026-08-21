@@ -892,6 +892,177 @@ section.slide.cover {
   color: rgba(249, 243, 234, 0.9);
 }
 
+/* ---------- the innovation flow ---------- */
+/* Two bands, and the shape carries the argument before a word is read: today's
+   row has no connectors because nothing connects, and the row beneath it is one
+   unbroken sequence. Terracotta marks the step that acts, slate the settled end. */
+.flow-band {
+  border-top: 1.5px solid var(--ink);
+  padding-top: 17px;
+}
+.flow-band.settled {
+  border-top-color: var(--slate);
+}
+.flow-lbl {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--t-small);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 15px;
+}
+.flow-lbl.settled {
+  color: var(--slate);
+}
+.flow-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.flow-seq {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+}
+.flow-seq .flow-node {
+  flex: 1;
+  min-width: 0;
+}
+.flow-node {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 15px 17px;
+}
+.flow-node .n {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.flow-node .t {
+  font-size: var(--t-small);
+  line-height: 1.38;
+  color: var(--ink-2);
+  margin-top: 8px;
+}
+.flow-node.lit {
+  border-color: var(--accent);
+}
+.flow-node.lit .n {
+  color: var(--accent);
+}
+.flow-node.done {
+  border-color: var(--slate);
+  background: var(--slate-soft);
+}
+.flow-node.done .n {
+  color: var(--slate);
+}
+.flow-chev {
+  flex: none;
+  align-self: center;
+  width: 17px;
+  height: 17px;
+  fill: var(--accent);
+}
+
+/* ---------- impact: who it lands on, and what we would count ---------- */
+.aud {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+.aud li {
+  list-style: none;
+  font-size: var(--t-small);
+  line-height: 1.35;
+  color: var(--ink-2);
+  padding: 5px 0 5px 20px;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+.aud li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+.aud li:last-child {
+  border-bottom: none;
+}
+.aud-key {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  margin-top: auto;
+  padding-top: 10px;
+}
+.measure {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.measure > div {
+  padding: 0 26px;
+  border-left: 1px solid var(--border);
+}
+.measure > div:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+.measure > div:last-child {
+  padding-right: 0;
+}
+.measure .m {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+/* ---------- feasibility: three phases on one rail ---------- */
+.phases {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.phase {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.phase:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.phase .p {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--t-small);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-top: 3px;
+}
+.phase.settled .p {
+  color: var(--slate);
+}
+
 /* ---------- the thread diagram ---------- */
 .thread {
   width: 100%;
