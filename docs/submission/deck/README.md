@@ -82,10 +82,16 @@ Everything here comes from the recorded system, not from taste. Palette, type an
   `assets/deck.css`, and nothing is set outside it.
 - **The three strands on the cover are the three agencies**, in the mark's own three colours, which
   are the same three the braided ribbons in the cover illustration carry. The device is a key.
-- **The songket lattice runs on every slide, including the two that are photographs.** The cover
-  carries it over its own warm radial glow; the close slide carries it across the top band only,
-  masked out before it reaches the part of the frame that reads as a picture. It is 3.2 per cent on
-  light grounds, 5 per cent on dark, and it is meant to be felt rather than seen.
+- **The songket lattice is on the first slide and the last slide only.** It frames the deck rather
+  than texturing it, and the twelve slides in between are clean ground so the content carries them.
+  The cover has it over its own warm radial glow at 3.2 per cent; the close slide has it across the
+  top band at 5.5 per cent, masked out before it reaches the part of the frame that reads as a
+  picture.
+- **Do not put a CSS filter or a transform on anything the cover needs.** Chrome's PDF writer
+  rasterizes a filtered element at print scale and silently drops a radial gradient on a transformed
+  absolutely positioned box. Both bugs hit this cover, and both are fixed by avoiding the feature:
+  the hero's shadow is painted into `assets/cover-hero.png` and `.cover-glow` is centred with
+  `calc()`. Check the exported PDF, not the browser, after any change here.
 - Structure is hairlines and one 4px radius, not soft shadows and rounded cards. **Tables carry an
   opaque `--card` surface**, not a tint and not a blur: the deck prints, and a backdrop filter does
   not survive the print path while a half-transparent fill lets the lattice run through the figures.
@@ -95,15 +101,16 @@ Everything here comes from the recorded system, not from taste. Palette, type an
 
 ## Assets
 
-| Path                  | Where It Came From                                                    |
-| --------------------- | --------------------------------------------------------------------- |
-| `assets/fonts.css`    | Copied from the canvas build. Outfit and Work Sans, embedded          |
-| `assets/mark.png`     | The Anyaman weave mark, from `../brand/`                              |
-| `assets/med-*.png`    | The watercolour medallion set, resized from `../codex-generated/`     |
-| `assets/screen-*.png` | Prototype screenshots, captured 16 by 9 by `export-deck.py`'s recipe  |
-| `assets/slides/`      | One PNG per slide, generated. Do not edit by hand, regenerate         |
-| `assets/sdg-*.png`    | Official UN goal icons. **Do not recolour, crop or round them**       |
-| `assets/gen/*`        | Generated for this deck via the Codex CLI, art direction in this repo |
+| Path                    | Where It Came From                                                           |
+| ----------------------- | ---------------------------------------------------------------------------- |
+| `assets/fonts.css`      | Copied from the canvas build. Outfit and Work Sans, embedded                 |
+| `assets/mark.png`       | The Anyaman weave mark, from `../brand/`                                     |
+| `assets/med-*.png`      | The watercolour medallion set, resized from `../codex-generated/`            |
+| `assets/screen-*.png`   | Prototype screenshots, captured 16 by 9 by `export-deck.py`'s recipe         |
+| `assets/slides/`        | One PNG per slide, generated. Do not edit by hand, regenerate                |
+| `assets/sdg-*.png`      | Official UN goal icons. **Do not recolour, crop or round them**              |
+| `assets/gen/*`          | Generated for this deck via the Codex CLI, art direction in this repo        |
+| `assets/cover-hero.png` | `gen/cover-hero.png` with its shadow painted in. Regenerate, never hand-edit |
 
 `assets/gen/bg-problem.jpg` is one painted scene, not a figure composited over a background. That
 matters: the earlier two-layer version read as a sticker, and a cut-out figure over a photographic

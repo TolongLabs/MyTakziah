@@ -90,7 +90,7 @@ section.slide.active {
 
 /* A songket lattice, barely there, so light slides carry the weave the canvas
    established rather than sitting on flat cream. */
-section.slide:not(.dark):not(.nolattice)::before {
+section.slide.cover::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -119,17 +119,6 @@ section.slide.close::after {
 section.slide.dark {
   background: radial-gradient(120% 95% at 6% -10%, #402a20 0%, var(--night) 56%, #1b100c 100%);
   color: var(--ground);
-}
-section.slide.dark::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image: url("./lattice.svg");
-  background-size: 440px 440px;
-  opacity: 0.05;
-  filter: invert(1);
 }
 
 .pad {
@@ -815,13 +804,15 @@ section.slide.cover {
   align-items: center;
   justify-content: center;
 }
+/* Centred with arithmetic rather than a transform. Chrome's PDF writer drops the
+   radial gradient on a transformed absolutely-positioned box, which is what made
+   the cover's glow vanish in the exported file while printing fine on screen. */
 .cover-glow {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: calc(50% - 360px);
+  top: calc(50% - 360px);
   width: 720px;
   height: 720px;
-  transform: translate(-50%, -50%);
   border-radius: 999px;
   background: radial-gradient(
     circle,
@@ -849,12 +840,15 @@ section.slide.cover {
   border-radius: 999px;
   border: 1px solid rgba(188, 77, 26, 0.13);
 }
+/* The shadow is painted into the asset rather than applied as a filter: a live
+   `drop-shadow` makes Chrome rasterize this element at print scale, which showed
+   as a seam around the hero in the exported PDF and cost about a third of the
+   file. The 640px box is the 560px artwork plus 40px of shadow room a side. */
 .cover-hero {
   position: relative;
   z-index: 2;
-  width: 560px;
+  width: 640px;
   display: block;
-  filter: drop-shadow(-14px 22px 30px rgba(40, 25, 19, 0.2));
 }
 
 /* ---------- full bleed photographic slides ---------- */

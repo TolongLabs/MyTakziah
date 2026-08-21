@@ -16,13 +16,18 @@ gets degraded and printed.
     1920 by 1080 stage. A 2400px mark drawn into a 96px box costs 140 KB in the
     PDF and resolves no better than a 192px one.
 2.  The songket lattice is baked into a pre-multiplied PNG tile. As an SVG under
-    `opacity`, Chrome flattens the whole slide into a transparency group and
-    prints roughly 150 KB of raster per light slide; as an opaque-alpha tile it
-    embeds once. The tile carries the opacity, so the result is identical.
+    `opacity`, Chrome flattens the slide into a transparency group and prints
+    roughly 150 KB of raster; as an opaque-alpha tile it embeds once. The tile
+    carries the opacity, so the result is identical. Only the cover and the close
+    slide carry the lattice.
 
-The cover's `drop-shadow` filter still forces Chrome to rasterize the hero at
-print scale. That single image is about a third of the file and there is no way
-to ask for it at a lower resolution, so it stays.
+Two things that used to break this file are now fixed in the deck itself rather
+than here, and both are worth knowing before touching the cover. The hero's
+shadow is painted into `assets/cover-hero.png`, because a live `drop-shadow`
+filter made Chrome rasterize the element at print scale. And `.cover-glow` is
+centred with arithmetic rather than `translate(-50%, -50%)`, because Chrome's
+PDF writer silently drops a radial gradient on a transformed absolutely
+positioned box while rendering it correctly on screen.
 """
 
 import pathlib
@@ -72,14 +77,9 @@ MEASURE = """() => {
 # the tiles, so the rule no longer opens a transparency group.
 PRINT_CSS = """
 @media print {
-  section.slide:not(.dark):not(.nolattice)::before {
+  section.slide.cover::before {
     background-image: url("./lattice-light.png") !important;
     opacity: 1 !important;
-  }
-  section.slide.dark::before {
-    background-image: url("./lattice-dark.png") !important;
-    opacity: 1 !important;
-    filter: none !important;
   }
   section.slide.close::after {
     background-image: url("./lattice-close.png") !important;
@@ -92,7 +92,6 @@ PRINT_CSS = """
 # would otherwise apply. Keep these in step with deck.css.
 TILES = (
     ("light", (0, 0, 0), 0.032),
-    ("dark", (249, 243, 234), 0.05),
     ("close", (0, 0, 0), 0.055),
 )
 
