@@ -1,0 +1,1040 @@
+/* MyTakziah deck, 1920 by 1080 stage.
+   Palette, type and semantics are the project's own, recorded in
+   frontend/src/index.css, docs/submission/canvas/canvas-copy.md and
+   docs/decisions.md. Nothing here is invented.
+   Terracotta means act or attend. Slate means settled. Colour carries state. */
+
+:root {
+  --ground: #f9f3ea;
+  --ground-2: #f3ebde;
+  --ground-3: #ece0cf;
+  --card: #fffdfa;
+  --ink: #281913;
+  --ink-2: #4a3629;
+  --muted: #6e5a4e;
+  --border: #e2d8ce;
+  --border-2: #d3c4b3;
+  --accent: #bc4d1a;
+  --accent-deep: #96380f;
+  --accent-soft: #f7e5d8;
+  --ochre: #e08a4c;
+  --slate: #376d7c;
+  --slate-soft: #e0eaec;
+
+  --night: #241611;
+
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* One type scale for the stage. Nothing is set outside it. */
+  --t-display: 94px;
+  --t-title: 60px;
+  --t-title-sm: 46px;
+  --t-fig: 84px;
+  --t-fig-sm: 52px;
+  --t-lead: 33px;
+  --t-ch: 29px;
+  --t-sub: 25px;
+  --t-body: 22px;
+  --t-small: 19px;
+  --t-label: 16px;
+
+  --radius: 4px;
+  --pad-x: 88px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  background: #1a100c;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+a {
+  color: inherit;
+}
+
+/* ---------- stage ---------- */
+#stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #1a100c;
+}
+section.slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1920px;
+  height: 1080px;
+  transform-origin: center center;
+  overflow: hidden;
+  background: var(--ground);
+  color: var(--ink);
+  display: none;
+}
+section.slide.active {
+  display: block;
+}
+
+/* A songket lattice, barely there, so light slides carry the weave the canvas
+   established rather than sitting on flat cream. */
+section.slide:not(.dark):not(.nolattice)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("./lattice.svg");
+  background-size: 440px 440px;
+  opacity: 0.032;
+}
+section.slide.dark {
+  background: radial-gradient(120% 95% at 6% -10%, #402a20 0%, var(--night) 56%, #1b100c 100%);
+  color: var(--ground);
+}
+section.slide.dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("./lattice.svg");
+  background-size: 440px 440px;
+  opacity: 0.05;
+  filter: invert(1);
+}
+
+.pad {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 50px var(--pad-x) 42px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- chrome ---------- */
+.chrome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: var(--t-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.dark .chrome {
+  color: rgba(249, 243, 234, 0.5);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+}
+.dark .brand {
+  color: var(--ground);
+}
+.brand img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+.brand b {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: var(--ink);
+}
+.dark .brand b {
+  color: var(--ground);
+}
+.brand b i {
+  font-style: normal;
+  color: var(--accent);
+}
+.dark .brand b i {
+  color: var(--ochre);
+}
+.brand span {
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+.dark .brand span {
+  color: rgba(249, 243, 234, 0.45);
+}
+.chrome-r {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.chrome-r .sec {
+  color: var(--ink-2);
+}
+.dark .chrome-r .sec {
+  color: var(--ground);
+}
+
+/* ---------- head ---------- */
+.head {
+  margin-top: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.dark .head {
+  border-bottom-color: rgba(249, 243, 234, 0.18);
+}
+/* The eyebrow is the official template's own section number. Judges score
+   against Sections 1 to 8, so it is navigation, not decoration. */
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--t-small);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 13px;
+}
+.dark .eyebrow {
+  color: var(--ochre);
+}
+h1.title,
+h2.title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--t-title);
+  line-height: 1.03;
+  letter-spacing: -0.026em;
+  max-width: 1600px;
+  text-wrap: balance;
+  color: var(--ink);
+}
+.dark h1.title,
+.dark h2.title {
+  color: var(--ground);
+}
+.title em {
+  font-style: normal;
+  color: var(--accent);
+}
+.dark .title em {
+  color: var(--ochre);
+}
+.title.sm {
+  font-size: var(--t-title-sm);
+}
+.standfirst {
+  font-size: var(--t-sub);
+  line-height: 1.44;
+  color: var(--ink-2);
+  max-width: 1380px;
+  margin-top: 15px;
+}
+.dark .standfirst {
+  color: rgba(249, 243, 234, 0.78);
+}
+.body {
+  flex: 1;
+  min-height: 0;
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- reusable type ---------- */
+.lead {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--t-lead);
+  line-height: 1.16;
+  letter-spacing: -0.016em;
+  color: var(--ink);
+}
+.dark .lead {
+  color: var(--ground);
+}
+.lead em {
+  font-style: normal;
+  color: var(--accent);
+}
+.dark .lead em {
+  color: var(--ochre);
+}
+.sub {
+  font-size: var(--t-body);
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.dark .sub {
+  color: rgba(249, 243, 234, 0.8);
+}
+.small {
+  font-size: var(--t-small);
+  line-height: 1.45;
+  color: var(--muted);
+}
+.dark .small {
+  color: rgba(249, 243, 234, 0.6);
+}
+.cap {
+  font-size: var(--t-label);
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+.dark .cap {
+  color: rgba(249, 243, 234, 0.54);
+}
+b,
+strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+.dark b,
+.dark strong {
+  color: var(--ground);
+}
+em.hl {
+  font-style: normal;
+  color: var(--accent);
+  font-weight: 600;
+}
+.dark em.hl {
+  color: var(--ochre);
+}
+
+/* ---------- surfaces ---------- */
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  position: relative;
+}
+.panel.flat {
+  background: var(--ground-2);
+  border-color: var(--border-2);
+}
+.panel.warm {
+  background: var(--accent-soft);
+  border-color: #e9cdb9;
+}
+.panel.cool {
+  background: var(--slate-soft);
+  border-color: #c6d7da;
+}
+.dark .panel {
+  background: rgba(249, 243, 234, 0.055);
+  border-color: rgba(249, 243, 234, 0.16);
+}
+.kx {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--t-label);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.kx.settled {
+  color: var(--slate);
+}
+.dark .kx {
+  color: var(--ochre);
+}
+.ch {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--t-ch);
+  line-height: 1.1;
+  letter-spacing: -0.016em;
+  color: var(--ink);
+}
+.dark .ch {
+  color: var(--ground);
+}
+.cp {
+  font-size: var(--t-body);
+  line-height: 1.46;
+  color: var(--ink-2);
+}
+.dark .cp {
+  color: rgba(249, 243, 234, 0.78);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: var(--t-small);
+  color: var(--ink-2);
+  border: 1px solid var(--border-2);
+  background: var(--card);
+  border-radius: 999px;
+  padding: 8px 17px;
+  white-space: nowrap;
+}
+.dark .pill {
+  color: rgba(249, 243, 234, 0.86);
+  border-color: rgba(249, 243, 234, 0.22);
+  background: rgba(249, 243, 234, 0.06);
+}
+.pill .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.pill.settled .dot {
+  background: var(--slate);
+}
+.pill .ic {
+  width: 19px;
+  height: 19px;
+  color: var(--accent);
+}
+.dark .pill .ic {
+  color: var(--ochre);
+}
+
+.fig {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--t-fig);
+  line-height: 0.88;
+  letter-spacing: -0.038em;
+  color: var(--accent);
+}
+.fig.sm {
+  font-size: var(--t-fig-sm);
+}
+.fig.settled {
+  color: var(--slate);
+}
+.dark .fig {
+  color: var(--ochre);
+}
+
+/* Icons are one drawn set at one stroke weight. */
+.ic {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- tables ---------- */
+table.grid {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--t-body);
+}
+table.grid th {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--t-small);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--muted);
+  padding: 0 0 13px;
+  border-bottom: 1.5px solid var(--ink);
+}
+.dark table.grid th {
+  color: rgba(249, 243, 234, 0.58);
+  border-bottom-color: rgba(249, 243, 234, 0.42);
+}
+table.grid td {
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink-2);
+  vertical-align: top;
+  line-height: 1.4;
+}
+.dark table.grid td {
+  border-bottom-color: rgba(249, 243, 234, 0.14);
+  color: rgba(249, 243, 234, 0.8);
+}
+table.grid tr:last-child td {
+  border-bottom: none;
+}
+table.grid td.k {
+  font-weight: 600;
+  color: var(--ink);
+}
+.dark table.grid td.k {
+  color: var(--ground);
+}
+table.grid .c {
+  text-align: center;
+}
+/* The comparison table's right column is the settled state, so it carries the
+   slate tint rather than a rule or an icon. */
+table.grid.compare th:last-child,
+table.grid.compare td:last-child {
+  background: var(--slate-soft);
+  padding-left: 24px;
+  padding-right: 24px;
+}
+table.grid.compare th:last-child {
+  padding-top: 16px;
+}
+table.grid.compare td {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+table.grid .n {
+  text-align: right;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+
+/* Yes and no marks are drawn, and coloured by state. */
+.mk {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  vertical-align: -4px;
+  stroke-width: 2.2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.mk.yes {
+  stroke: var(--accent);
+}
+.mk.no {
+  stroke: var(--border-2);
+}
+
+/* ---------- cover ----------
+   Light by default. The subject is bereavement, so the deck opens warm and
+   bright rather than funereal; the recorded theme decision is light anyway. */
+.cover {
+  background:
+    radial-gradient(74% 64% at 88% 8%, #fdf6ec 0%, transparent 58%),
+    radial-gradient(58% 56% at 102% 100%, #f6e6d3 0%, transparent 56%),
+    var(--ground);
+}
+.cover .pad {
+  padding: 0;
+}
+.cover-spine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 9px;
+  z-index: 5;
+  background: linear-gradient(180deg, var(--accent) 0%, var(--ochre) 52%, var(--slate) 100%);
+}
+.cover-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  height: 100%;
+}
+.cover-left {
+  padding: 54px 44px 46px 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+}
+.cover-evt {
+  font-size: var(--t-label);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cover-wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.cover-wordmark img {
+  width: 96px;
+  height: 96px;
+}
+.cover-wordmark i {
+  font-style: normal;
+  color: var(--accent);
+}
+.cover-tag {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  color: var(--ink-2);
+  max-width: 820px;
+  margin-top: 26px;
+}
+.cover-tag b {
+  color: var(--ink);
+  font-weight: 700;
+}
+.cover-pillars {
+  display: flex;
+  gap: 9px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+/* Three strands, one per agency, in the mark's own three colours. The colours
+   are the same three the braided ribbons in the cover image carry, so the
+   device is a key, not an ornament. */
+.strands {
+  display: flex;
+  gap: 44px;
+  margin-top: 34px;
+}
+.strand {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 27px;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.strand i {
+  display: block;
+  width: 74px;
+  height: 5px;
+  border-radius: 3px;
+  margin-bottom: 13px;
+}
+.strand em {
+  font-style: normal;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--t-label);
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.strand.jpn i {
+  background: var(--accent);
+}
+.strand.kwsp i {
+  background: var(--ochre);
+}
+.strand.perkeso i {
+  background: var(--slate);
+}
+
+.cover-team-lbl {
+  font-size: var(--t-label);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 13px;
+}
+.team-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.tm-card {
+  background: rgba(255, 253, 250, 0.72);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 15px 16px;
+}
+.tm-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.tm-role {
+  font-size: var(--t-label);
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  margin-top: 5px;
+  line-height: 1.35;
+}
+.cover-foot {
+  border-top: 1px solid var(--border-2);
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+.cover-sdg {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.cover-sdg-lbl {
+  font-size: var(--t-label);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.35;
+  white-space: nowrap;
+}
+.dark .cover-sdg-lbl {
+  color: rgba(249, 243, 234, 0.48);
+}
+.cover-sdg img {
+  width: 96px;
+  height: 96px;
+  display: block;
+}
+/* The url and what the name means, right aligned so neither can crowd the
+   goal icons on their left. */
+.cover-foot-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 7px;
+  min-width: 0;
+}
+.cover-foot-right .url {
+  font-size: var(--t-small);
+  letter-spacing: 0.04em;
+  color: var(--ink-2);
+}
+.cover-foot-right .creed {
+  font-size: var(--t-label);
+  line-height: 1.42;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+  max-width: 310px;
+  text-wrap: balance;
+}
+
+.cover-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cover-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 720px;
+  height: 720px;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(224, 138, 76, 0.2) 0%, rgba(188, 77, 26, 0.09) 46%, transparent 68%);
+  z-index: 0;
+}
+.cover-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 620px;
+  height: 620px;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  border: 1.5px dashed rgba(188, 77, 26, 0.26);
+  z-index: 0;
+}
+.cover-ring::before {
+  content: "";
+  position: absolute;
+  inset: 48px;
+  border-radius: 999px;
+  border: 1px solid rgba(188, 77, 26, 0.13);
+}
+.cover-hero {
+  position: relative;
+  z-index: 2;
+  width: 560px;
+  display: block;
+  filter: drop-shadow(-14px 22px 30px rgba(40, 25, 19, 0.2));
+}
+
+/* ---------- full bleed photographic slides ---------- */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+/* Panels sitting on a photograph cannot be a 5 per cent tint: the image reads
+   straight through and body text drops below 4.5:1. They get an opaque fill of
+   their own and let the photograph show only around them. */
+.on-photo {
+  background: rgba(24, 14, 10, 0.9) !important;
+  border-color: rgba(249, 243, 234, 0.2) !important;
+  backdrop-filter: blur(3px);
+}
+.on-photo .cp,
+.on-photo .sub {
+  color: rgba(249, 243, 234, 0.9);
+}
+
+/* ---------- the thread diagram ---------- */
+.thread {
+  width: 100%;
+  display: block;
+}
+.thread .node-l {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: -0.018em;
+  fill: var(--ink);
+}
+.thread .node-s {
+  font-size: 19px;
+  fill: var(--muted);
+}
+.thread .marker {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  fill: #fff;
+}
+
+/* ---------- step rail ---------- */
+.rail {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  border-top: 1.5px solid var(--ink);
+}
+.rail .step {
+  padding: 22px 26px 0 0;
+  position: relative;
+}
+.rail .step + .step {
+  padding-left: 26px;
+  border-left: 1px solid var(--border);
+}
+/* One medallion per step, from the set the canvas already uses: registry for
+   the verified death, evidence for provide-once, savings for what is owed,
+   protection for consent, timeline for the single view. */
+.rail .step .step-med {
+  width: 96px;
+  height: 96px;
+  display: block;
+  margin-bottom: 18px;
+}
+.rail .step .n {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 21px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.rail .step .t {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 27px;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 9px 0 11px;
+}
+.rail .step .d {
+  font-size: var(--t-small);
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+.rail .step::before {
+  content: "";
+  position: absolute;
+  top: -1.5px;
+  left: 0;
+  width: 46px;
+  height: 4px;
+  background: var(--accent);
+}
+.rail .step + .step::before {
+  left: 26px;
+}
+
+/* ---------- progress ---------- */
+#bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--ochre));
+  z-index: 60;
+  transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+#notes {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 70;
+  display: none;
+  max-width: 640px;
+  padding: 15px 19px;
+  border-radius: 6px;
+  background: rgba(36, 22, 17, 0.94);
+  color: #f0e6da;
+  font-size: 15px;
+  line-height: 1.5;
+}
+body.show-notes #notes {
+  display: block;
+}
+
+/* ---------- motion: one authored moment, then nothing ---------- */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .slide.active .head {
+    animation: rise 0.5s 0.02s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .slide.active .body {
+    animation: rise 0.55s 0.12s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .slide.active .cover-left > * {
+    animation: rise 0.58s both cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .slide.active .cover-left > *:nth-child(1) {
+    animation-delay: 0.06s;
+  }
+  .slide.active .cover-left > *:nth-child(2) {
+    animation-delay: 0.16s;
+  }
+  .slide.active .cover-left > *:nth-child(3) {
+    animation-delay: 0.28s;
+  }
+  .slide.active .cover-left > *:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  .slide.active .cover-hero {
+    animation: rise 0.8s 0.2s both cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .slide.active [data-stagger] > * {
+    animation: rise 0.5s both cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .slide.active [data-stagger] > *:nth-child(1) {
+    animation-delay: 0.22s;
+  }
+  .slide.active [data-stagger] > *:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  .slide.active [data-stagger] > *:nth-child(3) {
+    animation-delay: 0.38s;
+  }
+  .slide.active [data-stagger] > *:nth-child(4) {
+    animation-delay: 0.46s;
+  }
+  .slide.active [data-stagger] > *:nth-child(5) {
+    animation-delay: 0.54s;
+  }
+  .slide.active [data-stagger] > *:nth-child(6) {
+    animation-delay: 0.62s;
+  }
+}
+
+/* ---------- PDF export: every slide, one page each ---------- */
+@page {
+  size: 1920px 1080px;
+  margin: 0;
+}
+@media print {
+  #stage {
+    position: static;
+    overflow: visible;
+  }
+  section.slide {
+    display: block !important;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none !important;
+    page-break-after: always;
+    break-after: page;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .slide.active .head,
+  .slide.active .body,
+  .slide.active .cover-left > *,
+  .slide.active .cover-hero,
+  .slide.active [data-stagger] > * {
+    animation: none !important;
+  }
+  #bar,
+  #notes {
+    display: none !important;
+  }
+}
+
+/* ---------- four challenges: columns divided by hairlines, not boxes ---------- */
+.challenges {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  align-content: start;
+}
+.challenges .ch-col {
+  padding: 0 30px 0 0;
+}
+.challenges .ch-col + .ch-col {
+  padding-left: 30px;
+  border-left: 1px solid var(--border);
+}
+.challenges .ch-q {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.12;
+  letter-spacing: -0.018em;
+  color: var(--accent);
+  margin-bottom: 16px;
+  text-wrap: balance;
+}
