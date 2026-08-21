@@ -240,3 +240,58 @@ Issue #20 flagged that several official pages block automated retrieval and aske
 7. PERKESO, "Benefit Application", https://www.perkeso.gov.my/en/uncategorised/936-benefit-application.html, accessed 2026-08-19. Supports the counter submission instruction and the Portal LINDUNG FAEDAH online Death Notice channel.
 8. PERKESO, "Senarai Semak Dokumen Tuntutan Faedah Orang Tanggungan dan Pengurusan Mayat", https://www.perkeso.gov.my/images/borang/FOT%20DAN%20FPM/SenaraiSemak_fpm.pdf, accessed 2026-08-19. Supports Borang 24, Borang 26, Borang BKA-1, the sole widow declaration for Muslims, and the in-person original-documents requirement.
 9. MyGovernment, "Funeral Management Assistance (Khairat Kematian) in Malaysia", updated 30 July 2026, https://www.malaysia.gov.my/en/personas/caretakers-to-older-parents/mengurus-kematian-ibu-bapa/funeral-management-assistance-khairat-kematian-in-malaysia, accessed 2026-08-19. Independently corroborates the EPF and PERKESO conditions and amounts.
+
+---
+
+## Browser Verification Log, 2026-08-21, Issue #20
+
+Re-run once outbound network was available. Four of six checks are now closed. Two remain blocked,
+and the blocker is the site, not the tooling.
+
+### Closed: JPN Bahasa Malaysia pages, read in the original
+
+`https://www.jpn.gov.my/perkhidmatan/kematian/pendaftaran-biasa-kematian-semenanjung/` and
+`.../pendaftaran-lewat-kematian-semenanjung/`, both HTTP 200, accordions expanded, BM original.
+
+**Ordinary registration, Peninsular.** Two published routes. In both, the certifying agency
+(hospital, PDRM or DBKL) issues JPN.LM02 (Pin.1/11), gives the **blue** copy to the informant, and
+sends the **grey** copy to the nearest JPN office **"dalam masa 7 hari bekerja"**, within seven
+working days.
+
+**This confirms the wording already in the draft and is worth stating precisely:** the seven days is
+an obligation on the **certifying agency to transmit**, not a countdown the family is told to meet.
+The family's exposure begins after day 7, when the ordinary route no longer applies.
+
+Documents the family must bring to JPN, verbatim from the BM page:
+
+- Blue copy of Daftar Kematian / Permit Mengubur JPN.LM02 (Pin.1/11)
+- The deceased's original identity document
+- The informant's identity document, original and copy
+- **JPN.LM09 or JPN.LM10 (Post Mortem)** where the death occurred in hospital
+
+**Fee: "Tiada bayaran dikenakan."** No fee for ordinary registration.
+
+Who may collect the death certificate: parents, spouse, children, **siblings**, or the informant
+named on JPN.LM02.
+
+**Late registration, Peninsular.** The BM original states it covers deaths registered after the
+seventh day **"(kematian yang berlaku sebelum 1 Disember 2011 sahaja)"**, deaths occurring before
+1 December 2011 only. Two sponsors who are next of kin, or the investigating police officer where
+there is no next of kin. **Fee RM50.00, an application fee.** Forms JPN.LM02 (Pin.1/11) and
+JPN.LM28.
+
+**The structural claim is confirmed by the service index itself.** Peninsular publishes only
+_Pendaftaran Biasa_ and _Pendaftaran Lewat_. Sabah and Sarawak additionally publish _Pendaftaran
+Lambat_. So a Peninsular family past day 7 for a recent death has no published route, which is the
+point the submission makes.
+
+### Still blocked, and why
+
+| Check                           | Status                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| KWSP 9KM (AHL) form fields      | **Blocked by design.** `kwsp.gov.my` now serves a Cloudflare interstitial, "Performing security verification ... verifies you are not a bot", HTTP 403. No attempt was made to work around it. A human browser is required, exactly as this issue anticipated                                                                                                                |
+| JPN statutory window in Act 299 | **Blocked.** `lom.agc.gov.my` is reachable and its front page loads, but `act-detail.php` returns "Invalid request" on direct access because deep links are token-signed through `processFile.php`, and the site's own search form returns no results to an automated browser. Note for whoever retries: the URL in issue #20 uses `lang=BM`; the site expects `language=BI` |
+
+**Neither blocker affects the submission.** The seven-day boundary is printed as **JPN's published
+administrative rule, sourced to JPN**, which is now verified in the original Malay, and never
+attributed to a section of the Act.
