@@ -28,9 +28,13 @@
 
 TODO: courses, to be filled by each member.
 
-**Contact details are deliberately not stored in this repo**, per the "No Secrets in Repo" rule in
-`AGENTS.md`. They live in `team-contact.local.md`, which is gitignored, and are typed into the
-export at the end.
+**Contact details are not stored in this document.** They live in `team-contact.local.md`, which is
+gitignored, and are typed into the export at the end.
+
+> **Changed 2026-08-21.** The team lead asked for member emails and phone numbers on the deck cover,
+> so `deck/mytakziah-deck.html` now carries them and they are public in this repository's history.
+> That is a deliberate exception to the "No Secrets in Repo" rule in `AGENTS.md`, recorded in
+> `../decisions.md`. This document still keeps them out.
 
 > **Eligibility, resolved by the team 2026-08-19.** All four members are Malaysian. One is enrolled
 > at the University of Sheffield rather than a Malaysian institution. The briefing describes URIIS

@@ -118,10 +118,13 @@ plate is the tell that gets a deck marked as generated.
 
 ## Things A Reviewer Should Check
 
-- [ ] Every figure still matches `../../research/verified-figures.md`
+- [ ] **43,929 on slide 4 still has no source.** Supply one or revert to 72,929, 2003 to 2014
+- [ ] **A human has opened the Tan Gek Hiang article on slide 2.** PressReader blocks automated retrieval, so it was read through a search index. `../../research/documented-accounts-bereavement.md` requires a human to confirm it before it is quoted
+- [ ] Every other figure still matches `../../research/verified-figures.md`
 - [ ] No banned word anywhere on a slide: approved, eligible, you will receive
 - [ ] Section 8 is still at or under 100 words
-- [ ] The fictional-composite line on slide 2 is still present and still says fictional
+- [ ] The fictional-composite line on slide 2 is still present and still says fictional, and Tan Gek Hiang is still distinguished from it as a real case
+- [ ] The four contact blocks on the cover are still the details the members want published
 - [ ] Print to PDF and check the exported file, not only the browser
 
 ## Known Gaps

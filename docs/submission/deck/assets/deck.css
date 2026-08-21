@@ -38,6 +38,7 @@
   --t-body: 22px;
   --t-small: 19px;
   --t-label: 16px;
+  --t-micro: 15px;
 
   --radius: 4px;
   --pad-x: 88px;
@@ -727,7 +728,7 @@ section.slide.cover {
   background: rgba(255, 253, 250, 0.72);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 15px 16px;
+  padding: 15px 13px;
 }
 .tm-name {
   font-family: var(--font-display);
@@ -743,6 +744,18 @@ section.slide.cover {
   color: var(--muted);
   margin-top: 5px;
   line-height: 1.35;
+}
+/* Contact details sit under a hairline, so a card reads name, then role, then
+   how to reach the person. Kept inside the declared scale at --t-label. */
+.tm-contact {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: var(--t-micro);
+  letter-spacing: -0.005em;
+  line-height: 1.45;
+  color: var(--muted);
+  overflow-wrap: anywhere;
 }
 .cover-foot {
   border-top: 1px solid var(--border-2);
