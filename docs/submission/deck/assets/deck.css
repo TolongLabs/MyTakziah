@@ -891,6 +891,48 @@ section.slide.cover {
   color: rgba(249, 243, 234, 0.9);
 }
 
+/* ---------- the team row ---------- */
+/* Portraits, because a jury and a student vote both respond to faces. Circular,
+   because the source frames them that way and the deck should not re-crop a
+   person's head into a rectangle. */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.team-grid figure {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.team-grid img {
+  width: 104px;
+  height: 104px;
+  flex: none;
+  border-radius: 999px;
+  display: block;
+  border: 2px solid var(--border-2);
+}
+.team-grid figcaption {
+  min-width: 0;
+}
+.team-grid figcaption b {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  display: block;
+}
+.team-grid figcaption span {
+  display: block;
+  margin-top: 5px;
+  font-size: var(--t-label);
+  color: var(--muted);
+}
+
 /* ---------- glyphs ---------- */
 /* Line glyphs in the same stroke language as .ic, one step larger, used where a
    slide is otherwise a wall of type. Each one has to name the thing beside it,
@@ -910,10 +952,22 @@ section.slide.cover {
 .gl.settled {
   stroke: var(--slate);
 }
+.gl.inline {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  display: inline-block;
+  vertical-align: -4px;
+}
+.kx-ic {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
 .gl.sm {
-  width: 27px;
-  height: 27px;
-  margin-bottom: 9px;
+  width: 25px;
+  height: 25px;
+  margin-bottom: 7px;
 }
 .dark .gl {
   stroke: var(--ochre);
@@ -1081,7 +1135,7 @@ section.slide.cover {
 .measure .m {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 25px;
+  font-size: 23px;
   letter-spacing: -0.015em;
   color: var(--ink);
 }
@@ -1119,7 +1173,9 @@ section.slide.cover {
 
 /* ---------- the thread diagram ---------- */
 .thread {
-  width: 100%;
+  width: 88%;
+  max-width: 1520px;
+  margin: 0 auto;
   display: block;
 }
 .thread .node-l {
