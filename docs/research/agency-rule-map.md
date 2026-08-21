@@ -222,7 +222,7 @@ Issue #20 flagged that several official pages block automated retrieval and aske
 | Item                                  | Outcome On 2026-08-20                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Still Needs A Human |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-----------------: |
 | JPN Bahasa Malaysia document list     | **Confirmed.** The BM service page was retrieved in full. The document list matches this note. **Correction:** the form codes are `JPN.LM02`, `JPN.LM09` and `JPN.LM10`, not `NRD.LM02` etc. The English page machine-translated the department code `JPN` to its English acronym `NRD`, garbling the form identifiers. All references in this note are corrected accordingly. Certificate collectors, including "adik-beradik kandung" (biological siblings), are confirmed. No informant registration deadline appears on the page. |         No          |
-| JPN statutory registration window     | **Not resolved.** The official Laws of Malaysia page for Act 299 (`lom.agc.gov.my/act-detail.php?lang=BM&act=299`) timed out and CommonLII returned HTTP 403. Consolidated third-party hosts consistently attribute a three-day ordinary window to Section 21, but per the issue this may not be printed until confirmed against the official Act text. Remains `[NEEDS SOURCE]`.                                                                                                                                                     |         Yes         |
+| JPN statutory registration window     | **RESOLVED 2026-08-21.** Act 299 obtained from `lom.agc.gov.my` and archived at `act-299-births-deaths-registration-2018-reprint.pdf`. **Section 19(2) puts a seven-day duty on the informant; section 21(1) requires the Registrar-General's written authority after seven days.** The three-day figure from third-party hosts is wrong for Peninsular Malaysia and must not be printed. See the full note at the end of this file.                                                                                                  |         Yes         |
 | PERKESO claim deadline                | **Confirmed as unquantifiable from a source.** The 12-month figure appears only on third-party blogs, job sites and a Meta AI social post, never on an official PERKESO page. Leave unquantified.                                                                                                                                                                                                                                                                                                                                     |    No (settled)     |
 | KWSP without-nomination claimant list | **Not resolved at source.** `kwsp.gov.my` still returned HTTP 403 and web.archive.org is not reachable by the tools used. Corroborating Malaysian news and blogs describe a spouse then children then parents hierarchy with **no siblings**, which matches the version already used in this note, but the official page's internal contradiction could not be reopened to settle it.                                                                                                                                                 |         Yes         |
 | KWSP 9KM (AHL) form fields            | **Not resolved.** The form itself could not be opened (`kwsp.gov.my` HTTP 403, archive unreachable). Field match against prototype screen 2 still unconfirmed.                                                                                                                                                                                                                                                                                                                                                                        |         Yes         |
@@ -295,3 +295,62 @@ point the submission makes.
 **Neither blocker affects the submission.** The seven-day boundary is printed as **JPN's published
 administrative rule, sourced to JPN**, which is now verified in the original Malay, and never
 attributed to a section of the Act.
+
+---
+
+## Act 299 Resolved, 2026-08-21
+
+`act-299-births-deaths-registration-2018-reprint.pdf`, the Attorney General's Chambers English
+reprint as at 1 March 2018, downloaded from `lom.agc.gov.my`. **This closes the `[NEEDS SOURCE]`
+open since 2026-08-19 on the JPN statutory window.**
+
+### The Seven Days Is Statutory, And The Duty Is On The Family
+
+**Section 19(2)** places the duty on a defined cascade of qualified informants, beginning with a
+relative present at the death, and requires them:
+
+> "to give to the Registrar, **before the expiration of seven days from the time of the death**,
+> information to the best of his knowledge and belief of the particulars required to be registered
+> concerning the death, and **in the presence of the Registrar to sign the register**"
+
+Two things follow, and both matter.
+
+1. **Seven days is the statutory figure, and it binds the informant, not only the certifying agency.**
+   The three-day window circulating on third-party legal-summary sites is **wrong for Peninsular
+   Malaysia** and must not be printed.
+2. **The Act itself requires the informant to sign the register in the Registrar's presence.** The
+   in-person step at JPN is not an administrative habit that a portal could quietly remove. It is on
+   the face of the statute.
+
+### The Consequence Is Defined, In The Act Rather Than On JPN's Pages
+
+**Section 21(1):**
+
+> "After the expiration of seven days from the date of the death or finding of the dead body of any,
+> the death of that person **shall not be registered except with the written authority of the
+> Registrar-General** and in such manner and subject to such fees and conditions as may be prescribed
+> for late registration"
+
+**Section 21(2)** lets the Registrar-General waive those late fees in whole or in part.
+
+**This refines the submission's claim rather than breaking it.** The consequence is not unpublished
+in law; it is simply not surfaced to the citizen on the service page they would actually read. That
+is a sharper and more defensible way to put it.
+
+### Why Peninsular Has No Delayed Registration Procedure
+
+**Section 20, "Delayed registration", was deleted by Act A1524.** That is the statutory reason JPN
+publishes an Ordinary and a Late procedure for Peninsular Malaysia and no Delayed one, while Sabah
+and Sarawak, which fall outside this Act, still publish all three. The observation recorded on
+2026-08-21 from the JPN service index now has its cause.
+
+**Section 1(2): "This Act shall apply to Peninsular Malaysia only."** This is the statutory basis for
+the geographic scope decision recorded in `decisions.md`.
+
+### Correction To The Earlier Browser Log
+
+The 2026-08-21 log above states that the seven days is "an obligation on the certifying agency to
+transmit, not a countdown the family is told to meet". **That is wrong as a statement about the law.**
+Both duties exist and they are different things: JPN's page describes the certifying agency sending
+the grey copy within seven working days, while **section 19(2) places a seven-day duty on the
+informant**. The statutory duty on the family is the one that matters for the submission.
