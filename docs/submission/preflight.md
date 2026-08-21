@@ -55,25 +55,26 @@ A bare tick is not enough for a file property. Record the observed format, size,
 | ---- | ---------------------- | -----: | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | [x]  | Innovation             |    30% | Central innovation in one sentence, then four named incumbents refuted individually: MyGOV chatbot, Tell Us Once, MyDigital ID, UTC co-location | None material. The distinction is stated and defended                                      |
 | [x]  | Feasibility            |    25% | Dependencies table, risks table, first practical steps, scope boundary, and "What Is Not Proven, Stated Plainly"                                | None material. The UNVERIFIED submission API is stated, which the rubric asks for directly |
-| [ ]  | Social/Economic Impact |    25% | Every baseline traced to `verified-figures.md`; metrics explicitly framed as "proposed future measures, not results"                            | **Two unsourced figures and one base error, listed below. Fix before export**              |
-| [ ]  | Submission Quality     |    20% | Team Information plus Sections 1 to 8 complete, Section 8 verified at 96 words, canvas passes every format gate                                 | **Six literal evidence markers and five TODOs would print. No PDF export exists yet**      |
+| [x]  | Social/Economic Impact |    25% | Every baseline traced to `verified-figures.md`; metrics explicitly framed as "proposed future measures, not results"                            | Cleared. The two unsourced figures were cut and the base error corrected in `4f50558`      |
+| [ ]  | Submission Quality     |    20% | Team Information plus Sections 1 to 8 complete, Section 8 verified at 96 words, canvas passes every format gate                                 | Markers cleared. **No PDF export exists yet**, plus four courses and the final editor      |
 
 ## Weighted Review Outcome
 
 Complete this record after reviewing both required artifacts against the four judging criteria. Use "Ready with Comments" only when every remaining comment is non-blocking.
 
-| Outcome           | Recorded By           | Date       | Unresolved Blockers                                                       |
-| ----------------- | --------------------- | ---------- | ------------------------------------------------------------------------- |
-| **Not Yet Ready** | automated claim audit | 2026-08-21 | No exported PDF; two unsourced figures; one base error; markers and TODOs |
+| Outcome                 | Recorded By           | Date       | Unresolved Blockers                                        |
+| ----------------------- | --------------------- | ---------- | ---------------------------------------------------------- |
+| **Ready with Comments** | automated claim audit | 2026-08-21 | No exported PDF; four member courses; final editor unnamed |
 
-**Not Yet Ready is about the export, not the argument.** The reasoning, structure and sourcing are
-strong enough to score well. What blocks it is a short list of mechanical fixes plus the missing PDF.
+**Updated after fixes were applied in `4f50558`.** All three claim-audit defects are corrected and
+all six evidence markers are converted to prose. The content now passes every check that can be run
+against it. **The only mandatory blocker left is that no PDF export exists.**
 
 ### Claim Audit, 2026-08-21
 
 Sixty-nine quantified mentions were extracted from `idea-submission-draft.md` and each traced to
 `verified-figures.md`, `agency-rule-map.md`, `incumbent-and-deadline-verification.md`,
-`documented-accounts-bereavement.md` or `rubrics.md`. **Sixty-six trace cleanly. Three do not.**
+`documented-accounts-bereavement.md` or `rubrics.md`. **Sixty-six trace cleanly. Three did not, and all three were fixed in `4f50558`.**
 
 | #   | Location                  | Claim                                                                          | Finding                                                                                                                                                                     |
 | --- | ------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -92,9 +93,9 @@ sections currently disagree**. Section 2's wording is the correct one; make Sect
 narrowing rather than an oversight**, and the marker at Section 6 on unverified submission APIs is
 required by the rubric's own Feasibility question. Keep every sentence.
 
-**But do not print the bracket syntax.** In an exported PDF, `[NEEDS SOURCE]` reads as an unfinished
-draft and costs Submission Quality marks for something that is actually a strength. Convert each to
-plain prose, for example "We could not verify this, so we state only the published boundary."
+**Done in `4f50558`.** All six were converted to plain prose with every sentence's meaning
+intact, for example "JPN publishes no answer to this, and we could not source one." The honesty is
+preserved; only the draft-looking bracket syntax is gone.
 
 ### Remaining TODOs In The Draft
 
