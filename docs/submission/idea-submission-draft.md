@@ -112,9 +112,9 @@ applies by its own wording only to deaths occurring before 1 December 2011.** Fo
 Malaysia, JPN publishes an Ordinary procedure and that legacy Late procedure, and no Delayed
 procedure at all. Delayed Registration is published only for Sabah and Sarawak.
 
-`[NEEDS SOURCE]` **So a family in Peninsular Malaysia that passes the seventh day today cannot find
-out from JPN's published pages what happens next.** We state the boundary, which is published, and
-we do not invent the consequence, which is not.
+**JPN publishes no answer to this, and we could not source one.** A family in Peninsular Malaysia
+that passes the seventh day today cannot find out from JPN's published pages what happens next. We
+state the boundary, which is published, and we do not invent the consequence, which is not.
 
 **Parliament has measured part of this, and named the cause.** The explanatory statement to the
 Births and Deaths Registration (Amendment) Bill 2016 records that **72,929 cases of late
@@ -127,7 +127,7 @@ reason for extending the reporting window:
 
 **That is the state's own account of why families miss government deadlines after a death.**
 
-`[NEEDS SOURCE]` That figure counts late registration at JPN. **No Malaysian measurement exists of
+That figure counts late registration at JPN, and nothing wider. **No Malaysian measurement exists of
 how long the wider administration takes, or how many KWSP or PERKESO claims are never made.** We do
 not claim a figure for either. The repetition above is documented from the agencies' own published
 requirements, and it is enough.
@@ -143,7 +143,7 @@ requirements, and it is enough.
 ### Who
 
 **The surviving family member who administers the death**, most often an older spouse. The median
-age at death in Malaysia was **69.0 years** in 2024, and the largest single age band was 70 to 74.
+age at death in Malaysia was **69.0 years** in 2024.
 
 ### They Are Not Offline. That Is The Point.
 
@@ -179,7 +179,7 @@ the event of death."_
 **The failure mode is not rejection. It is that nobody tells the family, and the family has no way
 to check.**
 
-`[ASSUMPTION]` These are individual reported cases. Journalism selects for the remarkable, so a
+**Read these as illustration, not measurement.** These are individual reported cases. Journalism selects for the remarkable, so a
 23-year delay is reported precisely because it is unusual. **We do not claim to know how common
 this is**, and no Malaysian measurement of it exists.
 
@@ -335,9 +335,10 @@ layer** between three institutions that already share infrastructure with each o
 The surviving family member who administers the death. Typically an older spouse: the median
 age at death in Malaysia was **69.0 years** in 2024.
 
-They are not offline. Among Malaysians who use the internet, **91.6 per cent of those aged 60
-and over** were internet users in 2024, up from 86.9 per cent in 2023. Yet only **33.6 per cent
-of that group interact with government organisations online, against 38.9 per cent overall**.
+They are not offline. **91.6 per cent of Malaysians aged 60 and over used the internet in 2024**,
+up from 86.9 per cent in 2023. Yet among Malaysians who use the internet, only **33.6 per cent of
+those aged 60 and over interact with government organisations online, against 38.9 per cent
+overall**.
 
 **The barrier is the process, not the device.** That single contrast is the impact case.
 
@@ -349,7 +350,6 @@ because a delayed or missed claim removes money from a family at its least resil
 ### Scale
 
 **198,992 deaths were registered in Malaysia in 2024**, up 1.0 per cent from 196,965 in 2023.
-The largest single age band was 70 to 74, at 24,513 deaths (12.3 per cent).
 
 Every one of those deaths generates the same administrative sequence.
 
@@ -370,8 +370,8 @@ highlights, archived at `../research/kwsp-five-year-financial-highlights.pdf`.
 **In 2024 the EPF processed 85,532 death withdrawals and made 27,006 Death Assistance payments.**
 Most death withdrawals are not accompanied by a Death Assistance payment.
 
-`[ASSUMPTION]` **We do not attribute that gap to missed deadlines, and neither should anyone
-presenting this.** Death Assistance also requires the member to have died before age 60, and the
+This is our reading, not a published finding. **We do not attribute that gap to missed deadlines,
+and neither should anyone presenting this.** Death Assistance also requires the member to have died before age 60, and the
 median age at death is 69.0, so the age condition must account for a large share of it on its own.
 EPF also states the payment is discretionary. **No published breakdown separates the age condition,
 the discretion and the six-month window.**
@@ -418,7 +418,7 @@ Source: United Nations, "The 17 Goals", <https://sdgs.un.org/goals>, accessed 20
 **One part of this has been measured, and we use only that part.** Parliament recorded 72,929 late
 death registrations between 2003 and 2014. That counts registration at JPN.
 
-`[NEEDS SOURCE]` **Beyond it, no Malaysian measurement exists of how long bereavement
+**Beyond it, we could find no Malaysian measurement of how long bereavement
 administration takes, or how many KWSP or PERKESO claims are never made.** We do not claim a figure
 for either, and we do not stretch the JPN figure to cover them.
 
@@ -437,7 +437,6 @@ and the two series move independently.
 | Identity                     | MyDigital ID, almost 10 million registrations as of February 2026                                 |
 | Inter-agency data exchange   | MyGDX, 81 government agencies across 49 integrated systems, more than 65 million API transactions |
 | Legal basis for data sharing | Data Sharing Act 2025                                                                             |
-| Policy direction             | 95 per cent of government services fully online end to end by 2030                                |
 | An online death channel      | PERKESO Portal LINDUNG FAEDAH already accepts a Death Notice online                               |
 
 That last row matters more than its size suggests. **One of the three agencies has already built
@@ -455,7 +454,7 @@ system never decides, being wrong costs a correction, not a family's money.
 
 ### What Is Not Proven, Stated Plainly
 
-- `[NEEDS SOURCE]` **Public submission and status APIs at JPN, KWSP and PERKESO are UNVERIFIED.**
+- **Public submission and status APIs at JPN, KWSP and PERKESO are UNVERIFIED.**
   The integration is **proposed, not proven**. We have not found evidence that any of the three
   exposes a public transactional API.
 - **The Data Sharing Act 2025 governs sharing between federal bodies. It does not prove that
