@@ -11,6 +11,9 @@ node_modules/
 # Prototype Build Output
 frontend/dist/
 
+# Demo Recorder Output
+.demo-output/
+
 # Tool Artifacts
 .playwright-mcp/
 

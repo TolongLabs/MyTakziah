@@ -11,12 +11,17 @@
     "format:check": "prettier --check .",
     "frontend:dev": "cd frontend && bun install && bun run dev",
     "frontend:build": "cd frontend && bun install && bun run build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "demo:check": "node scripts/demo/check-shots.mjs",
+    "demo:record": "node scripts/demo/record.mjs",
+    "demo:encode": "bash scripts/demo/encode.sh",
+    "demo:test": "bun test scripts/demo/record.test.ts scripts/demo/check-shots.test.ts"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
     "husky": "^9.1.7",
+    "playwright": "1.62.0",
     "prettier": "^3.9.6"
   }
 }
