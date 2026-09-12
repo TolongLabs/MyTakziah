@@ -168,6 +168,41 @@ The same document carries a separate "Death and Incapacitation Benefits" block. 
 - **New verified figure, 2026-08-21: 72,929 late death registrations recorded between 2003 and 2014**, from the explanatory statement to the Births and Deaths Registration (Amendment) Bill 2016. Roughly 6,000 a year. It measures late registration at JPN only and does **not** license any claim about missed KWSP or PERKESO claims. The Bill also names "rituals, religious obligations and customs with regard to the management of a death" as the reason families could not meet the old window, which is Parliament stating our problem in its own words.
 - `[NEEDS SOURCE]` **2026-08-21, team decision: the deck now carries 43,929 late death registrations for 2019 to 2025 instead of the 72,929 figure above.** The team chose the more recent number on the grounds that recency wins. **No source for it exists anywhere in this repo.** The 72,929 figure remains the only late-registration count this file can support, and it stays here unchanged. Either the team supplies a citation for 43,929 before the deck ships, or the deck reverts to 72,929. Do not treat 43,929 as verified on the strength of it appearing on a slide.
 
+## Added 2026-09-12: Malaysia's Age Structure
+
+Needed because the mentor asked the pitch to open on Malaysia's ageing population. Verified against
+the primary DOSM release, not a summary.
+
+| Figure                                 | Value                                  |
+| -------------------------------------- | -------------------------------------- |
+| Total population, 2026                 | **34.4 million**                       |
+| Aged 65 and over, 2026                 | **8.4 per cent**, roughly 2.74 million |
+| Aged 65 and over, 2025                 | 8.0 per cent                           |
+| Aged 15 to 64, 2026                    | 70.4 per cent                          |
+| Aged 0 to 14, 2026                     | 21.2 per cent                          |
+| Old-age dependency ratio, 2025 to 2026 | 11.4 rising to 11.9                    |
+| Median age, 2026                       | 31.7 years                             |
+
+**Printable wording.** "8.4 per cent of Malaysians are aged 65 or over, up from 8.0 per cent a year
+earlier. That is roughly 2.7 million people, and the share is rising."
+
+### Do Not Say "Ageing Society" And Attribute It To DOSM
+
+**The Current Population Estimates 2026 release does not use that phrase.** The "ageing society at
+7 per cent, aged society at 14 per cent" thresholds are a general demographic convention, and the
+commonly repeated claims that Malaysia "became an ageing society in 2021" and will be an "aged
+society by 2048" were **not** found in this release. They may well be true and sourced elsewhere, but
+they are `[NEEDS SOURCE]` here.
+
+Print the DOSM numbers and let them carry the point. The rising share plus the rising dependency
+ratio says "ageing" without needing a label we cannot cite.
+
+### The Join That Makes It Our Problem
+
+The median age at death is 69.0, and 8.4 per cent of the population is already 65 or over. **The
+person left holding the paperwork is usually inside that group, and that group is growing.** That is
+the honest version of the mentor's opening, and every number in it is sourced.
+
 ## Sources
 
 1. Department of Statistics Malaysia, "Vital Statistics, Malaysia, 2025", published 16 October 2025, https://www.dosm.gov.my/portal-main/release-content/vital-statistics-malaysia-2025, accessed 2026-08-19. Supports deaths 2024 and 2023, crude death rate, median age at death, sex split.
@@ -182,3 +217,4 @@ The same document carries a separate "Death and Incapacitation Benefits" block. 
 10. Ministry of Digital, MyGOV Malaysia app statement, published 5 June 2026, https://www.digital.gov.my/en-GB/siaran/Aplikasi-MyGOV-Malaysia-Capai-2.2-Juta-Pengguna%2CPerluas-Penawaran-Digital-Dengan-Penstriman-Langsung-Piala-Dunia-FIFA-2026, accessed 2026-08-19. Supports 2.2 million users, 51 services, 19 agencies.
 11. Ministry of Digital, "Revolusi Digital Sektor Awam: PPDSA Dan MyGDX Pemacu Transformasi Rakyat", published 10 February 2026, https://www.digital.gov.my/en-GB/siaran/Revolusi-Digital-Sektor-Awam%3APPDSA-Dan-MyGDX-Pemacu-Transformasi-Rakyat, accessed 2026-08-19. Supports MyGDX agency, system and transaction counts.
 12. Bernama, "MyDigital ID Targets 17 Mln Registered Accounts By End-2026", published 12 February 2026, https://www.bernama.com/en/news.php?id=2523289, accessed 2026-08-19. Supports almost 10 million registrations and the quoted attribution.
+13. Department of Statistics Malaysia, "Current Population Estimates, 2026", released 31 July 2026, https://www.dosm.gov.my/portal-main/release-content/current-population-estimates-2026, accessed 2026-09-12. Supports total population, the 65 and over share for 2025 and 2026, the working age and child shares, the old-age dependency ratio and the median age.
