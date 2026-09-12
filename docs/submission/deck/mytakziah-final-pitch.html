@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MyTakziah, Final Pitch, Seven Slides</title>
+    <link rel="stylesheet" href="assets/fonts.css" />
+    <style>
+      :root {
+        --ink: #281913;
+        --terra: #bc4d1a;
+        --slate: #376d7c;
+        --muted: #6e635c;
+        --hair: #e2dbd4;
+        --faint: #cfc6be;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        background: #fff;
+      }
+      .slide {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        background: #fff;
+        padding: 74px 112px 60px;
+        display: flex;
+        flex-direction: column;
+        font-family: "Work Sans", system-ui, sans-serif;
+        color: var(--ink);
+        overflow: hidden;
+        page-break-after: always;
+        break-after: page;
+      }
+      .eyebrow {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-weight: 600;
+        font-size: 21px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--slate);
+      }
+      .eyebrow span {
+        color: var(--faint);
+        letter-spacing: 0.1em;
+      }
+      .hair {
+        height: 1px;
+        background: var(--hair);
+        margin: 22px 0 0;
+      }
+      h1 {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: 66px;
+        line-height: 1.07;
+        letter-spacing: -0.02em;
+        margin-top: 38px;
+        max-width: 1560px;
+      }
+      .rule {
+        width: 96px;
+        height: 6px;
+        background: var(--terra);
+        margin-top: 26px;
+      }
+      .cols {
+        display: flex;
+        gap: 60px;
+        margin-top: 40px;
+        flex: 1;
+        align-items: flex-start;
+        min-height: 0;
+      }
+      .points {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+      .pt {
+        display: flex;
+        gap: 28px;
+      }
+      .num {
+        font-family: "Outfit", sans-serif;
+        font-weight: 600;
+        font-size: 30px;
+        color: var(--faint);
+        line-height: 1.35;
+        min-width: 30px;
+      }
+      .lead {
+        font-family: "Outfit", sans-serif;
+        font-weight: 600;
+        font-size: 34px;
+        line-height: 1.24;
+        color: var(--terra);
+        letter-spacing: -0.01em;
+      }
+      .body {
+        font-size: 25px;
+        line-height: 1.48;
+        color: var(--muted);
+        margin-top: 9px;
+        max-width: 1060px;
+      }
+      .aside {
+        width: 600px;
+        flex-shrink: 0;
+      }
+      .aside img.shot {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: fill;
+        border-radius: 4px;
+        border: 1px solid var(--hair);
+        display: block;
+      }
+      .cap {
+        font-size: 21px;
+        color: var(--muted);
+        margin-top: 14px;
+        line-height: 1.42;
+      }
+      .foot {
+        margin-top: auto;
+        padding-top: 24px;
+        border-top: 1px solid var(--hair);
+        font-size: 23px;
+        line-height: 1.46;
+        color: var(--slate);
+        max-width: 1650px;
+      }
+      .foot.terra {
+        color: var(--terra);
+      }
+      /* cover */
+      .cover-kicker {
+        font-weight: 600;
+        font-size: 22px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--slate);
+        margin-top: 92px;
+      }
+      .wordmark {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: 152px;
+        letter-spacing: -0.035em;
+        line-height: 1;
+        margin-top: 30px;
+      }
+      .oneline {
+        font-family: "Outfit", sans-serif;
+        font-weight: 600;
+        font-size: 54px;
+        color: var(--terra);
+        margin-top: 34px;
+        letter-spacing: -0.015em;
+      }
+      .support {
+        font-size: 30px;
+        line-height: 1.5;
+        color: var(--muted);
+        margin-top: 30px;
+        max-width: 1120px;
+      }
+      .team {
+        margin-top: auto;
+        padding-top: 32px;
+        border-top: 1px solid var(--hair);
+      }
+      .team b {
+        font-family: "Outfit", sans-serif;
+        font-weight: 600;
+        font-size: 30px;
+      }
+      .team p {
+        font-size: 24px;
+        color: var(--muted);
+        margin-top: 10px;
+      }
+      .qrbox {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        margin-top: 34px;
+      }
+      .qrbox img {
+        width: 168px;
+        height: 168px;
+        display: block;
+      }
+      .qrbox .t {
+        font-family: "Outfit", sans-serif;
+        font-weight: 600;
+        font-size: 27px;
+      }
+      .qrbox .s {
+        font-size: 23px;
+        color: var(--muted);
+        margin-top: 8px;
+        line-height: 1.42;
+      }
+      .closer {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: 48px;
+        color: var(--terra);
+        letter-spacing: -0.015em;
+      }
+
+      /* cover branding */
+      .brandrow {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .brandrow .left {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+      }
+      .brandrow img.uriis {
+        height: 104px;
+      }
+      .brandrow img.kolaxus {
+        height: 46px;
+      }
+      .brandrow .org {
+        font-size: 17px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .lockup {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-top: 46px;
+      }
+      .lockup img {
+        width: 118px;
+        height: 118px;
+      }
+      .covbody {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 60px;
+      }
+      .covqr {
+        text-align: center;
+        flex-shrink: 0;
+      }
+      .covqr img {
+        width: 344px;
+        height: 344px;
+        display: block;
+      }
+      .covqr div {
+        font-size: 21px;
+        color: var(--muted);
+        margin-top: 10px;
+        line-height: 1.4;
+      }
+      .teamrow {
+        margin-top: auto;
+        padding-top: 28px;
+        border-top: 1px solid var(--hair);
+        display: flex;
+        gap: 54px;
+      }
+      .mem {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .mem img {
+        width: 74px;
+        height: 74px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .mem b {
+        font-family: "Outfit", sans-serif;
+        font-weight: 600;
+        font-size: 23px;
+        display: block;
+      }
+      .mem span {
+        font-size: 18px;
+        color: var(--muted);
+        display: block;
+        line-height: 1.35;
+        margin-top: 3px;
+      }
+      .shots {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      /* demands matrix, slide 2 */
+      .matrix {
+        border: 1px solid var(--hair);
+        border-radius: 4px;
+        padding: 22px 24px 18px;
+      }
+      .matrix h4 {
+        font-family: "Outfit", sans-serif;
+        font-weight: 600;
+        font-size: 23px;
+        margin-bottom: 4px;
+      }
+      .matrix p.sub {
+        font-size: 18px;
+        color: var(--muted);
+        margin-bottom: 14px;
+      }
+      .matrix table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 19px;
+      }
+      .matrix th {
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--slate);
+        padding: 6px 4px;
+        text-align: center;
+      }
+      .matrix th:first-child {
+        text-align: left;
+      }
+      .matrix td {
+        padding: 9px 4px;
+        border-top: 1px solid var(--hair);
+        color: var(--muted);
+        text-align: center;
+      }
+      .matrix td:first-child {
+        text-align: left;
+        color: var(--ink);
+      }
+      .dot {
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: var(--terra);
+      }
+      .dash {
+        color: var(--faint);
+      }
+      .matrix .tot {
+        font-size: 17px;
+        color: var(--muted);
+        margin-top: 12px;
+        line-height: 1.4;
+      }
+      /* impact trio, slide 6 */
+      .trio {
+        display: flex;
+        gap: 26px;
+        align-items: flex-start;
+      }
+      .trio figure {
+        text-align: center;
+        width: 168px;
+      }
+      .trio img {
+        width: 132px;
+        height: 132px;
+      }
+      .trio figcaption {
+        font-family: "Outfit", sans-serif;
+        font-weight: 600;
+        font-size: 19px;
+        margin-top: 6px;
+      }
+      .sdg {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        margin-top: 26px;
+      }
+      .sdg img {
+        width: 84px;
+        height: 84px;
+      }
+      .sdg span {
+        font-size: 18px;
+        color: var(--muted);
+        line-height: 1.35;
+      }
+      @page {
+        size: 1920px 1080px;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1 COVER -->
+    <section class="slide">
+      <div class="brandrow">
+        <div class="left">
+          <img class="uriis" src="assets/uriis.png" alt="URIIS 2026" />
+          <div>
+            <div class="org">Student Biz Innov Challenge 2026</div>
+          </div>
+        </div>
+        <div class="left">
+          <div class="org">Organised by</div>
+          <img class="kolaxus" src="assets/kolaxus.png" alt="Kolaxus" />
+        </div>
+      </div>
+
+      <div class="lockup">
+        <img src="assets/mark.png" alt="" />
+        <div class="wordmark">MyTakziah</div>
+      </div>
+
+      <div class="covbody">
+        <div>
+          <div class="rule" style="margin-top: 34px"></div>
+          <div class="oneline">One death. Told to government once.</div>
+          <div class="support">
+            An AI that, after a death, reads a family's documents once and files their JPN, KWSP and
+            PERKESO claims for them.
+          </div>
+        </div>
+        <div class="covqr">
+          <img src="assets/qr-logo.png" alt="" />
+          <div>Scan for the working prototype</div>
+        </div>
+      </div>
+
+      <div class="teamrow">
+        <div class="mem">
+          <img src="assets/team/anderson-ling.png" alt="" />
+          <div>
+            <b>Anderson Ling</b><span>Team Leader<br />Universiti Malaya</span>
+          </div>
+        </div>
+        <div class="mem">
+          <img src="assets/team/hee-zi-jie.png" alt="" />
+          <div>
+            <b>Hee Zi Jie</b><span>Software Development<br />Asia Pacific University</span>
+          </div>
+        </div>
+        <div class="mem">
+          <img src="assets/team/wong-xuan-rui.png" alt="" />
+          <div>
+            <b>Wong Xuan Rui</b><span>Designer<br />Universiti Malaya</span>
+          </div>
+        </div>
+        <div class="mem">
+          <img src="assets/team/yow-li-hao.png" alt="" />
+          <div>
+            <b>Yow Li Hao</b><span>Software Development<br />Asia Pacific University</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 PROBLEM -->
+    <section class="slide">
+      <div class="eyebrow">1. The Problem <span>2 / 7</span></div>
+      <div class="hair"></div>
+      <h1>Malaysia is ageing. The paperwork<br />after a death has not changed.</h1>
+      <div class="rule"></div>
+      <div class="cols">
+        <div class="points">
+          <div class="pt">
+            <div class="num">1</div>
+            <div>
+              <div class="lead">
+                8.4 per cent of Malaysians are now 65 or over, up from 8.0 per cent a year earlier.
+              </div>
+              <div class="body">
+                That is roughly 2.7 million people, and the share is rising every year. 198,992
+                people died in Malaysia in 2024, and the median age at death is 69.
+              </div>
+            </div>
+          </div>
+          <div class="pt">
+            <div class="num">2</div>
+            <div>
+              <div class="lead">
+                Three agencies then ask that family for the same five things, separately.
+              </div>
+              <div class="body">
+                JPN, PERKESO and KWSP each demand the same core information again, on three
+                different forms, and mostly in person with original documents.
+              </div>
+            </div>
+          </div>
+          <div class="pt">
+            <div class="num">3</div>
+            <div>
+              <div class="lead">
+                Two of the three agencies enforce deadlines they do not fully publish.
+              </div>
+              <div class="body">
+                The person left holding that paperwork is usually an older widow or widower. Miss
+                the EPF window and the RM2,500 Death Assistance is gone.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="aside" style="width: 516px">
+          <div class="matrix">
+            <h4>The same information, demanded again</h4>
+            <p class="sub">Each row is asked for once per agency.</p>
+            <table>
+              <tr>
+                <th>Information</th>
+                <th>JPN</th>
+                <th>KWSP</th>
+                <th>PERKESO</th>
+              </tr>
+              <tr>
+                <td>Identity of the deceased</td>
+                <td><span class="dot"></span></td>
+                <td><span class="dot"></span></td>
+                <td><span class="dot"></span></td>
+              </tr>
+              <tr>
+                <td>Identity of the claimant</td>
+                <td><span class="dot"></span></td>
+                <td><span class="dot"></span></td>
+                <td><span class="dot"></span></td>
+              </tr>
+              <tr>
+                <td>The fact of the death</td>
+                <td><span class="dot"></span></td>
+                <td><span class="dot"></span></td>
+                <td><span class="dot"></span></td>
+              </tr>
+              <tr>
+                <td>Relationship to the deceased</td>
+                <td class="dash">&ndash;</td>
+                <td><span class="dot"></span></td>
+                <td><span class="dot"></span></td>
+              </tr>
+              <tr>
+                <td>Payment destination</td>
+                <td class="dash">&ndash;</td>
+                <td><span class="dot"></span></td>
+                <td><span class="dot"></span></td>
+              </tr>
+            </table>
+            <div class="tot">
+              Three different forms: JPN.LM02, KWSP 9KM (AHL), and Borang 34 or
+              Borang 24 and 26.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        Parliament recorded 72,929 late death registrations between 2003 and 2014, and named funeral
+        rites and religious obligations as the reason families could not meet the deadline.
+        Published accounts describe survivors collecting benefits more than twenty years late,
+        simply because nobody told them.
+      </div>
+    </section>
+
+    <!-- 3 SOLUTION -->
+    <section class="slide">
+      <div class="eyebrow">2. Our Solution <span>3 / 7</span></div>
+      <div class="hair"></div>
+      <h1>Provide once. We prepare every claim.</h1>
+      <div class="rule"></div>
+      <div class="cols">
+        <div class="points">
+          <div class="pt">
+            <div class="num">1</div>
+            <div>
+              <div class="lead">Provide once.</div>
+              <div class="body">
+                Identity, proof of death, relationship and bank details, entered a single time.
+              </div>
+            </div>
+          </div>
+          <div class="pt">
+            <div class="num">2</div>
+            <div>
+              <div class="lead">
+                Every entitlement, with the government's own rule printed beside it.
+              </div>
+              <div class="body">Ranked by deadline, soonest first, never by value.</div>
+            </div>
+          </div>
+          <div class="pt">
+            <div class="num">3</div>
+            <div>
+              <div class="lead">Submitted, receipted and tracked. Never approved.</div>
+              <div class="body">
+                The agency always keeps the decision. We prepare and we file. We never decide who
+                qualifies.
+              </div>
+            </div>
+          </div>
+          <div class="qrbox">
+            <img src="assets/qr-logo.png" alt="" />
+            <div>
+              <div class="t">Working prototype, live now</div>
+              <div class="s">
+                mytakziah.vercel.app<br />Scan it. It runs the whole journey.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="aside">
+          <div class="shots">
+            <img class="shot" src="assets/live-step2.png" alt="" />
+            <img class="shot" src="assets/live-step4.png" alt="" />
+          </div>
+          <div class="cap">
+            Live prototype: evidence given once, then consent taken separately for
+            each agency. mytakziah.vercel.app
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 INNOVATION -->
+    <section class="slide">
+      <div class="eyebrow">3. What Makes It Innovative <span>4 / 7</span></div>
+      <div class="hair"></div>
+      <h1>Not a chatbot. A filing engine<br />with the rulebook attached.</h1>
+      <div class="rule"></div>
+      <div class="cols">
+        <div class="points">
+          <div class="pt">
+            <div class="num">1</div>
+            <div>
+              <div class="lead">JPN has already built a chatbot. It still cannot reach KWSP.</div>
+              <div class="body">
+                A chatbot tells you what to do. MyTakziah does it. That is the whole difference, and
+                it is why this has not been solved already.
+              </div>
+            </div>
+          </div>
+          <div class="pt">
+            <div class="num">2</div>
+            <div>
+              <div class="lead">Deadline first, and every rule cited to its source.</div>
+              <div class="body">
+                Where an agency publishes no deadline, we say so on the screen instead of guessing.
+                Nothing we show a family is invented.
+              </div>
+            </div>
+          </div>
+          <div class="pt">
+            <div class="num">3</div>
+            <div>
+              <div class="lead">Routed to the family's own rites.</div>
+              <div class="body">
+                The checklist a Muslim family sees is not the one a Chinese or Hindu family sees.
+                Religion changes the documents, the timing and the services that matter.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="aside" style="width: 560px">
+          <img class="shot" src="assets/live-step3.png" alt="" />
+          <div class="cap">
+            Every entitlement carries its deadline, its source link, and a plain
+            statement of what the agency does not publish.
+          </div>
+        </div>
+      </div>
+      <div class="foot terra">
+        Other countries have built the notification half of this. The UK's Tell Us Once tells
+        departments that someone has died; it does not file the claim or protect the deadline. None
+        of it is built for JPN, KWSP and PERKESO. Our advantage is not the technology, because
+        anyone can add AI. It is that we read these three agencies' forms until we understood this
+        ecosystem better than a general purpose assistant ever will.
+      </div>
+    </section>
+
+    <!-- 5 FEASIBILITY -->
+    <section class="slide">
+      <div class="eyebrow">4. How It Works and Feasibility <span>5 / 7</span></div>
+      <div class="hair"></div>
+      <h1>Built already. Honest about<br />what is not built yet.</h1>
+      <div class="rule"></div>
+      <div class="cols">
+        <div class="points">
+          <div class="pt">
+            <div class="num">1</div>
+            <div>
+              <div class="lead">A working prototype is live today, not a mockup.</div>
+              <div class="body">
+                The full journey runs end to end. The judges can scan it from their seats.
+              </div>
+            </div>
+          </div>
+          <div class="pt">
+            <div class="num">2</div>
+            <div>
+              <div class="lead">The national rails already exist.</div>
+              <div class="body">
+                MyDigital ID has almost 10 million accounts. MyGDX already connects 81 agencies. We
+                are not asking anyone to build new plumbing.
+              </div>
+            </div>
+          </div>
+          <div class="pt">
+            <div class="num">3</div>
+            <div>
+              <div class="lead">Integration is proposed, not proven.</div>
+              <div class="body">
+                Until an agency connects we print the completed forms and the family carries them.
+                They still know what they are owed and which deadline is first.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="aside">
+          <img class="shot" src="assets/live-step5.png" alt="" />
+          <div class="cap">
+            Three forms prepared from one set of evidence, and one timeline.
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        Where we are today: a working prototype, and rules verified against primary government
+        documents. &nbsp;&middot;&nbsp; Next: a minimum viable product, then one community pilot.
+      </div>
+    </section>
+
+    <!-- 6 IMPACT -->
+    <section class="slide">
+      <div class="eyebrow">5. Impact and Potential <span>6 / 7</span></div>
+      <div class="hair"></div>
+      <h1>Three sides benefit.<br />One of them can pay.</h1>
+      <div class="rule"></div>
+      <div class="cols">
+        <div class="points">
+          <div class="pt">
+            <div class="num">1</div>
+            <div>
+              <div class="lead">Families use it free. Always.</div>
+              <div class="body">
+                They are the people least able to pay, at the worst possible moment. Charging them
+                would defeat the point.
+              </div>
+            </div>
+          </div>
+          <div class="pt">
+            <div class="num">2</div>
+            <div>
+              <div class="lead">
+                Government gets complete, on time, correctly filled submissions.
+              </div>
+              <div class="body">
+                Fewer rejected forms, fewer repeat counter visits, and deaths registered inside the
+                window rather than years late.
+              </div>
+            </div>
+          </div>
+          <div class="pt">
+            <div class="num">3</div>
+            <div>
+              <div class="lead">Service providers pay to reach families at the moment of need.</div>
+              <div class="body">
+                Funeral, memorial and estate services already spend to find these families. A
+                listing and referral model funds the platform without ever charging the bereaved.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="aside" style="width: 545px">
+          <div class="trio">
+            <figure>
+              <img src="assets/med-protection.png" alt="" />
+              <figcaption>Families</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/med-registry.png" alt="" />
+              <figcaption>Government</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/med-savings.png" alt="" />
+              <figcaption>Providers</figcaption>
+            </figure>
+          </div>
+          <div class="sdg">
+            <img src="assets/sdg-16.png" alt="Sustainable Development Goal 16" />
+            <img src="assets/sdg-1.png" alt="Sustainable Development Goal 1" />
+            <span
+              >Accountable institutions, and social protection<br />that actually
+              reaches the people entitled to it.</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        RM3.24 billion moved through EPF death withdrawals in 2024, across 85,532 cases.
+        &nbsp;&middot;&nbsp; We will measure families served, agencies connected and providers
+        onboarded. &nbsp;&middot;&nbsp; Malaysia first, then the same problem across Southeast Asia.
+      </div>
+    </section>
+
+    <!-- 7 WHY US -->
+    <section class="slide">
+      <div class="eyebrow">6. Why Us, and What We Are Asking For <span>7 / 7</span></div>
+      <div class="hair"></div>
+      <h1>We already built it.<br />We need the doors.</h1>
+      <div class="rule"></div>
+      <div class="cols">
+        <div class="points">
+          <div class="pt">
+            <div class="num">1</div>
+            <div>
+              <div class="lead">
+                Two computer science students and two actuarial science students.
+              </div>
+              <div class="body">
+                The eligibility rules, contribution tests and deadlines behind this are actuarial
+                work, and we did it ourselves rather than guessing at it.
+              </div>
+            </div>
+          </div>
+          <div class="pt">
+            <div class="num">2</div>
+            <div>
+              <div class="lead">
+                Every number here is verified against primary government documents.
+              </div>
+              <div class="body">
+                Where we could not verify something we left it off the slide. We would rather be
+                narrow than wrong.
+              </div>
+            </div>
+          </div>
+          <div class="pt">
+            <div class="num">3</div>
+            <div>
+              <div class="lead">What we need is not mainly money. It is access.</div>
+              <div class="body">
+                We do not reach families by advertising. We reach one community through the people
+                already trusted with a death there, and learn from it before going wider. Introduce
+                us to one, and to service providers, and we will have real users inside a month.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="aside" style="width: 300px; text-align: center">
+          <img
+            src="assets/qr-logo.png"
+            alt=""
+            style="width: 268px; height: 268px; margin: 10px auto 0"
+          />
+          <div class="cap" style="text-align: center">mytakziah.vercel.app</div>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="closer">One death. Told to government once.</div>
+      </div>
+    </section>
+  </body>
+</html>
