@@ -9,6 +9,87 @@ The MyTakziah presentation deck, fourteen slides, built as one self-contained HT
 
 ---
 
+## Two Decks Live Here. Do Not Confuse Them
+
+`mytakziah-deck.html` and `.pdf` are the **fourteen-slide** deck, built for the written submission's
+eight sections. `mytakziah-final-pitch.*` is the **seven-slide** deck for the live final. The
+mentor's rules there are exactly seven slides, a white background, three pointers per slide, six
+minutes of pitch and four minutes of questions. The fourteen-slide deck breaks every one of those,
+by design. **Do not present it on the day.**
+
+### The Final Pitch Deck
+
+Source of truth is `mytakziah-final-pitch.html`. Everything else is generated from it.
+
+| File                                    | Use It When                                                                |
+| --------------------------------------- | -------------------------------------------------------------------------- |
+| `mytakziah-final-pitch.pdf`             | **Presenting directly.** No Canva needed. Safest option on the day         |
+| `assets/final-pitch-slides/slide-N.png` | **Putting it in Canva fast.** One image per page, 2880 by 1620, exact 16:9 |
+| `mytakziah-final-pitch.pptx`            | **Editing text inside Canva.** Native text boxes, set in Arial             |
+| `final-pitch-script.md`                 | The spoken script, timings and question prep                               |
+
+The `.pptx` is set in Arial rather than the brand's Outfit, because it has to survive whatever font
+stack opens it. The PDF and the PNGs carry the real brand type, Outfit and Work Sans, both embedded.
+If you import the `.pptx` into Canva and switch it to Outfit there, re-check every slide for
+overflow afterwards, because the metrics differ.
+
+### The QR Code
+
+The deck uses `assets/qr-logo.png`, which carries the Anyaman mark in the centre. That is only safe
+because the symbol is encoded at error-correction level H. `../brand/mytakziah-qr-logo.py` builds it
+and **refuses to write the file unless it decodes back to the URL** at 1600, 800, 480, 320 and
+240 pixels. The mark is set at 16 per cent of the symbol width; measured on this symbol, 20 per cent
+already fails to decode, so do not raise it.
+
+```bash
+uv run --with opencv-python-headless --with pillow python3 \
+  docs/submission/brand/mytakziah-qr-logo.py docs/submission/brand
+cp docs/submission/brand/mytakziah-qr-logo.png docs/submission/deck/assets/qr-logo.png
+```
+
+### Prototype Screenshots
+
+Slides 3, 4 and 5 carry real screens from the deployed prototype, captured straight from the live
+site rather than mocked. The walkthrough is a single page app with hash routes, so each step can be
+grabbed without clicking:
+
+```bash
+for n in 1 2 3 4 5; do
+  U="https://mytakziah.vercel.app/#step$n"; [ $n -eq 1 ] && U="https://mytakziah.vercel.app/"
+  google-chrome --headless --hide-scrollbars --window-size=1600,900 \
+    --virtual-time-budget=12000 \
+    --screenshot="docs/submission/deck/assets/live-step$n.png" "$U"
+done
+```
+
+The five steps are Verified, Provide Once, Entitlements, Consent and Timeline. Recapture them after
+any prototype change, because a stale screenshot is worse than none: a judge who scans the QR will
+be looking at the live version while your slide shows the old one.
+
+### Rebuilding
+
+```bash
+cd docs/submission/deck
+google-chrome --headless --no-pdf-header-footer --virtual-time-budget=20000 \
+  --print-to-pdf=mytakziah-final-pitch.pdf "file://$PWD/mytakziah-final-pitch.html"
+pdftoppm -png -r 144 mytakziah-final-pitch.pdf assets/final-pitch-slides/slide
+```
+
+The `.pptx` is built and checked separately, from the repo root:
+
+```bash
+uv run --with python-pptx python3 docs/submission/deck/build-final-pitch.py
+uv run --with python-pptx --with pillow python3 \
+  docs/submission/deck/validate-final-pitch.py \
+  docs/submission/deck/mytakziah-final-pitch.pptx
+```
+
+The validator checks the three things that actually go wrong in a generated deck: shapes falling off
+the slide, text taller than the box holding it, and text boxes overlapping. It measures with
+Liberation Sans, which is metric-compatible with Arial.
+
+---
+
 ## Controls
 
 | Key                           | What It Does                        |
@@ -114,17 +195,18 @@ Everything here comes from the recorded system, not from taste. Palette, type an
 
 ## Assets
 
-| Path                              | Where It Came From                                                           |
-| --------------------------------- | ---------------------------------------------------------------------------- |
-| `assets/fonts.css`                | Copied from the canvas build. Outfit and Work Sans, embedded                 |
-| `assets/mark.png`                 | The Anyaman weave mark, from `../brand/`                                     |
-| `assets/med-*.png`                | The watercolour medallion set, resized from `../codex-generated/`            |
-| `assets/screen-*.png`             | Prototype screenshots, captured 16 by 9 by `export-deck.py`'s recipe         |
-| `assets/slides/`                  | One PNG per slide, generated. Do not edit by hand, regenerate                |
-| `assets/sdg-*.png`                | Official UN goal icons. **Do not recolour, crop or round them**              |
-| `assets/gen/*`                    | Generated for this deck via the Codex CLI, art direction in this repo        |
-| `assets/gen/bg-problem-young.jpg` | The problem slide's ground. `bg-problem.jpg` is the elderly original, kept   |
-| `assets/cover-hero.png`           | `gen/cover-hero.png` with its shadow painted in. Regenerate, never hand-edit |
+| Path                              | Where It Came From                                                                   |
+| --------------------------------- | ------------------------------------------------------------------------------------ |
+| `assets/fonts.css`                | Copied from the canvas build. Outfit and Work Sans, embedded                         |
+| `assets/mark.png`                 | The Anyaman weave mark, from `../brand/`                                             |
+| `assets/med-*.png`                | The watercolour medallion set, resized from `../codex-generated/`                    |
+| `assets/screen-*.png`             | Prototype screenshots, captured 16 by 9 by `export-deck.py`'s recipe                 |
+| `assets/slides/`                  | One PNG per slide of the fourteen-slide deck, generated. Regenerate, do not edit     |
+| `assets/final-pitch-slides/`      | One PNG per slide of the seven-slide final pitch, generated. Regenerate, do not edit |
+| `assets/sdg-*.png`                | Official UN goal icons. **Do not recolour, crop or round them**                      |
+| `assets/gen/*`                    | Generated for this deck via the Codex CLI, art direction in this repo                |
+| `assets/gen/bg-problem-young.jpg` | The problem slide's ground. `bg-problem.jpg` is the elderly original, kept           |
+| `assets/cover-hero.png`           | `gen/cover-hero.png` with its shadow painted in. Regenerate, never hand-edit         |
 
 `assets/gen/bg-problem-young.jpg` is one painted scene, not a figure composited over a background. That
 matters: the earlier two-layer version read as a sticker, and a cut-out figure over a photographic
