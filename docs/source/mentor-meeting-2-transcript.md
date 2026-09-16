@@ -2,19 +2,23 @@
 
 The 15 September mock presentation to Mr. Siva, sectioned by timestamp. Anderson delivered the full MyTakziah pitch
 end to end; Siva interrupted with corrections slide by slide, then gave his verdict and the pitch-day logistics that
-have changed since the [first mentor meeting](mentor-meeting-1-transcript.md).
+have changed since the [first mentor meeting](mentor-meeting-1-transcript.md). Zi Jie was expected but was stuck in
+traffic, so the team began without him.
 
 > **Source** — local recording `2026-09-15 19-59-32.mp4` (19m 02s). **Method** — audio extracted with `ffmpeg`,
 > transcribed with OpenAI Whisper (`large`, language auto-detected as English) on GPU. Reproduce with any Whisper
 > wrapper; the model is what matters. **Editing** — timestamps preserved; filler, backchannel and dead air trimmed;
 > ASR-mangled proper nouns corrected, see the key below. **Speakers** — Whisper does not diarize; attribution is
-> inferred, see [Attribution and confidence](#attribution-and-confidence). Transcribed 2026-09-16.
+> inferred, see [Attribution and confidence](#attribution-and-confidence). **Decoding** — transcribed twice; the second
+> pass disables `condition_on_previous_text`, which is what recovered the pre-pitch conversation and cleared three
+> repetition loops. See [Transcription notes](#transcription-notes). Transcribed 2026-09-16.
 
 Contents:
 
 1. [Attribution and confidence](#attribution-and-confidence)
 1. [Proper-noun correction key](#proper-noun-correction-key)
-1. [04:20 Setup](#0420-setup)
+1. [02:50 Before the pitch](#0250-before-the-pitch)
+1. [04:20 Handover to the deck](#0420-handover-to-the-deck)
 1. [04:52 Slide 1 — title and opening](#0452-slide-1--title-and-opening)
 1. [05:24 Siva: open with a story, not a summary](#0524-siva-open-with-a-story-not-a-summary)
 1. [06:15 Slide 2 — the Saiful Nizam story](#0615-slide-2--the-saiful-nizam-story)
@@ -37,16 +41,18 @@ Contents:
 
 ## Attribution and confidence
 
-Whisper produces no speaker labels, and no participant is named aloud in this recording. Attribution rests on the
+Whisper produces no speaker labels. One participant is named aloud; the rest rests on context. Attribution basis:
 following:
 
 | Speaker      | Role                            | Basis                                                                                                             |
 | ------------ | ------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | **Siva**     | Mentor (organiser side)         | Thanked by name at 18:47 ("Thanks, Mr. Siva"); the same mentor voice and role as mentor meeting 1                  |
-| **Anderson** | Presenter                       | Volunteers at 04:42 ("No one's presenting? Okay, I will present") and delivers every slide                        |
+| **Anderson** | Presenter                       | Named at 04:16 ("I think Anderson is sharing"); volunteers at 04:37 and delivers every slide                        |
 | **Dawg**     | Second team member              | Speaks only at 16:07 (submission format, laptops) and 18:57 ("Nice, bro. Good job")                               |
+| _Zi Jie_     | Expected, did not attend        | Named at 03:44 — "Zi Jie is stuck in a traffic jam, so I think we can start first". No speaking turns             |
 
-Anderson holds roughly nine unbroken minutes of the recording. Dawg's contribution is small but substantive — the
+Anderson is **named aloud at 04:16** — "I think Anderson is sharing" — which confirms the presenter independently of
+the surrounding context. Anderson holds roughly nine unbroken minutes of the recording. Dawg's contribution is small but substantive — the
 submission-format exchange is his. Where a one-word acknowledgement could belong to either team member it has been
 trimmed rather than attributed.
 
@@ -63,22 +69,55 @@ Whisper mangled the project name in a different way almost every time it appeare
 | "Masjid, and Kairat Partners"                                        | **masjid and khairat partners** (khairat kematian committees)   |
 | "takafu of life insurers"                                            | **takaful or life insurers**                                    |
 | "Chek Saiful"                                                        | **Encik Saiful** (Saiful Nizam)                                 |
+| "Siam Dabi" / "signed rb"                                            | **Sime Darby** (the challenge Siva plugs at 02:52 and 03:59)   |
+| "summit"                                                             | **submit**                                                      |
 | "Mr. Siew"                                                           | **Mr. Siva**                                                    |
 | "a live event journey"                                               | **a life-event journey**                                        |
 | "Team Survive"                                                       | (unresolved — the team name, garbled at 04:54)                  |
 | "Ann Khoo"                                                           | (a judge — spelling unverified)                                 |
-| "Solar Lee"                                                          | (organiser handling the slide deck — spelling unverified)       |
+| "Sola Lee" / "Solar Lee"                                             | (organiser handling the slide deck — spelling unverified)       |
 | "I see you all on that day, 2030"                                    | (unresolved — a date or time; see [Transcription notes](#transcription-notes)) |
 
 **Correct as transcribed:** **JPN** (Jabatan Pendaftaran Negara), **DOSM** (Department of Statistics Malaysia),
 **Nirvana** (Nirvana Asia), **Tabung Haji**, **ASNB**, **Hilti**, **Petaling Jaya**.
 
-## 04:20 Setup
+## 02:50 Before the pitch
 
-The recording opens with **4 minutes 20 seconds of silence** while the call assembles — Whisper renders this as repeated
-"Thank you", which is a known artefact on near-silent audio and carries no content.
+The recording opens with **2 minutes 50 seconds of true silence** while the call assembles — the audio sits at the
+digital floor, with no signal at all. Speech begins at 2:50.
 
-**[00:04:42] Anderson:** No one's presenting? Okay, I will present.
+**[00:02:52] Siva:** _[on Sime Darby]_ ...it's a very big company. It's a real problem.
+
+**[00:03:12] Siva:** Are we ready to start, or are you waiting for some more people?
+
+**[00:03:18] Siva:** So yeah — **you have until Sunday to submit.**
+
+**[00:03:27] Siva:** My team haven't given you all a WhatsApp link, right? We are trying to get all the students into
+WhatsApp so that it's easier for us to coordinate on that day.
+
+**[00:03:41] Siva:** So are we waiting for more people, or that's it?
+
+**[00:03:44] Anderson:** I think **Zi Jie is stuck in a traffic jam**, so I think we can start first.
+
+**[00:03:47] Siva:** Yeah, we start first. All of you are from **UM**, right?
+
+**[00:03:54] Anderson:** Me and Zi Jie are from **APU**, actually.
+
+**[00:03:59] Siva:** I was just sharing about the **Sime Darby** challenge. I hope you all participate there too.
+
+**[00:04:03] Anderson:** Oh yeah, thanks for the info — I received it.
+
+## 04:20 Handover to the deck
+
+**[00:04:07] Siva:** So you're sharing a deck?
+
+**[00:04:16] Dawg:** Yeah, I think **Anderson** is sharing.
+
+**[00:04:18] Anderson:** Can you see my screen?
+
+**[00:04:28] Siva:** Yes, I can. Maybe you can start presenting.
+
+**[00:04:37] Anderson:** Who wants to present? Okay, I will present, yeah.
 
 **[00:04:48] Siva:** Okay, wonderful.
 
@@ -236,8 +275,11 @@ Thank you.
 **[00:14:49] Siva:** Number two is **create some excitement**. And you all are going to give that **QR code** to the
 judges. I think it's exciting. It's interesting, very interesting. So I wish you all the best.
 
-**[00:15:10] Siva:** What you all do is — you still have time to submit this. **Submit before the 28th.** And then just
+**[00:15:10] Siva:** What you all do is — you still have time to submit this. **Submit before the 20th.** And then just
 practise on the time.
+
+> Siva gives the deadline three times in this recording and all three agree: _"you have until Sunday to submit"_ (03:18),
+> _"submit before the 20th"_ (15:14), and _"end of this Sunday"_ (16:22). **Sunday 20 September.**
 
 ## 15:14 QR codes and knowing your judges
 
@@ -324,7 +366,7 @@ Things that have changed or been newly specified since 11 September:
 
 | Item                    | Meeting 1 (11 Sep)                                        | Meeting 2 (15 Sep)                                                     |
 | ----------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------ |
-| Submission deadline     | End of Sunday (14 Sep)                                     | **Before the 28th**                                                     |
+| Submission deadline     | End of Sunday (13 Sep)                                     | **End of Sunday 20 September** — stated three times, consistently        |
 | Submission format       | not stated                                                 | **PDF or PowerPoint** — organiser to confirm which                      |
 | Slide delivery          | not stated                                                 | **Organiser consolidates all decks**; teams cannot connect laptops      |
 | Presentation order      | Top 10, back to back                                       | **Assigned slot**, teams told in advance                                |
@@ -346,7 +388,7 @@ bells at 4/5/6 minutes, arrival by 1:00 pm, and roughly **RM10,000** for a stron
 | **Team** | Rehearse to fit inside 6 minutes — raised twice, the main outstanding gap  | Before submission       |
 | **Team** | Move the human story to the opening, addressed to the judges               | Next revision           |
 | **Team** | Print **six** copies of the QR sheet, one per judge                        | Before pitch day        |
-| **Team** | Submit the deck                                                            | **Before the 28th**     |
+| **Team** | Submit the deck                                                            | **End of Sunday 20 Sep** |
 | **Team** | Confirm whether PDF or PowerPoint is wanted                                | When organisers confirm |
 | **Team** | Ask in the WhatsApp group who the judges are, and research them            | Once the group is formed |
 | **Siva** | Form the WhatsApp group and join it                                        | "Soon"                  |
@@ -370,12 +412,18 @@ consistent** — 548 deaths per day is ~200,000 per year, and ~50,000 per quarte
 
 ## Transcription notes
 
-- **The first 4 minutes 20 seconds are silence** while the call assembles. Whisper renders near-silent audio as repeated
-  "Thank you"; this is an artefact, not speech, and has been removed.
-- **Three repetition loops** occur where the presenter's audio briefly drops: "Malaysia sees roughly close to 200,000
-  deaths each year" repeats four times at 13:05, "our team combines two IT students and two statistics students" three
-  times at 13:44, and a shorter stutter at 09:03. Each has been collapsed to a single instance; no content is lost.
-- **"I see you all on that day, 2030"** at 18:36 is unresolved — plausibly a date or a time, but the audio does not
-  support a confident reading. Worth confirming directly with Siva rather than assuming.
-- **The team name at 04:54** ("Team Survive") is garbled and almost certainly wrong.
-- Two names, **Ann Khoo** and **Solar Lee**, are spelled as heard and have not been verified.
+- **Only the first 2 minutes 50 seconds are silent**, not 4:20. Measured levels: the audio sits at **-91 dB** — the
+  digital floor, no signal whatsoever — until 2:50, then jumps to **-25 to -19 dB**, the same level as the rest of the
+  call. A first transcription pass rendered everything before 4:30 as repeated "Thank you"; that was wrong. With
+  `condition_on_previous_text` at its default, the decoder locked into a loop during the long silence and could not
+  break out when real speech arrived at 2:50, discarding roughly **100 seconds of genuine conversation** — including
+  the submission deadline, Zi Jie's absence, and the Sime Darby mention.
+- **The fix** is a second full pass with `condition_on_previous_text=False`, which is the transcript this document is
+  built on. Any recording with a long silent opening needs the same treatment.
+- **Three repetition loops** in the first pass — "Malaysia sees roughly close to 200,000 deaths each year" four times at
+  13:05, "our team combines two IT students and two statistics students" three times at 13:44, and a stutter at
+  09:03 — **do not occur in the second pass**. Same cause, same fix.
+- **"I see you all on that day, 2030"** at 18:38 is unresolved. **Both passes produce it identically**, so it is not a
+  decoding artefact, but neither reading is confident. Worth confirming directly with Siva.
+- **The team name at 04:50** renders as "Team Survive" in both passes. Consistent, but still worth confirming.
+- Two names, **Ann Khoo** and **Sola Lee**, are spelled as heard and have not been verified.
