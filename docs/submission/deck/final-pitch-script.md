@@ -4,33 +4,32 @@
 **Venue:** PWTC, Kuala Lumpur  
 **Deck:** `mytakziah-finals-pitch-deck.pdf`  
 **Format:** Six-minute pitch, four-minute Q&A, seven slides  
-**Status:** Rehearsal Draft Based on the Team-Finalized 19 September PDF
+**Status:** Timing-Refined Rehearsal Script Based on the Team-Finalized 19 September PDF
 
-**Default Speaker Plan:** Presenter A (you) covers Slides 1 to 3. Presenter B (chaosiris)
-covers Slides 4 to 7. This is an `[ASSUMPTION]` until the team confirms the final stage lineup.
-Replace the role labels with names after that decision.
+**Speaker Plan:** Presenter A (you) covers Slides 1 to 3. Presenter B (chaosiris) covers Slides 4 to 7. Anderson and xrwong support the brochure handout and join the Q&A.
 
 Use one speaker handoff only. It gives the story a clean first half and lets the second speaker carry
 innovation, feasibility, impact, and the close without turning the pitch into a relay.
 
 ## Timing
 
-| Slide | Purpose                        | Speaker     | Target | Running Time |
-| ----: | ------------------------------ | ----------- | -----: | -----------: |
-|     1 | Human Hook and Idea            | Presenter A |   0:30 |         0:30 |
-|     2 | Problem and Stakes             | Presenter A |   0:50 |         1:20 |
-|     3 | Solution Journey               | Presenter A |   0:55 |         2:15 |
-|     4 | Innovation                     | Presenter B |   0:45 |         3:00 |
-|     5 | Feasibility and Business Model | Presenter B |   1:00 |         4:00 |
-|     6 | Impact and Potential           | Presenter B |   0:45 |         4:45 |
-|     7 | Team, Ask, and Close           | Presenter B |   0:50 |         5:35 |
+| Slide | Purpose                        | Speaker     | Spoken Target | Stage End at a 6-Second Change |
+| ----: | ------------------------------ | ----------- | ------------: | -----------------------------: |
+|     1 | Human Hook and Idea            | Presenter A |          0:22 |                           0:22 |
+|     2 | Problem and Stakes             | Presenter A |          0:45 |                           1:13 |
+|     3 | Solution Journey               | Presenter A |          0:55 |                           2:14 |
+|     4 | Innovation                     | Presenter B |          0:37 |                           2:57 |
+|     5 | Feasibility and Business Model | Presenter B |          0:52 |                           3:55 |
+|     6 | Impact and Potential           | Presenter B |          0:40 |                           4:41 |
+|     7 | Team, Ask, and Close           | Presenter B |          0:45 |                           5:32 |
 
-The 5:35 target leaves 25 seconds for applause, slide lag, and natural pauses. Do not fill that
-buffer with extra facts.
+The spoken target is 4:56. Six production-controlled slide changes at five to seven seconds each
+produce an expected stage time of 5:26 to 5:38. A five to ten-second recovery still finishes before
+six minutes. Do not fill that safety margin with extra facts.
 
 ## Full Rehearsal Script
 
-### Slide 1: Human Hook and Idea, 0:00 to 0:30
+### Slide 1: Human Hook and Idea, 0:00 to 0:22
 
 **Speaker:** Presenter A  
 **Delivery:** Begin still and unhurried. Address the judges before looking at the screen. Pause after
@@ -41,13 +40,12 @@ buffer with extra facts.
 > On 14 August, Encik Saifulnizam Sulaiman lost his wife and his 12-year-old son in a road accident in
 > Pahang.
 >
-> For a family in his position, grief may be followed by forms, documents, deadlines, and three
-> separate government journeys.
+> For his family, one loss may now become three separate government journeys.
 >
-> We are Team Survive. We built MyTakziah so a family does not have to become the integration layer
-> between agencies.
+> We are Team Survive. We built the first MyTakziah prototype so a grieving family does not have to
+> become the integration layer between agencies.
 
-### Slide 2: Problem and Stakes, 0:30 to 1:20
+### Slide 2: Problem and Stakes, 0:28 to 1:13
 
 **Speaker:** Presenter A  
 **Delivery:** Point once to the repeated-information table. Do not narrate every cell.
@@ -57,7 +55,7 @@ buffer with extra facts.
 > Look at how the same facts return. His identity appears in all three. Death evidence appears in
 > three processes. Relationship and bank details return for the relevant benefits.
 >
-> Different forms, same family story.
+> Different forms. Same family story.
 >
 > This is not rare. Malaysia recorded 49,827 deaths in the second quarter of 2026, about 548 every
 > day.
@@ -68,70 +66,69 @@ buffer with extra facts.
 > At the worst moment of their lives, families are expected to know where to go, what to bring, and
 > what comes next.
 
-### Slide 3: Solution Journey, 1:20 to 2:15
+### Slide 3: Solution Journey, 1:19 to 2:14
 
 **Speaker:** Presenter A  
-**Delivery:** Sweep from left to right across the five steps. Slow down for the consent boundary.
+**Delivery:** Anderson and xrwong begin moving as Slide 2 ends and each covers half the judges.
+Sweep from left to right across the five steps. Slow down for the consent boundary. Do not ask the
+judges to scan during the pitch.
 
-> MyTakziah turns those tasks into one guided journey.
+> The brochure reaching you includes our prototype QR. MyTakziah turns those tasks into one guided
+> journey.
 >
-> We start from a verified death record. The family provides shared details once. AI structures
-> the evidence, maps potentially relevant routes, documents, and deadlines, then prepares forms for
-> review.
+> Starting from a verified death record, the family provides shared details once. AI structures the
+> evidence, maps relevant routes and deadlines, and prepares forms for review.
 >
-> The family reviews and consents. Agencies still decide eligibility. One timeline shows what is
-> complete, what is pending, and what comes next.
+> AI prepares. The family reviews and consents. Agencies still decide. One timeline shows what is
+> done, what is pending, and what comes next.
 >
-> Our interactive prototype demonstrates the guided experience today, using simulated agency
-> responses. Version one needs no government API. It prepares the package for official channels.
-> With authorisation later, the same workflow can support direct submission and live status.
+> Our prototype demonstrates that journey with simulated agency responses. Version one needs no
+> government API; it prepares packages for official channels. With authorisation, the same workflow
+> can later support direct submission and live status.
 >
 > One evidence set. Three agencies coordinated. One clear next step at a time.
 >
-> That is the experience. The bigger innovation is how we redesign the service.
+> That is the family experience. Now, here is the innovation behind it.
 
-### Slide 4: Innovation, 2:15 to 3:00
+### Slide 4: Innovation, 2:20 to 2:57
 
 **Speaker:** Presenter B  
 **Delivery:** Begin immediately after the handoff. Contrast the crowded top half with the simple
 bottom half.
 
-> Today, the process is agency-centric. A family separately gathers evidence for JPN, KWSP, and
-> PERKESO, then waits through separate processes and separate statuses.
+> Today, a family gives evidence to JPN, KWSP, and PERKESO separately, then waits through three
+> processes and statuses.
 >
 > MyTakziah redesigns that around one life event.
 >
-> Behind the scenes, shared evidence is mapped to each agency's own requirements. AI assists with
-> extraction and orchestration. The family reviews and consents. Each agency keeps its rules and
-> its decision. One timeline coordinates the whole journey.
+> AI alone is not the innovation. We organise the service around the life event, not the agency.
 >
-> We are not replacing JPN, KWSP, or PERKESO. We are building the orchestration layer between a
-> family and the next correct step.
+> Shared evidence is mapped to each agency's requirements. The family reviews and consents. Each
+> agency keeps its rules and makes its decision. One timeline coordinates the journey.
+>
+> We do not replace agencies. We connect the family to the next correct step.
 
-### Slide 5: Feasibility and Business Model, 3:00 to 4:00
+### Slide 5: Feasibility and Business Model, 3:03 to 3:55
 
 **Speaker:** Presenter B  
 **Delivery:** Keep this practical. The judges should hear a staged plan, not a list of logos.
 
-> Feasibility starts with one deliberate choice: prove value before integration.
+> We did not start with AI. We started with the forms.
 >
-> Today, we have a working interactive prototype and documented mappings of forms and deadlines
-> across three agencies. It shows how documents would be structured and drafts prepared. Version
-> one works without a government API.
+> We mapped repeated fields, documents, and deadlines across three agencies, then built our
+> interactive prototype around that evidence. Version one prepares drafts without a government API.
+> That lets us prove value before integration.
 >
-> Families use MyTakziah free. Our B2B2C model asks organisations already serving bereaved families
-> to fund it. Insurers benefit from more complete claims. Funeral providers can offer better
-> aftercare.
+> MyTakziah is free for families and funded by partners. Insurers can receive more complete claims;
+> funeral providers can offer better aftercare.
 >
-> The RM100 and RM200 figures on this slide are starting price hypotheses to test, not signed
-> contracts.
+> The RM100 and RM200 figures are price hypotheses to test, not signed contracts.
 >
-> We plan to recruit a 100-family pilot in Petaling Jaya through funeral and khairat partners. We
-> will measure completion, time saved, missing documents, and satisfaction. Those results become the
-> case for two to three paying partners, then authorised identity, data-sharing, and agency
-> integration.
+> Our next step is a 100-family pilot in Petaling Jaya through funeral and khairat partners. We will
+> measure completion, time saved, missing documents, and satisfaction. That evidence supports our
+> first paying partners, then authorised integration.
 
-### Slide 6: Impact and Potential, 4:00 to 4:45
+### Slide 6: Impact and Potential, 4:01 to 4:41
 
 **Speaker:** Presenter B  
 **Delivery:** The four-minute bell should happen near the start of this slide. Stay calm and keep
@@ -140,35 +137,34 @@ the close intact.
 > Families face less stress. Agencies receive more complete submissions. Partners provide better
 > bereavement support.
 >
-> We will judge success by outcomes, not downloads: completion rate, time saved, fewer missing
-> documents, and family satisfaction.
->
-> Malaysia recorded 198,992 deaths in 2024. EPF processed RM3.24 billion in death withdrawals that
-> year. That is not our revenue, but it shows the journey's financial weight.
+> We will not call downloads impact. We will call it impact when families complete the right claims
+> faster, with fewer missing documents and less uncertainty.
 >
 > Once the core journey works, it can extend to Tabung Haji and ASNB, then connect to national
-> digital rails with the right authorisation. Singapore's MyLegacy shows the model can work.
-> Malaysia can build it around our own institutions.
+> digital rails with the right authorisation.
+>
+> Singapore's MyLegacy shows strong uptake for a coordinated digital death-certificate service.
+> Malaysia can build a broader journey around our own institutions.
 
-### Slide 7: Team, Ask, and Close, 4:45 to 5:35
+### Slide 7: Team, Ask, and Close, 4:47 to 5:32
 
 **Speaker:** Presenter B  
-**Delivery:** Make eye contact for the ask. Take one full beat before the final two sentences.
+**Delivery:** Anderson and xrwong take half a step forward on "We are four students." Make eye
+contact for the ask. Take one full beat before the final two sentences.
 
 > We are four students, two from IT and two from statistics, covering product, software, design,
-> and go-to-market. We have already shipped a production web application used by close to 1,000
-> people.
+> and go-to-market. This is not our first time shipping: one member has already built a production
+> web application used by close to 1,000 people.
 >
-> Over the next six months, we will pilot with 100 families, measure the outcomes, and turn that
-> evidence into our first paid B2B partner.
+> Over the next six months, our goal is simple: prove MyTakziah with 100 families in Petaling Jaya.
 >
-> What we need from this room is access: pilot partners, industry connections, PDPA and legal
-> guidance, and funding to run the pilot responsibly.
+> We are asking this room for the pilot partners, PDPA and legal guidance, and funding to run that
+> test responsibly.
 >
 > When someone dies, the family should be allowed to grieve, not become the integration layer
 > between government agencies.
 >
-> We are Team Survive, and this is MyTakziah: one verified death, one guided bereavement journey.
+> We are Team Survive. MyTakziah: one loss, one guided journey.
 >
 > Thank you.
 
@@ -177,98 +173,278 @@ QR code.
 
 ## Cue Card Version
 
-| Slide | Memory Anchor                                                                                                 |
-| ----: | ------------------------------------------------------------------------------------------------------------- |
-|     1 | Saifulnizam lost two people. Grief plus three government journeys. Family should not be the integration layer |
-|     2 | Same facts repeat. 548 deaths daily. Time-sensitive EPF and PERKESO support                                   |
-|     3 | Verified record, provide once, know next, review and consent, one timeline                                    |
-|     4 | Agency-centric today. Life-event journey with MyTakziah. Agencies still decide                                |
-|     5 | Built now, no API needed for V1, free for families, partner-funded hypothesis, 100-family PJ pilot            |
-|     6 | Less stress, less admin, better service. Measure outcomes. RM3.24 billion is context, not revenue             |
-|     7 | Team can ship. Six-month goal. Ask for access. One verified death, one guided journey                         |
+| Slide | Memory Anchor                                                                                 |
+| ----: | --------------------------------------------------------------------------------------------- |
+|     1 | One loss may become three government journeys. The family should not be the integration layer |
+|     2 | Different forms. Same family story. 548 deaths daily. Time-sensitive support                  |
+|     3 | AI prepares. Family consents. Agencies decide. One evidence set and one timeline              |
+|     4 | Organise the service around the life event, not the agency                                    |
+|     5 | Start with the forms, not the AI. Family-free, partner-funded. Prove it with 100 families     |
+|     6 | Outcomes, not downloads. Less stress, less admin, better service                              |
+|     7 | This team can ship. Ask for a responsible pilot. One loss, one guided journey                 |
 
 Do not memorise punctuation. Memorise the seven anchors and the first and last two sentences
 word-for-word.
 
 ## Strong Q&A Answers
 
-### Are You Actually Connected to Government Agencies?
+The balance below is 12 business and government questions to three technical and safeguard
+questions. Lead with the answer, give one reason, then stop. Aim for 20 to 30 seconds. The collapsed
+Reasoning sections are study notes for the team, not part of the spoken answer.
 
-> Not yet. The prototype demonstrates the guided journey, with simulated document-preparation and
-> tracking states. Version one is designed to work before integration by preparing the package for
-> official channels. Direct submission and real-time status require agency agreements and
-> authorised access. We have separated those phases deliberately.
+### Business and Government Questions
 
-### Is This Just Another Chatbot?
+#### Who Pays, and Why Would They Pay?
 
-> No. A chatbot can answer a question. MyTakziah is designed to carry one verified family record
-> through a maintained cross-agency workflow: identify potentially relevant routes, prepare
-> agency-specific documents, collect consent, and track next actions. The value is the workflow and
-> rule maintenance, not a chat box.
+> Families use the core journey free. In our B2B2C model, insurers, takaful operators, and funeral or
+> memorial providers pay per supported case. Their value is operational: more complete claims, less
+> back-and-forth, and stronger bereavement aftercare. We have not proven willingness to pay, so the
+> pilot must test that value against our price hypotheses.
 
-### What Happens When the AI Is Wrong?
+<details>
+<summary>Reasoning</summary>
 
-> AI assists with extraction and plain-language explanation. It does not decide eligibility.
-> Published requirements and maintained rules control the workflow, uncertain information is
-> flagged for review, the family confirms every submission, and the agency makes the final
-> decision. Before real-document use, we also need an independent rule and privacy review.
+B2B2C means one business funds a service delivered to another party, the consumer. Here, the family
+is the consumer but is not charged. The partner needs a business reason to pay, such as fewer
+incomplete submissions or a better aftercare service. Do not claim savings, demand, or revenue until
+the pilot measures them.
 
-### How Will You Protect Sensitive Family Data?
+</details>
 
-> The current prototype does not use real family documents or connect to agency systems. A real
-> pilot must minimise the data collected, encrypt it, restrict access, record consent, and define
-> retention and deletion. We are asking for PDPA and legal guidance because that review is a gate,
-> not a claim we have already completed.
+#### Is It Ethical to Earn Revenue Around Bereavement?
 
-### Do You Already Have Pilot or Paying Partners?
+> Only with strict boundaries. Core guidance stays free, partner payment never changes eligibility
+> guidance, and family documents or contact details are never sold. Partners pay for service
+> delivery, not access to grieving families. If the model cannot work within those boundaries, we
+> change the model rather than weaken the boundary.
 
-> No signed partner is recorded yet. Petaling Jaya, 100 families, and the funeral, khairat, takaful,
-> and insurer routes are our pilot plan. The first purpose of the pilot is to prove value and give a
-> potential partner evidence instead of promises.
+<details>
+<summary>Reasoning</summary>
 
-### Are RM100 and RM200 Validated Prices?
+A government or business judge may worry that a provider could exploit a vulnerable family or steer
+it toward a paid service. The answer separates the public-interest guidance from the commercial
+relationship. It also shows that trust is a non-negotiable design requirement, not a marketing
+claim.
 
-> No. They are testable starting hypotheses. The pilot must establish the partner's operational
-> value, our support cost, willingness to pay, and the right charging unit. What is fixed is the
-> principle that core guidance remains free for families and family data is never sold.
+</details>
 
-### Is 198,992 Your Market Size?
+#### Do You Have Partners, and How Will You Reach the First 100 Families?
 
-> No. It is national context: deaths recorded in Malaysia in 2024. Not every family needs every
-> agency or becomes a MyTakziah user. We will size the reachable segment only after the pilot shows
-> which cases the workflow helps and which partners can reach them.
+> We do not have a signed pilot or paying partner yet. Our proposed route is consenting referrals
+> through funeral, khairat, and community partners in Petaling Jaya, beginning with a small supervised
+> cohort and expanding only after privacy and workflow checks. Securing one credible host is the
+> first milestone, not something we claim has already happened.
 
-### Why Not Use MyGOV, MyDigital ID, or MyGDX?
+<details>
+<summary>Reasoning</summary>
 
-> They are complementary. MyGOV brings services together, MyDigital ID supports identity, and
-> MyGDX supports authorised data exchange. MyTakziah is the life-event workflow that can sit across
-> those rails. We do not claim access or endorsement today.
+Families are unlikely to discover a new bereavement tool through ordinary advertising at the right
+moment. Trusted organisations already supporting them are a more credible route. Referral must be
+voluntary. MyTakziah should never buy or receive a marketing list of recently bereaved families.
 
-### Why Would Government Not Build This Itself?
+</details>
 
-> Government may eventually build or adopt parts of it, and that would be a good outcome. Our role
-> now is to test the family journey quickly, prove which preparation steps reduce friction, and
-> bring agencies a working, evidence-based model rather than only an idea.
+#### Are RM100 and RM200 Validated, and Can This Be Profitable?
 
-### Is This Just Singapore's MyLegacy?
+> No. They are starting hypotheses, not validated prices or revenue. The pilot must measure
+> willingness to pay, support time, and cost per case before we can discuss margin. A viable price
+> must cover delivery while remaining below the operational value created for the partner.
 
-> MyLegacy is useful prior art because it proves that people will use a coordinated death service.
-> MyTakziah is designed for Malaysia's own JPN, KWSP, and PERKESO requirements, with benefit
-> preparation, consent, and a shared timeline. We are not claiming that the life-event idea is new.
-> Our innovation is applying and testing that model against this Malaysian workflow.
+<details>
+<summary>Reasoning</summary>
 
-### What Is Defensible if Any Team Can Add AI?
+Price is what a customer pays. Cost per case is what MyTakziah spends to serve that case. The
+difference becomes gross margin. None of those figures is known yet, so the honest business answer
+is to name the measurements required rather than inventing profitability.
 
-> The AI model is not the moat. The defensible part would be a maintained library of agency rules,
-> a workflow tested with families, trusted distribution partners, and outcome data showing that the
-> process works. We are early, so the pilot is how we start building that evidence.
+</details>
 
-### Why Is This Team Able to Execute?
+#### Is 198,992 the Market Size?
 
-> We combine IT and statistics, have built the current prototype, mapped the three agency journeys,
-> and have prior experience shipping a production application to close to 1,000 users. We also know
-> what we do not have yet: agency access, legal review, and a validated pilot. Our six-month plan is
-> designed to close those gaps in the right order.
+> No. It is national context, not a customer count. Not every family needs every agency or would use
+> MyTakziah. Our initial reachable market is the subset of Peninsular Malaysian families for whom
+> JPN, KWSP, or PERKESO preparation is relevant and whom trusted partners can reach. The pilot must
+> establish that conversion before we publish a market size.
+
+<details>
+<summary>Reasoning</summary>
+
+The annual death figure shows that bereavement is a national-scale journey. It does not equal total
+addressable market because eligibility, geography, channel access, and willingness to use the
+service all reduce the reachable number. A bottom-up estimate after the pilot will be more credible
+than multiplying all deaths by a speculative price.
+
+</details>
+
+#### How Much Value Can You Claim Today, and What Must the Pilot Prove?
+
+> We cannot yet claim measured time or money saved. The pilot must test completion, preparation
+> time, missing-document corrections, and family satisfaction. Commercially, it must also test
+> partner referrals and willingness to pay. We would set baselines and success thresholds before
+> starting, then use the results to decide whether to improve, stop, or seek integration.
+
+<details>
+<summary>Reasoning</summary>
+
+A pilot is a decision tool, not a small launch dressed up as traction. Baselines show what happens
+without MyTakziah, and thresholds define what improvement would justify continuing. Agreeing on
+those measures first prevents the team from selecting only favourable results afterward.
+
+</details>
+
+#### What Is Actually Built, and Are You Connected to Government Agencies?
+
+> Today we have a working interactive prototype and documented mappings for three agency journeys.
+> It uses simulated agency responses; it does not process live family documents, submit claims, or
+> connect to agency systems. Version one can still prepare a package for official channels. Direct
+> submission and live status come only after authorised agreements and access.
+
+<details>
+<summary>Reasoning</summary>
+
+The deck presents the complete vision, while the prototype proves the guided experience. This
+answer prevents a judge from mistaking a working interface for a live government service. It also
+shows a feasible first phase that creates value without waiting for an API or implying government
+endorsement.
+
+</details>
+
+#### Is This Just Another Chatbot or Something MyGOV Already Does?
+
+> No. MyGOV brings services together, and a chatbot can answer questions. MyTakziah focuses on one
+> life event: reuse shared information, map it to agency-specific requirements, prepare drafts for
+> review, and coordinate next actions. It is designed to complement MyGOV, not compete with or
+> duplicate it.
+
+<details>
+<summary>Reasoning</summary>
+
+The difference is depth rather than ownership of a new government portal. A general assistant may
+explain a service. MyTakziah proposes a maintained preparation workflow across several services.
+Calling it complementary is important because the team has no mandate to replace MyGOV and should
+not sound adversarial toward existing public investment.
+
+</details>
+
+#### Why Not Use MyDigital ID or MyGDX?
+
+> We should use them if authorised. MyDigital ID verifies identity. MyGDX enables authorised data
+> exchange between systems. Neither automatically gives our team permission or creates the
+> family-facing bereavement workflow. Version one avoids that dependency; later phases can build on
+> those national rails through formal agreements.
+
+<details>
+<summary>Reasoning</summary>
+
+Think of MyDigital ID as the key, MyGDX as the secure pipe, and MyTakziah as the guided journey. A
+key and a pipe are enabling infrastructure, but they are not permission to access data and they do
+not decide what the citizen experiences. Government authorisation is still required.
+
+</details>
+
+#### Why Would Government Not Build This Itself?
+
+> It may, or it may adopt parts through existing platforms. That would validate the mission. Our
+> near-term role is to test the narrow family journey cheaply and responsibly, learn which steps
+> reduce friction, and bring agencies evidence from a working pilot. We are not asking government to
+> commit to integration before value is proven.
+
+<details>
+<summary>Reasoning</summary>
+
+The safest position is not to claim that students can outbuild government. A small team can test a
+narrow workflow quickly, while agencies retain authority, infrastructure, and scale. If the pilot
+works, the future could be partnership, procurement, adoption, or lessons transferred into MyGOV.
+
+</details>
+
+#### Is This Just Singapore's MyLegacy, and What Is Defensible?
+
+> MyLegacy is useful prior art, not something we claim to have invented. MyTakziah applies the
+> life-event model to Malaysian JPN, KWSP, and PERKESO preparation. The AI model is not the moat.
+> Defensibility would come from maintained Malaysian rule mappings, trusted distribution, tested
+> workflows, and outcome data. We are early, and the pilot begins building those assets.
+
+<details>
+<summary>Reasoning</summary>
+
+Prior art can reduce execution risk because it shows that coordinated bereavement services are
+possible. The Malaysian work is still different because the agencies, forms, eligibility rules,
+and delivery channels differ. A replaceable AI model is easy to copy. Reliable local operations,
+relationships, and evidence become harder to copy over time.
+
+</details>
+
+#### Why Is This Team Able to Execute?
+
+> We combine IT and statistics, built the current prototype, mapped three agency journeys, and
+> include experience shipping a production application used by close to 1,000 people. We are not
+> claiming agency, legal, or bereavement expertise. Our strength is that we know the next gaps and
+> have a six-month plan to bring in the right reviewers and partners.
+
+<details>
+<summary>Reasoning</summary>
+
+Business judges look for evidence of execution, complementary skills, and self-awareness. The
+prototype, rule research, and prior product demonstrate a starting capability. Naming the missing
+expertise makes the answer more credible, provided the team can explain exactly how it will recruit
+those reviewers.
+
+</details>
+
+### Technical and Safeguard Questions
+
+#### What Happens When the AI Is Wrong?
+
+> AI assists with extraction and plain-language explanation; it does not decide eligibility.
+> Maintained rules control known requirements, uncertain information is flagged, the family reviews
+> every draft, and the agency makes the final decision. If a field or rule cannot be verified, that
+> task stops for human review rather than guessing.
+
+<details>
+<summary>Reasoning</summary>
+
+AI models are probabilistic, which means they can produce a plausible but incorrect result. Fixed
+requirements and deadlines should therefore come from maintained rules, not model memory. The
+family review and agency decision are separate safeguards. A safe system must be able to say that
+it is uncertain and stop.
+
+</details>
+
+#### What AI Model Will You Use, and Why Use AI at All?
+
+> We have not locked the service to one model. AI is useful for reading varied documents and
+> explaining requirements in plain language. Fixed deadlines, field mappings, and known rules
+> should use deterministic logic. We will choose or remove AI task by task based on accuracy,
+> privacy, cost, and Malaysian-language performance.
+
+<details>
+<summary>Reasoning</summary>
+
+Deterministic logic produces the same result from the same known rule, which is appropriate for a
+published deadline or form field. AI is better suited to variable inputs such as document layouts
+and natural-language explanations. Keeping the model replaceable reduces vendor dependence and
+makes AI a tool inside the service rather than the product itself.
+
+</details>
+
+#### How Will You Protect Sensitive Family Data?
+
+> The current prototype uses no real family documents. Before a live pilot, we need data
+> minimisation, encryption, role-based access, explicit authority and consent, retention and
+> deletion rules, incident response, and independent legal and privacy review. Paid partners must
+> never receive family documents. Privacy readiness is a gate before real data, not a badge we
+> claim today.
+
+<details>
+<summary>Reasoning</summary>
+
+Death-related files also contain information about living relatives, including identity, contact,
+relationship, and bank details. Consent alone is not a complete privacy programme. The team must
+know why each field is needed, who can see it, how long it is kept, how it is deleted, and what
+happens after an incident. Government-system access would require additional formal authority.
+
+</details>
 
 ## Claim Guardrails
 
@@ -279,6 +455,7 @@ Use these phrases consistently:
 - "Where applicable," not "every family has three claims."
 - "Price hypothesis," not "our current price."
 - "Pilot plan" or "potential partner," not "our partner" until an agreement exists.
+- "Partners pay for service delivery," not "partners receive family data or preferential guidance."
 - "198,992 deaths recorded in Malaysia in 2024," not "198,992 customers" or "families."
 - "RM3.24 billion in existing EPF death withdrawals," not "our market" or "money MyTakziah
   recovers."
@@ -292,26 +469,40 @@ integration agreement.
 
 ## Stage and Rehearsal Plan
 
-1. Rehearse until the normal delivery is between 5:25 and 5:35. Treat 5:40 as the maximum, not the
+1. Rehearse until the spoken delivery is between 4:50 and 4:56. With six production-controlled
+   changes, the expected stage finish is 5:26 to 5:38. Treat 5:45 as the rehearsal maximum, not the
    target.
-2. Use one handoff after Slide 3. If Andersonnn7788 and xrwong join the stage, keep the two-speaker
-   narrative and bring them into Q&A instead of adding more handoffs.
-3. At the four-minute bell, Presenter B should be entering Slide 6. At the five-minute bell, move
-   into Slide 7 without speeding up the final line.
-4. Print six QR cards for the judges and two spares. Test every code from the exported PDF and the
-   printed card. Hand them out before the pitch or after Q&A, not during the six-minute script.
-5. Do not run a live demo or video. The organiser is using one shared screen, so submit and rehearse
-   from the exact PDF.
-6. Ask for the judge list in the organiser's WhatsApp group. Know each judge's role and choose one
+2. Use one speaking handoff after Slide 3. Anderson and xrwong support the stage action and Q&A
+   without adding two more narration handoffs.
+3. As Presenter A delivers the final sentence of Slide 2, Anderson and xrwong move toward opposite
+   ends of the judging table. During the transition into Slide 3, each hands out three brochures
+   face-up with the QR visible. They return to their marks before Slide 4. Confirm this route with
+   the stage manager so nobody crosses the projection or blocks a judge's view.
+4. At the four-minute bell, Presenter B should be entering Slide 6. At the five-minute bell,
+   Presenter B should already be on Slide 7 and should keep the final lines unhurried.
+5. Print six brochures for the judges and two spares. Test every QR code from the final printed
+   copies. Do not ask the judges to scan during the pitch.
+6. Do not run a live demo or video. The organiser is using one shared screen, so rehearse from the
+   exact submitted PDF.
+7. On Slide 7, Anderson and xrwong take half a step forward at "We are four students." All four hold
+   their positions after "Thank you." Do not deliver the tagline in chorus.
+8. Ask for the judge list in the organiser's WhatsApp group. Know each judge's role and choose one
    relevant connection request for the Q&A or networking period.
-7. Assign first responders before the event:
+9. Use the following first-responder plan. One person answers; one teammate may add only when the
+   judge requests it or a material correction is needed.
 
-| Topic                                              | First Responder |
-| -------------------------------------------------- | --------------- |
-| Story, User Journey, and Product Flow              | Presenter A     |
-| Innovation, Business Model, Pilot, and Impact      | Presenter B     |
-| Agency Rules and Evidence                          | TODO: Assign    |
-| Privacy, Technical Architecture, and AI Safeguards | TODO: Assign    |
+| Topic                                              | First Responder | Backup      |
+| -------------------------------------------------- | --------------- | ----------- |
+| Story, Product Flow, and Current Product Status    | Presenter A     | xrwong      |
+| Business Model, Pricing, Partners, and Pilot       | Anderson        | Presenter B |
+| User Journey, Design, and Accessibility            | xrwong          | Presenter A |
+| Impact, Roadmap, Team, and Ask                     | Presenter B     | Anderson    |
+| Government Fit, Agency Rules, and Evidence         | Presenter A     | Anderson    |
+| Privacy, Technical Architecture, and AI Safeguards | Presenter B     | Presenter A |
+
+For a four-minute Q&A, aim for answers of 20 to 30 seconds. Start with "yes," "no," or "not yet"
+when one applies. If the team does not know, state what remains unvalidated and how the pilot or an
+expert review would resolve it. Do not let all four members answer the same question.
 
 The whole team should know the product-status answer, the pricing-hypothesis answer, and the privacy
 answer. Those are the questions most likely to expose a gap between the slide language and what has
