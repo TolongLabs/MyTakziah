@@ -2,8 +2,8 @@
 
 **Owner:** TODO: assign
 **Status:** Substitute evidence for issue #5. **This is not user research.**
-**Last Updated:** 2026-08-19
-**Feeds:** PDF Section 2 Target User, canvas Target User pillar
+**Last Updated:** 2026-09-19
+**Feeds:** PDF Section 2 Target User, canvas Target User pillar, finals pitch opening
 
 > **What this file is.** Published, citable accounts of Malaysians dealing with death benefits,
 > gathered from news reporting and official sources. It exists because the team could not
@@ -106,6 +106,33 @@ Mohammad Ramli, Selangor SOCSO deputy director, quoted by Bernama:
 **The headline word is "unexpected".** A national news agency framing survivors' pension as an
 unexpected benefit, and an agency official hoping beneficiaries are aware of their rights, is a
 modest but real signal that the awareness gap is recognised inside the system.
+
+---
+
+## Account 4: Saifulnizam Sulaiman's Loss
+
+On 14 August 2026, **Saifulnizam Sulaiman** lost his wife, Nur Fatima Syuhada Abdullah, and their
+12-year-old son, Muhammad Fattah Aisy Naufal, in a road crash on Jalan Temerloh-Triang in Pahang.
+Published accounts report that he was waiting for them in Seremban, could not reach his wife, saw
+social-media footage of the tanker crash, and later learned they were the victims.
+
+| Field         | Entry                                                                                                                                                  |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Publisher     | Malay Mail                                                                                                                                             |
+| Title         | He saw the crash online and knew something was wrong: Father loses wife, son in Temerloh crash                                                         |
+| Published     | 15 August 2026                                                                                                                                         |
+| Location      | https://www.malaymail.com/news/malaysia/2026/08/15/he-saw-the-crash-online-and-knew-something-was-wrong-father-loses-wife-son-in-temerloh-crash/231466 |
+| Accessed      | 2026-09-19                                                                                                                                             |
+| Evidence Type | Secondary, published journalism                                                                                                                        |
+
+The deaths and date are independently corroborated by Bernama's 18 August 2026 court report and
+Astro Awani's 15 August 2026 report.
+
+**This account verifies the human loss only.** It does not establish that Saifulnizam personally
+handled JPN, KWSP, or PERKESO paperwork, missed a deadline, qualified for a benefit, or would use
+MyTakziah. The pitch may use his story as the human opening, then move to the documented form
+burden with wording such as "families in his position may also face". Do not attach an invented
+administrative experience to him.
 
 ---
 

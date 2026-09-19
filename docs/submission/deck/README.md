@@ -1,32 +1,51 @@
 # Deck
 
-The MyTakziah presentation deck, fourteen slides, built as one self-contained HTML file.
+The MyTakziah stage deck, presenter script, and earlier working decks.
 
 **Owner:** TODO: assign, per issue #19
-**Status:** First full build, awaiting team review
-**Feeds:** issue #9
-**Open it:** `mytakziah-deck.html` in any browser. No server, no network, no build step.
+**Status:** Team-finalized stage PDF received on 19 September 2026
+**Feeds:** URIIS Grand Final at PWTC, 23 September 2026
+**Present It:** Use `mytakziah-finals-pitch-deck.pdf`.
 
 ---
 
-## Two Decks Live Here. Do Not Confuse Them
+## Canonical Finals Deck
 
-`mytakziah-deck.html` and `.pdf` are the **fourteen-slide** deck, built for the written submission's
-eight sections. `mytakziah-final-pitch.*` is the **seven-slide** deck for the live final. The
-mentor's rules there are exactly seven slides, a white background, three pointers per slide, six
-minutes of pitch and four minutes of questions. The fourteen-slide deck breaks every one of those,
-by design. **Do not present it on the day.**
+`mytakziah-finals-pitch-deck.pdf` is the team-finalized Canva export and the only deck marked for
+the PWTC stage. It has seven 16:9 pages and follows the six-minute pitch format. The editable Canva
+source is not stored in this repository.
 
-### The Final Pitch Deck
+| File                                         | Use It When                                                  |
+| -------------------------------------------- | ------------------------------------------------------------ |
+| `mytakziah-finals-pitch-deck.pdf`            | **Presenting or submitting the team-finalized deck**         |
+| `final-pitch-script.md`                      | Rehearsing the two-presenter narration and preparing for Q&A |
+| `meeting-summary-2026-09-15-finals-pitch.md` | Checking Siva's feedback and pitch-day instructions          |
 
-Source of truth is `mytakziah-final-pitch.html`. Everything else is generated from it.
+The final PDF contains ambitious future-state language. The presenter script gives the stage
+phrasing for the current prototype, integration status, partner plan, and pricing hypotheses. Use
+the script's claim guardrails during Q&A.
 
-| File                                    | Use It When                                                                |
-| --------------------------------------- | -------------------------------------------------------------------------- |
-| `mytakziah-final-pitch.pdf`             | **Presenting directly.** No Canva needed. Safest option on the day         |
-| `assets/final-pitch-slides/slide-N.png` | **Putting it in Canva fast.** One image per page, 2880 by 1620, exact 16:9 |
-| `mytakziah-final-pitch.pptx`            | **Editing text inside Canva.** Native text boxes, set in Arial             |
-| `final-pitch-script.md`                 | The spoken script, timings and question prep                               |
+## Other Decks Live Here. Do Not Confuse Them
+
+`mytakziah-deck.html` and `.pdf` are the **fourteen-slide** deck built for the earlier written
+submission. `mytakziah-final-pitch.*` and `assets/final-pitch-slides/` are a separate generated
+seven-slide reference set. They are useful for editing history and claim review, but they are not
+the team-finalized Canva export. **Do not present either set on the day.**
+
+### Generated Seven-Slide Reference Deck
+
+`mytakziah-final-pitch.html` is the source for the reference PDF and PNG exports. The editable
+reference PPTX is built separately by `build-final-pitch.py`, using the seven core slides from the
+immutable official template at `../../source/final-pitch-deck-sample.pptx`. The official header,
+URIIS mark, footer and slide structure remain in the PPTX; the instructional middle content is
+replaced with native text, tables, shapes and two prototype screenshots.
+
+| File                                    | Use It When                                    |
+| --------------------------------------- | ---------------------------------------------- |
+| `mytakziah-final-pitch.pdf`             | Reviewing the generated claim-safe alternative |
+| `assets/final-pitch-slides/slide-N.png` | Reviewing its 2880 by 1620 slide exports       |
+| `mytakziah-final-pitch.pptx`            | Editing the generated alternative in Canva     |
+| `build-final-pitch.py`                  | Rebuilding the generated editable PPTX         |
 
 The `.pptx` is set in Arial rather than the brand's Outfit, because it has to survive whatever font
 stack opens it. The PDF and the PNGs carry the real brand type, Outfit and Work Sans, both embedded.
@@ -49,9 +68,10 @@ cp docs/submission/brand/mytakziah-qr-logo.png docs/submission/deck/assets/qr-lo
 
 ### Prototype Screenshots
 
-Slides 3, 4 and 5 carry real screens from the deployed prototype, captured straight from the live
-site rather than mocked. The walkthrough is a single page app with hash routes, so each step can be
-grabbed without clicking:
+Slide 3 carries the only two prototype screenshots in the finals deck. They are cropped from real
+walkthrough screens, then clearly labelled as an interactive prototype with simulated agency
+responses. No screenshot is evidence of an official transaction. The walkthrough is a single page
+app with hash routes, so each step can be captured without clicking:
 
 ```bash
 for n in 1 2 3 4 5; do
@@ -63,8 +83,8 @@ done
 ```
 
 The five steps are Verified, Provide Once, Entitlements, Consent and Timeline. Recapture them after
-any prototype change, because a stale screenshot is worse than none: a judge who scans the QR will
-be looking at the live version while your slide shows the old one.
+any prototype change, then recheck the two crops on Slide 3 against the claim boundaries in
+`final-pitch-script.md`.
 
 ### Rebuilding
 

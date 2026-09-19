@@ -1,8 +1,8 @@
 # Verified Figures: Research Note
 
 **Owner:** TODO: assign the actuarial pair named in issue #19
-**Status:** Verification complete for the ten figures listed in issue #3
-**Last Updated:** 2026-08-19
+**Status:** Verification complete for the issue #3 figures and the finals-deck mortality figures
+**Last Updated:** 2026-09-19
 **Feeds:** PDF Sections 1, 2, 5 and 6; canvas bottom band; issue #3
 
 ## Question This Answers
@@ -18,6 +18,7 @@ Print the value in the **Printable Wording** column, not the value in the issue.
 | Figure                            | Claimed In Issue #3                           | Verdict                 | Printable Value                           |
 | --------------------------------- | --------------------------------------------- | ----------------------- | ----------------------------------------- |
 | Deaths In Malaysia 2024           | 198,992                                       | Confirmed               | 198,992                                   |
+| Deaths In Malaysia, Q2 2026       | 49,827, daily average 548                     | Confirmed               | as claimed, dated Q2 2026                 |
 | Median Age At Death               | 69                                            | Confirmed               | 69.0 years                                |
 | EPF Death Withdrawals 2024, Count | 87,776                                        | **Rejected, corrected** | **85,532, confirmed 2026-08-21**          |
 | EPF Death Withdrawals 2024, Value | RM3.20 billion                                | **Rejected, corrected** | **RM3,243,030,617, confirmed 2026-08-21** |
@@ -26,8 +27,9 @@ Print the value in the **Printable Wording** column, not the value in the issue.
 | PERKESO Funeral Benefit           | up to RM3,000                                 | Confirmed               | up to RM3,000, effective 1 June 2024      |
 | Over-60s Government Interaction   | 33.6% vs 38.9%                                | Confirmed, base wrong   | 33.6% vs 38.9% **of internet users**      |
 | MyGOV Scale                       | 2.2m users, 51 services, 19 agencies          | Confirmed               | as claimed, dated 5 June 2026             |
-| MyDigital ID Registrations        | almost 10 million, Feb 2026                   | Confirmed               | almost 10 million, 12 February 2026       |
-| MyGDX Scale                       | 81 agencies, 49 systems, 65m+ transactions    | Confirmed, caveat       | print without the provider/consumer split |
+| MyDigital ID Registrations        | 12 million, June 2026                         | **Updated, confirmed**  | 12 million, reported 8 July 2026          |
+| MyGDX Scale                       | 131 onboarded agencies                        | **Updated, confirmed**  | label as onboarded agencies               |
+| Singapore MyLegacy Use            | about 90% of bereaved families                | Confirmed, narrow scope | digital death-certificate downloads only  |
 
 ## The One Figure That Must Not Be Printed As Written
 
@@ -91,6 +93,20 @@ DOSM Vital Statistics, Malaysia, 2025, released 16 October 2025:
 - Median age at death 69.0 years in 2024, unchanged from 2023.
 - Male deaths 113,866 (57.2%), female deaths 85,126 (42.8%).
 
+### Deaths in the Second Quarter of 2026
+
+DOSM Demographic Statistics Malaysia, Second Quarter 2026, released 13 August 2026:
+
+- 49,827 deaths were recorded in Malaysia in the second quarter of 2026.
+- The daily average was 548 deaths.
+- The quarterly total was 0.6 per cent higher than the 49,552 deaths reported for the second
+  quarter of 2025.
+
+**Printable wording.** "Malaysia recorded 49,827 deaths in the second quarter of 2026, an average
+of 548 every day."
+
+These are recorded deaths, not unique bereaved families, claims, or potential MyTakziah users.
+
 ### EPF Death Assistance
 
 All four elements of the claim are confirmed by the KWSP Death Withdrawal page, and independently corroborated by the MyGovernment portal. The stated conditions are, verbatim from KWSP:
@@ -115,10 +131,33 @@ It is payable to the eligible person, or if there is none, to whoever bore the f
 ### MyGOV, MyDigital ID And MyGDX
 
 - **MyGOV.** "More than 2.2 million Malaysian citizens now use the MyGOV App" and it "has consolidated 51 services from 19 government agencies". Ministry of Digital, 5 June 2026.
-- **MyDigital ID.** "As of today, we have reached almost 10 million (accounts)", Azrin Aris, Deputy Chief Executive Officer of MyDigital ID, reported by Bernama on 12 February 2026. Up from 1.8 million a year earlier. Targets of 13 million by mid-2026 and 17 million by end-2026. **The publisher is Bernama reporting a company officer, not a Ministry of Digital statement.** Issue #3 asked this to be confirmed; it is now confirmed and the attribution in the submission must say so.
-- **MyGDX.** Verbatim: "MyGDX has been utilized by 81 government agencies, comprising 51 data-providing agencies and 23 data-consuming agencies across 49 integrated systems. With over 65 million Application Programming Interface (API) transactions recorded". Ministry of Digital, 10 February 2026.
+- **MyDigital ID.** The official MyDigital ID news page records multiple 8 July 2026 reports that
+  registration reached **12 million users as of June 2026**, quoting Deputy Prime Minister Ahmad
+  Zahid Hamidi. This supersedes the earlier February figure of almost 10 million for current finals
+  material. Label the date because registrations continue to change.
+- **MyGDX.** The live MyGDX portal reported **131 onboarded agencies**, 82 integrated systems and
+  425,265,340 transactions when accessed on 19 September 2026. "Onboarded agencies" is the portal's
+  label and should not be shortened to "integrated agencies." The Ministry of Digital's dated
+  10 February release remains a useful snapshot: 81 participating agencies across 49 integrated
+  systems and more than 65 million API transactions.
 
-**MyGDX caveat.** 51 plus 23 is 74, not 81. The arithmetic gap is in the source itself. Print "81 government agencies across 49 integrated systems, with more than 65 million API transactions" and omit the provider and consumer split. Quoting the split invites a judge to do the sum in front of you.
+**MyGDX caveat.** The live portal and the February release use different measures and dates. Print
+"131 onboarded agencies" only when citing the live portal. If using the February snapshot, print
+"81 government agencies across 49 integrated systems, with more than 65 million API transactions"
+and omit the provider and consumer split. The February source says 51 providers and 23 consumers,
+which adds to 74 rather than 81.
+
+### Singapore MyLegacy Comparator
+
+Singapore's Ministry of Digital Development and Information reported on 1 March 2024 that about
+90 per cent of bereaved families download digital death certificates from MyLegacy every month.
+The service brings information and services from several government agencies onto one platform.
+
+**Printable wording.** "In Singapore, about 90 per cent of bereaved families use MyLegacy to
+download the digital death certificate."
+
+Keep the scope narrow. The figure supports uptake of the death-certificate service, not use of
+every MyLegacy feature, successful benefit claims, or proof that Malaysia will reach the same rate.
 
 ## The Two Traps, Confirmed
 
@@ -173,18 +212,18 @@ The same document carries a separate "Death and Incapacitation Benefits" block. 
 Needed because the mentor asked the pitch to open on Malaysia's ageing population. Verified against
 the primary DOSM release, not a summary.
 
-| Figure                                 | Value                                  |
-| -------------------------------------- | -------------------------------------- |
-| Total population, 2026                 | **34.4 million**                       |
-| Aged 65 and over, 2026                 | **8.4 per cent**, roughly 2.74 million |
-| Aged 65 and over, 2025                 | 8.0 per cent                           |
-| Aged 15 to 64, 2026                    | 70.4 per cent                          |
-| Aged 0 to 14, 2026                     | 21.2 per cent                          |
-| Old-age dependency ratio, 2025 to 2026 | 11.4 rising to 11.9                    |
-| Median age, 2026                       | 31.7 years                             |
+| Figure                                 | Value                                 |
+| -------------------------------------- | ------------------------------------- |
+| Total population, 2026                 | **34.4 million**                      |
+| Aged 65 and over, 2026                 | **8.4 per cent**, roughly 2.9 million |
+| Aged 65 and over, 2025                 | 8.0 per cent                          |
+| Aged 15 to 64, 2026                    | 70.4 per cent                         |
+| Aged 0 to 14, 2026                     | 21.2 per cent                         |
+| Old-age dependency ratio, 2025 to 2026 | 11.4 rising to 11.9                   |
+| Median age, 2026                       | 31.7 years                            |
 
 **Printable wording.** "8.4 per cent of Malaysians are aged 65 or over, up from 8.0 per cent a year
-earlier. That is roughly 2.7 million people, and the share is rising."
+earlier. That is roughly 2.9 million people, and the share is rising."
 
 ### Do Not Say "Ageing Society" And Attribute It To DOSM
 
@@ -199,9 +238,10 @@ ratio says "ageing" without needing a label we cannot cite.
 
 ### The Join That Makes It Our Problem
 
-The median age at death is 69.0, and 8.4 per cent of the population is already 65 or over. **The
-person left holding the paperwork is usually inside that group, and that group is growing.** That is
-the honest version of the mentor's opening, and every number in it is sourced.
+The median age at death is 69.0, and 8.4 per cent of the population is already 65 or over. These
+figures establish national context, but they do not establish the age, gender or household role of
+the person handling the paperwork. Treat the proposed surviving-spouse segment as `[ASSUMPTION]`
+until the team records genuine user research.
 
 ## Sources
 
@@ -218,3 +258,7 @@ the honest version of the mentor's opening, and every number in it is sourced.
 11. Ministry of Digital, "Revolusi Digital Sektor Awam: PPDSA Dan MyGDX Pemacu Transformasi Rakyat", published 10 February 2026, https://www.digital.gov.my/en-GB/siaran/Revolusi-Digital-Sektor-Awam%3APPDSA-Dan-MyGDX-Pemacu-Transformasi-Rakyat, accessed 2026-08-19. Supports MyGDX agency, system and transaction counts.
 12. Bernama, "MyDigital ID Targets 17 Mln Registered Accounts By End-2026", published 12 February 2026, https://www.bernama.com/en/news.php?id=2523289, accessed 2026-08-19. Supports almost 10 million registrations and the quoted attribution.
 13. Department of Statistics Malaysia, "Current Population Estimates, 2026", released 31 July 2026, https://www.dosm.gov.my/portal-main/release-content/current-population-estimates-2026, accessed 2026-09-12. Supports total population, the 65 and over share for 2025 and 2026, the working age and child shares, the old-age dependency ratio and the median age.
+14. Department of Statistics Malaysia, "Demographic Statistic Malaysia, Second Quarter 2026", released 13 August 2026, https://www.dosm.gov.my/portal-main/release-content/demographic-statistic-malaysia-q22026, accessed 2026-09-19. Supports 49,827 deaths in Q2 2026 and the daily average of 548.
+15. MyDigital ID, "News", entries published 8 July 2026, https://www.digital-id.my/en/news, accessed 2026-09-19. Records multiple reports quoting the Deputy Prime Minister that MyDigital ID reached 12 million registered users as of June 2026.
+16. Malaysian Government Central Data Exchange, "MyGDX", live implementation statistics, https://www.mygdx.gov.my/en/landing-page/catalog, accessed 2026-09-19. Supports 131 onboarded agencies and labels the figure as onboarding rather than integration.
+17. Singapore Ministry of Digital Development and Information, "MyLegacy@LifeSG", published 1 March 2024, https://www.mddi.gov.sg/newsroom/my-legacy-life-sg/, accessed 2026-09-19. Supports the statement that about 90 per cent of bereaved families download digital death certificates from MyLegacy every month.

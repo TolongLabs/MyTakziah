@@ -1,456 +1,467 @@
-"""Build the 7-slide MyTakziah pitch deck for the URIIS final.
+"""Build the editable seven-slide finals deck from the official URIIS template.
 
-White ground (mentor's hard rule), Arial, three points per slide, 16:9.
-Designed to be imported into Canva, where every text box stays editable.
+The seven core template slides are retained as the base. Their header, URIIS logo,
+footer and master remain intact. Instructional content is removed and replaced with
+native PowerPoint shapes and Arial text for Canva compatibility.
 """
 
-from pptx import Presentation
-from pptx.util import Inches as In, Pt
-from pptx.dml.color import RGBColor
-from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
+from pathlib import Path
 
-INK = RGBColor(0x28, 0x19, 0x13)
-TERRA = RGBColor(0xBC, 0x4D, 0x1A)
-SLATE = RGBColor(0x37, 0x6D, 0x7C)
-GREY = RGBColor(0x6E, 0x63, 0x5C)
-HAIR = RGBColor(0xDC, 0xD5, 0xCE)
-WHITE = RGBColor(0xFF, 0xFF, 0xFF)
+from pptx import Presentation
+from pptx.dml.color import RGBColor
+from pptx.enum.shapes import MSO_CONNECTOR, MSO_SHAPE, MSO_SHAPE_TYPE
+from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
+from pptx.util import Inches as In, Pt
+
+
+ROOT = Path(__file__).resolve().parents[3]
+DECK = Path(__file__).resolve().parent
+ASSETS = DECK / "assets"
+TEMPLATE = ROOT / "docs/source/final-pitch-deck-sample.pptx"
+OUTPUT = DECK / "mytakziah-final-pitch.pptx"
 
 FONT = "Arial"
-W, H = 13.333, 7.5
-ML, MR = 0.80, 0.80
-CW = W - ML - MR
+INK = RGBColor(0x28, 0x19, 0x13)
+TERRA = RGBColor(0xBC, 0x4D, 0x1A)
+OCHRE = RGBColor(0xC7, 0x89, 0x2D)
+SLATE = RGBColor(0x37, 0x6D, 0x7C)
+MUTED = RGBColor(0x6E, 0x63, 0x5C)
+HAIR = RGBColor(0xE2, 0xDB, 0xD4)
+SOFT = RGBColor(0xF9, 0xF3, 0xEA)
+WHITE = RGBColor(0xFF, 0xFF, 0xFF)
 
-ASSETS = "docs/submission/deck/assets/"
-QR = ASSETS + "qr-logo.png"
-
-prs = Presentation()
-prs.slide_width, prs.slide_height = In(W), In(H)
-BLANK = prs.slide_layouts[6]
-
-
-def slide():
-    s = prs.slides.add_slide(BLANK)
-    bg = s.background.fill
-    bg.solid()
-    bg.fore_color.rgb = WHITE
-    return s
-
-
-def tb(s, x, y, w, h, anchor=MSO_ANCHOR.TOP):
-    box = s.shapes.add_textbox(In(x), In(y), In(w), In(h))
-    tf = box.text_frame
-    tf.word_wrap = True
-    tf.vertical_anchor = anchor
-    tf.margin_left = tf.margin_right = tf.margin_top = tf.margin_bottom = 0
-    return tf
-
-
-def para(tf, text, size, color, bold=False, first=False, space_before=0,
-         space_after=0, align=PP_ALIGN.LEFT, spacing=None):
-    p = tf.paragraphs[0] if first else tf.add_paragraph()
-    p.alignment = align
-    p.space_before = Pt(space_before)
-    p.space_after = Pt(space_after)
-    if spacing:
-        p.line_spacing = spacing
-    r = p.add_run()
-    r.text = text
-    f = r.font
-    f.name, f.size, f.bold, f.color.rgb = FONT, Pt(size), bold, color
-    return p
-
-
-def rule(s, x, y, w, h=0.043, color=TERRA):
-    from pptx.enum.shapes import MSO_SHAPE
-    shp = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, In(x), In(y), In(w), In(h))
-    shp.fill.solid()
-    shp.fill.fore_color.rgb = color
-    shp.line.fill.background()
-    shp.shadow.inherit = False
-    return shp
-
-
-def header(s, section, num, heading, rule_w=1.5):
-    """Eyebrow, slide counter, heading and the terracotta rule."""
-    t = tb(s, ML, 0.46, CW * 0.7, 0.32)
-    para(t, section.upper(), 11.5, SLATE, bold=True, first=True)
-    t2 = tb(s, ML + CW * 0.7, 0.46, CW * 0.3, 0.32)
-    para(t2, f"{num} / 7", 11.5, GREY, first=True, align=PP_ALIGN.RIGHT)
-    rule(s, ML, 0.90, CW, 0.012, HAIR)
-    hh = tb(s, ML, 1.08, CW, 1.24)
-    para(hh, heading, 33, INK, bold=True, first=True, spacing=1.05)
-    rule(s, ML, 2.40, rule_w)
-
-
-
-def points(s, items, top=2.80, width=None, gap=1.28, lead_size=17.5,
-           body_size=14.5, lead_color=TERRA):
-    """Three numbered points: bold lead, supporting line beneath."""
-    width = width or CW
-    for i, (lead, body) in enumerate(items):
-        y = top + i * gap
-        n = tb(s, ML, y - 0.02, 0.42, 0.4)
-        para(n, f"{i + 1}", 15, HAIR, bold=True, first=True)
-        t = tb(s, ML + 0.44, y, width - 0.44, gap - 0.12)
-        para(t, lead, lead_size, lead_color, bold=True, first=True,
-             spacing=1.12)
-        para(t, body, body_size, GREY, space_before=5, spacing=1.28)
-
-
-def note(s, text):
-    s.notes_slide.notes_text_frame.text = text
-
-
-def strip(s, y, text, color=SLATE, size=12.5, height=0.75):
-    """A quiet supporting band at the foot of the slide."""
-    rule(s, ML, y, CW, 0.012, HAIR)
-    t = tb(s, ML, y + 0.18, CW, height)
-    para(t, text, size, color, first=True, spacing=1.3)
-
-
-def matrix_table(s, x, y, w, h, rows, headers):
-    """The demands matrix, as a native table so Canva keeps it editable."""
-    from pptx.enum.text import PP_ALIGN as A
-    shp = s.shapes.add_table(len(rows) + 1, len(headers), In(x), In(y),
-                             In(w), In(h))
-    tbl = shp.table
-    tbl.first_row = False
-    tbl.horz_banding = False
-    tbl.columns[0].width = In(w - 2.34)
-    for c in range(1, len(headers)):
-        tbl.columns[c].width = In(0.78)
-    for c, head in enumerate(headers):
-        cell = tbl.cell(0, c)
-        cell.text = head
-        pr = cell.text_frame.paragraphs[0]
-        pr.alignment = A.LEFT if c == 0 else A.CENTER
-        f = pr.runs[0].font
-        f.name, f.size, f.bold, f.color.rgb = FONT, Pt(9.5), True, SLATE
-        cell.fill.solid()
-        cell.fill.fore_color.rgb = WHITE
-    for r, row in enumerate(rows, start=1):
-        for c, val in enumerate(row):
-            cell = tbl.cell(r, c)
-            cell.text = val
-            pr = cell.text_frame.paragraphs[0]
-            pr.alignment = A.LEFT if c == 0 else A.CENTER
-            f = pr.runs[0].font
-            f.name, f.size = FONT, Pt(11 if c else 10.5)
-            f.bold = bool(c)
-            f.color.rgb = TERRA if c and val != "-" else (
-                GREY if c else INK)
-            cell.fill.solid()
-            cell.fill.fore_color.rgb = WHITE
-    return shp
-
-
-# ---------------------------------------------------------------- slide 1
-s = slide()
-s.shapes.add_picture(ASSETS + "uriis.png", In(ML), In(0.38), height=In(0.88))
-t = tb(s, ML + 1.05, 0.70, 5.2, 0.3)
-para(t, "STUDENT BIZ INNOV CHALLENGE 2026", 11.5, GREY, bold=True, first=True)
-t = tb(s, 9.55, 0.70, 2.0, 0.3)
-para(t, "ORGANISED BY", 11.5, GREY, bold=True, first=True, align=PP_ALIGN.RIGHT)
-s.shapes.add_picture(ASSETS + "kolaxus.png", In(11.72), In(0.62), height=In(0.36))
-
-s.shapes.add_picture(ASSETS + "mark.png", In(ML), In(1.58), height=In(0.98))
-t = tb(s, ML + 1.18, 1.52, 8.0, 1.15)
-para(t, "MyTakziah", 62, INK, bold=True, first=True)
-
-rule(s, ML, 2.92, 1.7)
-t = tb(s, ML, 3.20, 8.6, 0.6)
-para(t, "One death. Told to government once.", 26, TERRA, bold=True, first=True)
-t = tb(s, ML, 3.92, 7.5, 0.9)
-para(t, "An AI that, after a death, reads a family's documents once and files "
-        "their JPN, KWSP and PERKESO claims for them.", 15, GREY, first=True,
-     spacing=1.35)
-
-s.shapes.add_picture(QR, In(10.15), In(2.82), height=In(2.38))
-t = tb(s, 9.95, 5.26, 2.78, 0.4)
-para(t, "Scan for the working prototype", 11, GREY, first=True,
-     align=PP_ALIGN.CENTER, spacing=1.3)
-
-rule(s, ML, 5.62, CW, 0.012, HAIR)
-MEM = [
-    ("round-anderson-ling.png", "Anderson Ling", "Team Leader",
-     "Universiti Malaya"),
-    ("round-hee-zi-jie.png", "Hee Zi Jie", "Software Development",
-     "Asia Pacific University"),
-    ("round-wong-xuan-rui.png", "Wong Xuan Rui", "Designer",
-     "Universiti Malaya"),
-    ("round-yow-li-hao.png", "Yow Li Hao", "Software Development",
-     "Asia Pacific University"),
+HEADERS = [
+    ("OPEN STRONG", "1. The Idea"),
+    ("WHY THIS MATTERS", "2. The Problem"),
+    ("MAKE IT EASY TO UNDERSTAND", "3. Our Solution"),
+    ("DIFFERENTIATION", "4. What Makes It Innovative?"),
+    ("CAN THIS REALLY BE DONE?", "5. How It Works & Feasibility"),
+    ("SHOW THE VALUE", "6. Impact & Potential"),
+    ("FINISH MEMORABLY", "7. Why Us + Closing Vision"),
 ]
-for i, (img, name, role, uni) in enumerate(MEM):
-    x = ML + i * 3.02
-    s.shapes.add_picture(ASSETS + "team/" + img, In(x), In(5.88),
-                         height=In(0.66))
-    t = tb(s, x + 0.80, 5.88, 2.2, 0.8)
-    para(t, name, 13, INK, bold=True, first=True)
-    para(t, role, 10, GREY, space_before=3, spacing=1.25)
-    para(t, uni, 10, GREY, spacing=1.25)
 
-note(s, "20 SECONDS. Do not read the slide.\n\n"
-        "\"Good afternoon. We are Team Survive, and this is MyTakziah.\n"
-        "When someone dies in Malaysia, the family has to tell the government "
-        "the same thing over and over. MyTakziah lets them tell it once.\"\n\n"
-        "Point at the QR: \"That code takes you to our working prototype, and "
-        "we have printed it for each of you.\"\n\n"
-        "Then move on. Do not introduce all four names one by one.")
 
-# ---------------------------------------------------------------- slide 2
-s = slide()
-header(s, "1. The Problem", 2, "Malaysia is ageing. The paperwork\n"
-                               "after a death has not changed.")
-points(s, [
-    ("8.4 per cent of Malaysians are now 65 or over, up from 8.0 per cent a "
-     "year earlier.",
-     "That is roughly 2.7 million people. 198,992 people died in Malaysia in "
-     "2024, and the median age at death is 69."),
-    ("Three agencies then ask that family for the same five things, "
-     "separately.",
-     "JPN, PERKESO and KWSP each demand the same core information again, on "
-     "three different forms, and mostly in person with original documents."),
-    ("Two of the three agencies enforce deadlines they do not fully publish.",
-     "The person left holding that paperwork is usually an older widow or "
-     "widower. Miss the EPF window and the RM2,500 is gone."),
-], top=2.80, width=CW * 0.655, gap=1.20, lead_size=14.2,
-       body_size=11.2)
-matrix_table(s, 8.72, 2.86, 3.81, 2.55,
-             [["Identity of the deceased", "o", "o", "o"],
-              ["Identity of the claimant", "o", "o", "o"],
-              ["The fact of the death", "o", "o", "o"],
-              ["Relationship to the deceased", "-", "o", "o"],
-              ["Payment destination", "-", "o", "o"]],
-             ["The same information, demanded again", "JPN", "KWSP", "PERKESO"])
-t = tb(s, 8.72, 5.50, 3.81, 0.55)
-para(t, "Three different forms: JPN.LM02, KWSP 9KM (AHL), and Borang 34 or "
-        "Borang 24 and 26.", 10, GREY, first=True, spacing=1.3)
-strip(s, 6.40, "Parliament recorded 72,929 late death registrations between "
-                "2003 and 2014, and named funeral rites and religious "
-                "obligations as the reason families could not meet the "
-                "deadline. Published accounts describe survivors collecting "
-                "benefits more than twenty years late, simply because nobody "
-                "told them.")
-note(s, "60 SECONDS. This slide earns the room. Slow down.\n\n"
-        "\"A father dies. The family goes to JPN to register the death. Then "
-        "to PERKESO. Then to KWSP. Three agencies, three forms, and every one "
-        "of them asks for the same five things.\n\n"
-        "The government already knows he died. The family told one part of "
-        "it. It just did not tell the other two.\n\n"
-        "Two hundred thousand deaths a year, and the person holding the "
-        "folder is usually a widow in her late sixties.\n\n"
-        "And the clock is running. EPF gives you six months or the RM2,500 "
-        "is gone. JPN's boundary is the seventh day. PERKESO does not publish "
-        "its deadline at all.\n\n"
-        "This is not us guessing. Parliament counted 72,929 late "
-        "registrations and blamed funeral rites. They extended one deadline "
-        "at one agency. They never touched the journey.\"")
+def remove_slide(prs, index):
+    slide_id = prs.slides._sldIdLst[index]
+    prs.part.drop_rel(slide_id.rId)
+    del prs.slides._sldIdLst[index]
 
-# ---------------------------------------------------------------- slide 3
-s = slide()
-header(s, "2. Our Solution", 3, "Provide once. We prepare every claim.")
-points(s, [
-    ("Provide once.",
-     "Identity, proof of death, relationship and bank details, entered a "
-     "single time."),
-    ("Every entitlement, with the government's own rule printed beside it.",
-     "Ranked by deadline, soonest first, never by value."),
-    ("Submitted, receipted and tracked. Never approved.",
-     "The agency always keeps the decision. We prepare and file. We never "
-     "decide who qualifies."),
-], top=2.80, width=CW * 0.545, gap=1.19, body_size=14)
-s.shapes.add_picture(ASSETS + "live-step2.png", In(7.86), In(2.70),
-                     width=In(4.20))
-s.shapes.add_picture(ASSETS + "live-step4.png", In(7.86), In(5.14),
-                     width=In(4.20))
-t = tb(s, 7.86, 6.62, 4.20, 0.6)
-para(t, "Live prototype: evidence given once, then consent taken separately "
-        "for each agency. mytakziah.vercel.app", 10.5, GREY, first=True, spacing=1.3)
-note(s, "60 SECONDS. Hold up the printed QR card as you start.\n\n"
-        "\"So here is what we built.\n\n"
-        "The family gives us the information once. Who died, who they are, "
-        "how they are related, where the money should go.\n\n"
-        "We then show every benefit they are owed, with the government's own "
-        "rule printed next to it, ranked by whichever deadline runs out "
-        "first.\n\n"
-        "And then we fill in all three claims for them.\n\n"
-        "One line matters more than everything else on this slide. We never "
-        "say approved. The agency always decides. We prepare and we file. "
-        "That is what makes this safe to put in front of a grieving "
-        "family.\"")
 
-# ---------------------------------------------------------------- slide 4
-s = slide()
-header(s, "3. What Makes It Innovative", 4,
-       "Not a chatbot. A filing engine with\nthe rulebook attached.")
-points(s, [
-    ("JPN has already built a chatbot. It still cannot reach KWSP.",
-     "A chatbot tells you what to do. MyTakziah does it. That is the whole "
-     "difference, and it is the reason this has not been solved already."),
-    ("Deadline first, and every rule cited to its source.",
-     "Where an agency publishes no deadline, we say so on the screen instead "
-     "of guessing. Nothing we show a family is invented."),
-    ("Routed to the family's own rites.",
-     "The checklist a Muslim family sees is not the one a Chinese or Hindu "
-     "family sees. Religion changes the documents, the timing and the "
-     "services that matter."),
-], top=2.80, width=CW * 0.655, gap=1.20, lead_size=14.5,
-       body_size=11.8)
-s.shapes.add_picture(ASSETS + "live-step3.png", In(8.72), In(3.02),
-                     width=In(3.81))
-t = tb(s, 8.72, 5.22, 3.81, 0.8)
-para(t, "Every entitlement carries its deadline, its source link, and a plain "
-        "statement of what the agency does not publish.", 10, GREY, first=True,
-     spacing=1.3)
-strip(s, 6.48, "Other countries built the notification half of this. The UK's "
-                "Tell Us Once tells departments someone has died; it does not "
-                "file the claim or protect the deadline, and none of it is "
-                "built for JPN, KWSP and PERKESO. Our advantage is not the "
-                "technology. It is that we read these three agencies' forms.",
-      TERRA, 12.5)
-note(s, "60 SECONDS. This is the slide that separates you from the field.\n\n"
-        "\"Every judge is going to think this is a chatbot. It is not.\n\n"
-        "JPN already has a chatbot. It is live on their website and it "
-        "answers JPN questions well. It still cannot tell KWSP anything. A "
-        "chatbot tells you what to do. We do it.\n\n"
-        "Second, we lead with the deadline, not the money, and every rule we "
-        "show cites the government page it came from. Where an agency "
-        "publishes nothing, we say so.\n\n"
-        "Third, and this is the part people underestimate, the rites matter. "
-        "A Muslim family, a Chinese family and a Hindu family do not face the "
-        "same week. The system follows the family.\n\n"
-        "Our edge is not AI. Everyone has AI. Our edge is that we actually "
-        "read the forms.\"")
+def remove_shape(shape):
+    shape._element.getparent().remove(shape._element)
 
-# ---------------------------------------------------------------- slide 5
-s = slide()
-header(s, "4. How It Works and Feasibility", 5,
-       "Built already. Honest about what\nis not built yet.")
-points(s, [
-    ("A working prototype is live today, not a mockup.",
-     "The full journey runs end to end. The judges can scan it from their "
-     "seats."),
-    ("The national rails already exist.",
-     "MyDigital ID has almost 10 million accounts. MyGDX already connects "
-     "81 agencies. We are not asking anyone to build new plumbing."),
-    ("Agency integration is proposed, not proven.",
-     "Until an agency connects we print the completed forms and the family "
-     "carries them. They still know what they are owed and which deadline "
-     "is first."),
-], top=2.80, width=CW * 0.62, gap=1.18, body_size=14)
-s.shapes.add_picture(ASSETS + "live-step5.png", In(8.30), In(2.95),
-                     width=In(4.20))
-t = tb(s, 8.30, 5.42, 4.20, 0.5)
-para(t, "Three forms prepared from one set of evidence, and one timeline",
-     11.5, GREY, first=True, spacing=1.25)
-strip(s, 6.44, "Where we are today: a working prototype and rules verified "
-                "against primary government documents.   Next: a minimum "
-                "viable product, then one community pilot.")
-note(s, "55 SECONDS. Feasibility is scored. Honesty wins it.\n\n"
-        "\"This is not a concept. The prototype is live right now and you can "
-        "scan it from your seat.\n\n"
-        "We are also not asking the country to build anything new. "
-        "MyDigital ID already has nearly ten million accounts. MyGDX already "
-        "moves data between eighty one agencies. The rails exist. The "
-        "bereavement path was just never built on them.\n\n"
-        "Now, the honest part. We do not have agency integration yet. It is "
-        "proposed, not proven.\n\n"
-        "But even if no agency ever signs, we print the forms and the family "
-        "carries them. They still know the benefits exist, they still know "
-        "which deadline is first, and they still arrive with the right "
-        "documents. Those three things are what actually cost families "
-        "money.\"")
 
-# ---------------------------------------------------------------- slide 6
-s = slide()
-header(s, "5. Impact and Potential", 6,
-       "Three sides benefit. One of them can pay.")
-points(s, [
-    ("Families use it free. Always.",
-     "They are the people least able to pay, at the worst possible moment. "
-     "Charging them would defeat the point."),
-    ("Government gets complete, on time, correctly filled submissions.",
-     "Fewer rejected forms, fewer repeat counter visits, and deaths "
-     "registered inside the window rather than years late."),
-    ("Service providers pay to reach families at the moment of need.",
-     "Funeral, memorial and estate services already spend to find these "
-     "families. A listing and referral model funds the platform without ever "
-     "charging the bereaved."),
-], top=2.80, width=CW * 0.655, gap=1.20, lead_size=14.5,
-       body_size=11.8)
-for i, (med, cap) in enumerate([("med-protection.png", "Families"),
-                                ("med-registry.png", "Government"),
-                                ("med-savings.png", "Providers")]):
-    mx = 8.80 + i * 1.30
-    s.shapes.add_picture(ASSETS + med, In(mx), In(2.90), height=In(1.10))
-    t = tb(s, mx - 0.12, 4.06, 1.34, 0.3)
-    para(t, cap, 11, INK, bold=True, first=True, align=PP_ALIGN.CENTER)
-s.shapes.add_picture(ASSETS + "sdg-16.png", In(8.80), In(4.62), height=In(0.66))
-s.shapes.add_picture(ASSETS + "sdg-1.png", In(9.54), In(4.62), height=In(0.66))
-t = tb(s, 10.34, 4.62, 2.20, 0.75)
-para(t, "Accountable institutions, and social protection that actually "
-        "reaches the people entitled to it.", 10, GREY, first=True,
-     spacing=1.3)
-strip(s, 6.48, "RM3.24 billion moved through EPF death withdrawals in 2024, "
-                "across 85,532 cases.   We will measure families served, "
-                "agencies connected and providers onboarded.   Malaysia "
-                "first, then the same problem across Southeast Asia.", SLATE,
-      13)
-note(s, "60 SECONDS. Economic impact is a scored category. Be concrete.\n\n"
-        "\"Three groups benefit, and that is what makes this a business and "
-        "not a charity.\n\n"
-        "Families use it free, always. They are the least able to pay and the "
-        "worst possible people to charge.\n\n"
-        "Government gets submissions that are complete and on time. That is "
-        "fewer rejected forms and fewer people queueing twice.\n\n"
-        "And the third group pays. Funeral homes, memorial parks and estate "
-        "services are already spending money to reach these families. We put "
-        "them in front of the family at the moment of need, with the family's "
-        "consent, and that funds the platform.\n\n"
-        "The money is already moving. Three point two four billion ringgit "
-        "of EPF death withdrawals in 2024 alone.\"\n\n"
-        "IF ASKED FOR RATES: say the model is a listing and referral fee and "
-        "that we are testing pricing in the pilot. Do not invent a number.")
+def set_first_run(shape, value):
+    paragraph = shape.text_frame.paragraphs[0]
+    if paragraph.runs:
+        paragraph.runs[0].text = value
+    else:
+        paragraph.text = value
 
-# ---------------------------------------------------------------- slide 7
-s = slide()
-header(s, "6. Why Us, and What We Are Asking For", 7,
-       "We already built it. We need the doors.")
-points(s, [
-    ("Two computer science students and two actuarial science students.",
-     "The eligibility rules, contribution tests and deadlines behind this are "
-     "actuarial work, and we did that ourselves rather than guessing at it."),
-    ("Every number here is verified against primary government documents.",
-     "Where we could not verify something we left it off the slide. We would "
-     "rather be narrow than wrong."),
-    ("What we need is not mainly money. It is access.",
-     "We do not reach families by advertising. We reach one community, "
-     "through the people already trusted with a death there. Introduce us to "
-     "one, and to service providers."),
-], top=2.80, width=CW * 0.74, gap=1.22)
-s.shapes.add_picture(QR, In(10.78), In(2.82), width=In(1.86))
-t = tb(s, 10.55, 4.86, 2.35, 0.6)
-para(t, "mytakziah.vercel.app", 11.5, GREY, first=True, align=PP_ALIGN.CENTER)
-rule(s, ML, 6.46, CW, 0.012, HAIR)
-t = tb(s, ML, 6.70, CW, 0.55)
-para(t, "One death. Told to government once.", 24, TERRA, bold=True,
-     first=True)
-note(s, "45 SECONDS. Land it, then stop talking.\n\n"
-        "\"Why us. We are two computer science students and two actuarial "
-        "science students. The rules and the deadlines behind this are "
-        "actuarial work, and we did it ourselves.\n\n"
-        "Every number you have seen today is checked against the "
-        "government's own documents. Where we could not verify something, we "
-        "took it off the slide.\n\n"
-        "And what we are asking for is not mainly money. It is access. One "
-        "community to pilot with, and introductions to service providers. "
-        "Give us that and we will have real families using this within a "
-        "month.\n\n"
-        "One death. Told to government once. Thank you.\"\n\n"
-        "Then stop. Do not keep talking into the Q and A.")
 
-out = "docs/submission/deck/mytakziah-final-pitch.pptx"
-prs.save(out)
-print("saved", out, len(prs.slides.__iter__.__self__._sldIdLst), "slides")
+def prepare_template(prs):
+    for index in reversed(range(len(prs.slides))):
+        if index not in range(3, 10):
+            remove_slide(prs, index)
+
+    for number, slide in enumerate(prs.slides, 1):
+        slide.background.fill.solid()
+        slide.background.fill.fore_color.rgb = WHITE
+        for shape in list(slide.shapes):
+            top = shape.top / 914400
+            keep = top < 1.60 or top > 6.85
+            if shape.shape_type == MSO_SHAPE_TYPE.PICTURE and top < 1.20:
+                keep = True
+            if not keep:
+                remove_shape(shape)
+
+        for shape in slide.shapes:
+            if (
+                shape.has_text_frame
+                and shape.left == 0
+                and shape.top == 0
+                and shape.width == prs.slide_width
+                and shape.height == prs.slide_height
+            ):
+                shape.text_frame.clear()
+
+        top_text = sorted(
+            [
+                shape
+                for shape in slide.shapes
+                if shape.has_text_frame
+                and shape.top / 914400 < 1.60
+                and shape.height / 914400 < 1.00
+            ],
+            key=lambda shape: shape.top,
+        )
+        if len(top_text) >= 2:
+            set_first_run(top_text[0], HEADERS[number - 1][0])
+            set_first_run(top_text[1], HEADERS[number - 1][1])
+
+        for shape in slide.shapes:
+            if not shape.has_text_frame:
+                continue
+            text = shape.text_frame.text.strip()
+            top = shape.top / 914400
+            if top > 6.85 and text.isdigit():
+                set_first_run(shape, str(number))
+            if top > 6.85:
+                shape.top = In(7.05)
+                shape.height = In(0.30)
+
+
+def text_box(
+    slide,
+    text,
+    x,
+    y,
+    w,
+    h,
+    size=18,
+    color=INK,
+    bold=False,
+    align=PP_ALIGN.LEFT,
+    valign=MSO_ANCHOR.TOP,
+    margin=0.02,
+):
+    shape = slide.shapes.add_textbox(In(x), In(y), In(w), In(h))
+    frame = shape.text_frame
+    frame.clear()
+    frame.word_wrap = True
+    frame.margin_left = In(margin)
+    frame.margin_right = In(margin)
+    frame.margin_top = In(margin)
+    frame.margin_bottom = In(margin)
+    frame.vertical_anchor = valign
+    paragraph = frame.paragraphs[0]
+    paragraph.alignment = align
+    paragraph.space_after = Pt(0)
+    paragraph.line_spacing = 1.04
+    run = paragraph.add_run()
+    run.text = text
+    run.font.name = FONT
+    run.font.size = Pt(size)
+    run.font.bold = bold
+    run.font.color.rgb = color
+    return shape
+
+
+def rect(slide, x, y, w, h, fill=WHITE, line=HAIR, radius=True):
+    kind = MSO_SHAPE.ROUNDED_RECTANGLE if radius else MSO_SHAPE.RECTANGLE
+    shape = slide.shapes.add_shape(kind, In(x), In(y), In(w), In(h))
+    shape.fill.solid()
+    shape.fill.fore_color.rgb = fill
+    shape.line.color.rgb = line
+    shape.line.width = Pt(0.8)
+    return shape
+
+
+def rule(slide, x, y, w, color=HAIR, width=1.0):
+    shape = slide.shapes.add_connector(
+        MSO_CONNECTOR.STRAIGHT, In(x), In(y), In(x + w), In(y)
+    )
+    shape.line.color.rgb = color
+    shape.line.width = Pt(width)
+    return shape
+
+
+def dot(slide, x, y, diameter=0.26, color=SLATE, width=3.5):
+    shape = slide.shapes.add_shape(
+        MSO_SHAPE.OVAL, In(x), In(y), In(diameter), In(diameter)
+    )
+    shape.fill.solid()
+    shape.fill.fore_color.rgb = WHITE
+    shape.line.color.rgb = color
+    shape.line.width = Pt(width)
+    return shape
+
+
+def picture(slide, name, x, y, w=None, h=None):
+    kwargs = {}
+    if w is not None:
+        kwargs["width"] = In(w)
+    if h is not None:
+        kwargs["height"] = In(h)
+    return slide.shapes.add_picture(str(ASSETS / name), In(x), In(y), **kwargs)
+
+
+def source(slide, value):
+    text_box(slide, value, 0.75, 6.83, 11.55, 0.22, 9.0, MUTED)
+
+
+def notes(slide, script, evidence):
+    slide.notes_slide.notes_text_frame.text = (
+        f"PRESENTER SCRIPT\n\n{script}\n\nEVIDENCE AND LIMITS\n\n{evidence}"
+    )
+
+
+prs = Presentation(str(TEMPLATE))
+prepare_template(prs)
+
+# Slide 1: The Idea
+s = prs.slides[0]
+picture(s, "mark.png", 0.78, 1.92, h=0.76)
+text_box(s, "MyTakziah", 1.78, 1.80, 6.0, 0.92, 54, INK, True)
+text_box(s, "One Family Record. Clearer Next Steps.", 0.78, 2.92, 7.25, 1.04, 29, TERRA, True)
+text_box(
+    s,
+    "A proposed assistant helping bereaved families prepare for JPN, KWSP and PERKESO.",
+    0.78,
+    4.08,
+    7.0,
+    0.80,
+    18,
+    MUTED,
+)
+rule(s, 0.78, 5.42, 6.95)
+text_box(
+    s,
+    "Team Survive | Universiti Malaya and Asia Pacific University",
+    0.78,
+    5.58,
+    7.2,
+    0.32,
+    16,
+    INK,
+    True,
+)
+text_box(
+    s,
+    "Anderson Ling | Hee Zi Jie | Wong Xuan Rui | Yow Li Hao",
+    0.78,
+    5.98,
+    7.0,
+    0.34,
+    12,
+    MUTED,
+)
+rect(s, 8.44, 2.58, 1.78, 1.52, SOFT)
+picture(s, "mark.png", 8.98, 2.83, h=0.55)
+text_box(s, "Family Record", 8.60, 3.48, 1.46, 0.28, 13, INK, True, PP_ALIGN.CENTER)
+for y, label in [(2.38, "JPN"), (3.41, "KWSP"), (4.44, "PERKESO")]:
+    connector = s.shapes.add_connector(
+        MSO_CONNECTOR.STRAIGHT, In(10.22), In(3.34), In(11.05), In(y + 0.25)
+    )
+    connector.line.color.rgb = SLATE
+    connector.line.width = Pt(1.4)
+    rect(s, 11.05, y, 1.18, 0.50, WHITE)
+    text_box(s, label, 11.05, y + 0.07, 1.18, 0.28, 14, SLATE, True, PP_ALIGN.CENTER)
+text_box(
+    s,
+    "Student Proposal\nNot an Official Government Service",
+    8.55,
+    5.70,
+    3.70,
+    0.55,
+    10.5,
+    SLATE,
+    True,
+    PP_ALIGN.RIGHT,
+)
+notes(
+    s,
+    "Good afternoon. We are Team Survive, from Universiti Malaya and Asia Pacific University. MyTakziah is our proposed assistant for bereaved families: one family record, clearer next steps across death registration, EPF savings and SOCSO benefits.",
+    "Team identity and selected scope are recorded in docs/decisions.md. This is a proposed service, not a live government integration.",
+)
+
+# Slide 2: The Problem
+s = prs.slides[1]
+text_box(s, "After a Death, the Paperwork Still Repeats", 0.78, 1.68, 11.4, 0.54, 30, INK, True)
+rule(s, 0.78, 2.52, 3.55, TERRA, 3.4)
+text_box(s, "198,992", 0.78, 2.70, 3.2, 1.02, 57, TERRA, True)
+text_box(s, "deaths recorded in Malaysia in 2024", 0.78, 3.82, 3.25, 0.70, 17, INK)
+for y, agency in [(2.62, "JPN"), (3.47, "KWSP"), (4.32, "PERKESO")]:
+    rule(s, 4.45, y, 7.78)
+    text_box(s, agency, 4.45, y + 0.22, 1.25, 0.35, 18, SLATE, True)
+    rect(s, 5.92, y + 0.12, 2.64, 0.56, SOFT)
+    text_box(s, "Identity", 6.10, y + 0.25, 2.25, 0.28, 14, INK, True)
+    rect(s, 8.80, y + 0.12, 3.42, 0.56, SOFT)
+    text_box(s, "Proof of Death", 8.98, y + 0.25, 3.05, 0.28, 14, INK, True)
+rect(s, 0.78, 5.45, 11.45, 1.04, WHITE, RGBColor(0xDC, 0xA7, 0x89))
+text_box(s, "A Deadline Families Cannot Afford to Miss", 1.00, 5.58, 4.10, 0.50, 14, INK, True)
+text_box(
+    s,
+    "EPF Death Assistance: application within six months, death before 60, and other conditions. Not a deadline for withdrawing all EPF savings.",
+    5.25,
+    5.60,
+    6.63,
+    0.60,
+    13.0,
+    MUTED,
+)
+source(s, "Sources: DOSM, Vital Statistics, Malaysia, 2025; DOSM, Current Population Estimates, 2026; KWSP, Death Withdrawal.")
+notes(
+    s,
+    "Malaysia recorded almost two hundred thousand deaths in 2024. Its population is also ageing: the share aged sixty-five and over reached eight point four per cent in 2026. Our proposed first user is a surviving spouse handling the paperwork, with a family member helping if needed. The forms show the burden. Identity and death information recur across agencies; relationship and payment details recur across the benefit claims. Timing matters. EPF's discretionary two-thousand-five-hundred-ringgit Death Assistance requires an application within six months and the member's death before sixty, among other conditions. That is one concrete deadline. It is not a deadline for withdrawing all EPF savings.",
+    "198,992 is deaths in Malaysia in 2024, not a customer count. The surviving-spouse segment is an assumption. The six-month condition applies to discretionary Death Assistance, not all EPF savings.",
+)
+
+# Slide 3: Our Solution
+s = prs.slides[2]
+text_box(s, "Provide Shared Details Once. Prepare the Next Step.", 0.78, 1.68, 11.6, 0.54, 28, INK, True)
+for i, (label, detail) in enumerate(
+    [
+        ("Reuse", "Shared details in relevant draft forms."),
+        ("Review", "Requirements, known deadlines and questions that need checking."),
+        ("Submit Officially", "The family uses official channels. Agencies decide."),
+    ]
+):
+    y = 2.55 + i * 0.88
+    text_box(s, label, 0.78, y, 2.6, 0.30, 17, TERRA, True)
+    text_box(s, detail, 0.78, y + 0.36, 3.0, 0.44, 11.6, MUTED)
+    if i < 2:
+        rule(s, 0.78, y + 0.78, 3.05)
+picture(s, "qr-logo.png", 0.82, 4.78, h=1.60)
+text_box(s, "Interactive Prototype", 2.60, 5.19, 1.42, 0.44, 13, INK, True)
+text_box(s, "mytakziah.vercel.app", 2.60, 5.72, 1.42, 0.42, 9.8, MUTED)
+
+rect(s, 4.18, 2.53, 3.05, 3.83, SOFT)
+pic = picture(s, "live-step2.png", 4.18, 2.53, 3.05, 3.83)
+pic.crop_left, pic.crop_top, pic.crop_right, pic.crop_bottom = 0.14, 0.30, 0.46, 0.02
+rect(s, 7.52, 2.53, 4.72, 2.20, SOFT)
+pic = picture(s, "screen-timeline.png", 7.52, 2.53, 4.72, 2.20)
+pic.crop_left, pic.crop_top, pic.crop_right, pic.crop_bottom = 0.00, 0.02, 0.00, 0.47
+text_box(s, "INTERACTIVE PROTOTYPE. AGENCY RESPONSES SIMULATED.", 7.58, 4.94, 4.58, 0.42, 11.5, SLATE, True)
+text_box(
+    s,
+    "Required originals, signatures and thumbprints remain where applicable.",
+    7.58,
+    5.40,
+    4.55,
+    0.46,
+    12.5,
+    MUTED,
+)
+source(s, "Sources: MyTakziah interactive prototype; reviewed JPN, KWSP and PERKESO forms in the repository research record.")
+notes(
+    s,
+    "Here is the journey we are proposing. The family provides shared details once to MyTakziah. We would reuse them to prepare the relevant forms and a checklist of supporting documents. The family sees published conditions, known deadlines and questions requiring agency confirmation. They review each agency's information separately. In the first service, the family would still submit through official channels. Required originals, signatures and thumbprints remain. These are screens from our interactive prototype. Agency responses are simulated; it does not file claims. The QR opens that walkthrough. Our immediate goal is to test whether families arrive better prepared, with a clearer understanding of what to do next.",
+    "The prototype does not file claims. Screens do not prove working AI extraction or accepted official-form exports. Once means reuse within MyTakziah, not elimination of agency formalities.",
+)
+
+# Slide 4: Innovation
+s = prs.slides[3]
+text_box(s, "Share the Common Evidence. Respect Every Agency Rule.", 0.78, 1.68, 11.2, 0.54, 28, INK, True)
+text_box(
+    s,
+    "The workflow reuses what is common, then asks only for what each route still needs.",
+    0.78,
+    2.30,
+    10.50,
+    0.40,
+    14.0,
+    MUTED,
+)
+rect(s, 0.78, 2.90, 11.45, 0.92, SOFT)
+text_box(s, "Shared Once", 1.02, 3.17, 1.65, 0.30, 17, TERRA, True)
+for x, label in [(3.00, "Deceased Identity"), (6.05, "Applicant Identity"), (9.10, "Proof of Death")]:
+    rule(s, x - 0.18, 3.10, 0.01, HAIR, 22)
+    text_box(s, label, x, 3.17, 2.65, 0.30, 14, INK, True)
+branches = [
+    (0.78, "JPN", "Registration route, informant details and required originals."),
+    (4.62, "KWSP", "Relationship evidence and payment details when the route requires them."),
+    (8.46, "PERKESO", "Relationship evidence and payment details where applicable."),
+]
+for x, label, detail in branches:
+    rule(s, x, 4.28, 3.35, SLATE, 3.0)
+    text_box(s, label, x + 0.02, 4.51, 3.25, 0.35, 18, SLATE, True)
+    text_box(s, detail, x + 0.02, 4.96, 3.22, 0.72, 13.5, MUTED)
+rule(s, 0.78, 5.98, 11.45)
+text_box(s, "AI extracts and explains. Human-maintained rules constrain. Agencies decide.", 0.78, 6.12, 11.35, 0.34, 15, INK, True)
+source(s, "Sources: JPN, Ordinary Registration of Death; KWSP 9KM (AHL), V20260701; PERKESO Borang 34 and benefit checklists.")
+notes(
+    s,
+    "The innovation is connecting a family record to the right documents and next actions across agencies. An answer from a chatbot is not a completed preparation process. MyGOV brings services together; MyDigital ID authenticates users; MyGDX supports data exchange. We propose a focused bereavement workflow that could complement them. AI would extract draft details and explain cited instructions in plain language. Rules reviewed and kept current by people would control conditions and deadlines. Uncertain information must be checked, and agencies decide eligibility. We also recognise Britain's Tell Us Once as prior art. Our focus is preparing Malaysian benefit applications, with requirements specific to these agencies. That difference still needs user testing.",
+    "Official forms support recurring information categories, not identical documents. AI responsibilities and competitive differentiation are proposed design boundaries, not validated performance.",
+)
+
+# Slide 5: Feasibility
+s = prs.slides[4]
+text_box(s, "Test Preparation Before Government Integration", 0.78, 1.68, 11.3, 0.54, 29, INK, True)
+text_box(s, "A bounded path tests usefulness and safety before any promise of automated submission.", 0.78, 2.30, 10.4, 0.38, 13.5, MUTED)
+rule(s, 1.55, 3.07, 9.55, HAIR, 1.5)
+stages = [
+    (
+        0.78,
+        "Evidence Today",
+        "Interactive prototype and documented agency-form research.",
+        "Reality: no completed interviews, host or agency integration.",
+    ),
+    (
+        4.48,
+        "Supervised Preparation Pilot",
+        "[ASSUMPTION] Test one PJ community, reviewed drafts and official channels.",
+        "Gate: user, rule and privacy review; draft-format acceptance.",
+    ),
+    (
+        8.18,
+        "Authorised Integration",
+        "Submission and status updates only after agency agreements and access.",
+        "Gate: legal, identity, operational and technical approvals.",
+    ),
+]
+for index, (x, label, detail, gate) in enumerate(stages):
+    dot(s, x + 0.30, 2.87, 0.38, [SLATE, TERRA, HAIR][index], 4)
+    text_box(s, label, x, 3.43, 3.30, 0.65, 19, INK, True)
+    text_box(s, detail, x, 4.16, 3.18, 0.86, 13.5, MUTED)
+    rect(s, x, 5.15, 3.25, 1.05, SOFT)
+    text_box(s, gate, x + 0.18, 5.36, 2.88, 0.62, 13.0, INK, True)
+source(s, "Evidence status as at 12 September 2026: prototype and form research exist; interviews, host, reviewers and integration agreements are not recorded.")
+notes(
+    s,
+    "Today we have an interactive prototype and documented comparisons of official forms. We have no recorded user interviews or agency integration. Our proposed next step is one community pilot in Petaling Jaya, subject to securing a host. First, speak with people who have handled a death and observe where preparation breaks down. Then test a reviewed checklist and draft forms using fictional details. Before handling real documents, we need independent rule and privacy review, and confirmation that the draft format is acceptable. Only then would we offer assisted preparation through that host. This tests value before government integration. Automated submission and agency status updates would require separate agreements and technical access.",
+    "The pilot, host and reviewers are assumptions or TODOs. The initial pilot does not fulfil the full Track 02 integration ambition; it is staged evidence building.",
+)
+
+# Slide 6: Impact
+s = prs.slides[5]
+text_box(s, "Test Whether Families Arrive Better Prepared", 0.78, 1.68, 11.5, 0.54, 28, INK, True)
+for i, label in enumerate(["Less Preparation\nTime?", "Fewer Document\nCorrections?", "More Relevant\nDeadlines Met?"]):
+    x = 0.78 + i * 3.82
+    text_box(s, label, x, 2.72, 3.30, 1.14, 22, INK, True)
+    if i < 2:
+        rule(s, x + 3.52, 2.72, 0.01, HAIR, 70)
+rect(s, 0.78, 4.65, 4.05, 1.28, SOFT)
+text_box(s, "RM3.24b in 2024", 1.00, 4.93, 3.60, 0.36, 18, INK, True)
+text_box(s, "Financial stakes in EPF death withdrawals, not MyTakziah revenue.", 1.00, 5.34, 3.58, 0.50, 12.2, MUTED)
+rect(s, 5.12, 4.65, 7.10, 1.28, SOFT)
+text_box(s, "[ASSUMPTION] TEST ONLY AFTER USER VALUE", 5.36, 4.91, 6.55, 0.30, 12.5, MUTED, True)
+text_box(s, "Keep guidance free; test optional fixed-fee provider listings. No family-data sale, benefit commission or paid influence on guidance.", 5.36, 5.30, 6.50, 0.46, 12.2, MUTED)
+source(s, "Source: EPF Integrated Annual Report 2024. Pilot outcomes and willingness to pay have not been measured.")
+notes(
+    s,
+    "We want families to understand their next step and complete the right paperwork sooner. The pilot would measure preparation time, missing-document corrections and whether the relevant deadline was met. We have not measured those outcomes yet. EPF processed three point two four billion ringgit in death withdrawals in 2024. That shows the financial importance of this journey; it is not our revenue market. Only after demonstrating user value, our proposed funding test would keep core guidance free. Service providers could pay for optional directory listings. Families choose whether to contact them. Payment must never influence benefit guidance, and family documents must never become sales leads. Willingness to pay remains untested.",
+    "RM3.24 billion is existing EPF withdrawal activity, not TAM, recoverable value or MyTakziah revenue. The directory model is an unvalidated assumption with ethical guardrails.",
+)
+
+# Slide 7: Why Us and Closing Vision
+s = prs.slides[6]
+text_box(s, "Help Us Test This With One Community", 0.78, 1.68, 8.05, 0.56, 30, INK, True)
+points = [
+    ("TEAM", "Four students: two Computer Science, two Actuarial Science."),
+    ("BUILT BEFORE", "Two members built Layak, a previous hackathon grand champion."),
+    ("ASK", "Community host, benefits adviser and privacy mentor."),
+]
+for i, (label, detail) in enumerate(points):
+    y = 2.65 + i * 0.92
+    text_box(s, label, 0.78, y, 1.70, 0.28, 11.2, SLATE, True)
+    text_box(s, detail, 2.50, y - 0.02, 5.95, 0.62, 16, INK, True)
+    if i < 2:
+        rule(s, 0.78, y + 0.64, 7.75)
+text_box(s, "One loss should not mean starting over at every counter.", 0.78, 5.72, 7.95, 0.82, 23, TERRA, True)
+picture(s, "mark.png", 9.85, 2.66, h=1.78)
+text_box(s, "MyTakziah", 9.08, 4.75, 3.30, 0.45, 25, INK, True, PP_ALIGN.CENTER)
+text_box(s, "One family record. Clearer next steps.", 9.12, 5.39, 3.20, 0.50, 12, MUTED, False, PP_ALIGN.CENTER)
+source(s, "Team composition and Layak experience are team-supplied records. No pilot partner is secured.")
+notes(
+    s,
+    "Our four-person team combines two computer science and two actuarial science students. Two members also built Layak, a previous hackathon grand champion. For MyTakziah, we have a prototype and agency research. Computing supports the interface; actuarial training supports structured checks. Independent agency expertise is our next gap. Our next milestone is a reviewed preparation workflow tested with users. We ask for introductions to one community host and an experienced benefits adviser, plus a privacy mentor. Prize funding would support that work, with a budget agreed before spending. One loss should not mean starting over at every counter. Thank you.",
+    "Team composition and Layak experience are team-supplied. Two members built Layak, not all four. No host, adviser or privacy mentor is secured.",
+)
+
+prs.core_properties.title = "MyTakziah Final Pitch"
+prs.core_properties.subject = "URIIS Student Biz Innov Challenge 2026 Grand Final"
+prs.core_properties.author = "Team Survive"
+prs.save(str(OUTPUT))
+print(f"saved {OUTPUT} with {len(prs.slides)} slides")

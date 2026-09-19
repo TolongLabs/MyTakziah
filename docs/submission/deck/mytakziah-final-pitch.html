@@ -2,877 +2,989 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>MyTakziah, Final Pitch, Seven Slides</title>
+    <title>MyTakziah Final Pitch</title>
     <link rel="stylesheet" href="assets/fonts.css" />
     <style>
       :root {
         --ink: #281913;
         --terra: #bc4d1a;
+        --ochre: #c7892d;
         --slate: #376d7c;
         --muted: #6e635c;
         --hair: #e2dbd4;
-        --faint: #cfc6be;
+        --soft: #f9f3ea;
+        --paper: #ffffff;
+        --uriis-blue: #1869aa;
+        --uriis-navy: #0c2138;
       }
+
       * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
       }
       html,
       body {
         background: #fff;
       }
+      body {
+        color: var(--ink);
+        font-family: "Work Sans", Arial, sans-serif;
+      }
+
       .slide {
         position: relative;
         width: 1920px;
         height: 1080px;
-        background: #fff;
-        padding: 74px 112px 60px;
-        display: flex;
-        flex-direction: column;
-        font-family: "Work Sans", system-ui, sans-serif;
-        color: var(--ink);
         overflow: hidden;
-        page-break-after: always;
+        background: var(--paper);
         break-after: page;
+        page-break-after: always;
       }
-      .eyebrow {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        font-weight: 600;
+      .frame-head {
+        position: absolute;
+        inset: 62px 108px auto;
+        height: 112px;
+      }
+      .frame-kicker {
+        color: var(--uriis-blue);
+        font-family: Arial, sans-serif;
         font-size: 21px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--slate);
-      }
-      .eyebrow span {
-        color: var(--faint);
-        letter-spacing: 0.1em;
-      }
-      .hair {
-        height: 1px;
-        background: var(--hair);
-        margin: 22px 0 0;
-      }
-      h1 {
-        font-family: "Outfit", sans-serif;
         font-weight: 700;
-        font-size: 66px;
-        line-height: 1.07;
-        letter-spacing: -0.02em;
-        margin-top: 38px;
-        max-width: 1560px;
+        letter-spacing: 0.08em;
+        line-height: 1;
+        text-transform: uppercase;
       }
-      .rule {
-        width: 96px;
-        height: 6px;
-        background: var(--terra);
-        margin-top: 26px;
+      .frame-title {
+        color: var(--uriis-navy);
+        font-family: Arial, sans-serif;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1.05;
+        margin-top: 15px;
       }
-      .cols {
+      .frame-logo {
+        position: absolute;
+        right: 0;
+        top: -48px;
+        width: 112px;
+        height: 112px;
+        object-fit: contain;
+      }
+      .content {
+        position: absolute;
+        inset: 195px 108px 110px;
+      }
+      .source {
+        position: absolute;
+        left: 108px;
+        right: 160px;
+        bottom: 64px;
+        color: #786f69;
+        font-size: 15px;
+        line-height: 1.28;
+      }
+      .frame-foot {
+        position: absolute;
+        left: 108px;
+        right: 108px;
+        bottom: 26px;
+        color: #646e78;
         display: flex;
-        gap: 60px;
-        margin-top: 40px;
-        flex: 1;
-        align-items: flex-start;
-        min-height: 0;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        justify-content: space-between;
+        line-height: 1;
       }
-      .points {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 28px;
+      .headline {
+        color: var(--ink);
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 60px;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        line-height: 1.02;
       }
-      .pt {
-        display: flex;
-        gap: 28px;
+      .headline.compact {
+        font-size: 54px;
       }
-      .num {
-        font-family: "Outfit", sans-serif;
-        font-weight: 600;
-        font-size: 30px;
-        color: var(--faint);
-        line-height: 1.35;
-        min-width: 30px;
-      }
-      .lead {
-        font-family: "Outfit", sans-serif;
-        font-weight: 600;
-        font-size: 34px;
-        line-height: 1.24;
-        color: var(--terra);
-        letter-spacing: -0.01em;
-      }
-      .body {
-        font-size: 25px;
-        line-height: 1.48;
-        color: var(--muted);
-        margin-top: 9px;
-        max-width: 1060px;
-      }
-      .aside {
-        width: 600px;
-        flex-shrink: 0;
-      }
-      .aside img.shot {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-        object-fit: fill;
-        border-radius: 4px;
+      .screen {
+        overflow: hidden;
         border: 1px solid var(--hair);
+        border-radius: 8px;
+        background: var(--soft);
+      }
+      .screen img {
         display: block;
       }
-      .cap {
-        font-size: 21px;
-        color: var(--muted);
-        margin-top: 14px;
-        line-height: 1.42;
+
+      /* Slide 1 */
+      .idea-grid {
+        display: grid;
+        grid-template-columns: 1.55fr 0.8fr;
+        gap: 88px;
       }
-      .foot {
-        margin-top: auto;
-        padding-top: 24px;
-        border-top: 1px solid var(--hair);
-        font-size: 23px;
-        line-height: 1.46;
-        color: var(--slate);
-        max-width: 1650px;
+      .idea-copy {
+        display: flex;
+        flex-direction: column;
       }
-      .foot.terra {
-        color: var(--terra);
+      .idea-lockup {
+        align-items: center;
+        display: flex;
+        gap: 28px;
+        margin-top: 34px;
       }
-      /* cover */
-      .cover-kicker {
-        font-weight: 600;
-        font-size: 22px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--slate);
-        margin-top: 92px;
+      .idea-mark {
+        height: 104px;
+        width: 104px;
       }
       .wordmark {
-        font-family: "Outfit", sans-serif;
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 118px;
         font-weight: 700;
-        font-size: 152px;
-        letter-spacing: -0.035em;
+        letter-spacing: -0.045em;
         line-height: 1;
-        margin-top: 30px;
       }
-      .oneline {
-        font-family: "Outfit", sans-serif;
-        font-weight: 600;
-        font-size: 54px;
+      .idea-line {
         color: var(--terra);
-        margin-top: 34px;
-        letter-spacing: -0.015em;
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 46px;
+        font-weight: 650;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin-top: 40px;
       }
-      .support {
-        font-size: 30px;
+      .idea-desc {
+        color: var(--muted);
+        font-size: 29px;
+        line-height: 1.43;
+        margin-top: 22px;
+        max-width: 1030px;
+      }
+      .identity {
+        border-top: 1px solid var(--hair);
+        margin-top: auto;
+        padding-top: 22px;
+      }
+      .identity strong {
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 26px;
+      }
+      .identity p {
+        color: var(--muted);
+        font-size: 19px;
         line-height: 1.5;
-        color: var(--muted);
-        margin-top: 30px;
-        max-width: 1120px;
-      }
-      .team {
-        margin-top: auto;
-        padding-top: 32px;
-        border-top: 1px solid var(--hair);
-      }
-      .team b {
-        font-family: "Outfit", sans-serif;
-        font-weight: 600;
-        font-size: 30px;
-      }
-      .team p {
-        font-size: 24px;
-        color: var(--muted);
-        margin-top: 10px;
-      }
-      .qrbox {
-        display: flex;
-        align-items: center;
-        gap: 24px;
-        margin-top: 34px;
-      }
-      .qrbox img {
-        width: 168px;
-        height: 168px;
-        display: block;
-      }
-      .qrbox .t {
-        font-family: "Outfit", sans-serif;
-        font-weight: 600;
-        font-size: 27px;
-      }
-      .qrbox .s {
-        font-size: 23px;
-        color: var(--muted);
-        margin-top: 8px;
-        line-height: 1.42;
-      }
-      .closer {
-        font-family: "Outfit", sans-serif;
-        font-weight: 700;
-        font-size: 48px;
-        color: var(--terra);
-        letter-spacing: -0.015em;
-      }
-
-      /* cover branding */
-      .brandrow {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .brandrow .left {
-        display: flex;
-        align-items: center;
-        gap: 26px;
-      }
-      .brandrow img.uriis {
-        height: 104px;
-      }
-      .brandrow img.kolaxus {
-        height: 46px;
-      }
-      .brandrow .org {
-        font-size: 17px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--muted);
-        font-weight: 600;
-      }
-      .lockup {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-        margin-top: 46px;
-      }
-      .lockup img {
-        width: 118px;
-        height: 118px;
-      }
-      .covbody {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        gap: 60px;
-      }
-      .covqr {
-        text-align: center;
-        flex-shrink: 0;
-      }
-      .covqr img {
-        width: 344px;
-        height: 344px;
-        display: block;
-      }
-      .covqr div {
-        font-size: 21px;
-        color: var(--muted);
-        margin-top: 10px;
-        line-height: 1.4;
-      }
-      .teamrow {
-        margin-top: auto;
-        padding-top: 28px;
-        border-top: 1px solid var(--hair);
-        display: flex;
-        gap: 54px;
-      }
-      .mem {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-      }
-      .mem img {
-        width: 74px;
-        height: 74px;
-        border-radius: 50%;
-        flex-shrink: 0;
-      }
-      .mem b {
-        font-family: "Outfit", sans-serif;
-        font-weight: 600;
-        font-size: 23px;
-        display: block;
-      }
-      .mem span {
-        font-size: 18px;
-        color: var(--muted);
-        display: block;
-        line-height: 1.35;
-        margin-top: 3px;
-      }
-      .shots {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-      }
-
-      /* demands matrix, slide 2 */
-      .matrix {
-        border: 1px solid var(--hair);
-        border-radius: 4px;
-        padding: 22px 24px 18px;
-      }
-      .matrix h4 {
-        font-family: "Outfit", sans-serif;
-        font-weight: 600;
-        font-size: 23px;
-        margin-bottom: 4px;
-      }
-      .matrix p.sub {
-        font-size: 18px;
-        color: var(--muted);
-        margin-bottom: 14px;
-      }
-      .matrix table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 19px;
-      }
-      .matrix th {
-        font-weight: 600;
-        font-size: 16px;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: var(--slate);
-        padding: 6px 4px;
-        text-align: center;
-      }
-      .matrix th:first-child {
-        text-align: left;
-      }
-      .matrix td {
-        padding: 9px 4px;
-        border-top: 1px solid var(--hair);
-        color: var(--muted);
-        text-align: center;
-      }
-      .matrix td:first-child {
-        text-align: left;
-        color: var(--ink);
-      }
-      .dot {
-        display: inline-block;
-        width: 13px;
-        height: 13px;
-        border-radius: 50%;
-        background: var(--terra);
-      }
-      .dash {
-        color: var(--faint);
-      }
-      .matrix .tot {
-        font-size: 17px;
-        color: var(--muted);
-        margin-top: 12px;
-        line-height: 1.4;
-      }
-      /* impact trio, slide 6 */
-      .trio {
-        display: flex;
-        gap: 26px;
-        align-items: flex-start;
-      }
-      .trio figure {
-        text-align: center;
-        width: 168px;
-      }
-      .trio img {
-        width: 132px;
-        height: 132px;
-      }
-      .trio figcaption {
-        font-family: "Outfit", sans-serif;
-        font-weight: 600;
-        font-size: 19px;
         margin-top: 6px;
       }
-      .sdg {
-        display: flex;
-        gap: 14px;
+      .record-map {
         align-items: center;
-        margin-top: 26px;
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        grid-template-rows: repeat(3, 88px);
+        justify-content: center;
+        position: relative;
       }
-      .sdg img {
-        width: 84px;
-        height: 84px;
+      .record-card {
+        align-items: center;
+        background: var(--soft);
+        border: 1px solid var(--hair);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        grid-column: 1;
+        grid-row: 1 / 4;
+        height: 236px;
+        justify-content: center;
+        position: relative;
+        width: 236px;
+        z-index: 2;
       }
-      .sdg span {
-        font-size: 18px;
-        color: var(--muted);
+      .record-card img {
+        height: 72px;
+        width: 72px;
+      }
+      .record-card strong {
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 26px;
+        margin-top: 16px;
+      }
+      .agency-path {
+        align-items: center;
+        display: flex;
+        grid-column: 2;
+        gap: 0;
+      }
+      .agency-path::before {
+        border-top: 2px solid var(--slate);
+        content: "";
+        flex: 1;
+      }
+      .agency-path span {
+        align-items: center;
+        background: #fff;
+        border: 1px solid var(--hair);
+        border-radius: 8px;
+        display: flex;
+        font-size: 22px;
+        font-weight: 700;
+        height: 58px;
+        justify-content: center;
+        width: 126px;
+      }
+      .agency-path.a {
+        grid-row: 1;
+      }
+      .agency-path.b {
+        grid-row: 2;
+      }
+      .agency-path.c {
+        grid-row: 3;
+      }
+      .proposal-tag {
+        bottom: 28px;
+        color: var(--slate);
+        font-size: 17px;
+        font-weight: 650;
+        position: absolute;
+        right: 0;
+        text-align: right;
+      }
+
+      /* Slide 2 */
+      .problem-grid {
+        display: grid;
+        gap: 62px;
+        grid-template-columns: 0.72fr 1.28fr;
+        margin-top: 44px;
+      }
+      .big-stat {
+        align-self: start;
+        border-top: 5px solid var(--terra);
+        padding-top: 22px;
+      }
+      .big-stat strong {
+        color: var(--terra);
+        display: block;
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 116px;
+        font-weight: 700;
+        letter-spacing: -0.055em;
+        line-height: 0.92;
+      }
+      .big-stat p {
+        font-size: 27px;
         line-height: 1.35;
+        margin-top: 20px;
+        max-width: 530px;
+      }
+      .repeat-map {
+        border-top: 1px solid var(--hair);
+      }
+      .repeat-row {
+        align-items: center;
+        border-bottom: 1px solid var(--hair);
+        display: grid;
+        gap: 26px;
+        grid-template-columns: 135px 1fr 1fr;
+        min-height: 98px;
+      }
+      .repeat-row b {
+        color: var(--slate);
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 28px;
+      }
+      .evidence-chip {
+        background: var(--soft);
+        border: 1px solid var(--hair);
+        border-radius: 6px;
+        color: var(--ink);
+        font-size: 22px;
+        font-weight: 650;
+        padding: 13px 16px;
+      }
+      .problem-bottom {
+        margin-top: 38px;
+      }
+      .deadline {
+        border: 1px solid var(--hair);
+        border-radius: 8px;
+        padding: 22px 26px;
+      }
+      .deadline {
+        border-color: #dca789;
+      }
+      .problem-bottom strong {
+        display: block;
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 24px;
+      }
+      .problem-bottom p {
+        color: var(--muted);
+        font-size: 22px;
+        line-height: 1.35;
+        margin-top: 8px;
+      }
+
+      /* Slide 3 */
+      .solution-grid {
+        display: grid;
+        gap: 48px;
+        grid-template-columns: 0.72fr 1.28fr;
+        margin-top: 36px;
+      }
+      .promise-list {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+      .promise {
+        border-bottom: 1px solid var(--hair);
+        padding-bottom: 20px;
+      }
+      .promise:last-child {
+        border-bottom: 0;
+      }
+      .promise strong {
+        color: var(--terra);
+        display: block;
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 27px;
+      }
+      .promise p {
+        color: var(--muted);
+        font-size: 20px;
+        line-height: 1.38;
+        margin-top: 6px;
+      }
+      .qr-row {
+        align-items: center;
+        display: flex;
+        gap: 18px;
+        margin-top: 18px;
+      }
+      .qr-row img {
+        height: 240px;
+        width: 240px;
+      }
+      .qr-row strong {
+        display: block;
+        font-size: 20px;
+      }
+      .qr-row span {
+        color: var(--muted);
+        display: block;
+        font-size: 17px;
+        margin-top: 5px;
+      }
+      .prototype-grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 0.92fr 1.28fr;
+        grid-template-rows: 238px 232px;
+      }
+      .form-crop {
+        grid-row: 1 / 3;
+        position: relative;
+      }
+      .form-crop img {
+        height: 760px;
+        left: -180px;
+        position: absolute;
+        top: -285px;
+        width: auto;
+      }
+      .draft-crop {
+        position: relative;
+      }
+      .draft-crop img {
+        height: auto;
+        left: 0;
+        position: absolute;
+        top: -8px;
+        width: 660px;
+      }
+      .prototype-note {
+        align-self: start;
+        color: var(--muted);
+        font-size: 20px;
+        line-height: 1.42;
+        padding: 8px 6px;
+      }
+      .prototype-note strong {
+        color: var(--slate);
+        display: block;
+        font-size: 21px;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+      }
+
+      /* Slide 4 */
+      .innovation-top {
+        max-width: 1370px;
+      }
+      .innovation-copy {
+        color: var(--muted);
+        font-size: 24px;
+        line-height: 1.42;
+        margin-top: 14px;
+      }
+      .shared-core {
+        align-items: center;
+        background: var(--soft);
+        border: 1px solid var(--hair);
+        border-radius: 8px;
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 190px 1fr;
+        margin-top: 28px;
+        padding: 22px 28px;
+      }
+      .shared-core strong {
+        color: var(--terra);
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 27px;
+      }
+      .core-items {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .core-items span {
+        border-left: 1px solid var(--hair);
+        font-size: 22px;
+        font-weight: 650;
+        padding-left: 18px;
+      }
+      .agency-branches {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 28px;
+      }
+      .agency-branch {
+        border-top: 4px solid var(--slate);
+        padding: 18px 10px 0;
+      }
+      .agency-branch h3 {
+        color: var(--slate);
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 28px;
+      }
+      .agency-branch p {
+        color: var(--muted);
+        font-size: 21px;
+        line-height: 1.4;
+        margin-top: 10px;
+      }
+      .innovation-guardrail {
+        border-top: 1px solid var(--hair);
+        color: var(--ink);
+        font-size: 22px;
+        font-weight: 650;
+        margin-top: 28px;
+        padding-top: 16px;
+      }
+
+      /* Slide 5 */
+      .feasibility-intro {
+        color: var(--muted);
+        font-size: 23px;
+        line-height: 1.4;
+        margin-top: 22px;
+        max-width: 1300px;
+      }
+      .stages {
+        display: grid;
+        gap: 0;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 52px;
+        position: relative;
+      }
+      .stages::before {
+        background: var(--hair);
+        content: "";
+        height: 2px;
+        left: 14%;
+        position: absolute;
+        right: 14%;
+        top: 25px;
+      }
+      .stage {
+        padding: 0 30px;
+        position: relative;
+      }
+      .stage:first-child {
+        padding-left: 0;
+      }
+      .stage:last-child {
+        padding-right: 0;
+      }
+      .stage-dot {
+        background: #fff;
+        border: 6px solid var(--hair);
+        border-radius: 50%;
+        height: 52px;
+        position: relative;
+        width: 52px;
+        z-index: 2;
+      }
+      .stage:first-child .stage-dot {
+        border-color: var(--slate);
+      }
+      .stage:nth-child(2) .stage-dot {
+        border-color: var(--terra);
+      }
+      .stage h3 {
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 30px;
+        line-height: 1.15;
+        margin-top: 24px;
+      }
+      .stage p {
+        color: var(--muted);
+        font-size: 22px;
+        line-height: 1.4;
+        margin-top: 13px;
+      }
+      .gate {
+        background: var(--soft);
+        border: 1px solid var(--hair);
+        border-radius: 8px;
+        color: var(--ink);
+        font-size: 21px;
+        font-weight: 650;
+        line-height: 1.38;
+        margin-top: 22px;
+        min-height: 82px;
+        padding: 15px 18px;
+      }
+      /* Slide 6 */
+      .impact-measures {
+        display: grid;
+        gap: 0;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 52px;
+      }
+      .measure {
+        border-right: 1px solid var(--hair);
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 1.18;
+        min-height: 135px;
+        padding: 4px 42px 0;
+      }
+      .measure:first-child {
+        padding-left: 0;
+      }
+      .measure:last-child {
+        border-right: 0;
+        padding-right: 0;
+      }
+      .impact-context {
+        align-items: stretch;
+        display: grid;
+        gap: 28px;
+        grid-template-columns: 0.8fr 1.2fr;
+        margin-top: 62px;
+      }
+      .financial-context,
+      .funding-test {
+        background: var(--soft);
+        border: 1px solid var(--hair);
+        border-radius: 8px;
+        padding: 22px 26px;
+      }
+      .financial-context strong {
+        color: var(--ink);
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 27px;
+      }
+      .financial-context p,
+      .funding-test p {
+        color: var(--muted);
+        font-size: 19px;
+        line-height: 1.4;
+        margin-top: 8px;
+      }
+      .funding-test strong {
+        color: var(--muted);
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+
+      /* Slide 7 */
+      .closing-grid {
+        display: grid;
+        gap: 72px;
+        grid-template-columns: 1.3fr 0.7fr;
+      }
+      .closing-copy {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .closing-points {
+        display: grid;
+        gap: 22px;
+        margin-top: 42px;
+      }
+      .closing-point {
+        align-items: baseline;
+        border-bottom: 1px solid var(--hair);
+        display: grid;
+        gap: 22px;
+        grid-template-columns: 205px 1fr;
+        padding-bottom: 18px;
+      }
+      .closing-point:last-child {
+        border-bottom: 0;
+      }
+      .closing-point strong {
+        color: var(--slate);
+        font-size: 19px;
+        text-transform: uppercase;
+      }
+      .closing-point span {
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 26px;
+        font-weight: 650;
+        line-height: 1.25;
+      }
+      .final-line {
+        bottom: 28px;
+        color: var(--terra);
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 38px;
+        font-weight: 700;
+        line-height: 1.15;
+        max-width: 1100px;
+        position: absolute;
+      }
+      .closing-mark {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .closing-mark img {
+        height: 230px;
+        width: 230px;
+      }
+      .closing-mark strong {
+        font-family: "Outfit", Arial, sans-serif;
+        font-size: 42px;
+        margin-top: 24px;
+      }
+      .closing-mark p {
+        color: var(--muted);
+        font-size: 19px;
+        line-height: 1.4;
+        margin-top: 16px;
+        max-width: 350px;
+        text-align: center;
       }
       @page {
-        size: 1920px 1080px;
         margin: 0;
+        size: 1920px 1080px;
       }
     </style>
   </head>
   <body>
-    <!-- 1 COVER -->
-    <section class="slide">
-      <div class="brandrow">
-        <div class="left">
-          <img class="uriis" src="assets/uriis.png" alt="URIIS 2026" />
+    <section class="slide" data-label="1 The Idea">
+      <header class="frame-head">
+        <div class="frame-kicker">Open Strong</div>
+        <div class="frame-title">1. The Idea</div>
+        <img class="frame-logo" src="assets/uriis.png" alt="URIIS 2026" />
+      </header>
+      <main class="content idea-grid">
+        <div class="idea-copy">
+          <div class="idea-lockup">
+            <img class="idea-mark" src="assets/mark.png" alt="" />
+            <div class="wordmark">MyTakziah</div>
+          </div>
+          <div class="idea-line">One Family Record. Clearer Next Steps.</div>
+          <p class="idea-desc">
+            A proposed assistant helping bereaved families prepare for JPN, KWSP and PERKESO.
+          </p>
+          <div class="identity">
+            <strong>Team Survive | Universiti Malaya and Asia Pacific University</strong>
+            <p>Anderson Ling | Hee Zi Jie | Wong Xuan Rui | Yow Li Hao</p>
+          </div>
+        </div>
+        <div class="record-map" aria-label="One family record mapped to three agencies">
+          <div class="record-card">
+            <img src="assets/mark.png" alt="" />
+            <strong>Family Record</strong>
+          </div>
+          <div class="agency-path a"><span>JPN</span></div>
+          <div class="agency-path b"><span>KWSP</span></div>
+          <div class="agency-path c"><span>PERKESO</span></div>
+          <div class="proposal-tag">Student Proposal<br />Not an Official Government Service</div>
+        </div>
+      </main>
+      <footer class="frame-foot">
+        <span>URIIS Student Biz Innov Challenge 2026 | Final Pitch</span><span>1</span>
+      </footer>
+    </section>
+
+    <section class="slide" data-label="2 The Problem">
+      <header class="frame-head">
+        <div class="frame-kicker">Why This Matters</div>
+        <div class="frame-title">2. The Problem</div>
+        <img class="frame-logo" src="assets/uriis.png" alt="URIIS 2026" />
+      </header>
+      <main class="content">
+        <h1 class="headline">After a Death, the Paperwork Still Repeats</h1>
+        <div class="problem-grid">
+          <div class="big-stat">
+            <strong>198,992</strong>
+            <p>deaths recorded in Malaysia in 2024</p>
+          </div>
+          <div class="repeat-map">
+            <div class="repeat-row">
+              <b>JPN</b><span class="evidence-chip">Identity</span
+              ><span class="evidence-chip">Proof of Death</span>
+            </div>
+            <div class="repeat-row">
+              <b>KWSP</b><span class="evidence-chip">Identity</span
+              ><span class="evidence-chip">Proof of Death</span>
+            </div>
+            <div class="repeat-row">
+              <b>PERKESO</b><span class="evidence-chip">Identity</span
+              ><span class="evidence-chip">Proof of Death</span>
+            </div>
+          </div>
+        </div>
+        <div class="problem-bottom">
+          <div class="deadline">
+            <strong>A Deadline Families Cannot Afford to Miss</strong>
+            <p>
+              EPF Death Assistance requires application within six months, death before 60, and
+              other conditions. This is not a deadline for withdrawing all EPF savings.
+            </p>
+          </div>
+        </div>
+      </main>
+      <div class="source">
+        Sources: DOSM, Vital Statistics, Malaysia, 2025; DOSM, Current Population Estimates, 2026;
+        KWSP, Death Withdrawal.
+      </div>
+      <footer class="frame-foot">
+        <span>URIIS Student Biz Innov Challenge 2026 | Final Pitch</span><span>2</span>
+      </footer>
+    </section>
+
+    <section class="slide" data-label="3 Our Solution">
+      <header class="frame-head">
+        <div class="frame-kicker">Make It Easy to Understand</div>
+        <div class="frame-title">3. Our Solution</div>
+        <img class="frame-logo" src="assets/uriis.png" alt="URIIS 2026" />
+      </header>
+      <main class="content">
+        <h1 class="headline compact">Provide Shared Details Once. Prepare the Next Step.</h1>
+        <div class="solution-grid">
           <div>
-            <div class="org">Student Biz Innov Challenge 2026</div>
+            <div class="promise-list">
+              <div class="promise">
+                <strong>Reuse</strong>
+                <p>Shared details in relevant draft forms.</p>
+              </div>
+              <div class="promise">
+                <strong>Review</strong>
+                <p>Requirements, known deadlines and questions that need checking.</p>
+              </div>
+              <div class="promise">
+                <strong>Submit Officially</strong>
+                <p>The family uses official channels. Agencies decide.</p>
+              </div>
+            </div>
+            <div class="qr-row">
+              <img src="assets/qr-logo.png" alt="QR code for the MyTakziah prototype" />
+              <div><strong>Interactive Prototype</strong><span>mytakziah.vercel.app</span></div>
+            </div>
+          </div>
+          <div class="prototype-grid">
+            <div class="screen form-crop">
+              <img src="assets/live-step2.png" alt="Prototype screen for entering shared details" />
+            </div>
+            <div class="screen draft-crop">
+              <img src="assets/screen-timeline.png" alt="Prototype screen showing draft forms" />
+            </div>
+            <div class="prototype-note">
+              <strong>Interactive Prototype. Agency Responses Simulated.</strong>Required originals,
+              signatures and thumbprints remain where applicable.
+            </div>
           </div>
         </div>
-        <div class="left">
-          <div class="org">Organised by</div>
-          <img class="kolaxus" src="assets/kolaxus.png" alt="Kolaxus" />
-        </div>
+      </main>
+      <div class="source">
+        Sources: MyTakziah interactive prototype; reviewed JPN, KWSP and PERKESO forms in the
+        repository research record.
       </div>
-
-      <div class="lockup">
-        <img src="assets/mark.png" alt="" />
-        <div class="wordmark">MyTakziah</div>
-      </div>
-
-      <div class="covbody">
-        <div>
-          <div class="rule" style="margin-top: 34px"></div>
-          <div class="oneline">One death. Told to government once.</div>
-          <div class="support">
-            An AI that, after a death, reads a family's documents once and files their JPN, KWSP and
-            PERKESO claims for them.
-          </div>
-        </div>
-        <div class="covqr">
-          <img src="assets/qr-logo.png" alt="" />
-          <div>Scan for the working prototype</div>
-        </div>
-      </div>
-
-      <div class="teamrow">
-        <div class="mem">
-          <img src="assets/team/anderson-ling.png" alt="" />
-          <div>
-            <b>Anderson Ling</b><span>Team Leader<br />Universiti Malaya</span>
-          </div>
-        </div>
-        <div class="mem">
-          <img src="assets/team/hee-zi-jie.png" alt="" />
-          <div>
-            <b>Hee Zi Jie</b><span>Software Development<br />Asia Pacific University</span>
-          </div>
-        </div>
-        <div class="mem">
-          <img src="assets/team/wong-xuan-rui.png" alt="" />
-          <div>
-            <b>Wong Xuan Rui</b><span>Designer<br />Universiti Malaya</span>
-          </div>
-        </div>
-        <div class="mem">
-          <img src="assets/team/yow-li-hao.png" alt="" />
-          <div>
-            <b>Yow Li Hao</b><span>Software Development<br />Asia Pacific University</span>
-          </div>
-        </div>
-      </div>
+      <footer class="frame-foot">
+        <span>URIIS Student Biz Innov Challenge 2026 | Final Pitch</span><span>3</span>
+      </footer>
     </section>
 
-    <!-- 2 PROBLEM -->
-    <section class="slide">
-      <div class="eyebrow">1. The Problem <span>2 / 7</span></div>
-      <div class="hair"></div>
-      <h1>Malaysia is ageing. The paperwork<br />after a death has not changed.</h1>
-      <div class="rule"></div>
-      <div class="cols">
-        <div class="points">
-          <div class="pt">
-            <div class="num">1</div>
-            <div>
-              <div class="lead">
-                8.4 per cent of Malaysians are now 65 or over, up from 8.0 per cent a year earlier.
-              </div>
-              <div class="body">
-                That is roughly 2.7 million people, and the share is rising every year. 198,992
-                people died in Malaysia in 2024, and the median age at death is 69.
-              </div>
-            </div>
-          </div>
-          <div class="pt">
-            <div class="num">2</div>
-            <div>
-              <div class="lead">
-                Three agencies then ask that family for the same five things, separately.
-              </div>
-              <div class="body">
-                JPN, PERKESO and KWSP each demand the same core information again, on three
-                different forms, and mostly in person with original documents.
-              </div>
-            </div>
-          </div>
-          <div class="pt">
-            <div class="num">3</div>
-            <div>
-              <div class="lead">
-                Two of the three agencies enforce deadlines they do not fully publish.
-              </div>
-              <div class="body">
-                The person left holding that paperwork is usually an older widow or widower. Miss
-                the EPF window and the RM2,500 Death Assistance is gone.
-              </div>
-            </div>
+    <section class="slide" data-label="4 What Makes It Innovative">
+      <header class="frame-head">
+        <div class="frame-kicker">Differentiation</div>
+        <div class="frame-title">4. What Makes It Innovative?</div>
+        <img class="frame-logo" src="assets/uriis.png" alt="URIIS 2026" />
+      </header>
+      <main class="content">
+        <div class="innovation-top">
+          <h1 class="headline compact">Share the Common Evidence. Respect Every Agency Rule.</h1>
+          <p class="innovation-copy">
+            The workflow reuses what is common, then asks only for what each route still needs.
+          </p>
+        </div>
+        <div class="shared-core">
+          <strong>Shared Once</strong>
+          <div class="core-items">
+            <span>Deceased Identity</span><span>Applicant Identity</span><span>Proof of Death</span>
           </div>
         </div>
-        <div class="aside" style="width: 516px">
-          <div class="matrix">
-            <h4>The same information, demanded again</h4>
-            <p class="sub">Each row is asked for once per agency.</p>
-            <table>
-              <tr>
-                <th>Information</th>
-                <th>JPN</th>
-                <th>KWSP</th>
-                <th>PERKESO</th>
-              </tr>
-              <tr>
-                <td>Identity of the deceased</td>
-                <td><span class="dot"></span></td>
-                <td><span class="dot"></span></td>
-                <td><span class="dot"></span></td>
-              </tr>
-              <tr>
-                <td>Identity of the claimant</td>
-                <td><span class="dot"></span></td>
-                <td><span class="dot"></span></td>
-                <td><span class="dot"></span></td>
-              </tr>
-              <tr>
-                <td>The fact of the death</td>
-                <td><span class="dot"></span></td>
-                <td><span class="dot"></span></td>
-                <td><span class="dot"></span></td>
-              </tr>
-              <tr>
-                <td>Relationship to the deceased</td>
-                <td class="dash">&ndash;</td>
-                <td><span class="dot"></span></td>
-                <td><span class="dot"></span></td>
-              </tr>
-              <tr>
-                <td>Payment destination</td>
-                <td class="dash">&ndash;</td>
-                <td><span class="dot"></span></td>
-                <td><span class="dot"></span></td>
-              </tr>
-            </table>
-            <div class="tot">
-              Three different forms: JPN.LM02, KWSP 9KM (AHL), and Borang 34 or
-              Borang 24 and 26.
-            </div>
+        <div class="agency-branches">
+          <div class="agency-branch">
+            <h3>JPN</h3>
+            <p>Registration route, informant details and required originals.</p>
+          </div>
+          <div class="agency-branch">
+            <h3>KWSP</h3>
+            <p>Relationship evidence and payment details when the route requires them.</p>
+          </div>
+          <div class="agency-branch">
+            <h3>PERKESO</h3>
+            <p>Relationship evidence and payment details where applicable.</p>
           </div>
         </div>
+        <p class="innovation-guardrail">
+          AI extracts and explains. Human-maintained rules constrain. Agencies decide.
+        </p>
+      </main>
+      <div class="source">
+        Sources: JPN, Ordinary Registration of Death; KWSP 9KM (AHL), V20260701; PERKESO Borang 34
+        and benefit checklists.
       </div>
-      <div class="foot">
-        Parliament recorded 72,929 late death registrations between 2003 and 2014, and named funeral
-        rites and religious obligations as the reason families could not meet the deadline.
-        Published accounts describe survivors collecting benefits more than twenty years late,
-        simply because nobody told them.
-      </div>
+      <footer class="frame-foot">
+        <span>URIIS Student Biz Innov Challenge 2026 | Final Pitch</span><span>4</span>
+      </footer>
     </section>
 
-    <!-- 3 SOLUTION -->
-    <section class="slide">
-      <div class="eyebrow">2. Our Solution <span>3 / 7</span></div>
-      <div class="hair"></div>
-      <h1>Provide once. We prepare every claim.</h1>
-      <div class="rule"></div>
-      <div class="cols">
-        <div class="points">
-          <div class="pt">
-            <div class="num">1</div>
-            <div>
-              <div class="lead">Provide once.</div>
-              <div class="body">
-                Identity, proof of death, relationship and bank details, entered a single time.
-              </div>
-            </div>
+    <section class="slide" data-label="5 How It Works and Feasibility">
+      <header class="frame-head">
+        <div class="frame-kicker">Can This Really Be Done?</div>
+        <div class="frame-title">5. How It Works &amp; Feasibility</div>
+        <img class="frame-logo" src="assets/uriis.png" alt="URIIS 2026" />
+      </header>
+      <main class="content">
+        <h1 class="headline compact">Test Preparation Before Government Integration</h1>
+        <p class="feasibility-intro">
+          A bounded path tests usefulness and safety before any promise of automated submission.
+        </p>
+        <div class="stages">
+          <div class="stage">
+            <div class="stage-dot"></div>
+            <h3>Evidence Today</h3>
+            <p>Interactive prototype and documented agency-form research.</p>
+            <div class="gate">Reality: no completed interviews, host or agency integration.</div>
           </div>
-          <div class="pt">
-            <div class="num">2</div>
-            <div>
-              <div class="lead">
-                Every entitlement, with the government's own rule printed beside it.
-              </div>
-              <div class="body">Ranked by deadline, soonest first, never by value.</div>
-            </div>
+          <div class="stage">
+            <div class="stage-dot"></div>
+            <h3>Supervised Preparation Pilot</h3>
+            <p>[ASSUMPTION] Test one PJ community, reviewed drafts and official channels.</p>
+            <div class="gate">Gate: user, rule and privacy review; draft-format acceptance.</div>
           </div>
-          <div class="pt">
-            <div class="num">3</div>
-            <div>
-              <div class="lead">Submitted, receipted and tracked. Never approved.</div>
-              <div class="body">
-                The agency always keeps the decision. We prepare and we file. We never decide who
-                qualifies.
-              </div>
-            </div>
-          </div>
-          <div class="qrbox">
-            <img src="assets/qr-logo.png" alt="" />
-            <div>
-              <div class="t">Working prototype, live now</div>
-              <div class="s">
-                mytakziah.vercel.app<br />Scan it. It runs the whole journey.
-              </div>
-            </div>
+          <div class="stage">
+            <div class="stage-dot"></div>
+            <h3>Authorised Integration</h3>
+            <p>Automated submission and status updates only after agency agreements and access.</p>
+            <div class="gate">Gate: legal, identity, operational and technical approvals.</div>
           </div>
         </div>
-        <div class="aside">
-          <div class="shots">
-            <img class="shot" src="assets/live-step2.png" alt="" />
-            <img class="shot" src="assets/live-step4.png" alt="" />
-          </div>
-          <div class="cap">
-            Live prototype: evidence given once, then consent taken separately for
-            each agency. mytakziah.vercel.app
-          </div>
-        </div>
+      </main>
+      <div class="source">
+        Evidence status as at 12 September 2026: prototype and form research exist; interviews,
+        host, reviewers and integration agreements are not recorded.
       </div>
+      <footer class="frame-foot">
+        <span>URIIS Student Biz Innov Challenge 2026 | Final Pitch</span><span>5</span>
+      </footer>
     </section>
 
-    <!-- 4 INNOVATION -->
-    <section class="slide">
-      <div class="eyebrow">3. What Makes It Innovative <span>4 / 7</span></div>
-      <div class="hair"></div>
-      <h1>Not a chatbot. A filing engine<br />with the rulebook attached.</h1>
-      <div class="rule"></div>
-      <div class="cols">
-        <div class="points">
-          <div class="pt">
-            <div class="num">1</div>
-            <div>
-              <div class="lead">JPN has already built a chatbot. It still cannot reach KWSP.</div>
-              <div class="body">
-                A chatbot tells you what to do. MyTakziah does it. That is the whole difference, and
-                it is why this has not been solved already.
-              </div>
-            </div>
+    <section class="slide" data-label="6 Impact and Potential">
+      <header class="frame-head">
+        <div class="frame-kicker">Show the Value</div>
+        <div class="frame-title">6. Impact &amp; Potential</div>
+        <img class="frame-logo" src="assets/uriis.png" alt="URIIS 2026" />
+      </header>
+      <main class="content">
+        <h1 class="headline compact">Test Whether Families Arrive Better Prepared</h1>
+        <div class="impact-measures">
+          <div class="measure">Less Preparation Time?</div>
+          <div class="measure">Fewer Document Corrections?</div>
+          <div class="measure">More Relevant Deadlines Met?</div>
+        </div>
+        <div class="impact-context">
+          <div class="financial-context">
+            <strong>RM3.24b in 2024</strong>
+            <p>Financial stakes in EPF death withdrawals, not MyTakziah revenue.</p>
           </div>
-          <div class="pt">
-            <div class="num">2</div>
-            <div>
-              <div class="lead">Deadline first, and every rule cited to its source.</div>
-              <div class="body">
-                Where an agency publishes no deadline, we say so on the screen instead of guessing.
-                Nothing we show a family is invented.
-              </div>
-            </div>
-          </div>
-          <div class="pt">
-            <div class="num">3</div>
-            <div>
-              <div class="lead">Routed to the family's own rites.</div>
-              <div class="body">
-                The checklist a Muslim family sees is not the one a Chinese or Hindu family sees.
-                Religion changes the documents, the timing and the services that matter.
-              </div>
-            </div>
+          <div class="funding-test">
+            <strong>[ASSUMPTION] Test Only After User Value</strong>
+            <p>
+              Keep guidance free; test optional fixed-fee provider listings. No family-data sale,
+              benefit commission or paid influence on guidance.
+            </p>
           </div>
         </div>
-        <div class="aside" style="width: 560px">
-          <img class="shot" src="assets/live-step3.png" alt="" />
-          <div class="cap">
-            Every entitlement carries its deadline, its source link, and a plain
-            statement of what the agency does not publish.
-          </div>
-        </div>
+      </main>
+      <div class="source">
+        Source: EPF Integrated Annual Report 2024. Pilot outcomes and willingness to pay have not
+        been measured.
       </div>
-      <div class="foot terra">
-        Other countries have built the notification half of this. The UK's Tell Us Once tells
-        departments that someone has died; it does not file the claim or protect the deadline. None
-        of it is built for JPN, KWSP and PERKESO. Our advantage is not the technology, because
-        anyone can add AI. It is that we read these three agencies' forms until we understood this
-        ecosystem better than a general purpose assistant ever will.
-      </div>
+      <footer class="frame-foot">
+        <span>URIIS Student Biz Innov Challenge 2026 | Final Pitch</span><span>6</span>
+      </footer>
     </section>
 
-    <!-- 5 FEASIBILITY -->
-    <section class="slide">
-      <div class="eyebrow">4. How It Works and Feasibility <span>5 / 7</span></div>
-      <div class="hair"></div>
-      <h1>Built already. Honest about<br />what is not built yet.</h1>
-      <div class="rule"></div>
-      <div class="cols">
-        <div class="points">
-          <div class="pt">
-            <div class="num">1</div>
-            <div>
-              <div class="lead">A working prototype is live today, not a mockup.</div>
-              <div class="body">
-                The full journey runs end to end. The judges can scan it from their seats.
-              </div>
+    <section class="slide" data-label="7 Why Us and Closing Vision">
+      <header class="frame-head">
+        <div class="frame-kicker">Finish Memorably</div>
+        <div class="frame-title">7. Why Us + Closing Vision</div>
+        <img class="frame-logo" src="assets/uriis.png" alt="URIIS 2026" />
+      </header>
+      <main class="content closing-grid">
+        <div class="closing-copy">
+          <h1 class="headline compact">Help Us Test This With One Community</h1>
+          <div class="closing-points">
+            <div class="closing-point">
+              <strong>Team</strong
+              ><span>Four students: two Computer Science, two Actuarial Science.</span>
+            </div>
+            <div class="closing-point">
+              <strong>Built Before</strong
+              ><span>Two members built Layak, a previous hackathon grand champion.</span>
+            </div>
+            <div class="closing-point">
+              <strong>Ask</strong><span>Community host, benefits adviser and privacy mentor.</span>
             </div>
           </div>
-          <div class="pt">
-            <div class="num">2</div>
-            <div>
-              <div class="lead">The national rails already exist.</div>
-              <div class="body">
-                MyDigital ID has almost 10 million accounts. MyGDX already connects 81 agencies. We
-                are not asking anyone to build new plumbing.
-              </div>
-            </div>
-          </div>
-          <div class="pt">
-            <div class="num">3</div>
-            <div>
-              <div class="lead">Integration is proposed, not proven.</div>
-              <div class="body">
-                Until an agency connects we print the completed forms and the family carries them.
-                They still know what they are owed and which deadline is first.
-              </div>
-            </div>
-          </div>
+          <div class="final-line">One loss should not mean starting over at every counter.</div>
         </div>
-        <div class="aside">
-          <img class="shot" src="assets/live-step5.png" alt="" />
-          <div class="cap">
-            Three forms prepared from one set of evidence, and one timeline.
-          </div>
+        <div class="closing-mark">
+          <img src="assets/mark.png" alt="" /><strong>MyTakziah</strong>
+          <p>One family record. Clearer next steps.</p>
         </div>
+      </main>
+      <div class="source">
+        Team composition and Layak experience are team-supplied records. No pilot partner is
+        secured.
       </div>
-      <div class="foot">
-        Where we are today: a working prototype, and rules verified against primary government
-        documents. &nbsp;&middot;&nbsp; Next: a minimum viable product, then one community pilot.
-      </div>
-    </section>
-
-    <!-- 6 IMPACT -->
-    <section class="slide">
-      <div class="eyebrow">5. Impact and Potential <span>6 / 7</span></div>
-      <div class="hair"></div>
-      <h1>Three sides benefit.<br />One of them can pay.</h1>
-      <div class="rule"></div>
-      <div class="cols">
-        <div class="points">
-          <div class="pt">
-            <div class="num">1</div>
-            <div>
-              <div class="lead">Families use it free. Always.</div>
-              <div class="body">
-                They are the people least able to pay, at the worst possible moment. Charging them
-                would defeat the point.
-              </div>
-            </div>
-          </div>
-          <div class="pt">
-            <div class="num">2</div>
-            <div>
-              <div class="lead">
-                Government gets complete, on time, correctly filled submissions.
-              </div>
-              <div class="body">
-                Fewer rejected forms, fewer repeat counter visits, and deaths registered inside the
-                window rather than years late.
-              </div>
-            </div>
-          </div>
-          <div class="pt">
-            <div class="num">3</div>
-            <div>
-              <div class="lead">Service providers pay to reach families at the moment of need.</div>
-              <div class="body">
-                Funeral, memorial and estate services already spend to find these families. A
-                listing and referral model funds the platform without ever charging the bereaved.
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="aside" style="width: 545px">
-          <div class="trio">
-            <figure>
-              <img src="assets/med-protection.png" alt="" />
-              <figcaption>Families</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/med-registry.png" alt="" />
-              <figcaption>Government</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/med-savings.png" alt="" />
-              <figcaption>Providers</figcaption>
-            </figure>
-          </div>
-          <div class="sdg">
-            <img src="assets/sdg-16.png" alt="Sustainable Development Goal 16" />
-            <img src="assets/sdg-1.png" alt="Sustainable Development Goal 1" />
-            <span
-              >Accountable institutions, and social protection<br />that actually
-              reaches the people entitled to it.</span
-            >
-          </div>
-        </div>
-      </div>
-      <div class="foot">
-        RM3.24 billion moved through EPF death withdrawals in 2024, across 85,532 cases.
-        &nbsp;&middot;&nbsp; We will measure families served, agencies connected and providers
-        onboarded. &nbsp;&middot;&nbsp; Malaysia first, then the same problem across Southeast Asia.
-      </div>
-    </section>
-
-    <!-- 7 WHY US -->
-    <section class="slide">
-      <div class="eyebrow">6. Why Us, and What We Are Asking For <span>7 / 7</span></div>
-      <div class="hair"></div>
-      <h1>We already built it.<br />We need the doors.</h1>
-      <div class="rule"></div>
-      <div class="cols">
-        <div class="points">
-          <div class="pt">
-            <div class="num">1</div>
-            <div>
-              <div class="lead">
-                Two computer science students and two actuarial science students.
-              </div>
-              <div class="body">
-                The eligibility rules, contribution tests and deadlines behind this are actuarial
-                work, and we did it ourselves rather than guessing at it.
-              </div>
-            </div>
-          </div>
-          <div class="pt">
-            <div class="num">2</div>
-            <div>
-              <div class="lead">
-                Every number here is verified against primary government documents.
-              </div>
-              <div class="body">
-                Where we could not verify something we left it off the slide. We would rather be
-                narrow than wrong.
-              </div>
-            </div>
-          </div>
-          <div class="pt">
-            <div class="num">3</div>
-            <div>
-              <div class="lead">What we need is not mainly money. It is access.</div>
-              <div class="body">
-                We do not reach families by advertising. We reach one community through the people
-                already trusted with a death there, and learn from it before going wider. Introduce
-                us to one, and to service providers, and we will have real users inside a month.
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="aside" style="width: 300px; text-align: center">
-          <img
-            src="assets/qr-logo.png"
-            alt=""
-            style="width: 268px; height: 268px; margin: 10px auto 0"
-          />
-          <div class="cap" style="text-align: center">mytakziah.vercel.app</div>
-        </div>
-      </div>
-      <div class="foot">
-        <div class="closer">One death. Told to government once.</div>
-      </div>
+      <footer class="frame-foot">
+        <span>URIIS Student Biz Innov Challenge 2026 | Final Pitch</span><span>7</span>
+      </footer>
     </section>
   </body>
 </html>
