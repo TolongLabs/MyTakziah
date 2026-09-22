@@ -71,16 +71,16 @@ This is MyTakziah - from three separate visits to three minutes of filing.
 
 **Presenter A**, 2:45 to 3:16
 
-Today the family carries evidence to three agencies and waits through three processes.
+Look at the top half. That's him in the middle, and three agencies around him asking for the same
+MyKad, the same death certificate, the same marriage certificate. Three separate pending statuses,
+and no way to tell which one is stuck.
 
-MyTakziah redesigns that around one life event.
+Now the bottom. Same documents, handed over once.
 
-AI alone is not the innovation. We organise the service around the life event, not the agency.
+The innovation isn't the AI. It's that this is built around one event, a death, instead of around
+three agencies.
 
-Shared evidence is mapped to each agency's requirements, and each agency keeps its own rules and
-its own decision.
-
-We do not replace agencies. We connect the family to the next correct step.
+He still reviews and consents. The agencies still decide.
 
 ## Slide 5, Feasibility and Business Model
 
