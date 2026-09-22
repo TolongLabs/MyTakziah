@@ -10,48 +10,52 @@ handoff, after Slide 4. Target 5:07 spoken, about 5:43 on stage.
 
 **Presenter A**, 0:00 to 0:52
 
-Good afternoon. We are Team Survive, and this is MyTakziah.
+Good afternoon dear judges and audience. We are Team Survive, a team of students from Universiti Malaya and APU.
 
-Takziah is the Malay word for condolences. It is what you say to a family that has just lost
-someone. The "My" in front is where we believe this belongs: beside MyKad and MyDigital ID.
-
-Here is why.
+To kick off our presentation, we would like to talk about a real case that happened in Malaysia recently.
 
 On the fourteenth of August, Encik Saiful was waiting in Seremban for his wife and their
-twelve-year-old son.
+twelve-year-old son to arrive home.
 
-They were late. His calls went unanswered. Then he saw footage online of a tanker crash on the
+They were late for a few hours. His calls went unanswered. Then he saw footage online of a tanker crash on the
 Temerloh road.
 
-He already knew.
+Upon seeing the footage, his heart sank. His body trembled, his blood went cold, being
+overcome with grief. At that moment, his world went dark.
 
-The forms call the person left behind the survivor. That is who we named ourselves after, and
-what this country asks of them is why we built MyTakziah.
+The pain he felt was already torturous enough. Unfortunately, he still has to deal with all the
+aftermath processes and claims across three government agencies, not to mention the funeral processes.
+
+His grief is the reason we created MyTakziah - Takziah meaning condolences, which our team would like to
+express with this project.
+
+In short, MyTakziah is a platform to consolidate the aforementioned three government agency visits and applications into one digital app.
+
+In fact, we already have a working prototype for this app - the brochure reaching you includes its QR, please feel free to scan and have a look through the website during or after this presentation, it would be deeply appreciated.
 
 ## Slide 2, Problem and Stakes
 
 **Presenter A**, 0:58 to 1:47
 
-The report ends there. What it does not cover is the administration.
+Depressingly, En Saiful's case is just one of many. An unspeakable tragedy for him, but a mere statistic on a national scale. Malaysia recorded 49,827 deaths last quarter. On average, that is 548 deaths a day.
 
-A family in his position can face JPN, KWSP and PERKESO separately.
+For every individual that passed, their close ones have to visit JPN, KWSP and PERKESO separately.
 
-On that table, identity is proved three times. The death, three times. Marriage and bank
+Across these visits, they have to prove their relationship with the deceased three times. The proof of death, three times. Marriage and bank
 details, twice more.
 
-He is not unusual. Malaysia recorded 49,827 deaths last quarter. That is 548 a day.
+And the support is time-limited: they have six months to claim EPF's RM2,500 Death Assistance, and PERKESO's funeral benefit of up to RM3,000 runs on a deadline PERKESO does not publish. If they misfile a claim, or did not report the passing at JPN within seven days - they may even get penalized.
 
-Half of Malaysians who die are 69 or older. Malaysia became an ageing nation in 2021. The
+To emphasize how important this issue is - this is a real problem affecting not just a specific subset of Malaysians - this problem will eventually be faced by every single one of us, some day, as long as time relentlessly marches on. Malaysia has been classified as ageing nation in 2021. The
 Ministry of Finance expects us to be an aged nation by 2048. This number does not go down.
 
-And the support is time-limited: EPF's RM2,500 Death Assistance, and up to RM3,000 from PERKESO
-where the case qualifies.
+Therefore, it is imperative that a system such as MyTakziah be implemented as swiftly as possible, for the greater good of society.
 
 ## Slide 3, Solution Journey
 
 **Presenter A**, 1:53 to 2:39
 
-The brochure reaching you includes our prototype QR.
+MyTakziah isn't built for only tech-savvy people in mind. Half of Malaysians who die are 69 or older, hence our fundamental aim is to make the system as streamlined and simple to use as possible.
 
 We built this for someone who may be in their seventies themselves, doing this for the first
 time, alone. MyTakziah turns those tasks into one guided journey.
@@ -120,14 +124,16 @@ our own institutions.
 **Presenter B**, 5:01 to 5:43
 
 Two of us are IT students and two are statistics students. This is not our first time shipping:
-one member has already built a production web application used by close to 1,000 people.
+we have already built a production web application, NexHack, used by close to 1,000 people, as well as
+a prototype for a similar website except meant for Malaysian subsidies called Layak, which won us
+champion in another hackathon.
 
-Over the next six months, we prove MyTakziah with 100 families.
+Over the next six months, we shall aim to pilot MyTakziah with 100 families.
 
 We are asking this room for the pilot partners, PDPA and legal guidance, and funding to run that
 test responsibly.
 
-When someone dies, the family should be allowed to grieve, not become the integration layer
+Grief is already hard enough. Families should be allowed to grieve, not become a broker
 between government agencies.
 
 We are Team Survive. MyTakziah: one loss, one guided journey.
