@@ -3,12 +3,19 @@
 Stage version. Spoken words and slide numbers, nothing else. The full script with delivery
 notes, sourcing and Q&A is in `final-pitch-script.md`, which settles any wording question.
 
-Presenter A speaks Slides 1 to 4. Presenter B speaks Slides 5 to 7. One silent handoff, after
-Slide 4. Target 5:00 spoken, about 5:36 on stage.
+Presenter A speaks Slides 1 to 4 (2:58). Presenter B speaks Slides 5 to 7 (2:09). One silent
+handoff, after Slide 4. Target 5:07 spoken, about 5:43 on stage.
 
 ## Slide 1, Human Hook and Idea
 
-**Presenter A**, 0:00 to 0:29
+**Presenter A**, 0:00 to 0:52
+
+Good afternoon. We are Team Survive, and this is MyTakziah.
+
+Takziah is the Malay word for condolences. It is what you say to a family that has just lost
+someone. The "My" in front is where we believe this belongs: beside MyKad and MyDigital ID.
+
+Here is why.
 
 On the fourteenth of August, Encik Saiful was waiting in Seremban for his wife and their
 twelve-year-old son.
@@ -18,12 +25,12 @@ Temerloh road.
 
 He already knew.
 
-We are Team Survive. What this country asks of a family in the days after that is why we built
-MyTakziah.
+The forms call the person left behind the survivor. That is who we named ourselves after, and
+what this country asks of them is why we built MyTakziah.
 
 ## Slide 2, Problem and Stakes
 
-**Presenter A**, 0:35 to 1:24
+**Presenter A**, 0:58 to 1:47
 
 The report ends there. What it does not cover is the administration.
 
@@ -42,7 +49,7 @@ where the case qualifies.
 
 ## Slide 3, Solution Journey
 
-**Presenter A**, 1:30 to 2:15
+**Presenter A**, 1:53 to 2:39
 
 The brochure reaching you includes our prototype QR.
 
@@ -56,35 +63,33 @@ done, what is pending, and what comes next.
 
 Our prototype demonstrates that journey with simulated agency responses.
 
-One evidence set. Three agencies coordinated. One clear next step at a time.
-
-That is the family experience. Here is why it is new.
+One evidence set, three agencies coordinated, one clear next step at a time. That is the family
+experience. Here is why it is new.
 
 ## Slide 4, Innovation
 
-**Presenter A**, 2:21 to 2:57
+**Presenter A**, 2:45 to 3:16
 
-Today, a family gives evidence to JPN, KWSP, and PERKESO separately, then waits through three
-processes and statuses.
+Today the family carries evidence to three agencies and waits through three processes.
 
 MyTakziah redesigns that around one life event.
 
 AI alone is not the innovation. We organise the service around the life event, not the agency.
 
-Shared evidence is mapped to each agency's requirements. The family reviews and consents. Each
-agency keeps its rules and makes its decision. One timeline coordinates the journey.
+Shared evidence is mapped to each agency's requirements, and each agency keeps its own rules and
+its own decision.
 
 We do not replace agencies. We connect the family to the next correct step.
 
 ## Slide 5, Feasibility and Business Model
 
-**Presenter B**, 3:03 to 3:53
+**Presenter B**, 3:22 to 4:12
 
 We did not start with AI. We started with the forms.
 
-We mapped repeated fields, documents, and deadlines across three agencies, then built our
-interactive prototype around that evidence. Version one prepares drafts without a government
-API. That lets us prove value before integration.
+We mapped every repeated field, document and deadline across three agencies, then built the
+prototype around that evidence. Version one prepares drafts without a government API, so we can
+prove value before integration.
 
 MyTakziah is free for families and funded by partners. Insurers can receive more complete
 claims; funeral providers can offer better aftercare.
@@ -92,15 +97,12 @@ claims; funeral providers can offer better aftercare.
 The RM100 and RM200 figures are price hypotheses to test, not signed contracts.
 
 Our next step is a 100-family pilot in Petaling Jaya through funeral and khairat partners. We
-will measure completion, time saved, missing documents, and satisfaction. That evidence supports
-our first paying partners, then authorised integration.
+will measure completion, time saved and missing documents. That evidence supports our first
+paying partners, then authorised integration.
 
 ## Slide 6, Impact and Potential
 
-**Presenter B**, 3:59 to 4:43
-
-Families face less stress. Agencies receive more complete submissions. Partners provide better
-bereavement support.
+**Presenter B**, 4:18 to 4:55
 
 We will not call downloads impact. We will call it impact when families complete the right
 claims faster, with fewer missing documents and less uncertainty.
@@ -110,19 +112,17 @@ Nearly 199,000 families face a death each year, and with an ageing population, m
 Once the core journey works, it can extend to Tabung Haji and ASNB, then connect to national
 digital rails with the right authorisation.
 
-Singapore's MyLegacy shows strong uptake for a coordinated digital death-certificate service.
-Malaysia can build a broader journey around our own institutions.
+Singapore already does a version of this with MyLegacy. Malaysia can build a broader one around
+our own institutions.
 
 ## Slide 7, Team, Ask, and Close
 
-**Presenter B**, 4:49 to 5:36
+**Presenter B**, 5:01 to 5:43
 
-We are four students, two from IT and two from statistics, covering product, software, design,
-and go-to-market. This is not our first time shipping: one member has already built a production
-web application used by close to 1,000 people.
+Two of us are IT students and two are statistics students. This is not our first time shipping:
+one member has already built a production web application used by close to 1,000 people.
 
-Over the next six months, our goal is simple: prove MyTakziah with 100 families in Petaling
-Jaya.
+Over the next six months, we prove MyTakziah with 100 families.
 
 We are asking this room for the pilot partners, PDPA and legal guidance, and funding to run that
 test responsibly.

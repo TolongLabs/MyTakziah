@@ -19,19 +19,26 @@ judges approach afterwards.
 
 | Slide | Purpose                        | Speaker     | Spoken Target | Stage End at a 6-Second Change |
 | ----: | ------------------------------ | ----------- | ------------: | -----------------------------: |
-|     1 | Human Hook and Idea            | Presenter A |          0:29 |                           0:29 |
-|     2 | Problem and Stakes             | Presenter A |          0:49 |                           1:24 |
-|     3 | Solution Journey               | Presenter A |          0:45 |                           2:15 |
-|     4 | Innovation                     | Presenter A |          0:36 |                           2:57 |
-|     5 | Feasibility and Business Model | Presenter B |          0:50 |                           3:53 |
-|     6 | Impact and Potential           | Presenter B |          0:44 |                           4:43 |
-|     7 | Team, Ask, and Close           | Presenter B |          0:47 |                           5:36 |
+|     1 | Human Hook and Idea            | Presenter A |          0:52 |                           0:52 |
+|     2 | Problem and Stakes             | Presenter A |          0:49 |                           1:47 |
+|     3 | Solution Journey               | Presenter A |          0:46 |                           2:39 |
+|     4 | Innovation                     | Presenter A |          0:31 |                           3:16 |
+|     5 | Feasibility and Business Model | Presenter B |          0:50 |                           4:12 |
+|     6 | Impact and Potential           | Presenter B |          0:37 |                           4:55 |
+|     7 | Team, Ask, and Close           | Presenter B |          0:42 |                           5:43 |
 
-The spoken target is 5:00. Six production-controlled slide changes at five to seven seconds each
-produce an expected stage time of 5:30 to 5:42. A five to ten-second recovery still finishes before
+The spoken target is 5:07. Six production-controlled slide changes at five to seven seconds each
+produce an expected stage time of 5:37 to 5:49. A five to ten-second recovery still finishes before
 six minutes. Do not fill that safety margin with extra facts.
 
-Presenter A carries 2:39, Presenter B carries 2:21.
+Presenter A carries 2:58, Presenter B carries 2:09.
+
+**The introduction has unbalanced the split, and that is a live decision.** Presenter A now carries
+2:58 against B's 2:09, because the greeting and the name explanation both land on Slide 1. The
+Slide 1 to 4 boundary still has the better logic, since Slides 2, 3 and 4 are one argument and B
+owns the half the Q&A actually lands on. But if 2:58 feels long in rehearsal, moving the handoff to
+after Slide 3 balances it to roughly 2:27 and 2:40, and Slide 3 already ends on a handoff-shaped
+line: "That is the family experience. Here is why it is new." Decide it in rehearsal, not on stage.
 
 If a rehearsal runs long, the first line to cut is "Nearly 199,000 families face a death each year,
 and with an ageing population, more every year" on Slide 6. The ageing argument is already made on
@@ -39,14 +46,24 @@ Slide 2; that line repeats it as a market claim and is the only genuinely option
 
 ## Full Rehearsal Script
 
-### Slide 1: Human Hook and Idea, 0:00 to 0:29
+### Slide 1: Human Hook and Idea, 0:00 to 0:52
 
 **Speaker:** Presenter A  
-**Delivery:** Begin still and unhurried. Address the judges, not the screen. Slide 1 is only the
-title slide, so nothing up there helps you; this is carried entirely by voice. Take a full beat
-before "He already knew," say those three words quietly, and take another beat after them. Do not
-dramatise. The restraint is what makes it land.
+**Delivery:** Begin still and unhurried. Address the judges, not the screen. The title slide holds
+our names and the wordmark, so the introduction has something to stand on; gesture at it once and
+then leave it alone. Change gear at "Here is why": the greeting is warm, the story is quiet. Take a
+full beat before "He already knew," say those three words quietly, and take another beat after
+them. Do not dramatise. The restraint is what makes it land.
 
+Check the running order on the day and use "Good morning" if that is what the clock says.
+
+> Good afternoon. We are Team Survive, and this is MyTakziah.
+>
+> Takziah is the Malay word for condolences. It is what you say to a family that has just lost
+> someone. The "My" in front is where we believe this belongs: beside MyKad and MyDigital ID.
+>
+> Here is why.
+>
 > On the fourteenth of August, Encik Saiful was waiting in Seremban for his wife and their
 > twelve-year-old son.
 >
@@ -55,20 +72,34 @@ dramatise. The restraint is what makes it land.
 >
 > He already knew.
 >
-> We are Team Survive. What this country asks of a family in the days after that is why we built
-> MyTakziah.
+> The forms call the person left behind the survivor. That is who we named ourselves after, and
+> what this country asks of them is why we built MyTakziah.
 
 Every detail here is in the Malay Mail report of 15 August 2026, corroborated by Bernama and Astro
 Awani, and recorded in `../../research/documented-accounts-bereavement.md`. He was waiting in
 Seremban, his calls went unanswered, and he saw footage of the crash online before anyone told him.
 **Add nothing to it.**
 
+**The name, and the line not to cross.** Both halves are recorded in `../../decisions.md`. Takziah
+is the standard respectful Malaysian word for condolences, and the "My" prefix was chosen to place
+the idea beside MyKad, MySejahtera and MyDigital ID. **Say where we believe it belongs, never that
+it is a government service.** The same ledger forbids any wording that implies MyTakziah is an
+existing or sanctioned MyGOV service, so do not upgrade this on stage into "an official service" or
+"part of MyGOV". If a judge asks whether the name is religiously specific, the honest answer is
+that takziah is the word Malaysians reach for across communities, and the service is built for
+every family regardless of faith.
+
+"Survivor" is not a flourish either. It is the administrative term: PERKESO pays a Survivors'
+Pension and the forms say surviving spouse. The team name points at the user rather than the event,
+which is why the reveal is worth holding until after the story rather than spending it in the
+greeting.
+
 **A team decision, deliberately left open.** This version says "his wife and their twelve-year-old
 son" rather than naming Nur Fatima Syuhada Abdullah and Muhammad Fattah Aisy Naufal. Both names are
 published. Naming them adds weight, and naming a dead child to win a prize is a choice the four of
 you should make together rather than inherit from a draft.
 
-### Slide 2: Problem and Stakes, 0:35 to 1:24
+### Slide 2: Problem and Stakes, 0:58 to 1:47
 
 **Speaker:** Presenter A  
 **Delivery:** His photograph is now on screen and it does the emotional work for you, so drop your
@@ -111,7 +142,7 @@ navigate JPN, KWSP and PERKESO", which asserts an administrative experience nobo
 for, about a real and identifiable bereaved man whose family is photographed on the slide. The
 hedge is not pedantry; it is the difference between an honest pitch and an invented one.
 
-### Slide 3: Solution Journey, 1:30 to 2:15
+### Slide 3: Solution Journey, 1:53 to 2:39
 
 **Speaker:** Presenter A  
 **Delivery:** Anderson and xrwong begin moving as Slide 2 ends and each covers half the judges.
@@ -137,30 +168,30 @@ feasibility belongs.
 >
 > Our prototype demonstrates that journey with simulated agency responses.
 >
-> One evidence set. Three agencies coordinated. One clear next step at a time.
->
-> That is the family experience. Here is why it is new.
+> One evidence set, three agencies coordinated, one clear next step at a time. That is the family
+> experience. Here is why it is new.
 
-### Slide 4: Innovation, 2:21 to 2:57
+### Slide 4: Innovation, 2:45 to 3:16
 
 **Speaker:** Presenter A  
 **Delivery:** You are still speaking, so carry the momentum straight through from Slide 3. Contrast
-the crowded top half with the simple bottom half. Finish on a full stop, then step back half a pace
+the crowded top half with the simple bottom half. Resist re-narrating the journey here. Consent,
+agency decisions and the single timeline were all said on Slide 3; this slide answers why it is
+new, not what happens. Finish on a full stop, then step back half a pace
 and stop talking. That silence is the handoff.
 
-> Today, a family gives evidence to JPN, KWSP, and PERKESO separately, then waits through three
-> processes and statuses.
+> Today the family carries evidence to three agencies and waits through three processes.
 >
 > MyTakziah redesigns that around one life event.
 >
 > AI alone is not the innovation. We organise the service around the life event, not the agency.
 >
-> Shared evidence is mapped to each agency's requirements. The family reviews and consents. Each
-> agency keeps its rules and makes its decision. One timeline coordinates the journey.
+> Shared evidence is mapped to each agency's requirements, and each agency keeps its own rules and
+> its own decision.
 >
 > We do not replace agencies. We connect the family to the next correct step.
 
-### Slide 5: Feasibility and Business Model, 3:03 to 3:53
+### Slide 5: Feasibility and Business Model, 3:22 to 4:12
 
 **Speaker:** Presenter B  
 **Delivery:** This is the handoff. Step in as A steps back and open on the first line without any
@@ -170,9 +201,9 @@ list of logos.
 
 > We did not start with AI. We started with the forms.
 >
-> We mapped repeated fields, documents, and deadlines across three agencies, then built our
-> interactive prototype around that evidence. Version one prepares drafts without a government API.
-> That lets us prove value before integration.
+> We mapped every repeated field, document and deadline across three agencies, then built the
+> prototype around that evidence. Version one prepares drafts without a government API, so we can
+> prove value before integration.
 >
 > MyTakziah is free for families and funded by partners. Insurers can receive more complete claims;
 > funeral providers can offer better aftercare.
@@ -180,18 +211,17 @@ list of logos.
 > The RM100 and RM200 figures are price hypotheses to test, not signed contracts.
 >
 > Our next step is a 100-family pilot in Petaling Jaya through funeral and khairat partners. We will
-> measure completion, time saved, missing documents, and satisfaction. That evidence supports our
+> measure completion, time saved and missing documents. That evidence supports our
 > first paying partners, then authorised integration.
 
-### Slide 6: Impact and Potential, 3:59 to 4:43
+### Slide 6: Impact and Potential, 4:18 to 4:55
 
 **Speaker:** Presenter B  
 **Delivery:** The four-minute bell should happen near the start of this slide. Stay calm and keep
-the close intact.
+the close intact. The three columns and the LESS STRESS, LESS ADMIN, BETTER SERVICE banner are
+already on the screen in large type. Let the judges read them. Saying them aloud used to open this
+slide and it was cut, because it bought nothing and cost seven seconds.
 
-> Families face less stress. Agencies receive more complete submissions. Partners provide better
-> bereavement support.
->
 > We will not call downloads impact. We will call it impact when families complete the right claims
 > faster, with fewer missing documents and less uncertainty.
 >
@@ -200,20 +230,19 @@ the close intact.
 > Once the core journey works, it can extend to Tabung Haji and ASNB, then connect to national
 > digital rails with the right authorisation.
 >
-> Singapore's MyLegacy shows strong uptake for a coordinated digital death-certificate service.
-> Malaysia can build a broader journey around our own institutions.
+> Singapore already does a version of this with MyLegacy. Malaysia can build a broader one around
+> our own institutions.
 
-### Slide 7: Team, Ask, and Close, 4:49 to 5:36
+### Slide 7: Team, Ask, and Close, 5:01 to 5:43
 
 **Speaker:** Presenter B  
-**Delivery:** Anderson and xrwong take half a step forward on "We are four students." Make eye
+**Delivery:** Anderson and xrwong take half a step forward on "Two of us are IT students." Make eye
 contact for the ask. Take one full beat before the final two sentences.
 
-> We are four students, two from IT and two from statistics, covering product, software, design,
-> and go-to-market. This is not our first time shipping: one member has already built a production
-> web application used by close to 1,000 people.
+> Two of us are IT students and two are statistics students. This is not our first time shipping:
+> one member has already built a production web application used by close to 1,000 people.
 >
-> Over the next six months, our goal is simple: prove MyTakziah with 100 families in Petaling Jaya.
+> Over the next six months, we prove MyTakziah with 100 families.
 >
 > We are asking this room for the pilot partners, PDPA and legal guidance, and funding to run that
 > test responsibly.
@@ -232,13 +261,13 @@ QR code.
 
 | Slide | Memory Anchor                                                                             |
 | ----: | ----------------------------------------------------------------------------------------- |
-|     1 | Seremban. Late. No answer. Footage online. He already knew. That is why we built it       |
+|     1 | Team Survive. Takziah is condolences. Here is why. Seremban. He already knew. Survivor    |
 |     2 | A family in his position. Three agencies. 548 a day. Half aged 69+. 2021 to 2048          |
 |     3 | Built for someone in their seventies. AI prepares, family consents, agencies decide       |
 |     4 | Organise the service around the life event, not the agency                                |
 |     5 | Start with the forms, not the AI. Family-free, partner-funded. Prove it with 100 families |
-|     6 | Outcomes, not downloads. Less stress, less admin, better service                          |
-|     7 | This team can ship. Ask for a responsible pilot. One loss, one guided journey             |
+|     6 | Outcomes, not downloads. 199,000 a year and rising. Tabung Haji, ASNB, Singapore          |
+|     7 | Two IT, two stats, already shipped. 100 families. Ask. One loss, one guided journey       |
 
 Do not memorise punctuation. Memorise the seven anchors and the first and last two sentences
 word-for-word.
@@ -526,8 +555,8 @@ integration agreement.
 
 ## Stage and Rehearsal Plan
 
-1. Rehearse until the spoken delivery is between 4:54 and 5:00. With six production-controlled
-   changes, the expected stage finish is 5:30 to 5:42. Treat 5:45 as the rehearsal maximum, not the
+1. Rehearse until the spoken delivery is between 5:01 and 5:07. With six production-controlled
+   changes, the expected stage finish is 5:37 to 5:49. Treat 5:45 as the rehearsal maximum, not the
    target.
 2. Use one speaking handoff, after Slide 4. Anderson and xrwong support the stage action and Q&A
    without adding two more narration handoffs. Rehearse the handoff itself: A finishes Slide 4, steps
