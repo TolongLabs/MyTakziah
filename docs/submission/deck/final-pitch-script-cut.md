@@ -1,20 +1,20 @@
 # MyTakziah Finals Pitch Script, Cut To Time
 
-Six-minute version of `final-pitch-script-simplified.md`, about 273 words lighter. Same voice,
+Six-minute version of `final-pitch-script-simplified.md`, about 305 words lighter. Same voice,
 same structure, same argument. Nothing was rewritten for style: lines were removed, merged or
 tightened, and every passage that said the same thing twice was resolved in favour of the slide
 that said it better.
 
-**It is cut to survive the slow rate, not the fast one.** At 135 words per minute this runs 4:59
-spoken and about 5:35 on stage. At 125, the rate this team actually measured in rehearsal, it runs
-5:23 and about 5:59. The slide timings below use the slower clock, so the numbers on the page are
+**It is cut to survive the slow rate, not the fast one.** At 135 words per minute this runs 4:45
+spoken and about 5:21 on stage. At 125, the rate this team actually measured in rehearsal, it runs
+5:08 and about 5:44. The slide timings below use the slower clock, so the numbers on the page are
 the pessimistic ones.
 
 **This script changes nothing on the slides.** Every line is spoken over the deck exactly as it was
 finalised. Slide 4's narration points at the before-and-after diagram already on that page.
 
-**If a timed run goes over, drop "We will not call downloads impact" on Slide 6.** That is eight
-seconds. It is a good line, so cut it only against a stopwatch, not on a feeling.
+**If a timed run goes over, drop "Singapore already does a version of this" from Slide 6** if you
+put it back, or the PERKESO nomination aside on Slide 2. Nothing else in the script is loose.
 
 Presenter A speaks Slides 1 to 4. Presenter B speaks Slides 5 to 7. One silent handoff, after
 Slide 4.
@@ -79,28 +79,27 @@ This is MyTakziah - from three separate visits to three minutes of filing.
 
 ## Slide 4, Innovation
 
-**Presenter A**, 2:57 to 4:03
+**Presenter A**, 2:57 to 3:55
 
-Look at the top half. That's him in the middle, three agencies around him asking for the same
-MyKad, the same death certificate, the same marriage certificate. Three pending statuses, no way
-to tell which is stuck.
+Look at the top half. Three agencies, all asking him for the same MyKad, the same death
+certificate, the same marriage certificate.
 
-Now the bottom. Same documents, handed over once.
+Now the bottom. Given once.
 
-And here is why that is new. KWSP lets you nominate a beneficiary from your phone in two minutes.
-It will not let that beneficiary claim from theirs - that is still a printed form.
+Here is why ours works where nothing else has.
 
-PERKESO already takes a death notice online. JPN, by law, needs you there in person to sign the
-register.
+JPN issues that death certificate. Then the family carries it to KWSP, and again to PERKESO. We
+move the evidence instead of the family. We mapped every field all three forms demand, and we fill
+them from one set.
 
-Three agencies, three different answers, and the family has to work out which is which. Nobody
-joins them up. That is our gap.
+And we need nobody's permission to start. Version one does this without a single government API.
 
-The agencies still decide; we just get the family there with the right paperwork.
+We never decide. We prepare, the family consents, the agency approves. Being wrong costs a
+correction, not a family's money, and that is why an agency can actually adopt this.
 
 ## Slide 5, Feasibility and Business Model
 
-**Presenter B**, 4:09 to 4:55
+**Presenter B**, 4:01 to 4:48
 
 We did not start with AI. We started with the forms.
 
@@ -118,16 +117,13 @@ partners.
 
 ## Slide 6, Impact and Potential
 
-**Presenter B**, 5:01 to 5:17
-
-We will not call downloads impact. We call it impact when families complete the right claims
-faster.
+**Presenter B**, 4:54 to 5:01
 
 Nearly 199,000 families face a death each year, and with an ageing population, more every year.
 
 ## Slide 7, Team, Ask, and Close
 
-**Presenter B**, 5:23 to 5:59
+**Presenter B**, 5:07 to 5:44
 
 Two of us study IT, two study statistics. This is not our first time shipping: NexHack, used by
 close to 1,000 people, and Layak, which won another hackathon.
@@ -147,6 +143,6 @@ Thank you.
 After the last line of Slide 4, Presenter A stops and steps back half a pace. Presenter B steps
 in and starts on "We did not start with AI." Say nothing else in between.
 
-Presenter A carries 3:45 and Presenter B 1:38 on the slower clock. If that feels lopsided in
-rehearsal, move the handoff to after Slide 3 instead, which gives 2:39 and 2:43. Slide 4 then opens
+Presenter A carries 3:37 and Presenter B 1:30 on the slower clock. If that feels lopsided in
+rehearsal, move the handoff to after Slide 3 instead, which gives 2:39 and 2:28. Slide 4 then opens
 cleanly on "Look at the top half," which is a natural place for a new voice to take over.
