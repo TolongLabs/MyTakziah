@@ -6,67 +6,90 @@
 **Format:** Six-minute pitch, four-minute Q&A, seven slides  
 **Status:** Timing-Refined Rehearsal Script Based on the Team-Finalized 19 September PDF
 
-**Speaker Plan:** Presenter A (you) covers Slides 1 to 3. Presenter B (chaosiris) covers Slides 4 to 7. Anderson and xrwong support the brochure handout and join the Q&A.
+**Speaker Plan:** Presenter A (you) covers Slides 1 to 4. Presenter B (chaosiris) covers Slides 5 to 7. Anderson and xrwong support the brochure handout and join the Q&A.
 
-Use one speaker handoff only. It gives the story a clean first half and lets the second speaker carry
-innovation, feasibility, impact, and the close without turning the pitch into a relay.
+Use one speaker handoff only, and put it after Slide 4. Slides 2, 3 and 4 are a single argument, the
+problem, the answer, and why the answer is new, so one voice should carry all three. The break then
+falls where the pitch changes mode, from what we built to whether it is a business. Presenter B
+owns feasibility, the model, impact and the ask, which is also where twelve of the fifteen prepared
+questions land, so B warms up on their own material before Q&A. Whoever makes the ask is who the
+judges approach afterwards.
 
 ## Timing
 
 | Slide | Purpose                        | Speaker     | Spoken Target | Stage End at a 6-Second Change |
 | ----: | ------------------------------ | ----------- | ------------: | -----------------------------: |
-|     1 | Human Hook and Idea            | Presenter A |          0:22 |                           0:22 |
-|     2 | Problem and Stakes             | Presenter A |          0:45 |                           1:13 |
-|     3 | Solution Journey               | Presenter A |          0:55 |                           2:14 |
-|     4 | Innovation                     | Presenter B |          0:37 |                           2:57 |
-|     5 | Feasibility and Business Model | Presenter B |          0:52 |                           3:55 |
-|     6 | Impact and Potential           | Presenter B |          0:40 |                           4:41 |
-|     7 | Team, Ask, and Close           | Presenter B |          0:45 |                           5:32 |
+|     1 | Human Hook and Idea            | Presenter A |          0:29 |                           0:29 |
+|     2 | Problem and Stakes             | Presenter A |          0:40 |                           1:15 |
+|     3 | Solution Journey               | Presenter A |          0:55 |                           2:16 |
+|     4 | Innovation                     | Presenter A |          0:37 |                           2:59 |
+|     5 | Feasibility and Business Model | Presenter B |          0:52 |                           3:57 |
+|     6 | Impact and Potential           | Presenter B |          0:40 |                           4:43 |
+|     7 | Team, Ask, and Close           | Presenter B |          0:45 |                           5:34 |
 
-The spoken target is 4:56. Six production-controlled slide changes at five to seven seconds each
-produce an expected stage time of 5:26 to 5:38. A five to ten-second recovery still finishes before
+The spoken target is 4:58. Six production-controlled slide changes at five to seven seconds each
+produce an expected stage time of 5:28 to 5:40. A five to ten-second recovery still finishes before
 six minutes. Do not fill that safety margin with extra facts.
+
+Presenter A carries 2:41, Presenter B carries 2:17.
 
 ## Full Rehearsal Script
 
-### Slide 1: Human Hook and Idea, 0:00 to 0:22
+### Slide 1: Human Hook and Idea, 0:00 to 0:29
 
 **Speaker:** Presenter A  
-**Delivery:** Begin still and unhurried. Address the judges before looking at the screen. Pause after
-"12-year-old son."
+**Delivery:** Begin still and unhurried. Address the judges, not the screen. Slide 1 is only the
+title slide, so nothing up there helps you; this is carried entirely by voice. Take a full beat
+before "He already knew," say those three words quietly, and take another beat after them. Do not
+dramatise. The restraint is what makes it land.
 
-> Good afternoon.
+> On the fourteenth of August, Encik Saiful was waiting in Seremban for his wife and their
+> twelve-year-old son.
 >
-> On 14 August, Encik Saifulnizam Sulaiman lost his wife and his 12-year-old son in a road accident in
-> Pahang.
+> They were late. His calls went unanswered. Then he saw footage online of a tanker crash on the
+> Temerloh road.
 >
-> For his family, one loss may now become three separate government journeys.
+> He already knew.
 >
-> We are Team Survive. We built the first MyTakziah prototype so a grieving family does not have to
-> become the integration layer between agencies.
+> We are Team Survive. What this country asks of a family in the days after that is why we built
+> MyTakziah.
 
-### Slide 2: Problem and Stakes, 0:28 to 1:13
+Every detail here is in the Malay Mail report of 15 August 2026, corroborated by Bernama and Astro
+Awani, and recorded in `../../research/documented-accounts-bereavement.md`. He was waiting in
+Seremban, his calls went unanswered, and he saw footage of the crash online before anyone told him.
+**Add nothing to it.**
+
+**A team decision, deliberately left open.** This version says "his wife and their twelve-year-old
+son" rather than naming Nur Fatima Syuhada Abdullah and Muhammad Fattah Aisy Naufal. Both names are
+published. Naming them adds weight, and naming a dead child to win a prize is a choice the four of
+you should make together rather than inherit from a draft.
+
+### Slide 2: Problem and Stakes, 0:35 to 1:15
 
 **Speaker:** Presenter A  
-**Delivery:** Point once to the repeated-information table. Do not narrate every cell.
+**Delivery:** His photograph is now on screen and it does the emotional work for you, so drop your
+volume rather than raising it. Point once at the table. Do not read cells aloud.
 
-> Saifulnizam may need JPN, KWSP, and PERKESO, where applicable.
+> The report ends there. What it does not cover is the administration.
 >
-> Look at how the same facts return. His identity appears in all three. Death evidence appears in
-> three processes. Relationship and bank details return for the relevant benefits.
+> A family in his position can face JPN, KWSP and PERKESO separately.
 >
-> Different forms. Same family story.
+> On that table, identity is proved three times. The death, three times. Marriage and bank details,
+> twice more. Different forms, the same family story.
 >
-> This is not rare. Malaysia recorded 49,827 deaths in the second quarter of 2026, about 548 every
-> day.
+> He is not unusual. Malaysia recorded 49,827 deaths last quarter. That is 548 a day.
 >
 > The stakes are real. EPF's RM2,500 Death Assistance is time-sensitive, while an eligible PERKESO
 > case can receive up to RM3,000 in funeral benefit.
->
-> At the worst moment of their lives, families are expected to know where to go, what to bring, and
-> what comes next.
 
-### Slide 3: Solution Journey, 1:19 to 2:14
+**Say "a family in his position", never "Saiful has to".** The published reporting establishes the
+deaths and nothing else. It does not establish that he handled any agency, missed any deadline, or
+qualified for anything. In the 15 September rehearsal this drifted into "Saiful Nizam still has to
+navigate JPN, KWSP and PERKESO", which asserts an administrative experience nobody has evidence
+for, about a real and identifiable bereaved man whose family is photographed on the slide. The
+hedge is not pedantry; it is the difference between an honest pitch and an invented one.
+
+### Slide 3: Solution Journey, 1:21 to 2:16
 
 **Speaker:** Presenter A  
 **Delivery:** Anderson and xrwong begin moving as Slide 2 ends and each covers half the judges.
@@ -88,13 +111,14 @@ judges to scan during the pitch.
 >
 > One evidence set. Three agencies coordinated. One clear next step at a time.
 >
-> That is the family experience. Now, here is the innovation behind it.
+> That is the family experience. Here is why it is new.
 
-### Slide 4: Innovation, 2:20 to 2:57
+### Slide 4: Innovation, 2:22 to 2:59
 
-**Speaker:** Presenter B  
-**Delivery:** Begin immediately after the handoff. Contrast the crowded top half with the simple
-bottom half.
+**Speaker:** Presenter A  
+**Delivery:** You are still speaking, so carry the momentum straight through from Slide 3. Contrast
+the crowded top half with the simple bottom half. Finish on a full stop, then step back half a pace
+and stop talking. That silence is the handoff.
 
 > Today, a family gives evidence to JPN, KWSP, and PERKESO separately, then waits through three
 > processes and statuses.
@@ -108,10 +132,13 @@ bottom half.
 >
 > We do not replace agencies. We connect the family to the next correct step.
 
-### Slide 5: Feasibility and Business Model, 3:03 to 3:55
+### Slide 5: Feasibility and Business Model, 3:05 to 3:57
 
 **Speaker:** Presenter B  
-**Delivery:** Keep this practical. The judges should hear a staged plan, not a list of logos.
+**Delivery:** This is the handoff. Step in as A steps back and open on the first line without any
+introduction. Do not say "my colleague will now cover" or "over to me"; it costs three seconds and
+breaks the momentum A just built. Keep this practical. The judges should hear a staged plan, not a
+list of logos.
 
 > We did not start with AI. We started with the forms.
 >
@@ -128,7 +155,7 @@ bottom half.
 > measure completion, time saved, missing documents, and satisfaction. That evidence supports our
 > first paying partners, then authorised integration.
 
-### Slide 6: Impact and Potential, 4:01 to 4:41
+### Slide 6: Impact and Potential, 4:03 to 4:43
 
 **Speaker:** Presenter B  
 **Delivery:** The four-minute bell should happen near the start of this slide. Stay calm and keep
@@ -146,7 +173,7 @@ the close intact.
 > Singapore's MyLegacy shows strong uptake for a coordinated digital death-certificate service.
 > Malaysia can build a broader journey around our own institutions.
 
-### Slide 7: Team, Ask, and Close, 4:47 to 5:32
+### Slide 7: Team, Ask, and Close, 4:49 to 5:34
 
 **Speaker:** Presenter B  
 **Delivery:** Anderson and xrwong take half a step forward on "We are four students." Make eye
@@ -173,15 +200,15 @@ QR code.
 
 ## Cue Card Version
 
-| Slide | Memory Anchor                                                                                 |
-| ----: | --------------------------------------------------------------------------------------------- |
-|     1 | One loss may become three government journeys. The family should not be the integration layer |
-|     2 | Different forms. Same family story. 548 deaths daily. Time-sensitive support                  |
-|     3 | AI prepares. Family consents. Agencies decide. One evidence set and one timeline              |
-|     4 | Organise the service around the life event, not the agency                                    |
-|     5 | Start with the forms, not the AI. Family-free, partner-funded. Prove it with 100 families     |
-|     6 | Outcomes, not downloads. Less stress, less admin, better service                              |
-|     7 | This team can ship. Ask for a responsible pilot. One loss, one guided journey                 |
+| Slide | Memory Anchor                                                                             |
+| ----: | ----------------------------------------------------------------------------------------- |
+|     1 | Seremban. Late. No answer. Footage online. He already knew. That is why we built it       |
+|     2 | A family in his position. Same facts, three agencies. 548 a day. Time-sensitive support   |
+|     3 | AI prepares. Family consents. Agencies decide. One evidence set and one timeline          |
+|     4 | Organise the service around the life event, not the agency                                |
+|     5 | Start with the forms, not the AI. Family-free, partner-funded. Prove it with 100 families |
+|     6 | Outcomes, not downloads. Less stress, less admin, better service                          |
+|     7 | This team can ship. Ask for a responsible pilot. One loss, one guided journey             |
 
 Do not memorise punctuation. Memorise the seven anchors and the first and last two sentences
 word-for-word.
@@ -469,11 +496,13 @@ integration agreement.
 
 ## Stage and Rehearsal Plan
 
-1. Rehearse until the spoken delivery is between 4:50 and 4:56. With six production-controlled
-   changes, the expected stage finish is 5:26 to 5:38. Treat 5:45 as the rehearsal maximum, not the
+1. Rehearse until the spoken delivery is between 4:52 and 4:58. With six production-controlled
+   changes, the expected stage finish is 5:28 to 5:40. Treat 5:45 as the rehearsal maximum, not the
    target.
-2. Use one speaking handoff after Slide 3. Anderson and xrwong support the stage action and Q&A
-   without adding two more narration handoffs.
+2. Use one speaking handoff, after Slide 4. Anderson and xrwong support the stage action and Q&A
+   without adding two more narration handoffs. Rehearse the handoff itself: A finishes Slide 4, steps
+   back half a pace and stops; B steps in and starts on "We did not start with AI." No verbal
+   introduction, no thank-you, no walk-across pause.
 3. As Presenter A delivers the final sentence of Slide 2, Anderson and xrwong move toward opposite
    ends of the judging table. During the transition into Slide 3, each hands out three brochures
    face-up with the QR visible. They return to their marks before Slide 4. Confirm this route with
