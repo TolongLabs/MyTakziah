@@ -83,20 +83,26 @@ volume rather than raising it. Point once at the table. Do not read cells aloud.
 >
 > He is not unusual. Malaysia recorded 49,827 deaths last quarter. That is 548 a day.
 >
-> Half of Malaysians who die are 69 or older. And the country keeps getting older: the over-65 share
-> rose from 8 per cent to 8.4 in a single year. This number does not go down.
+> Half of Malaysians who die are 69 or older. Malaysia became an ageing nation in 2021. The Ministry
+> of Finance expects us to be an aged nation by 2048. This number does not go down.
 >
 > And the support is time-limited: EPF's RM2,500 Death Assistance, and up to RM3,000 from PERKESO
 > where the case qualifies.
 
-**The ageing numbers, and the words to avoid.** Siva asked in the first mentor meeting for the
-problem to be framed by Malaysia's ageing population, and this is where it lands: one man, then the
-country. All three figures are DOSM and recorded in `../../research/verified-figures.md`. Median
-age at death 69.0, from Vital Statistics Malaysia 2025. The over-65 share of 8.4 per cent, up from
-8.0, from Current Population Estimates 2026. **Do not say "ageing society" and attribute it to
-DOSM.** That release does not use the phrase, and the common "ageing society in 2021, aged society
-by 2048" claims have no source in this repo. The numbers say it without the label, and a label we
-cannot cite is exactly what a statistics-minded judge will ask about.
+**The ageing beat.** Siva asked in the first mentor meeting for the problem to be framed by
+Malaysia's ageing population, and this is where it lands: one man, then the country. Everything
+here is sourced in `../../research/verified-figures.md`. Median age at death 69.0, DOSM Vital
+Statistics Malaysia 2025. Ageing nation in 2021 and aged nation projected for 2048, Ministry of
+Finance, 26 August 2025.
+
+**Attribute the label to the Ministry of Finance, not to DOSM.** DOSM's population release supports
+the numbers but never uses the word "ageing"; it says "old age population". MOF supports the label
+and the dates. Keep them apart and both hold up.
+
+**If a judge asks for the current figure:** 8.4 per cent of Malaysians are 65 or over, up from 8.0
+a year earlier, and the old-age dependency ratio rose from 11.4 to 11.9. DOSM Current Population
+Estimates 2026, released 31 July 2026. That is the backup, not the stage line, because "ageing
+nation in 2021, aged nation by 2048" carries further in six minutes than a decimal does.
 
 **Say "a family in his position", never "Saiful has to".** The published reporting establishes the
 deaths and nothing else. It does not establish that he handled any agency, missed any deadline, or
@@ -227,7 +233,7 @@ QR code.
 | Slide | Memory Anchor                                                                             |
 | ----: | ----------------------------------------------------------------------------------------- |
 |     1 | Seremban. Late. No answer. Footage online. He already knew. That is why we built it       |
-|     2 | A family in his position. Three agencies. 548 a day. Half aged 69+. 8 to 8.4 per cent     |
+|     2 | A family in his position. Three agencies. 548 a day. Half aged 69+. 2021 to 2048          |
 |     3 | Built for someone in their seventies. AI prepares, family consents, agencies decide       |
 |     4 | Organise the service around the life event, not the agency                                |
 |     5 | Start with the forms, not the AI. Family-free, partner-funded. Prove it with 100 families |

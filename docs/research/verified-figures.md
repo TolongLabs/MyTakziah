@@ -225,16 +225,26 @@ the primary DOSM release, not a summary.
 **Printable wording.** "8.4 per cent of Malaysians are aged 65 or over, up from 8.0 per cent a year
 earlier. That is roughly 2.9 million people, and the share is rising."
 
-### Do Not Say "Ageing Society" And Attribute It To DOSM
+### "Ageing Nation": Resolved 2026-09-21, Cite MOF And Not DOSM
 
-**The Current Population Estimates 2026 release does not use that phrase.** The "ageing society at
-7 per cent, aged society at 14 per cent" thresholds are a general demographic convention, and the
-commonly repeated claims that Malaysia "became an ageing society in 2021" and will be an "aged
-society by 2048" were **not** found in this release. They may well be true and sourced elsewhere, but
-they are `[NEEDS SOURCE]` here.
+**The label is sourced. The earlier `[NEEDS SOURCE]` marking on this page was wrong and is
+withdrawn.** Both dated claims trace to the Ministry of Finance.
 
-Print the DOSM numbers and let them carry the point. The rising share plus the rising dependency
-ratio says "ageing" without needing a label we cannot cite.
+| Claim                                             | Status        | Source                                      |
+| ------------------------------------------------- | ------------- | ------------------------------------------- |
+| Malaysia became an ageing nation in 2021, at 7%   | **Confirmed** | MOF, Amir Hamzah Azizan, 26 August 2025     |
+| Malaysia projected an aged nation by 2048, at 14% | **Confirmed** | MOF, Amir Hamzah Azizan, 26 August 2025     |
+| The 7% and 14% thresholds                         | **Confirmed** | United Nations definition, via MOF and DOSM |
+
+**Printable wording.** "Malaysia became an ageing nation in 2021. The Ministry of Finance projects
+we will be an aged nation by 2048." Attribute it to the Ministry of Finance, or say it plainly as
+national fact. Either is defensible.
+
+**The one thing that stays wrong: do not attribute the label to the DOSM population release.** The
+Current Population Estimates 2026 release uses "old age population", never "ageing", and sets no
+threshold. Checked directly against the release on 2026-09-21. DOSM supports the numbers (8.0 to
+8.4 per cent, dependency ratio 11.4 to 11.9, median age 31.7); MOF supports the label and the
+dated projections. Keep the two attributions separate and both are safe.
 
 ### The Join That Makes It Our Problem
 
@@ -262,3 +272,5 @@ until the team records genuine user research.
 15. MyDigital ID, "News", entries published 8 July 2026, https://www.digital-id.my/en/news, accessed 2026-09-19. Records multiple reports quoting the Deputy Prime Minister that MyDigital ID reached 12 million registered users as of June 2026.
 16. Malaysian Government Central Data Exchange, "MyGDX", live implementation statistics, https://www.mygdx.gov.my/en/landing-page/catalog, accessed 2026-09-19. Supports 131 onboarded agencies and labels the figure as onboarding rather than integration.
 17. Singapore Ministry of Digital Development and Information, "MyLegacy@LifeSG", published 1 March 2024, https://www.mddi.gov.sg/newsroom/my-legacy-life-sg/, accessed 2026-09-19. Supports the statement that about 90 per cent of bereaved families download digital death certificates from MyLegacy every month.
+18. Ministry of Finance Malaysia, "Malaysia To Become Aged Nation By 2048 - Amir Hamzah", press citation dated 26 August 2025, https://mof.gov.my/portal/en/news/press-citations/malaysia-to-become-aged-nation-by-2048-amir-hamzah, accessed 2026-09-21. Supports the aged-nation projection for 2048 at a 14 per cent threshold, and the statement that Malaysia became an ageing nation in 2021 at 7 per cent. Attributed to Datuk Seri Amir Hamzah Azizan, Finance Minister II.
+19. Department of Statistics Malaysia, "Malaysia attained ageing nation status", content download reporting the Ministry of Finance Economic Outlook 2023, https://www.dosm.gov.my/uploads/content-downloads/file_20221215161042.pdf, accessed 2026-09-21. Records Malaysia as "officially considered as an ageing country" on reaching 7.3 per cent aged 65 and over, and attributes the 7 per cent threshold to the United Nations. Corroborates source 18 and predates it.
