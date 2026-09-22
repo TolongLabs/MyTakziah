@@ -127,13 +127,17 @@ JPN's Late Registration of Death (Peninsular) page states the procedure covers a
 
 ---
 
-## Finding 6: The PERKESO Deadline Is Genuinely Unpublished
+## Finding 6: The PERKESO Deadline Is Twelve Months, Superseded 2026-09-22
 
 Searching specifically for a Survivors' Pension or Dependants' Benefit submission deadline surfaced only deadlines belonging to other schemes: 60 days after job loss for EIS, and 12 months after an accident for SIP. Nothing quantifies the death claim window.
 
 **This confirms the existing marker rather than closing it, and that is a useful result.** We can now say, with a search behind it, that PERKESO does not publish a quantified deadline for death claims and states only "tempoh masa yang ditetapkan", the stipulated period. The 12-month figure circulating on social media remains unsourced and must not be printed.
 
-**This strengthens the concept.** A deadline that exists, is enforceable, and is not published is precisely the kind of thing a family cannot be expected to meet on its own.
+**Superseded 2026-09-22.** The finding above was right that PERKESO's consumer pages do not print a number, and wrong to conclude from that there is none. The limit is statutory: Employees' Social Security Act 1969 (Act 4), section 86(3)(a) requires a claim for dependants' benefit, survivors' pension or funeral benefit to be made "within a period of twelve months after the claim became due or within such further period as the Board may allow on grounds which appear to it to be reasonable", and section 89 bars payment of a benefit not claimed in time. A separate three-month proviso in section 29(2) binds only a non-family person who paid for the funeral, and must not be quoted at a surviving spouse.
+
+**The lesson for this file:** absence from an agency's own website is not absence from law. Check the Act before recording a deadline as unpublished.
+
+**The concept argument survives in a narrower form.** The deadline exists, is enforceable, and is not printed anywhere a grieving family would look. That is still a thing a family cannot be expected to meet on its own.
 
 ---
 

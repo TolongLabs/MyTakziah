@@ -31,7 +31,7 @@ express with this project.
 
 In short, MyTakziah is a platform to consolidate the aforementioned three government agency visits and applications into one digital app.
 
-In fact, we already have a working prototype for this app - the brochure reaching you includes its QR, please feel free to scan and have a look through the website during or after this presentation, it would be deeply appreciated.
+In fact, we already have a working prototype for this app - the brochure reaching you includes its QR, please feel free to scan and have a look through the website during or after this presentation, your interest in this project is deeply appreciated.
 
 ## Slide 2, Problem and Stakes
 
@@ -44,7 +44,7 @@ For every individual that passed, their close ones have to visit JPN, KWSP and P
 Across these visits, they have to prove their relationship with the deceased three times. The proof of death, three times. Marriage and bank
 details, twice more.
 
-And the support is time-limited: they have six months to claim EPF's RM2,500 Death Assistance, and PERKESO's funeral benefit of up to RM3,000 runs on a deadline PERKESO does not publish. If they misfile a claim, or did not report the passing at JPN within seven days - they may even get penalized.
+And the support is time-limited: they have six months to claim EPF's RM2,500 Death Assistance, and twelve months to claim PERKESO's funeral benefit of up to RM3,000. If they misfile a claim, or did not report the passing at JPN within seven days - they may even get penalized.
 
 To emphasize how important this issue is - this is a real problem affecting not just a specific subset of Malaysians - this problem will eventually be faced by every single one of us, some day, as long as time relentlessly marches on. Malaysia has been classified as ageing nation in 2021. The
 Ministry of Finance expects us to be an aged nation by 2048. This number does not go down.
