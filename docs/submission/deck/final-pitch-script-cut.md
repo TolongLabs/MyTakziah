@@ -1,13 +1,13 @@
 # MyTakziah Finals Pitch Script, Cut To Time
 
-Six-minute version of `final-pitch-script-simplified.md`, about 305 words lighter. Same voice,
+Six-minute version of `final-pitch-script-simplified.md`, about 157 words lighter. Same voice,
 same structure, same argument. Nothing was rewritten for style: lines were removed, merged or
 tightened, and every passage that said the same thing twice was resolved in favour of the slide
 that said it better.
 
-**It is cut to survive the slow rate, not the fast one.** At 135 words per minute this runs 4:45
-spoken and about 5:21 on stage. At 125, the rate this team actually measured in rehearsal, it runs
-5:08 and about 5:44. The slide timings below use the slower clock, so the numbers on the page are
+**It is cut to survive the slow rate, not the fast one.** At 135 words per minute this runs 5:46
+spoken and about 6:22 on stage. At 125, the rate this team actually measured in rehearsal, it runs
+6:13 and about 6:49. The slide timings below use the slower clock, so the numbers on the page are
 the pessimistic ones.
 
 **This script changes nothing on the slides.** Every line is spoken over the deck exactly as it was
@@ -21,114 +21,116 @@ Slide 4.
 
 ## Slide 1, Human Hook and Idea
 
-**Presenter A**, 0:00 to 0:56
+**Presenter A**, 0:00 to 0:18
 
-Good afternoon. We are Team Survive, students from Universiti Malaya and APU.
+Good afternoon dear judges and audience. We are Team Survive, a team of students from Universiti Malaya and APU.
 
-On the fourteenth of August, Encik Saiful was waiting in Seremban for his wife and their
-twelve-year-old son to arrive home.
-
-They were hours late. His calls went unanswered. Then he saw footage online of a tanker crash on
-the Temerloh road.
-
-He already knew.
-
-And yet a family in his position must then deal with claims across three government agencies, on
-top of the funeral itself.
-
-His grief is the reason we created MyTakziah. Takziah means condolences.
-
-MyTakziah turns those three visits into one app. We have a working prototype, and the brochure
-reaching you has its QR - do scan it during judging.
+To kick off our presentation, we would like to talk about a real case that happened in Malaysia recently.
 
 ## Slide 2, Problem and Stakes
 
-**Presenter A**, 1:02 to 1:54
+**Presenter A**, 0:24 to 2:28
+
+On the fourteenth of August, Encik Saiful was waiting at home for his wife and their
+twelve-year-old son to return.
+
+They were late for a few hours. His calls went unanswered. Then he saw footage online of a tanker crash on the
+Temerloh road.
+
+At that moment, he knew the worst had happened.
+
+The pain is already torturous enough. And yet, he must then deal with the aftermath processes and claims across three government agencies, on top of the funeral itself.
+
+His grief is the reason we created MyTakziah - Takziah meaning condolences, which our team hopes to express with this project.
+
+MyTakziah is a platform that consolidates those three visits onto one platform.
+
+We have a working prototype - the brochure reaching you includes its QR. Please feel free to scan it at your convenience, preferably during Q&A or judging.
 
 En Saiful's case is one of many. An unspeakable tragedy for him, a statistic on a national scale.
-Malaysia recorded 49,827 deaths last quarter, 548 a day.
+Malaysia recorded 50k deaths last quarter, 548 a day on average.
 
 For every one of them, the family visits JPN, KWSP and PERKESO separately, proving the same facts
 at each.
 
 And the support is time-limited: six months for KWSP's RM2,500 Death Assistance, twelve months
-for PERKESO's RM3,000 funeral benefit. Miss JPN's seven days and they may be penalised too.
+for PERKESO's RM3,000 funeral benefit. If they misfile a claim, or fail to report the passing at JPN within seven days - they may even get penalized.
 
-This is not a problem for a subset of Malaysians. Every one of us will face it. Malaysia became
+This is not just a problem for a small subset of Malaysians. Every one of us will face it eventually. Malaysia became
 an ageing nation in 2021, and the Ministry of Finance expects an aged nation by 2048.
 
 ## Slide 3, Solution Journey
 
-**Presenter A**, 2:00 to 2:51
+**Presenter A**, 2:34 to 3:23
 
-MyTakziah isn't built for tech-savvy people. Half of Malaysians who die are 69 or older, so we
-built it for someone in their seventies, doing this alone.
+MyTakziah isn't built only for tech-savvy people. Half of Malaysians who die are 69 or older, so we
+designed this website to be usable by someone elderly, doing this for the first time.
 
-First, they start from an existing record, already filed by a hospital, DBKL or PDRM.
+As shown in the screenshots, they start from an existing record, already filed by a hospital, DBKL or PDRM.
 
 Then they provide the particulars once.
 
-Third, it tells them what comes next - every deadline and form, ordered by whichever expires
+Third, MyTakziah tells them what comes next - every deadline and form, ordered by whichever expires
 first.
 
-Fourth, the AI pre-drafts every form, and the family reviews and approves.
+Fourth, the AI pre-drafts every application form needed, and the family reviews and approves.
 
-Finally, all three claims sit on one timeline - done, pending, next - in one place.
-
-This is MyTakziah - from three separate visits to three minutes of filing.
+Finally, all three claims sit on one easy-to-view timeline on the website.
 
 ## Slide 4, Innovation
 
-**Presenter A**, 2:57 to 3:55
+**Presenter A**, 3:29 to 4:07
 
-Look at the top half. Three agencies, all asking him for the same MyKad, the same death
+Without MyTakziah, three agencies are asking him for the same MyKad, the same death
 certificate, the same marriage certificate.
 
-Now the bottom. Given once.
+With MyTakziah, he just gives all these details once.
 
-Here is why ours works where nothing else has.
+The reason why this is unique is because currently there is no such product in the government's
+digital blueprint for bereavement.
 
-JPN issues that death certificate. Then the family carries it to KWSP, and again to PERKESO. We
-move the evidence instead of the family. We mapped every field all three forms demand, and we fill
-them from one set.
+The process is fully deterministic, and has no chance of
+hallucinations unlike a generic AI chatbot.
 
-And we need nobody's permission to start. Version one does this without a single government API.
-
-We never decide. We prepare, the family consents, the agency approves. Being wrong costs a
-correction, not a family's money, and that is why an agency can actually adopt this.
+This is MyTakziah - from three separate visits at 7am to three minutes of filing.
 
 ## Slide 5, Feasibility and Business Model
 
-**Presenter B**, 4:01 to 4:48
+**Presenter B**, 4:13 to 5:06
 
-We did not start with AI. We started with the forms.
+On monetisation. Encik Saiful has just lost someone dear. Charging him to use MyTakziah would be insensitive.
 
-We mapped every repeated field, document and deadline across three agencies, then built the
-prototype around that. Version one prepares drafts without a government API.
+So it should be free for families. Our model is B2B2C: the businesses already beside a grieving family
+pay instead.
 
-MyTakziah is free for families, funded by partners: insurers get more complete claims, funeral
-providers offer better aftercare.
+Takaful and life insurers, RM200 a case, because they get fewer incomplete claims and less
+back-and-forth. Funeral and memorial providers, RM100 a family, by adding MyTakziah as an
+aftercare to packages they already sell.
 
-The RM100 and RM200 figures are price hypotheses to test, not signed contracts.
-
-Our next step is a 100-family pilot in Petaling Jaya through funeral and khairat partners,
-measuring completion, time saved and missing documents. That evidence supports our first paying
-partners.
+These figures are hypothetical at this moment, and we hope to organize a 100-family pilot in Petaling Jaya through funeral and khairat partners,
+measuring completion, time saved and missing documents. That evidence gets us our first paying partners.
 
 ## Slide 6, Impact and Potential
 
-**Presenter B**, 4:54 to 5:01
+**Presenter B**, 5:12 to 6:02
 
-Nearly 199,000 families face a death each year, and with an ageing population, more every year.
+In 2024, KWSP released RM3.24 billion in savings to bereaved families, with up to 199,000 families affected.
+The need for MyTakziah will only get higher over time as society ages.
+
+Right now the prototype runs on mock documents with all data encrypted and discarded after processing.
+Before this gets shipped, we certainly do need an independent legal audit to ensure full PDPA compliance.
+
+Singapore already does a version of this with MyLegacy. It is imperative for Malaysia to build one around
+our own institutions.
 
 ## Slide 7, Team, Ask, and Close
 
-**Presenter B**, 5:07 to 5:44
+**Presenter B**, 6:08 to 6:49
 
-Two of us study IT, two study statistics. This is not our first time shipping: NexHack, used by
-close to 1,000 people, and Layak, which won another hackathon.
+Two of us study IT and two study actuarial science. This is not our first time shipping: NexHack, used by
+close to 1,000 students, and Layak, a Malaysian subsidy checker website, which won us another hackathon.
 
-We are asking this room for pilot partners, PDPA guidance, and funding to run that 100-family
+To make MyTakziah a reality, we are hoping to secure partners, PDPA guidance, and funding to run that 100-family
 pilot responsibly.
 
 Grief is already hard enough. Families should be allowed to grieve, not become a broker between
@@ -143,6 +145,6 @@ Thank you.
 After the last line of Slide 4, Presenter A stops and steps back half a pace. Presenter B steps
 in and starts on "We did not start with AI." Say nothing else in between.
 
-Presenter A carries 3:37 and Presenter B 1:30 on the slower clock. If that feels lopsided in
-rehearsal, move the handoff to after Slide 3 instead, which gives 2:39 and 2:28. Slide 4 then opens
+Presenter A carries 4:16 and Presenter B 2:02 on the slower clock. If that feels lopsided in
+rehearsal, move the handoff to after Slide 3 instead, which gives 3:26 and 2:52. Slide 4 then opens
 cleanly on "Look at the top half," which is a natural place for a new voice to take over.
