@@ -20,18 +20,16 @@ twelve-year-old son to arrive home.
 They were late for a few hours. His calls went unanswered. Then he saw footage online of a tanker crash on the
 Temerloh road.
 
-Upon seeing the footage, his heart sank. His body trembled, his blood went cold, being
-overcome with grief. At that moment, his world went dark.
+He already knew.
 
-The pain he felt was already torturous enough. Unfortunately, he still has to deal with all the
-aftermath processes and claims across three government agencies, not to mention the funeral processes.
+The pain is already torturous enough. And yet a family in his position must then deal with the aftermath processes and claims across three government agencies, on top of the funeral itself.
 
 His grief is the reason we created MyTakziah - Takziah meaning condolences, which our team would like to
 express with this project.
 
 In short, MyTakziah is a platform to consolidate the aforementioned three government agency visits and applications into one digital app.
 
-In fact, we already have a working prototype for this app - the brochure reaching you includes its QR, please feel free to scan and have a look through the website during or after this presentation, your interest in this project is deeply appreciated.
+In fact, we already have a working prototype for this app - the brochure reaching you includes its QR. Do scan it during Q&A or judging, and have a look through the website yourselves.
 
 ## Slide 2, Problem and Stakes
 
@@ -46,10 +44,7 @@ details, twice more.
 
 And the support is time-limited: they have six months to claim KWSP's RM2,500 Death Assistance, and twelve months to claim PERKESO's funeral benefit of up to RM3,000. If they misfile a claim, or did not report the passing at JPN within seven days - they may even get penalized.
 
-To emphasize how important this issue is - this is a real problem affecting not just a specific subset of Malaysians - this problem will eventually be faced by every single one of us, some day, as long as time relentlessly marches on. Malaysia has been classified as ageing nation in 2021. The
-Ministry of Finance expects us to be an aged nation by 2048.
-
-Therefore, it is imperative that a system such as MyTakziah be implemented as swiftly as possible, as the demand only keeps getting higher.
+And this is not a problem for some subset of Malaysians. Every one of us will face it, someday. Malaysia was classified an ageing nation in 2021. The Ministry of Finance expects us to be an aged nation by 2048.
 
 ## Slide 3, Solution Journey
 
@@ -70,7 +65,7 @@ Fourth, the AI pre-drafts each form from the particulars already given. The fami
 
 Finally, all three claims sit on one timeline - what's done, what's pending, what's next - on one page, instead of three hotlines.
 
-This is MyTakziah - from 3 separate visits to settled within 3 minutes.
+This is MyTakziah - from three separate visits to three minutes of filing.
 
 ## Slide 4, Innovation
 
