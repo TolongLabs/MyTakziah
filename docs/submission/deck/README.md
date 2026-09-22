@@ -15,11 +15,17 @@ The MyTakziah stage deck, presenter script, and earlier working decks.
 the PWTC stage. It has seven 16:9 pages and follows the six-minute pitch format. The editable Canva
 source is not stored in this repository.
 
-| File                                         | Use It When                                                  |
-| -------------------------------------------- | ------------------------------------------------------------ |
-| `mytakziah-finals-pitch-deck.pdf`            | **Presenting or submitting the team-finalized deck**         |
-| `final-pitch-script.md`                      | Rehearsing the two-presenter narration and preparing for Q&A |
-| `meeting-summary-2026-09-15-finals-pitch.md` | Checking Siva's feedback and pitch-day instructions          |
+| File                                         | Use It When                                                    |
+| -------------------------------------------- | -------------------------------------------------------------- |
+| `mytakziah-finals-pitch-deck.pdf`            | **Presenting or submitting the team-finalized deck**           |
+| `final-pitch-script.md`                      | Rehearsing the narration, delivery notes, sourcing, and Q&A    |
+| `final-pitch-script-simplified.md`           | **Reading from on stage.** Spoken lines and slide numbers only |
+| `meeting-summary-2026-09-15-finals-pitch.md` | Checking Siva's feedback and pitch-day instructions            |
+
+The two script files hold the same spoken words. `final-pitch-script-simplified.md` is generated
+from `final-pitch-script.md` and carries nothing else, so it is the one to hold on stage. The full
+script stays the source of truth: if the wording ever differs between them, the full script wins and
+the simplified file should be regenerated rather than edited.
 
 The final PDF contains ambitious future-state language. The presenter script gives the stage
 phrasing for the current prototype, integration status, partner plan, and pricing hypotheses. Use
