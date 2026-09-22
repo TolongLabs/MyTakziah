@@ -44,31 +44,33 @@ For every individual that passed, their close ones have to visit JPN, KWSP and P
 Across these visits, they have to prove their relationship with the deceased three times. The proof of death, three times. Marriage and bank
 details, twice more.
 
-And the support is time-limited: they have six months to claim EPF's RM2,500 Death Assistance, and twelve months to claim PERKESO's funeral benefit of up to RM3,000. If they misfile a claim, or did not report the passing at JPN within seven days - they may even get penalized.
+And the support is time-limited: they have six months to claim KWSP's RM2,500 Death Assistance, and twelve months to claim PERKESO's funeral benefit of up to RM3,000. If they misfile a claim, or did not report the passing at JPN within seven days - they may even get penalized.
 
 To emphasize how important this issue is - this is a real problem affecting not just a specific subset of Malaysians - this problem will eventually be faced by every single one of us, some day, as long as time relentlessly marches on. Malaysia has been classified as ageing nation in 2021. The
-Ministry of Finance expects us to be an aged nation by 2048. This number does not go down.
+Ministry of Finance expects us to be an aged nation by 2048.
 
-Therefore, it is imperative that a system such as MyTakziah be implemented as swiftly as possible, for the greater good of society.
+Therefore, it is imperative that a system such as MyTakziah be implemented as swiftly as possible, as the demand only keeps getting higher.
 
 ## Slide 3, Solution Journey
 
 **Presenter A**, 1:53 to 2:39
 
-MyTakziah isn't built for only tech-savvy people in mind. Half of Malaysians who die are 69 or older, hence our fundamental aim is to make the system as streamlined and simple to use as possible.
+MyTakziah isn't built for only tech-savvy people in mind. Half of Malaysians who die are 69 or older, hence our fundamental aim is to make the system as streamlined and intuitive to use as possible.
 
-We built this for someone who may be in their seventies themselves, doing this for the first
+As shown in these screenshots. We built this for someone who may be in their seventies themselves, doing this for the first
 time, alone. MyTakziah turns those tasks into one guided journey.
 
-Starting from a verified death record, the family provides shared details once.
+First, the user starts from an existing record - that has been filed into the system by a hospital, DBKL, or PDRM.
 
-AI prepares. The family reviews and consents. Agencies still decide. One timeline shows what is
-done, what is pending, and what comes next.
+Then, the user provides particulars of the deceased once (who they are, who you are, proof of death, relationship details, bank numbers, etc)
 
-Our prototype demonstrates that journey with simulated agency responses.
+Third, MyTakziah tells them what comes next - every deadline and every form across the three agencies, ordered by whichever expires first.
 
-One evidence set, three agencies coordinated, one clear next step at a time. That is the family
-experience. Here is why it is new.
+Fourth, the AI pre-drafts each form from the particulars already given. The family reviews and approves - nothing is sent without their consent, and every decision still belongs to the agencies.
+
+Finally, all three claims sit on one timeline - what's done, what's pending, what's next - on one page, instead of three hotlines.
+
+This is MyTakziah - from 3 separate visits to settled within 3 minutes.
 
 ## Slide 4, Innovation
 
