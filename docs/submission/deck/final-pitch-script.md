@@ -20,18 +20,22 @@ judges approach afterwards.
 | Slide | Purpose                        | Speaker     | Spoken Target | Stage End at a 6-Second Change |
 | ----: | ------------------------------ | ----------- | ------------: | -----------------------------: |
 |     1 | Human Hook and Idea            | Presenter A |          0:29 |                           0:29 |
-|     2 | Problem and Stakes             | Presenter A |          0:40 |                           1:15 |
-|     3 | Solution Journey               | Presenter A |          0:55 |                           2:16 |
-|     4 | Innovation                     | Presenter A |          0:37 |                           2:59 |
-|     5 | Feasibility and Business Model | Presenter B |          0:52 |                           3:57 |
-|     6 | Impact and Potential           | Presenter B |          0:40 |                           4:43 |
-|     7 | Team, Ask, and Close           | Presenter B |          0:45 |                           5:34 |
+|     2 | Problem and Stakes             | Presenter A |          0:49 |                           1:24 |
+|     3 | Solution Journey               | Presenter A |          0:45 |                           2:15 |
+|     4 | Innovation                     | Presenter A |          0:36 |                           2:57 |
+|     5 | Feasibility and Business Model | Presenter B |          0:50 |                           3:53 |
+|     6 | Impact and Potential           | Presenter B |          0:44 |                           4:43 |
+|     7 | Team, Ask, and Close           | Presenter B |          0:47 |                           5:36 |
 
-The spoken target is 4:58. Six production-controlled slide changes at five to seven seconds each
-produce an expected stage time of 5:28 to 5:40. A five to ten-second recovery still finishes before
+The spoken target is 5:00. Six production-controlled slide changes at five to seven seconds each
+produce an expected stage time of 5:30 to 5:42. A five to ten-second recovery still finishes before
 six minutes. Do not fill that safety margin with extra facts.
 
-Presenter A carries 2:41, Presenter B carries 2:17.
+Presenter A carries 2:39, Presenter B carries 2:21.
+
+If a rehearsal runs long, the first line to cut is "Nearly 199,000 families face a death each year,
+and with an ageing population, more every year" on Slide 6. The ageing argument is already made on
+Slide 2; that line repeats it as a market claim and is the only genuinely optional sentence left.
 
 ## Full Rehearsal Script
 
@@ -64,7 +68,7 @@ son" rather than naming Nur Fatima Syuhada Abdullah and Muhammad Fattah Aisy Nau
 published. Naming them adds weight, and naming a dead child to win a prize is a choice the four of
 you should make together rather than inherit from a draft.
 
-### Slide 2: Problem and Stakes, 0:35 to 1:15
+### Slide 2: Problem and Stakes, 0:35 to 1:24
 
 **Speaker:** Presenter A  
 **Delivery:** His photograph is now on screen and it does the emotional work for you, so drop your
@@ -75,12 +79,24 @@ volume rather than raising it. Point once at the table. Do not read cells aloud.
 > A family in his position can face JPN, KWSP and PERKESO separately.
 >
 > On that table, identity is proved three times. The death, three times. Marriage and bank details,
-> twice more. Different forms, the same family story.
+> twice more.
 >
 > He is not unusual. Malaysia recorded 49,827 deaths last quarter. That is 548 a day.
 >
-> The stakes are real. EPF's RM2,500 Death Assistance is time-sensitive, while an eligible PERKESO
-> case can receive up to RM3,000 in funeral benefit.
+> Half of Malaysians who die are 69 or older. And the country keeps getting older: the over-65 share
+> rose from 8 per cent to 8.4 in a single year. This number does not go down.
+>
+> And the support is time-limited: EPF's RM2,500 Death Assistance, and up to RM3,000 from PERKESO
+> where the case qualifies.
+
+**The ageing numbers, and the words to avoid.** Siva asked in the first mentor meeting for the
+problem to be framed by Malaysia's ageing population, and this is where it lands: one man, then the
+country. All three figures are DOSM and recorded in `../../research/verified-figures.md`. Median
+age at death 69.0, from Vital Statistics Malaysia 2025. The over-65 share of 8.4 per cent, up from
+8.0, from Current Population Estimates 2026. **Do not say "ageing society" and attribute it to
+DOSM.** That release does not use the phrase, and the common "ageing society in 2021, aged society
+by 2048" claims have no source in this repo. The numbers say it without the label, and a label we
+cannot cite is exactly what a statistics-minded judge will ask about.
 
 **Say "a family in his position", never "Saiful has to".** The published reporting establishes the
 deaths and nothing else. It does not establish that he handled any agency, missed any deadline, or
@@ -89,31 +105,37 @@ navigate JPN, KWSP and PERKESO", which asserts an administrative experience nobo
 for, about a real and identifiable bereaved man whose family is photographed on the slide. The
 hedge is not pedantry; it is the difference between an honest pitch and an invented one.
 
-### Slide 3: Solution Journey, 1:21 to 2:16
+### Slide 3: Solution Journey, 1:30 to 2:15
 
 **Speaker:** Presenter A  
 **Delivery:** Anderson and xrwong begin moving as Slide 2 ends and each covers half the judges.
 Sweep from left to right across the five steps. Slow down for the consent boundary. Do not ask the
 judges to scan during the pitch.
 
-> The brochure reaching you includes our prototype QR. MyTakziah turns those tasks into one guided
-> journey.
+The "someone in their seventies" line is a statement about how we designed, not a demographic claim
+about who our users are. The research record treats the surviving-spouse segment as an assumption
+until the team runs real interviews, so do not upgrade it on stage into "our users are elderly."
+
+The no-government-API point used to sit here as well. It now appears once, on Slide 5, where
+feasibility belongs.
+
+> The brochure reaching you includes our prototype QR.
 >
-> Starting from a verified death record, the family provides shared details once. AI structures the
-> evidence, maps relevant routes and deadlines, and prepares forms for review.
+> We built this for someone who may be in their seventies themselves, doing this for the first time,
+> alone. MyTakziah turns those tasks into one guided journey.
+>
+> Starting from a verified death record, the family provides shared details once.
 >
 > AI prepares. The family reviews and consents. Agencies still decide. One timeline shows what is
 > done, what is pending, and what comes next.
 >
-> Our prototype demonstrates that journey with simulated agency responses. Version one needs no
-> government API; it prepares packages for official channels. With authorisation, the same workflow
-> can later support direct submission and live status.
+> Our prototype demonstrates that journey with simulated agency responses.
 >
 > One evidence set. Three agencies coordinated. One clear next step at a time.
 >
 > That is the family experience. Here is why it is new.
 
-### Slide 4: Innovation, 2:22 to 2:59
+### Slide 4: Innovation, 2:21 to 2:57
 
 **Speaker:** Presenter A  
 **Delivery:** You are still speaking, so carry the momentum straight through from Slide 3. Contrast
@@ -132,7 +154,7 @@ and stop talking. That silence is the handoff.
 >
 > We do not replace agencies. We connect the family to the next correct step.
 
-### Slide 5: Feasibility and Business Model, 3:05 to 3:57
+### Slide 5: Feasibility and Business Model, 3:03 to 3:53
 
 **Speaker:** Presenter B  
 **Delivery:** This is the handoff. Step in as A steps back and open on the first line without any
@@ -155,7 +177,7 @@ list of logos.
 > measure completion, time saved, missing documents, and satisfaction. That evidence supports our
 > first paying partners, then authorised integration.
 
-### Slide 6: Impact and Potential, 4:03 to 4:43
+### Slide 6: Impact and Potential, 3:59 to 4:43
 
 **Speaker:** Presenter B  
 **Delivery:** The four-minute bell should happen near the start of this slide. Stay calm and keep
@@ -167,13 +189,15 @@ the close intact.
 > We will not call downloads impact. We will call it impact when families complete the right claims
 > faster, with fewer missing documents and less uncertainty.
 >
+> Nearly 199,000 families face a death each year, and with an ageing population, more every year.
+>
 > Once the core journey works, it can extend to Tabung Haji and ASNB, then connect to national
 > digital rails with the right authorisation.
 >
 > Singapore's MyLegacy shows strong uptake for a coordinated digital death-certificate service.
 > Malaysia can build a broader journey around our own institutions.
 
-### Slide 7: Team, Ask, and Close, 4:49 to 5:34
+### Slide 7: Team, Ask, and Close, 4:49 to 5:36
 
 **Speaker:** Presenter B  
 **Delivery:** Anderson and xrwong take half a step forward on "We are four students." Make eye
@@ -203,8 +227,8 @@ QR code.
 | Slide | Memory Anchor                                                                             |
 | ----: | ----------------------------------------------------------------------------------------- |
 |     1 | Seremban. Late. No answer. Footage online. He already knew. That is why we built it       |
-|     2 | A family in his position. Same facts, three agencies. 548 a day. Time-sensitive support   |
-|     3 | AI prepares. Family consents. Agencies decide. One evidence set and one timeline          |
+|     2 | A family in his position. Three agencies. 548 a day. Half aged 69+. 8 to 8.4 per cent     |
+|     3 | Built for someone in their seventies. AI prepares, family consents, agencies decide       |
 |     4 | Organise the service around the life event, not the agency                                |
 |     5 | Start with the forms, not the AI. Family-free, partner-funded. Prove it with 100 families |
 |     6 | Outcomes, not downloads. Less stress, less admin, better service                          |
@@ -496,8 +520,8 @@ integration agreement.
 
 ## Stage and Rehearsal Plan
 
-1. Rehearse until the spoken delivery is between 4:52 and 4:58. With six production-controlled
-   changes, the expected stage finish is 5:28 to 5:40. Treat 5:45 as the rehearsal maximum, not the
+1. Rehearse until the spoken delivery is between 4:54 and 5:00. With six production-controlled
+   changes, the expected stage finish is 5:30 to 5:42. Treat 5:45 as the rehearsal maximum, not the
    target.
 2. Use one speaking handoff, after Slide 4. Anderson and xrwong support the stage action and Q&A
    without adding two more narration handoffs. Rehearse the handoff itself: A finishes Slide 4, steps
